@@ -38,13 +38,16 @@ async (page) => {
   const menu = page.getByRole('button', { name: 'Toggle navigation menu' });
   await menu.press('Enter');
   expect(await menu.getAttribute('aria-expanded') === 'true', 'Mobile menu did not open by keyboard');
-  for (const label of ['Work', 'Contact', 'Start a project']) {
-    const visible = await page.locator('#mobile-menu').getByRole('link', { name: label }).evaluate(link => {
+  const mobileLinks = page.locator('#mobile-menu a');
+  expect(await mobileLinks.count() > 0, 'Mobile menu has no links');
+  for (let index = 0; index < await mobileLinks.count(); index++) {
+    const link = mobileLinks.nth(index);
+    const visible = await link.evaluate(link => {
       const panel = link.closest('#mobile-menu').getBoundingClientRect();
       const rect = link.getBoundingClientRect();
       return rect.top >= panel.top && rect.bottom <= panel.bottom;
     });
-    expect(visible, `Mobile menu clips ${label}`);
+    expect(visible, `Mobile menu clips ${await link.innerText()}`);
   }
   await page.keyboard.press('Escape');
   expect(await menu.getAttribute('aria-expanded') === 'false', 'Mobile menu did not close on Escape');
