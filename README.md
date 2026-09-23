@@ -4,7 +4,7 @@ Monorepo for the Crispframe TYPO3 theme.
 
 ## Packages
 
-- `packages/agency_theme/` — reusable GPL theme for TYPO3 13.4, with 17 Content Blocks and English/German labels. See [`packages/agency_theme/README.md`](packages/agency_theme/README.md).
+- `packages/agency_theme/` — reusable GPL theme for TYPO3 13.4, with 19 Content Blocks and English/German labels. See [`packages/agency_theme/README.md`](packages/agency_theme/README.md).
 - `packages/agency_demo/` — optional editable bilingual example pages for a new empty site.
 - `starter/` — Composer project without a local path repository. See [`starter/README.md`](starter/README.md).
 
@@ -26,6 +26,6 @@ For a fresh TYPO3 installation, follow the TYPO3 web installer to create its dat
 
 ## Local demo
 
-With TYPO3 installed and root page 1 created, run `podman compose exec web vendor/bin/typo3 cache:flush`, `podman compose exec web vendor/bin/typo3 extension:setup --extension=agency_theme --no-interaction`, then the local demo helpers in this order: `php config/seed-demo.php`, `php config/seed-gallery.php`, `php config/localize-demo.php`, and `php config/seed-photography.php` inside the web container. Flush the cache afterward. The helpers add editable Home, Work, Contact and a hidden Components page, plus localized gallery and hero images. Existing records are not reimported by the optional distribution package. The demo is served at `http://localhost:8080/`; inspect Pricing, Video and Gallery at `http://localhost:8080/components`. The optional distribution package uses TYPO3 Initialisation instead of these development helpers.
+With TYPO3 installed and root page 1 created, run `podman compose exec web vendor/bin/typo3 cache:flush`, `podman compose exec web vendor/bin/typo3 extension:setup --extension=agency_theme --no-interaction`, then the local demo helpers in this order: `php config/seed-demo.php`, `php config/seed-gallery.php`, `php config/localize-demo.php`, `php config/seed-photography.php`, and `python3 .dev/seed-v12-demo.py` inside the web container. Flush the cache afterward. The helpers add editable Home, Work, Contact, Services, About and a hidden Components page, plus localized gallery and hero images. Existing records are not reimported by the optional distribution package. The demo is served at `http://localhost:8080/`; inspect Pricing, Video and Gallery at `http://localhost:8080/components`. The optional distribution package uses TYPO3 Initialisation instead of these development helpers.
 
 The seed script and this demo site's URL, branding and database are development examples. Installing `crispframe/agency-theme` in another TYPO3 project does not create pages or copy those site-specific values.

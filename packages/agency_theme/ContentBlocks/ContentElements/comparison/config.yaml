@@ -1,0 +1,72 @@
+name: crispframe/comparison
+title: Comparison
+description: Compare two approaches in an accessible, responsive table.
+group: Crispframe
+fields:
+  - identifier: headline
+    type: Text
+    label: Headline
+    required: true
+    default: Compare your options
+  - identifier: lead
+    type: Textarea
+    label: Introduction
+  - identifier: firstHeading
+    type: Text
+    label: First column heading
+    required: true
+    default: Standard approach
+  - identifier: secondHeading
+    type: Text
+    label: Second column heading
+    required: true
+    default: Tailored approach
+  - identifier: rows
+    type: Collection
+    label: Comparison rows
+    description: Add two to eight concise points.
+    minitems: 2
+    maxitems: 8
+    fields:
+      - identifier: label
+        type: Text
+        label: Criterion
+        required: true
+      - identifier: firstValue
+        type: Textarea
+        label: First column value
+      - identifier: secondValue
+        type: Textarea
+        label: Second column value
+  - identifier: emphasizeSecond
+    type: Checkbox
+    label: Emphasize the second column
+  - identifier: sectionSpacing
+    type: Select
+    renderType: selectSingle
+    label: Section spacing
+    default: default
+    items:
+      - { label: Small, value: small }
+      - { label: Default, value: default }
+      - { label: Large, value: large }
+  - identifier: sectionBackground
+    type: Select
+    renderType: selectSingle
+    label: Section background
+    default: default
+    items:
+      - { label: Default, value: default }
+      - { label: Subtle, value: subtle }
+      - { label: Dark, value: dark }
+      - { label: Brand, value: brand }
+  - identifier: width
+    type: Select
+    renderType: selectSingle
+    label: Container width
+    default: default
+    items:
+      - { label: Narrow, value: narrow }
+      - { label: Default, value: default }
+      - { label: Wide, value: wide }
+      - { label: Full, value: full }

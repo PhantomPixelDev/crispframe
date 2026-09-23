@@ -1,0 +1,73 @@
+name: crispframe/timeline
+title: Timeline
+description: Show milestones, history, or a delivery roadmap.
+group: Crispframe
+fields:
+  - identifier: headline
+    type: Text
+    label: Headline
+    required: true
+    default: How we got here
+  - identifier: lead
+    type: Textarea
+    label: Introduction
+  - identifier: items
+    type: Collection
+    label: Milestones
+    description: Add two to eight milestones in chronological order.
+    minitems: 2
+    maxitems: 8
+    fields:
+      - identifier: period
+        type: Text
+        label: Date or phase
+      - identifier: title
+        type: Text
+        label: Title
+        required: true
+      - identifier: description
+        type: Textarea
+        label: Description
+      - identifier: linkLabel
+        type: Text
+        label: Link label
+      - identifier: link
+        type: Link
+        label: Link
+  - identifier: layout
+    type: Select
+    renderType: selectSingle
+    label: Layout
+    default: rail
+    items:
+      - { label: Vertical rail, value: rail }
+      - { label: Cards, value: cards }
+  - identifier: sectionSpacing
+    type: Select
+    renderType: selectSingle
+    label: Section spacing
+    default: default
+    items:
+      - { label: Small, value: small }
+      - { label: Default, value: default }
+      - { label: Large, value: large }
+  - identifier: sectionBackground
+    type: Select
+    renderType: selectSingle
+    label: Section background
+    default: default
+    items:
+      - { label: Default, value: default }
+      - { label: Subtle, value: subtle }
+      - { label: Dark, value: dark }
+      - { label: Brand, value: brand }
+  - identifier: width
+    type: Select
+    renderType: selectSingle
+    label: Container width
+    default: default
+    items:
+      - { label: Narrow, value: narrow }
+      - { label: Default, value: default }
+      - { label: Wide, value: wide }
+      - { label: Full, value: full }

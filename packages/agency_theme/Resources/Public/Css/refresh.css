@@ -83,13 +83,15 @@
 .site-footer__prelude-title{max-width:18ch}
 .form__input,.form__textarea,.form__select{min-height:3rem;padding:.7rem .85rem}
 @media(max-width:63.99rem){.site-header__nav{gap:var(--space-sm)}.site-header .nav__link{padding-inline:.65rem}}
-@media(max-width:47.99rem){
+@media(max-width:55.99rem){
   .site-header__inner{min-height:4.25rem;gap:.5rem}
   .site-header__brand{flex-shrink:1;min-width:0}
   .site-header__logotype{font-size:1rem}
   .site-header__logotype{overflow:hidden;text-overflow:ellipsis}
+  .site-header__nav{display:none!important}
   .site-header__actions{margin-inline-start:auto}
   .site-header__cta{display:none}
+  .nav-toggle{display:inline-flex}
   .site-header__mobile{position:absolute;inset:100% .5rem auto auto;width:min(25rem,calc(100vw - 1rem));max-height:calc(100dvh - 4.75rem);padding:var(--space-lg);border:1px solid var(--color-border);border-block-start:0;border-radius:0 0 var(--radius-md) var(--radius-md);box-shadow:0 24px 40px rgba(17,31,44,.16)}
   .site-header__mobile .nav__link{border-radius:var(--radius-sm)}
   .nav-toggle{width:2.7rem;height:2.7rem;border-radius:999px;background:var(--color-bg-subtle)}

@@ -1,0 +1,22 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<section class="section section--{data.sectionBackground}" data-spacing="{data.sectionSpacing}">
+    <div class="container container--{data.width}">
+        <header class="section-header">
+            <h2 class="section-header__title">{data.headline}</h2>
+            <f:if condition="{data.lead}"><p class="section-header__lead">{data.lead}</p></f:if>
+        </header>
+        <f:if condition="{data.items}">
+            <ol class="timeline timeline--{data.layout}" role="list">
+                <f:for each="{data.items}" as="item">
+                    <li class="timeline__item">
+                        <f:if condition="{item.period}"><p class="timeline__period">{item.period}</p></f:if>
+                        <h3 class="timeline__title">{item.title}</h3>
+                        <f:if condition="{item.description}"><p class="timeline__description">{item.description}</p></f:if>
+                        <f:if condition="{item.link} && {item.linkLabel} && {item.link} != '#'"><f:link.typolink parameter="{item.link}" class="timeline__link">{item.linkLabel}<span aria-hidden="true"> →</span></f:link.typolink></f:if>
+                    </li>
+                </f:for>
+            </ol>
+        </f:if>
+    </div>
+</section>
+</html>

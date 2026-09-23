@@ -17,7 +17,7 @@ import sys
 for path in sys.argv[1:]:
     with open(path, encoding='utf-8') as file:
         package = json.load(file)
-    package['version'] = '1.1.0'
+    package['version'] = '1.2.0'
     with open(path, 'w', encoding='utf-8') as file:
         json.dump(package, file, indent=2)
 PY
@@ -32,7 +32,7 @@ test -f vendor/crispframe/agency-theme/LICENSE
 test -f vendor/crispframe/agency-theme/Resources/Private/ThirdParty/LUCIDE-LICENSE
 test ! -d vendor/crispframe/agency-demo
 
-composer require crispframe/agency-demo:^1.1 --no-interaction --prefer-dist --no-progress
+composer require crispframe/agency-demo:^1.2 --no-interaction --prefer-dist --no-progress
 test -f vendor/crispframe/agency-demo/Initialisation/data.xml
 test -f vendor/crispframe/agency-demo/Initialisation/Site/main/config.yaml
 TYPO3_SETUP_ADMIN_PASSWORD='CleanInstall1234!' vendor/bin/typo3 setup --driver=sqlite --dbname="$work/site/var/site.sqlite" --admin-username=admin --admin-email=admin@example.invalid --project-name='Crispframe clean install' --server-type=apache --no-interaction
@@ -47,20 +47,20 @@ from pathlib import Path
 database = sqlite3.connect(sys.argv[1])
 pages = database.execute("SELECT COUNT(*) FROM pages WHERE deleted = 0").fetchone()[0]
 translations = database.execute("SELECT COUNT(*) FROM pages WHERE deleted = 0 AND sys_language_uid = 1").fetchone()[0]
-files = [row[0] for row in database.execute("SELECT identifier FROM sys_file WHERE identifier LIKE '%workspace.svg' OR identifier LIKE '%collaboration.svg' OR identifier LIKE '%studio-team.webp' OR identifier LIKE '%project-worktable.webp' OR identifier LIKE '%meeting-space.webp'")]
+files = [row[0] for row in database.execute("SELECT identifier FROM sys_file WHERE identifier LIKE '%workspace.svg' OR identifier LIKE '%collaboration.svg' OR identifier LIKE '%studio-team.webp' OR identifier LIKE '%project-worktable.webp' OR identifier LIKE '%meeting-space.webp' OR identifier LIKE '%services-team.webp' OR identifier LIKE '%about-team.webp'")]
 blocks = {row[0] for row in database.execute("SELECT DISTINCT CType FROM tt_content WHERE CType LIKE 'crispframe_%' AND deleted = 0")}
-assert pages >= 4, f'Expected example pages, found {pages}'
-assert translations >= 4, f'Expected German pages, found {translations}'
-assert len(files) >= 5, f'Expected two gallery images and three hero photos, found {files}'
-assert len(blocks) == 17, f'Expected all 17 block types, found {sorted(blocks)}'
+assert pages >= 12, f'Expected twelve bilingual example pages, found {pages}'
+assert translations >= 6, f'Expected six German pages, found {translations}'
+assert len(files) >= 7, f'Expected two gallery images and five hero photos, found {files}'
+assert len(blocks) == 19, f'Expected all 19 block types, found {sorted(blocks)}'
 heroes = database.execute("SELECT COUNT(*) FROM tt_content WHERE CType = 'crispframe_hero' AND crispframe_hero_image = 1 AND crispframe_hero_imageAlt != '' AND deleted = 0").fetchone()[0]
-assert heroes >= 6, f'Expected English and German image references for three heroes, found {heroes}'
+assert heroes >= 10, f'Expected English and German image references for five heroes, found {heroes}'
 localized_hero_refs = database.execute("SELECT COUNT(*) FROM sys_file_reference WHERE fieldname = 'crispframe_hero_image' AND sys_language_uid = 1 AND l10n_parent > 0 AND deleted = 0").fetchone()[0]
-assert localized_hero_refs >= 3, f'Expected three linked German hero image references, found {localized_hero_refs}'
+assert localized_hero_refs >= 5, f'Expected five linked German hero image references, found {localized_hero_refs}'
 for identifier in files:
     image = Path(sys.argv[1]).parents[2] / 'public' / 'fileadmin' / identifier.lstrip('/')
     assert image.is_file(), f'Missing imported gallery image: {image}'
-print(f'Clean install passed: {pages} pages, {translations} German translations, 17 block types, {len(files)} imported images.')
+print(f'Clean install passed: {pages} pages, {translations} German translations, 19 block types, {len(files)} imported images.')
 PY
 
 if [ "${CRISPFRAME_BROWSER_SMOKE:-0}" = '1' ]; then
@@ -87,7 +87,7 @@ for attempt in range(30):
         time.sleep(1)
 else:
     raise SystemExit('Clean starter HTTP server did not become ready')
-for path in ['/work', '/contact', '/components', '/de/', '/de/contact', '/de/components']:
+for path in ['/work', '/contact', '/services', '/about', '/components', '/de/', '/de/contact', '/de/leistungen', '/de/ueber-uns', '/de/components']:
     with urllib.request.urlopen('http://127.0.0.1:8765' + path) as response:
         assert response.status == 200, (path, response.status)
 with urllib.request.urlopen('http://127.0.0.1:8765/') as response:

@@ -4,7 +4,7 @@
     "type": "project",
     "license": "GPL-2.0-or-later",
     "require": {
-        "crispframe/agency-theme": "^1.0",
+        "crispframe/agency-theme": "^1.2",
         "typo3/cms-backend": "^13.4",
         "typo3/cms-core": "^13.4",
         "typo3/cms-extensionmanager": "^13.4",

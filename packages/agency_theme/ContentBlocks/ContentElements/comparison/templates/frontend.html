@@ -1,0 +1,22 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<section class="section section--{data.sectionBackground}" data-spacing="{data.sectionSpacing}">
+    <div class="container container--{data.width}">
+        <header class="section-header">
+            <h2 class="section-header__title">{data.headline}</h2>
+            <f:if condition="{data.lead}"><p class="section-header__lead">{data.lead}</p></f:if>
+        </header>
+        <f:if condition="{data.rows}">
+            <div class="comparison__scroll" role="region" aria-label="{data.headline}" tabindex="0">
+                <table class="comparison{f:if(condition: data.emphasizeSecond, then: ' comparison--emphasize-second')}">
+                    <thead><tr><th scope="col"><f:translate key="LLL:EXT:agency_theme/ContentBlocks/ContentElements/comparison/language/labels.xlf:criterion" /></th><th scope="col">{data.firstHeading}</th><th scope="col">{data.secondHeading}</th></tr></thead>
+                    <tbody>
+                        <f:for each="{data.rows}" as="row">
+                            <tr><th scope="row">{row.label}</th><td>{row.firstValue}</td><td>{row.secondValue}</td></tr>
+                        </f:for>
+                    </tbody>
+                </table>
+            </div>
+        </f:if>
+    </div>
+</section>
+</html>

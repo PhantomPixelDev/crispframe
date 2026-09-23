@@ -7,8 +7,8 @@ Each row is an editable TYPO3 content element. Start with a short page tree (Hom
 | Page | Block order | What to enter |
 | --- | --- | --- |
 | Home | Hero → Intro → Services → Process → Projects → Testimonials → CTA | Outcome-led headline, 3–6 service cards, steps, real work and a contact link. |
-| Services | Intro → Feature grid → Services → FAQ → CTA | Scope, deliverables, eligibility and common questions. |
-| About | Hero → Stats → Team → Logo cloud → CTA | People, measurable facts and permitted client logos. |
+| Services | Hero → Intro → Comparison → Timeline → FAQ → CTA | Scope, two approaches, delivery phases and common questions. |
+| About | Hero → Timeline → Stats → Team → Logo cloud → CTA | Principles, people, measurable facts and permitted client logos. |
 | Contact | Intro → Contact → TYPO3 Form | Contact details and a form with site-specific recipients. |
 
 ## Product company
@@ -16,7 +16,7 @@ Each row is an editable TYPO3 content element. Start with a short page tree (Hom
 | Page | Block order | What to enter |
 | --- | --- | --- |
 | Home | Hero → Logo cloud → Feature grid → Text/image → Video → CTA | Product value, benefits and a consent-aware product video. |
-| Product | Intro → Feature grid → Gallery → Process → FAQ | Screenshots with useful alt text, onboarding and answers. |
+| Product | Intro → Feature grid → Comparison → Gallery → Process → FAQ | Screenshots with useful alt text, plan comparison and onboarding. |
 | Pricing | Intro → Pricing → FAQ → CTA | Clear currency, billing interval and links for each tier. |
 | Contact | Intro → Contact → TYPO3 Form | Sales or support route, recipient overrides and mail test. |
 
@@ -26,7 +26,7 @@ Each row is an editable TYPO3 content element. Start with a short page tree (Hom
 | --- | --- | --- |
 | Home | Hero → Intro → Stats → Projects → CTA | Mission, impact and a relevant action. |
 | Our work | Services → Projects → Gallery → Testimonials | Programs, documented results, captions and attributed quotes. |
-| People | Intro → Team → Process → FAQ | Governance, roles and how people can participate. |
+| People | Intro → Timeline → Team → Process → FAQ | Governance, milestones, roles and ways to participate. |
 | Contact | Contact → TYPO3 Form | Real addresses and privacy information. |
 
 Use the four palettes as starting points, then check text contrast after replacing the example imagery and copy. Keep external video and newsletter integrations subject to the site's own consent and service choices.

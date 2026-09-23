@@ -1,18 +1,30 @@
 async (page) => {
   const base = page.url().match(/^https?:\/\/[^/]+/)[0];
   const expect = (condition, message) => { if (!condition) throw new Error(message); };
-  for (const path of ['/', '/work', '/contact', '/components', '/de/', '/de/work', '/de/contact', '/de/components']) {
+  for (const path of ['/', '/work', '/contact', '/services', '/about', '/components', '/de/', '/de/work', '/de/contact', '/de/leistungen', '/de/ueber-uns', '/de/components']) {
     const response = await page.goto(base + path);
     expect(response && response.status() === 200, `${path} must return 200`);
     const language = await page.locator('html').getAttribute('lang');
     expect(language === (path.startsWith('/de/') ? 'de' : 'en'), `${path} has wrong language: ${language}`);
     expect(await page.locator('link[rel="canonical"]').count() > 0, `${path} is missing canonical`);
-    if (['/', '/work', '/contact', '/de/', '/de/work', '/de/contact'].includes(path)) {
+    if (['/', '/work', '/contact', '/services', '/about', '/de/', '/de/work', '/de/contact', '/de/leistungen', '/de/ueber-uns'].includes(path)) {
       const heroImage = page.locator('.hero__media img').first();
       expect(await heroImage.count() === 1, `${path} is missing its editorial hero image`);
       expect((await heroImage.getAttribute('alt') || '').length > 10, `${path} needs useful hero alt text`);
       expect(await heroImage.evaluate(image => image.complete && image.naturalWidth > 0), `${path} hero image did not load`);
     }
+  }
+  for (const path of ['/services', '/de/leistungen']) {
+    await page.goto(base + path);
+    expect(await page.locator('.comparison tbody tr').count() >= 2, `${path} needs comparison rows`);
+    expect(await page.locator('.timeline__item').count() >= 3, `${path} needs timeline milestones`);
+    const breadcrumb = await page.locator('.breadcrumb').evaluate(nav => {
+      const items = [...nav.querySelectorAll('.breadcrumb__item')];
+      return { rows: new Set(items.map(item => Math.round(item.getBoundingClientRect().top))).size,
+        separators: nav.querySelectorAll('.breadcrumb__sep').length,
+        pseudo: getComputedStyle(items[1], '::before').content };
+    });
+    expect(breadcrumb.rows === 1 && breadcrumb.separators === 1 && breadcrumb.pseudo === 'none', `${path} breadcrumb is not a single row with one separator`);
   }
   for (const path of ['/missing-page', '/de/fehlende-seite']) {
     const response = await page.goto(base + path);
@@ -72,7 +84,7 @@ async (page) => {
   await page.getByRole('button', { name: 'Send inquiry' }).click();
   expect((await page.locator('body').innerText()).includes('Thank you. Your inquiry has been sent.'), 'Contact confirmation missing');
   await page.emulateMedia({ reducedMotion: 'reduce' });
-  for (const path of ['/', '/work', '/contact', '/components', '/de/']) {
+  for (const path of ['/', '/work', '/contact', '/services', '/about', '/components', '/de/', '/de/leistungen', '/de/ueber-uns']) {
     await page.goto(base + path);
     for (const width of [390, 768, 1440]) {
       await page.setViewportSize({ width, height: 900 });
@@ -83,5 +95,5 @@ async (page) => {
       }
     }
   }
-  return 'Browser smoke passed: pages, languages, SEO, 404, gallery, pricing, video, contact form, four palettes, three widths and reduced motion.';
+  return 'Browser smoke passed: bilingual pages, breadcrumbs, new blocks, SEO, 404, gallery, pricing, video, contact form, four palettes, three widths and reduced motion.';
 }

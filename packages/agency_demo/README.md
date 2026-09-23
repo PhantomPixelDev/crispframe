@@ -4,6 +4,8 @@ This optional distribution contains an editable example page tree. Install it on
 
 The example content uses fictional organization and contact details. Replace all names, prices, links, legal pages, form recipients, and SEO text before publishing. Do not use this package as an update mechanism for edited content.
 
-The starter includes three original, compressed WebP editorial photographs for Home, Work and Contact. They are imported as normal TYPO3 files and may be replaced or removed in the page editor. English and German hero records each carry their own editable alternative text. The theme package contains no demo photography.
+The starter includes five original, compressed WebP editorial photographs for Home, Work, Contact, Services and About. They are imported as normal TYPO3 files and may be replaced or removed in the page editor. English and German hero records each carry their own editable alternative text. The theme package contains no demo photography.
+
+The bilingual page tree contains Home, Work, Contact, Services and About, plus a hidden Components showcase. Services demonstrates the comparison table and vertical timeline; About demonstrates the card timeline. All records are editable in TYPO3.
 
 The XML export is generated from the local demo with TYPO3's `impexp:export` command. It includes only the page tree and records under that root. It contains no backend users or credentials.

@@ -19,11 +19,15 @@ A reusable corporate site package for **TYPO3 13.4 LTS**. Build a services, prod
 | --- | --- |
 | <img src="Documentation/Images/work-desktop.webp" alt="Work page with project photography" width="640"> | <img src="Documentation/Images/contact-desktop.webp" alt="Contact page with meeting space photography" width="640"> |
 
+| Services page | About page |
+| --- | --- |
+| <img src="Documentation/Images/services-desktop.webp" alt="Services page with an editable comparison and timeline" width="640"> | <img src="Documentation/Images/about-desktop.webp" alt="About page with team photography and principles" width="640"> |
+
 These screenshots show the [optional demo package](https://github.com/PhantomPixelDev/crispframe-agency-demo). Its branding, copy, photos, and prices are examples that you can edit in TYPO3.
 
 ## What is included
 
-- **17 Content Blocks:** hero, intro, text/image, features, services, stats, logos, testimonials, projects, team, FAQ, CTA, contact, process, pricing, video, and gallery.
+- **19 Content Blocks:** hero, intro, text/image, features, services, stats, logos, testimonials, projects, team, FAQ, CTA, contact, process, pricing, video, gallery, comparison, and timeline.
 - **Site settings:** branding, contact details, navigation and footer links, CTAs, content width, typography, corners, spacing, sticky header, and ocean/forest/plum/ember palettes.
 - **Publishing basics:** responsive PageView layouts, a branded 404, SEO metadata and structured data, language switcher, keyboard-friendly interactions, and reduced-motion support.
 - **Icon choices:** a curated, locally bundled [Lucide](https://lucide.dev/) selection for services and features, plus custom SVG upload. Existing icon identifiers remain available; no icon CDN or JavaScript package is needed at runtime.
@@ -34,7 +38,7 @@ These screenshots show the [optional demo package](https://github.com/PhantomPix
 In a TYPO3 13.4 Composer project, install the theme from [Packagist](https://packagist.org/packages/crispframe/agency-theme):
 
 ```bash
-composer require crispframe/agency-theme:^1.0
+composer require crispframe/agency-theme:^1.2
 ```
 
 Add the **Crispframe Agency Theme** Site Set under Admin → Site Management → Sites → *Your site* → Sets. Then follow the [first-run checklist](Documentation/FirstRun.md) to set branding, contact recipients, legal links, and SEO details.
@@ -42,7 +46,7 @@ Add the **Crispframe Agency Theme** Site Set under Admin → Site Management →
 For a **new empty site**, the [starter project](https://github.com/PhantomPixelDev/crispframe/tree/main/starter) and [optional demo package](https://packagist.org/packages/crispframe/agency-demo) provide an editable English/German page tree with examples of every block:
 
 ```bash
-composer require crispframe/agency-demo:^1.0
+composer require crispframe/agency-demo:^1.2
 vendor/bin/typo3 extension:setup --extension=agency_demo
 ```
 

@@ -8,7 +8,8 @@
   Notes: semantic <nav aria-label="Breadcrumb"><ol>. Works without JS. Minimal, no duplicate code.
 -->
 <f:if condition="{breadcrumb -> f:count()} > 1">
-    <nav class="breadcrumb" aria-label="{f:if(condition: ariaLabel, then: ariaLabel, else: 'Breadcrumb')}">
+    <f:variable name="defaultBreadcrumbLabel" value="{f:translate(key: 'LLL:EXT:agency_theme/Resources/Private/Language/locallang.xlf:site.breadcrumb')}" />
+    <nav class="breadcrumb" aria-label="{f:if(condition: ariaLabel, then: ariaLabel, else: defaultBreadcrumbLabel)}">
         <ol class="breadcrumb__list" role="list">
             <f:for each="{breadcrumb}" as="crumb" iteration="it">
                 <li class="breadcrumb__item{f:if(condition: crumb.current, then: ' is-current')}">

@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.2.0 — 2026-09-23
+
+- Added editable Comparison and Timeline blocks with English and German editor labels, responsive layouts, palette-aware styling, and empty-state handling.
+- Fixed duplicated breadcrumb separators and kept breadcrumb items on one scrollable line on narrow screens.
+- Expanded the compact header menu behavior to tablet widths for sites with more navigation links.
+
 ## 1.1.1 — 2026-09-23
 
 - Centered the intro block action across container widths.

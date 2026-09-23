@@ -197,9 +197,9 @@ img.site-header__logo{width:auto;height:2rem;background:none;border-radius:0;dis
 .form__row{display:grid;gap:var(--space-md)}
 @media (min-width:48rem){.form__row--2{grid-template-columns:1fr 1fr}}
 .breadcrumb{font-size:var(--text-xs);color:var(--color-text-muted);padding-block:var(--space-sm)}
-.breadcrumb__list{display:flex;flex-wrap:wrap;align-items:center;gap:.35rem;list-style:none;padding:0;margin:0}
-.breadcrumb__item{display:inline-flex;align-items:center;gap:.35rem}
-.breadcrumb__item+.breadcrumb__item::before{content:"/";color:var(--color-border-strong);font-size:.9em}
+.breadcrumb__list{display:flex;flex-wrap:nowrap;align-items:center;gap:.35rem;list-style:none;padding:0;margin:0;overflow-x:auto;white-space:nowrap}
+.breadcrumb__item{display:inline-flex;flex:none;align-items:center;gap:.35rem;margin:0;max-width:none}
+.breadcrumb__sep{color:var(--color-text-muted)}
 .breadcrumb__link{color:var(--color-text-muted);text-decoration:none}
 .breadcrumb__link:hover{color:var(--color-text);text-decoration:underline;text-underline-offset:2px}
 .breadcrumb__current{color:var(--color-text);font-weight:var(--font-weight-medium)}

@@ -1,0 +1,116 @@
+<?xml version='1.0' encoding='utf-8'?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file datatype="plaintext" original="labels.xlf" source-language="en" product-name="crispframe/comparison" target-language="de">
+    <header />
+    <body>
+      <trans-unit id="title">
+        <source>Comparison</source>
+        <target>Vergleich</target>
+      </trans-unit>
+      <trans-unit id="description">
+        <source>Compare two approaches in an accessible, responsive table.</source>
+        <target>Zwei Ansätze in einer barrierearmen, responsiven Tabelle vergleichen.</target>
+      </trans-unit>
+      <trans-unit id="headline.label">
+        <source>Headline</source>
+        <target>Überschrift</target>
+      </trans-unit>
+      <trans-unit id="lead.label">
+        <source>Introduction</source>
+        <target>Einleitung</target>
+      </trans-unit>
+      <trans-unit id="firstHeading.label">
+        <source>First column heading</source>
+        <target>Überschrift der ersten Spalte</target>
+      </trans-unit>
+      <trans-unit id="secondHeading.label">
+        <source>Second column heading</source>
+        <target>Überschrift der zweiten Spalte</target>
+      </trans-unit>
+      <trans-unit id="rows.label">
+        <source>Comparison rows</source>
+        <target>Vergleichszeilen</target>
+      </trans-unit>
+      <trans-unit id="rows.description">
+        <source>Add two to eight concise points.</source>
+        <target>Zwei bis acht kurze Punkte hinzufügen.</target>
+      </trans-unit>
+      <trans-unit id="rows.label.label">
+        <source>Criterion</source>
+        <target>Kriterium</target>
+      </trans-unit>
+      <trans-unit id="rows.firstValue.label">
+        <source>First column value</source>
+        <target>Wert der ersten Spalte</target>
+      </trans-unit>
+      <trans-unit id="rows.secondValue.label">
+        <source>Second column value</source>
+        <target>Wert der zweiten Spalte</target>
+      </trans-unit>
+      <trans-unit id="emphasizeSecond.label">
+        <source>Emphasize the second column</source>
+        <target>Zweite Spalte hervorheben</target>
+      </trans-unit>
+      <trans-unit id="criterion">
+        <source>Criterion</source>
+        <target>Kriterium</target>
+      </trans-unit>
+      <trans-unit id="sectionSpacing.label">
+        <source>Section spacing</source>
+        <target>Abschnittsabstand</target>
+      </trans-unit>
+      <trans-unit id="sectionSpacing.items.small.label">
+        <source>Small</source>
+        <target>Klein</target>
+      </trans-unit>
+      <trans-unit id="sectionSpacing.items.default.label">
+        <source>Default</source>
+        <target>Standard</target>
+      </trans-unit>
+      <trans-unit id="sectionSpacing.items.large.label">
+        <source>Large</source>
+        <target>Groß</target>
+      </trans-unit>
+      <trans-unit id="sectionBackground.label">
+        <source>Section background</source>
+        <target>Abschnittshintergrund</target>
+      </trans-unit>
+      <trans-unit id="sectionBackground.items.default.label">
+        <source>Default</source>
+        <target>Standard</target>
+      </trans-unit>
+      <trans-unit id="sectionBackground.items.subtle.label">
+        <source>Subtle</source>
+        <target>Dezent</target>
+      </trans-unit>
+      <trans-unit id="sectionBackground.items.dark.label">
+        <source>Dark</source>
+        <target>Dunkel</target>
+      </trans-unit>
+      <trans-unit id="sectionBackground.items.brand.label">
+        <source>Brand</source>
+        <target>Markenfarbe</target>
+      </trans-unit>
+      <trans-unit id="width.label">
+        <source>Container width</source>
+        <target>Inhaltsbreite</target>
+      </trans-unit>
+      <trans-unit id="width.items.narrow.label">
+        <source>Narrow</source>
+        <target>Schmal</target>
+      </trans-unit>
+      <trans-unit id="width.items.default.label">
+        <source>Default</source>
+        <target>Standard</target>
+      </trans-unit>
+      <trans-unit id="width.items.wide.label">
+        <source>Wide</source>
+        <target>Breit</target>
+      </trans-unit>
+      <trans-unit id="width.items.full.label">
+        <source>Full</source>
+        <target>Voll</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
