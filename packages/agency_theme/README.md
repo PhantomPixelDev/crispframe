@@ -1,6 +1,47 @@
 # Crispframe Agency Theme
 
-Flexible corporate sitepackage for **TYPO3 13.4 LTS** (PHP 8.2+). Provides a Site Set, PageView layouts, style presets, 17 Content Blocks, a contact form and English/German interface labels — no build step, Bootstrap, Tailwind or jQuery. The package contains no example pages or site-specific configuration.
+[![Packagist version](https://img.shields.io/packagist/v/crispframe/agency-theme?label=Packagist)](https://packagist.org/packages/crispframe/agency-theme)
+![TYPO3 13.4](https://img.shields.io/badge/TYPO3-13.4_LTS-f49700)
+[![License: GPL-2.0-or-later](https://img.shields.io/badge/license-GPL--2.0--or--later-blue)](LICENSE)
+[![Release checks](https://github.com/PhantomPixelDev/crispframe/actions/workflows/ci.yml/badge.svg)](https://github.com/PhantomPixelDev/crispframe/actions/workflows/ci.yml)
+
+A reusable corporate site package for **TYPO3 13.4 LTS**. Build a services, product, or organization website with editable Content Blocks, four style palettes, and English/German interface labels. The theme has no build step and does not import demo content into an existing site.
+
+## Preview
+
+![Crispframe demo homepage at desktop width](Documentation/Images/home-desktop.webp)
+
+| Mobile homepage | Editable pricing block |
+| --- | --- |
+| <img src="Documentation/Images/home-mobile.webp" alt="Crispframe demo homepage at mobile width" width="280"> | <img src="Documentation/Images/pricing-block.webp" alt="Three pricing tiers in the Crispframe demo" width="640"> |
+
+These screenshots show the [optional demo package](https://github.com/PhantomPixelDev/crispframe-agency-demo). Its branding, copy, and prices are examples that you can edit in TYPO3.
+
+## What is included
+
+- **17 Content Blocks:** hero, intro, text/image, features, services, stats, logos, testimonials, projects, team, FAQ, CTA, contact, process, pricing, video, and gallery.
+- **Site settings:** branding, contact details, navigation and footer links, CTAs, content width, typography, corners, spacing, sticky header, and ocean/forest/plum/ember palettes.
+- **Publishing basics:** responsive PageView layouts, a branded 404, SEO metadata and structured data, language switcher, keyboard-friendly interactions, and reduced-motion support.
+- **Contact form:** TYPO3 Form Framework definition with editable recipient overrides. Mail transport and real addresses are set by the site owner.
+
+## Get started
+
+In a TYPO3 13.4 Composer project, install the theme from [Packagist](https://packagist.org/packages/crispframe/agency-theme):
+
+```bash
+composer require crispframe/agency-theme:^1.0
+```
+
+Add the **Crispframe Agency Theme** Site Set under Admin → Site Management → Sites → *Your site* → Sets. Then follow the [first-run checklist](Documentation/FirstRun.md) to set branding, contact recipients, legal links, and SEO details.
+
+For a **new empty site**, the [starter project](https://github.com/PhantomPixelDev/crispframe/tree/main/starter) and [optional demo package](https://packagist.org/packages/crispframe/agency-demo) provide an editable English/German page tree with examples of every block:
+
+```bash
+composer require crispframe/agency-demo:^1.0
+vendor/bin/typo3 extension:setup --extension=agency_demo
+```
+
+The demo uses TYPO3's initialisation mechanism and should be installed only on a fresh site. The theme alone installs without example pages or site-specific configuration.
 
 ## Requirements
 
@@ -10,21 +51,7 @@ Flexible corporate sitepackage for **TYPO3 13.4 LTS** (PHP 8.2+). Provides a Sit
 
 Composer installs these extensions automatically through this package's requirements. `ext_emconf.php` declares the same required extensions for classic TYPO3 installations.
 
-## Composer install
-
-For a tagged release available through a Composer repository, install:
-
-```bash
-composer require crispframe/agency-theme:^1.0
-```
-
-If Packagist has not indexed the tag yet, add the [theme repository](https://github.com/PhantomPixelDev/crispframe-agency-theme) as a Composer VCS repository and require the tag. A local development checkout may use a Composer path repository, but the distributed starter has no local path dependency. The separate [demo package](https://github.com/PhantomPixelDev/crispframe-agency-demo) provides optional editable pages for a fresh installation.
-
-Enable in `config/system/settings.php` or via Extensions module, then include the **Site Set**:
-
-Admin → Site Management → Sites → *Your site* → Sets → add **Crispframe Agency Theme**.
-
-The site set includes TYPO3's Form Framework and SEO sitemap sets (`typo3/form`, `typo3/seo-sitemap`). Create your own site configuration with its base URL, root page and languages; the demo site configuration in this repository is not part of the installable package. Start with the [first-run checklist](Documentation/FirstRun.md) and [page recipes](Documentation/PageRecipes.md).
+The Site Set includes TYPO3's Form Framework and SEO sitemap sets (`typo3/form`, `typo3/seo-sitemap`). Create your own site configuration with its base URL, root page, and languages. See the [page recipes](Documentation/PageRecipes.md) for services, product, and organization layouts.
 
 For maintainers, [Release.md](Documentation/Release.md) describes clean-checkout verification, tags and Packagist publication. [Accessibility.md](Documentation/Accessibility.md) records the automated scope and launch checks.
 
