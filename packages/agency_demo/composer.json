@@ -1,8 +1,13 @@
 {
     "name": "crispframe/agency-demo",
     "description": "Optional example pages for the Crispframe Agency Theme",
+    "homepage": "https://github.com/PhantomPixelDev/crispframe-agency-demo",
     "type": "typo3-cms-extension",
     "license": "GPL-2.0-or-later",
+    "support": {
+        "issues": "https://github.com/PhantomPixelDev/crispframe-agency-demo/issues",
+        "source": "https://github.com/PhantomPixelDev/crispframe-agency-demo"
+    },
     "require": {
         "crispframe/agency-theme": "^1.0",
         "typo3/cms-impexp": "^13.4"

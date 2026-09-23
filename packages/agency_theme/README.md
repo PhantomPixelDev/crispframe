@@ -18,7 +18,7 @@ For a tagged release available through a Composer repository, install:
 composer require crispframe/agency-theme:^1.0
 ```
 
-Until a public release is tagged, add its Git URL as a Composer VCS repository and require the corresponding tag. A local development checkout may use a Composer path repository, but the distributed starter has no local path dependency. The separate `crispframe/agency-demo` package provides optional editable pages for a fresh installation.
+If Packagist has not indexed the tag yet, add the [theme repository](https://github.com/PhantomPixelDev/crispframe-agency-theme) as a Composer VCS repository and require the tag. A local development checkout may use a Composer path repository, but the distributed starter has no local path dependency. The separate [demo package](https://github.com/PhantomPixelDev/crispframe-agency-demo) provides optional editable pages for a fresh installation.
 
 Enable in `config/system/settings.php` or via Extensions module, then include the **Site Set**:
 
