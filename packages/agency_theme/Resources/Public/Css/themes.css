@@ -61,8 +61,8 @@
 .card__icon svg,.card__icon--custom{display:block;width:1.5rem;height:1.5rem}
 .card__icon--custom{box-sizing:content-box;padding:.5rem;object-fit:contain}
 .language-switch{display:flex;align-items:center;gap:.25rem;white-space:nowrap;font-size:var(--text-sm)}
-.language-switch a,.language-switch span{display:inline-block;padding:.3rem .45rem;border-radius:var(--radius-sm);color:var(--color-text-muted);text-decoration:none}
-.language-switch a:hover,.language-switch a.is-active{background:var(--color-bg-muted);color:var(--color-text)}
-.language-switch a:focus-visible{outline:3px solid var(--color-focus);outline-offset:2px}
+.language-switch>a,.language-switch>span{display:inline-block;padding:.3rem .45rem;border-radius:var(--radius-sm);color:var(--color-text-muted);text-decoration:none}
+.language-switch>a:hover,.language-switch>a.is-active{background:var(--color-bg-muted);color:var(--color-text)}
+.language-switch>a:focus-visible{outline:3px solid var(--color-focus);outline-offset:2px}
 .language-switch [aria-disabled="true"]{opacity:.5}
-@media(max-width:30rem){.language-switch{font-size:var(--text-xs)}.language-switch a,.language-switch span{padding:.25rem}}
+@media(max-width:30rem){.language-switch{font-size:var(--text-xs)}.language-switch>a,.language-switch>span{padding:.25rem}}

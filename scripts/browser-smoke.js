@@ -21,9 +21,31 @@ async (page) => {
   }
   await page.setViewportSize({ width: 390, height: 900 });
   await page.goto(base + '/');
+  for (const width of [320, 390, 768, 1440]) {
+    await page.setViewportSize({ width, height: 900 });
+    const layout = await page.evaluate(() => {
+      const button = document.querySelector('.intro__action .btn').getBoundingClientRect();
+      const container = document.querySelector('.intro__action').closest('.container').getBoundingClientRect();
+      return {
+        buttonOffset: button.left + button.width / 2 - (container.left + container.width / 2),
+        overflow: document.documentElement.scrollWidth - document.documentElement.clientWidth,
+      };
+    });
+    expect(Math.abs(layout.buttonOffset) <= 1, `Intro button is off center at ${width}px: ${layout.buttonOffset}px`);
+    expect(layout.overflow <= 1, `Homepage overflows at ${width}px: ${layout.overflow}px`);
+  }
+  await page.setViewportSize({ width: 390, height: 900 });
   const menu = page.getByRole('button', { name: 'Toggle navigation menu' });
   await menu.press('Enter');
   expect(await menu.getAttribute('aria-expanded') === 'true', 'Mobile menu did not open by keyboard');
+  for (const label of ['Work', 'Contact', 'Start a project']) {
+    const visible = await page.locator('#mobile-menu').getByRole('link', { name: label }).evaluate(link => {
+      const panel = link.closest('#mobile-menu').getBoundingClientRect();
+      const rect = link.getBoundingClientRect();
+      return rect.top >= panel.top && rect.bottom <= panel.bottom;
+    });
+    expect(visible, `Mobile menu clips ${label}`);
+  }
   await page.keyboard.press('Escape');
   expect(await menu.getAttribute('aria-expanded') === 'false', 'Mobile menu did not close on Escape');
   await page.getByRole('navigation', { name: 'Languages' }).getByRole('link', { name: 'Deutsch' }).click();

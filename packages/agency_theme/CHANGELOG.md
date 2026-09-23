@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.1.1 — 2026-09-23
+
+- Centered the intro block action across container widths.
+- Refined the header navigation, compact language switcher, and mobile menu styling.
+- Fixed mobile menu clipping and narrow screen overflow; expanded browser regression checks.
+
 ## 1.1.0 — 2026-09-23
 
 - Refreshed typography, spacing, surfaces, cards, hero layout, header and mobile navigation across the four palettes.

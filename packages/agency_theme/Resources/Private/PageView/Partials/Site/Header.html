@@ -26,8 +26,9 @@
         <div class="site-header__actions cluster">
             <f:if condition="{languageNavigation.1}">
                 <nav class="language-switch" aria-label="{f:translate(key: 'LLL:EXT:agency_theme/Resources/Private/Language/locallang.xlf:site.languages')}">
+                    <span class="language-switch__icon"><f:render partial="Components/Icon" arguments="{name: 'globe-2', size: 16, decorative: 1}" /></span>
                     <f:for each="{languageNavigation}" as="language">
-                        <f:if condition="{language.available}"><f:then><a href="{language.link}" hreflang="{language.hreflang}" lang="{language.hreflang}" aria-current="{f:if(condition: language.active, then: 'page')}" class="{f:if(condition: language.active, then: 'is-active')}">{language.navigationTitle}</a></f:then><f:else><span aria-disabled="true">{language.navigationTitle}</span></f:else></f:if>
+                        <f:if condition="{language.available}"><f:then><a href="{language.link}" hreflang="{language.hreflang}" lang="{language.hreflang}" aria-current="{f:if(condition: language.active, then: 'page')}" class="language-switch__option{f:if(condition: language.active, then: ' is-active')}"><span class="visually-hidden">{language.navigationTitle}</span><span class="language-switch__code" aria-hidden="true">{language.hreflang}</span></a></f:then><f:else><span class="language-switch__option" aria-disabled="true"><span class="visually-hidden">{language.navigationTitle}</span><span class="language-switch__code" aria-hidden="true">{language.hreflang}</span></span></f:else></f:if>
                     </f:for>
                 </nav>
             </f:if>
