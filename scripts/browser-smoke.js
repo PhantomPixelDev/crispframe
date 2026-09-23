@@ -1,12 +1,18 @@
 async (page) => {
   const base = page.url().match(/^https?:\/\/[^/]+/)[0];
   const expect = (condition, message) => { if (!condition) throw new Error(message); };
-  for (const path of ['/', '/work', '/contact', '/components', '/de/', '/de/contact', '/de/components']) {
+  for (const path of ['/', '/work', '/contact', '/components', '/de/', '/de/work', '/de/contact', '/de/components']) {
     const response = await page.goto(base + path);
     expect(response && response.status() === 200, `${path} must return 200`);
     const language = await page.locator('html').getAttribute('lang');
     expect(language === (path.startsWith('/de/') ? 'de' : 'en'), `${path} has wrong language: ${language}`);
     expect(await page.locator('link[rel="canonical"]').count() > 0, `${path} is missing canonical`);
+    if (['/', '/work', '/contact', '/de/', '/de/work', '/de/contact'].includes(path)) {
+      const heroImage = page.locator('.hero__media img').first();
+      expect(await heroImage.count() === 1, `${path} is missing its editorial hero image`);
+      expect((await heroImage.getAttribute('alt') || '').length > 10, `${path} needs useful hero alt text`);
+      expect(await heroImage.evaluate(image => image.complete && image.naturalWidth > 0), `${path} hero image did not load`);
+    }
   }
   for (const path of ['/missing-page', '/de/fehlende-seite']) {
     const response = await page.goto(base + path);

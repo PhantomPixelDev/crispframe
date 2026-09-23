@@ -38,4 +38,30 @@ foreach ($paths as $path) {
         }
     }
 }
+$sprite = file_get_contents($root . '/packages/agency_theme/Resources/Public/Icons/sprite.svg');
+preg_match_all('/id="icon-([^"]+)"/', $sprite, $matches);
+$symbols = array_fill_keys($matches[1], true);
+$legacy = ['strategy', 'design', 'code', 'star', 'check', 'arrow-right'];
+foreach (['services', 'feature-grid'] as $block) {
+    $base = $root . '/packages/agency_theme/ContentBlocks/ContentElements/' . $block;
+    $config = Yaml::parseFile($base . '/config.yaml');
+    $collection = array_values(array_filter($config['fields'], static fn(array $field): bool => $field['identifier'] === 'items'))[0];
+    $icon = array_values(array_filter($collection['fields'], static fn(array $field): bool => $field['identifier'] === 'icon'))[0];
+    $choices = array_column($icon['items'], 'value');
+    foreach ($legacy as $name) {
+        if (!in_array($name, $choices, true)) {
+            throw new RuntimeException("Missing legacy icon $name in $block");
+        }
+    }
+    foreach ($choices as $name) {
+        if ($name !== 'none' && !isset($symbols[$name])) {
+            throw new RuntimeException("Missing sprite symbol icon-$name in $block");
+        }
+        foreach (['labels.xlf', 'de.labels.xlf'] as $catalog) {
+            if (!str_contains(file_get_contents($base . '/language/' . $catalog), 'items.icon.items.' . $name . '.label')) {
+                throw new RuntimeException("Missing $name editor label in $block/$catalog");
+            }
+        }
+    }
+}
 echo sprintf("Static syntax passed: %d YAML, %d XML/XLIFF, %d PHP files.\n", ...array_values($counts));

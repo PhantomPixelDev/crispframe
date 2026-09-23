@@ -109,9 +109,9 @@ $services = $ensureBlock(1, 320, 'crispframe_services', 'Demo: services', [
     'crispframe_services_width' => 'default',
 ]);
 $ensureItems('crispframe_services_items', $services, 1, [
-    ['title' => 'Strategy', 'description' => 'Turn business goals and user needs into a focused digital plan.', 'icon' => 'strategy', 'link' => '/contact', 'linkLabel' => 'Discuss a project'],
-    ['title' => 'Design', 'description' => 'Create clear interfaces and a visual language that fits your organisation.', 'icon' => 'design', 'link' => '/contact', 'linkLabel' => 'Discuss a project'],
-    ['title' => 'Engineering', 'description' => 'Build maintainable TYPO3 websites and digital experiences.', 'icon' => 'code', 'link' => '/contact', 'linkLabel' => 'Discuss a project'],
+    ['title' => 'Strategy', 'description' => 'Turn business goals and user needs into a focused digital plan.', 'icon' => 'compass', 'link' => '/contact', 'linkLabel' => 'Discuss a project'],
+    ['title' => 'Design', 'description' => 'Create clear interfaces and a visual language that fits your organisation.', 'icon' => 'layers-3', 'link' => '/contact', 'linkLabel' => 'Discuss a project'],
+    ['title' => 'Engineering', 'description' => 'Build maintainable TYPO3 websites and digital experiences.', 'icon' => 'workflow', 'link' => '/contact', 'linkLabel' => 'Discuss a project'],
 ]);
 $features = $ensureBlock(1, 352, 'crispframe_featuregrid', 'Demo: features', [
     'crispframe_featuregrid_headline' => 'Made for the people behind the website',
@@ -121,9 +121,9 @@ $features = $ensureBlock(1, 352, 'crispframe_featuregrid', 'Demo: features', [
     'crispframe_featuregrid_width' => 'default',
 ]);
 $ensureItems('crispframe_featuregrid_items', $features, 1, [
-    ['title' => 'Accessible by design', 'description' => 'Readable content, clear navigation and keyboard-friendly interactions.', 'icon' => 'check'],
-    ['title' => 'Easy to edit', 'description' => 'Structured blocks let teams update pages without rebuilding layouts.', 'icon' => 'design'],
-    ['title' => 'Ready to evolve', 'description' => 'Reusable page patterns provide room for new content and services.', 'icon' => 'arrow-right'],
+    ['title' => 'Accessible by design', 'description' => 'Readable content, clear navigation and keyboard-friendly interactions.', 'icon' => 'shield-check'],
+    ['title' => 'Easy to edit', 'description' => 'Structured blocks let teams update pages without rebuilding layouts.', 'icon' => 'puzzle'],
+    ['title' => 'Ready to evolve', 'description' => 'Reusable page patterns provide room for new content and services.', 'icon' => 'rocket'],
 ]);
 $ensureBlock(1, 384, 'crispframe_cta', 'Demo: home CTA', [
     'crispframe_cta_headline' => 'Have a challenge worth solving?',

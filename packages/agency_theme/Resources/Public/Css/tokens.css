@@ -1,16 +1,16 @@
 /* tokens.css — Crispframe Agency Theme design tokens | Load first. No classes, only --vars. */
 :root{
   --color-brand:#1a56db;--color-brand-ink:#123a94;--color-brand-hover:#164bc2;
-  --color-text:#1e293b;--color-text-muted:#5b6472;--color-text-faint:#6b7280;
-  --color-bg:#fff;--color-bg-subtle:#f8f9fb;--color-bg-muted:#f1f5f9;
-  --color-border:#e5e7eb;--color-border-strong:#d1d5db;
-  --color-dark:#0f172a;--color-dark-soft:#1e293b;--color-on-dark:#e8eaed;--color-on-dark-muted:#94a3b8;
+  --color-text:#192637;--color-text-muted:#526172;--color-text-faint:#647386;
+  --color-bg:#fff;--color-bg-subtle:#f6f7f6;--color-bg-muted:#eaf0f2;
+  --color-border:#dce3e5;--color-border-strong:#bdc9cf;
+  --color-dark:#111f2c;--color-dark-soft:#1c3040;--color-on-dark:#f5f8f7;--color-on-dark-muted:#b8c8ce;
   --color-link:var(--color-brand);--color-link-hover:var(--color-brand-ink);
   --color-focus:var(--color-brand);--color-selection-bg:#dbeafe;--color-selection-text:var(--color-text);
-  --space-xs:.5rem;--space-sm:.75rem;--space-md:1rem;--space-lg:1.5rem;--space-xl:2rem;--space-2xl:3rem;--space-3xl:4rem;--space-4xl:5rem;
-  --container-sm:44rem;--container-default:72rem;--container-lg:80rem;--container-gutter:1.25rem;
-  --radius-sm:6px;--radius-md:10px;--radius-pill:999px;
-  --shadow-sm:0 1px 3px rgba(15,23,42,.08),0 1px 2px rgba(15,23,42,.06);--shadow:var(--shadow-sm);
+  --space-xs:.5rem;--space-sm:.75rem;--space-md:1rem;--space-lg:1.5rem;--space-xl:2rem;--space-2xl:3rem;--space-3xl:4.5rem;--space-4xl:6rem;
+  --container-sm:44rem;--container-default:74rem;--container-lg:84rem;--container-gutter:clamp(1rem,3vw,2rem);
+  --radius-sm:8px;--radius-md:16px;--radius-pill:999px;
+  --shadow-sm:0 4px 16px rgba(17,31,44,.045);--shadow:0 12px 36px rgba(17,31,44,.07);
   --ease-default:cubic-bezier(.25,.1,.25,1);--duration-fast:150ms;--duration-base:180ms;
   --transition-base:var(--duration-base) var(--ease-default);--transition-fast:var(--duration-fast) var(--ease-default);
   --font-sans:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji";
@@ -19,8 +19,8 @@
   --leading-tight:1.2;--leading-snug:1.35;--leading-normal:1.65;--leading-relaxed:1.75;
   --measure:65ch;
   --text-xs:.8125rem;--text-sm:.875rem;--text-base:1rem;--text-md:1.0625rem;--text-lg:1.125rem;
-  --text-h1:clamp(2rem,4vw,3rem);--text-h2:clamp(1.5rem,2.5vw,2.1rem);--text-h3:clamp(1.2rem,2vw,1.45rem);--text-h4:1.05rem;
-  --tracking-tight:-.015em;--tracking-normal:0;
+  --text-h1:clamp(2.6rem,5vw,4.6rem);--text-h2:clamp(2rem,3.2vw,3.1rem);--text-h3:clamp(1.25rem,2vw,1.65rem);--text-h4:1.08rem;
+  --tracking-tight:-.035em;--tracking-normal:0;
   --border-width:1px;--border-color:var(--color-border);
   --header-height:4rem;
   --z-header:100;--z-overlay:200;

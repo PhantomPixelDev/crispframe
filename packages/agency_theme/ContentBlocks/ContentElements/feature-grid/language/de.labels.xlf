@@ -75,6 +75,94 @@
         <source>Arrow</source>
         <target>Pfeil</target>
       </trans-unit>
+      <trans-unit id="items.icon.items.briefcase-business.label">
+        <source>Briefcase</source>
+        <target>Aktenkoffer</target>
+      </trans-unit>
+      <trans-unit id="items.icon.items.chart-no-axes-combined.label">
+        <source>Growth</source>
+        <target>Wachstum</target>
+      </trans-unit>
+      <trans-unit id="items.icon.items.compass.label">
+        <source>Compass</source>
+        <target>Kompass</target>
+      </trans-unit>
+      <trans-unit id="items.icon.items.lightbulb.label">
+        <source>Idea</source>
+        <target>Idee</target>
+      </trans-unit>
+      <trans-unit id="items.icon.items.shield-check.label">
+        <source>Trust</source>
+        <target>Vertrauen</target>
+      </trans-unit>
+      <trans-unit id="items.icon.items.globe-2.label">
+        <source>Global</source>
+        <target>Global</target>
+      </trans-unit>
+      <trans-unit id="items.icon.items.users-round.label">
+        <source>People</source>
+        <target>Menschen</target>
+      </trans-unit>
+      <trans-unit id="items.icon.items.rocket.label">
+        <source>Launch</source>
+        <target>Start</target>
+      </trans-unit>
+      <trans-unit id="items.icon.items.sparkles.label">
+        <source>Innovation</source>
+        <target>Innovation</target>
+      </trans-unit>
+      <trans-unit id="items.icon.items.target.label">
+        <source>Goal</source>
+        <target>Ziel</target>
+      </trans-unit>
+      <trans-unit id="items.icon.items.layers-3.label">
+        <source>Layers</source>
+        <target>Ebenen</target>
+      </trans-unit>
+      <trans-unit id="items.icon.items.workflow.label">
+        <source>Workflow</source>
+        <target>Arbeitsablauf</target>
+      </trans-unit>
+      <trans-unit id="items.icon.items.heart-handshake.label">
+        <source>Partnership</source>
+        <target>Partnerschaft</target>
+      </trans-unit>
+      <trans-unit id="items.icon.items.building-2.label">
+        <source>Organization</source>
+        <target>Organisation</target>
+      </trans-unit>
+      <trans-unit id="items.icon.items.leaf.label">
+        <source>Sustainability</source>
+        <target>Nachhaltigkeit</target>
+      </trans-unit>
+      <trans-unit id="items.icon.items.zap.label">
+        <source>Energy</source>
+        <target>Energie</target>
+      </trans-unit>
+      <trans-unit id="items.icon.items.puzzle.label">
+        <source>Integration</source>
+        <target>Integration</target>
+      </trans-unit>
+      <trans-unit id="items.icon.items.lock-keyhole.label">
+        <source>Security</source>
+        <target>Sicherheit</target>
+      </trans-unit>
+      <trans-unit id="items.icon.items.messages-square.label">
+        <source>Conversation</source>
+        <target>Gespräch</target>
+      </trans-unit>
+      <trans-unit id="items.icon.items.calendar-days.label">
+        <source>Calendar</source>
+        <target>Kalender</target>
+      </trans-unit>
+      <trans-unit id="items.icon.items.monitor-smartphone.label">
+        <source>Responsive</source>
+        <target>Responsive</target>
+      </trans-unit>
+      <trans-unit id="items.icon.items.award.label">
+        <source>Award</source>
+        <target>Auszeichnung</target>
+      </trans-unit>
       <trans-unit id="items.iconFile.label">
         <source>Custom SVG icon (overrides icon)</source>
         <target>Eigenes SVG-Symbol (ersetzt das gewählte Symbol)</target>

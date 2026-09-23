@@ -57,6 +57,72 @@
       <trans-unit id="items.icon.items.arrow-right.label">
         <source>Arrow</source>
       </trans-unit>
+      <trans-unit id="items.icon.items.briefcase-business.label">
+        <source>Briefcase</source>
+      </trans-unit>
+      <trans-unit id="items.icon.items.chart-no-axes-combined.label">
+        <source>Growth</source>
+      </trans-unit>
+      <trans-unit id="items.icon.items.compass.label">
+        <source>Compass</source>
+      </trans-unit>
+      <trans-unit id="items.icon.items.lightbulb.label">
+        <source>Idea</source>
+      </trans-unit>
+      <trans-unit id="items.icon.items.shield-check.label">
+        <source>Trust</source>
+      </trans-unit>
+      <trans-unit id="items.icon.items.globe-2.label">
+        <source>Global</source>
+      </trans-unit>
+      <trans-unit id="items.icon.items.users-round.label">
+        <source>People</source>
+      </trans-unit>
+      <trans-unit id="items.icon.items.rocket.label">
+        <source>Launch</source>
+      </trans-unit>
+      <trans-unit id="items.icon.items.sparkles.label">
+        <source>Innovation</source>
+      </trans-unit>
+      <trans-unit id="items.icon.items.target.label">
+        <source>Goal</source>
+      </trans-unit>
+      <trans-unit id="items.icon.items.layers-3.label">
+        <source>Layers</source>
+      </trans-unit>
+      <trans-unit id="items.icon.items.workflow.label">
+        <source>Workflow</source>
+      </trans-unit>
+      <trans-unit id="items.icon.items.heart-handshake.label">
+        <source>Partnership</source>
+      </trans-unit>
+      <trans-unit id="items.icon.items.building-2.label">
+        <source>Organization</source>
+      </trans-unit>
+      <trans-unit id="items.icon.items.leaf.label">
+        <source>Sustainability</source>
+      </trans-unit>
+      <trans-unit id="items.icon.items.zap.label">
+        <source>Energy</source>
+      </trans-unit>
+      <trans-unit id="items.icon.items.puzzle.label">
+        <source>Integration</source>
+      </trans-unit>
+      <trans-unit id="items.icon.items.lock-keyhole.label">
+        <source>Security</source>
+      </trans-unit>
+      <trans-unit id="items.icon.items.messages-square.label">
+        <source>Conversation</source>
+      </trans-unit>
+      <trans-unit id="items.icon.items.calendar-days.label">
+        <source>Calendar</source>
+      </trans-unit>
+      <trans-unit id="items.icon.items.monitor-smartphone.label">
+        <source>Responsive</source>
+      </trans-unit>
+      <trans-unit id="items.icon.items.award.label">
+        <source>Award</source>
+      </trans-unit>
       <trans-unit id="items.iconFile.label">
         <source>Custom SVG icon (overrides icon)</source>
       </trans-unit>

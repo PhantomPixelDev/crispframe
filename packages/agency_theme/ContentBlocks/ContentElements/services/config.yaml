@@ -45,6 +45,28 @@ fields:
     - { label: Star, value: star }
     - { label: Check, value: check }
     - { label: Arrow, value: arrow-right }
+    - { label: Briefcase, value: briefcase-business }
+    - { label: Growth, value: chart-no-axes-combined }
+    - { label: Compass, value: compass }
+    - { label: Idea, value: lightbulb }
+    - { label: Trust, value: shield-check }
+    - { label: Global, value: globe-2 }
+    - { label: People, value: users-round }
+    - { label: Launch, value: rocket }
+    - { label: Innovation, value: sparkles }
+    - { label: Goal, value: target }
+    - { label: Layers, value: layers-3 }
+    - { label: Workflow, value: workflow }
+    - { label: Partnership, value: heart-handshake }
+    - { label: Organization, value: building-2 }
+    - { label: Sustainability, value: leaf }
+    - { label: Energy, value: zap }
+    - { label: Integration, value: puzzle }
+    - { label: Security, value: lock-keyhole }
+    - { label: Conversation, value: messages-square }
+    - { label: Calendar, value: calendar-days }
+    - { label: Responsive, value: monitor-smartphone }
+    - { label: Award, value: award }
   - identifier: iconFile
     type: File
     label: Custom SVG icon (overrides icon)

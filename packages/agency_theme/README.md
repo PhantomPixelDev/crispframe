@@ -15,13 +15,18 @@ A reusable corporate site package for **TYPO3 13.4 LTS**. Build a services, prod
 | --- | --- |
 | <img src="Documentation/Images/home-mobile.webp" alt="Crispframe demo homepage at mobile width" width="280"> | <img src="Documentation/Images/pricing-block.webp" alt="Three pricing tiers in the Crispframe demo" width="640"> |
 
-These screenshots show the [optional demo package](https://github.com/PhantomPixelDev/crispframe-agency-demo). Its branding, copy, and prices are examples that you can edit in TYPO3.
+| Work page | Contact page |
+| --- | --- |
+| <img src="Documentation/Images/work-desktop.webp" alt="Work page with project photography" width="640"> | <img src="Documentation/Images/contact-desktop.webp" alt="Contact page with meeting space photography" width="640"> |
+
+These screenshots show the [optional demo package](https://github.com/PhantomPixelDev/crispframe-agency-demo). Its branding, copy, photos, and prices are examples that you can edit in TYPO3.
 
 ## What is included
 
 - **17 Content Blocks:** hero, intro, text/image, features, services, stats, logos, testimonials, projects, team, FAQ, CTA, contact, process, pricing, video, and gallery.
 - **Site settings:** branding, contact details, navigation and footer links, CTAs, content width, typography, corners, spacing, sticky header, and ocean/forest/plum/ember palettes.
 - **Publishing basics:** responsive PageView layouts, a branded 404, SEO metadata and structured data, language switcher, keyboard-friendly interactions, and reduced-motion support.
+- **Icon choices:** a curated, locally bundled [Lucide](https://lucide.dev/) selection for services and features, plus custom SVG upload. Existing icon identifiers remain available; no icon CDN or JavaScript package is needed at runtime.
 - **Contact form:** TYPO3 Form Framework definition with editable recipient overrides. Mail transport and real addresses are set by the site owner.
 
 ## Get started
@@ -76,7 +81,7 @@ All brand/URL data comes from **Site Settings** — no hardcoded company URLs or
 
 No build step. Edit and reload:
 
-- CSS: `Resources/Public/Css/` — tokens, base, layout, components, utilities, theme presets, form and block styles (loaded by the PageView layout)
+- CSS: `Resources/Public/Css/` — tokens, base, layout, components, utilities, theme presets, form, block and visual refresh styles (loaded by the PageView layout)
 - JS: `Resources/Public/JavaScript/` — `main.js` (nav, skip-link, year, sticky), `accordion.js`, `pricing.js`, `video.js` and `gallery.js`
 - Icons: `Resources/Public/Icons/sprite.svg` — referenced through TYPO3's public asset URL by the icon partial
 - Fluid: `Resources/Private/PageView/{Layouts,Pages,Partials/}` — layouts `Default`/`Landing`/`Minimal`, partials `Site/Header`, `Site/Navigation`, `Site/Footer`, `Components/*`
