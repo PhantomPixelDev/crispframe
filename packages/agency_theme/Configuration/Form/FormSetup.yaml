@@ -1,0 +1,12 @@
+persistenceManager:
+  allowedExtensionPaths:
+    100: 'EXT:agency_theme/Resources/Private/Forms/'
+
+prototypes:
+  standard:
+    formElementsDefinition:
+      Form:
+        renderingOptions:
+          translation:
+            translationFiles:
+              20: 'EXT:agency_theme/Resources/Private/Language/Form/locallang.xlf'

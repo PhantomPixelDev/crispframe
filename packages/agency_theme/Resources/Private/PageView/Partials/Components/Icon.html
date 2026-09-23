@@ -1,0 +1,25 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<!--
+  Partial: Components/Icon
+  Arguments:
+    - name (string, required): icon id matching Resources/Public/Icons/*.svg symbol id (e.g. "arrow-right", "linkedin", "mail", "phone", "pin", "check", "star", "quote")
+    - decorative (bool/int?) : 1 => aria-hidden="true" (default), 0 => requires ariaLabel
+    - ariaLabel (string?)    : accessible name when not decorative
+    - size (int?)            : width/height in px (default 24)
+    - class (string?)        : extra class on <svg>
+    - title (string?)        : optional <title> for non-decorative icons
+  Usage: SVG sprite pattern <svg><use href="sprite.svg#icon-name"/></svg>; TYPO3 provides the public asset URL.
+         Decorative icons are aria-hidden; meaningful icons must provide ariaLabel.
+  No emoji icons.
+-->
+<f:variable name="iconSize">{f:if(condition: size, then: size, else: 24)}</f:variable>
+<f:variable name="isDecorative">{f:if(condition: decorative, then: '1', else: '0')}</f:variable>
+<f:if condition="{isDecorative} == 1">
+    <f:then>
+        <svg width="{iconSize}" height="{iconSize}" class="icon icon--{name}{f:if(condition: class, then: ' {class}')}" aria-hidden="true" focusable="false"><use href="{f:uri.resource(path: 'Icons/sprite.svg', extensionName: 'AgencyTheme')}#icon-{name}"/></svg>
+    </f:then>
+    <f:else>
+        <svg width="{iconSize}" height="{iconSize}" class="icon icon--{name}{f:if(condition: class, then: ' {class}')}" role="img"{f:if(condition: ariaLabel, then: ' aria-label="{ariaLabel}"')}{f:if(condition: '!ariaLabel', then: ' aria-label="{name}"')} focusable="false"><f:if condition="{title}"><title>{title}</title></f:if><use href="{f:uri.resource(path: 'Icons/sprite.svg', extensionName: 'AgencyTheme')}#icon-{name}"/></svg>
+    </f:else>
+</f:if>
+</html>

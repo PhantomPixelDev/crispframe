@@ -1,0 +1,23 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<section class="section section--{data.sectionBackground}" data-spacing="{data.sectionSpacing}">
+    <div class="container container--{data.width}">
+        <header class="section-header">
+            <h2 class="section-header__title">{data.headline}</h2>
+            <f:if condition="{data.lead}"><p class="section-header__lead">{data.lead}</p></f:if>
+        </header>
+        <div class="video-facade" data-video-provider="{data.provider}" data-video-id="{data.videoId}" data-video-title="{data.headline}">
+            <button class="video-facade__button" type="button" aria-label="{f:translate(key: 'LLL:EXT:agency_theme/Resources/Private/Language/locallang.xlf:video.play')}: {data.headline}">
+                <f:for each="{data.poster}" as="file">
+                    <f:image image="{file}" width="1200c" height="675c" loading="lazy" decoding="async" alt="" class="video-facade__poster" />
+                </f:for>
+                <span class="video-facade__play" aria-hidden="true">▶</span>
+                <span class="video-facade__hint"><f:translate key="LLL:EXT:agency_theme/Resources/Private/Language/locallang.xlf:video.play" /></span>
+            </button>
+        </div>
+        <f:if condition="{data.caption}"><p class="video-caption">{data.caption}</p></f:if>
+        <f:if condition="{data.transcript}">
+            <details class="video-transcript"><summary><f:translate key="LLL:EXT:agency_theme/Resources/Private/Language/locallang.xlf:video.transcript" /></summary><div class="video-transcript__text">{data.transcript -> f:format.nl2br()}</div></details>
+        </f:if>
+    </div>
+</section>
+</html>

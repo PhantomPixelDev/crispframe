@@ -1,0 +1,95 @@
+name: crispframe/feature-grid
+title: Feature grid
+description: Grid of feature highlights with title and description. Ideal for benefits
+  or differentiators.
+group: Crispframe
+fields:
+- identifier: headline
+  type: Text
+  label: Headline
+  required: true
+  default: Why teams choose Crispframe
+- identifier: lead
+  type: Textarea
+  label: Lead paragraph
+  default: Senior product thinking applied to every content block — not just the homepage.
+- identifier: items
+  type: Collection
+  label: Features
+  description: Add 3 to 6 features.
+  minitems: 3
+  maxitems: 6
+  fields:
+  - identifier: title
+    type: Text
+    label: Feature title
+    required: true
+    default: Editor-first content
+    description: 'Placeholder: Editor-first content'
+  - identifier: description
+    type: Textarea
+    label: Description
+    default: Structured blocks editors love — no developer needed for everyday changes.
+    description: 'Placeholder: Structured blocks editors love — no developer needed
+      for everyday changes.'
+  - identifier: icon
+    type: Select
+    renderType: selectSingle
+    label: Icon
+    default: none
+    items:
+    - { label: None, value: none }
+    - { label: Strategy, value: strategy }
+    - { label: Design, value: design }
+    - { label: Code, value: code }
+    - { label: Star, value: star }
+    - { label: Check, value: check }
+    - { label: Arrow, value: arrow-right }
+  - identifier: iconFile
+    type: File
+    label: Custom SVG icon (overrides icon)
+    allowed: svg
+    maxitems: 1
+- identifier: sectionSpacing
+  type: Select
+  renderType: selectSingle
+  label: Section spacing
+  description: Vertical spacing before and after the section.
+  default: default
+  items:
+  - label: Small
+    value: small
+  - label: Default
+    value: default
+  - label: Large
+    value: large
+- identifier: sectionBackground
+  type: Select
+  renderType: selectSingle
+  label: Section background
+  description: Background variant for the section.
+  default: default
+  items:
+  - label: Default
+    value: default
+  - label: Subtle
+    value: subtle
+  - label: Dark
+    value: dark
+  - label: Brand
+    value: brand
+- identifier: width
+  type: Select
+  renderType: selectSingle
+  label: Container width
+  description: Maximum width of the content container.
+  default: default
+  items:
+  - label: Narrow
+    value: narrow
+  - label: Default
+    value: default
+  - label: Wide
+    value: wide
+  - label: Full
+    value: full

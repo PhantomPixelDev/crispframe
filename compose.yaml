@@ -1,0 +1,33 @@
+name: crispframe
+
+services:
+  web:
+    image: webdevops/php-apache:8.3-alpine
+    depends_on:
+      - mailpit
+    ports:
+      - "${CRISPFRAME_HTTP_PORT:-8080}:80"
+    environment:
+      WEB_DOCUMENT_ROOT: /app/public
+      APPLICATION_PATH: /app
+      TYPO3_CONTEXT: Development
+      CRISPFRAME_DEV_SMTP_SERVER: mailpit:1025
+    working_dir: /app
+    entrypoint: ["/bin/sh", "/app/.dev/start-web.sh"]
+    volumes:
+      - .:/app
+      - vendor:/app/vendor
+      - var:/data/var
+    restart: unless-stopped
+
+  mailpit:
+    image: axllent/mailpit:latest
+    ports:
+      - "${CRISPFRAME_MAILPIT_PORT:-8026}:8025"
+    restart: unless-stopped
+
+volumes:
+  vendor:
+    name: crispframe-vendor
+  var:
+    name: crispframe-var

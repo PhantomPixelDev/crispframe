@@ -1,0 +1,44 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<!--
+  Partial: Components/Image
+  Arguments:
+    - file (FileReference|array|string, required): FAL FileReference, or associative array with publicUrl,width,height, or string path
+    - alt (string?)      : Alt text (required for a11y; falls back to file alt/title if FileReference)
+    - eager (bool?)      : true => loading="eager" (hero/logo), false => "lazy" (default). Never lazy-load hero logo — pass eager=1.
+    - width (int?)       : override width (requires height)
+    - height (int?)      : override height
+    - maxWidth (int?)    : max width for f:image processing (default 1200)
+    - class (string?)    : extra CSS class
+    - caption (string?)  : optional figcaption
+  Notes: always emits width/height to prevent CLS; decoding="async"; loading eager vs lazy respected.
+-->
+<f:variable name="isEager">{f:if(condition: eager, then: '1', else: '0')}</f:variable>
+<f:variable name="loadingAttr">{f:if(condition: eager, then: 'eager', else: 'lazy')}</f:variable>
+<f:variable name="imgClass">image{f:if(condition: class, then: ' {class}')}</f:variable>
+
+<f:if condition="{caption}">
+    <f:then>
+        <figure class="image-figure">
+            <f:if condition="{file.uid}">
+                <f:then>
+                    <f:image image="{file}" alt="{f:if(condition: alt, then: alt, else: file.alternative)}{f:if(condition: '!alt && !file.alternative && file.title', then: file.title)}" title="{file.title}" loading="{loadingAttr}" decoding="async" maxWidth="{f:if(condition: maxWidth, then: maxWidth, else: '1200')}" width="{width}" height="{height}" class="{imgClass}" />
+                </f:then>
+                <f:else>
+                    <img src="{f:if(condition: file.publicUrl, then: file.publicUrl, else: file)}" alt="{alt}" width="{f:if(condition: width, then: width, else: file.width)}" height="{f:if(condition: height, then: height, else: file.height)}" loading="{loadingAttr}" decoding="async" class="{imgClass}" />
+                </f:else>
+            </f:if>
+            <figcaption class="image-caption">{caption}</figcaption>
+        </figure>
+    </f:then>
+    <f:else>
+        <f:if condition="{file.uid}">
+            <f:then>
+                <f:image image="{file}" alt="{f:if(condition: alt, then: alt, else: file.alternative)}{f:if(condition: '!alt && !file.alternative && file.title', then: file.title)}" title="{file.title}" loading="{loadingAttr}" decoding="async" maxWidth="{f:if(condition: maxWidth, then: maxWidth, else: '1200')}" width="{width}" height="{height}" class="{imgClass}" />
+            </f:then>
+            <f:else>
+                <img src="{f:if(condition: file.publicUrl, then: file.publicUrl, else: file)}" alt="{alt}" width="{f:if(condition: width, then: width, else: file.width)}" height="{f:if(condition: height, then: height, else: file.height)}" loading="{loadingAttr}" decoding="async" class="{imgClass}" />
+            </f:else>
+        </f:if>
+    </f:else>
+</f:if>
+</html>

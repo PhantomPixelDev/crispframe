@@ -1,0 +1,55 @@
+name: crispframe/gallery
+title: Gallery
+description: Image gallery with captions and a keyboard-friendly lightbox.
+group: Crispframe
+fields:
+  - identifier: headline
+    type: Text
+    label: Headline
+    required: true
+  - identifier: lead
+    type: Textarea
+    label: Introduction
+  - identifier: items
+    type: Collection
+    label: Gallery images
+    minitems: 2
+    maxitems: 12
+    fields:
+      - identifier: image
+        type: File
+        label: Image
+        allowed: common-image-types
+        maxitems: 1
+      - identifier: caption
+        type: Text
+        label: Caption
+  - identifier: sectionSpacing
+    type: Select
+    renderType: selectSingle
+    label: Section spacing
+    default: default
+    items:
+      - { label: Small, value: small }
+      - { label: Default, value: default }
+      - { label: Large, value: large }
+  - identifier: sectionBackground
+    type: Select
+    renderType: selectSingle
+    label: Section background
+    default: default
+    items:
+      - { label: Default, value: default }
+      - { label: Subtle, value: subtle }
+      - { label: Dark, value: dark }
+      - { label: Brand, value: brand }
+  - identifier: width
+    type: Select
+    renderType: selectSingle
+    label: Container width
+    default: default
+    items:
+      - { label: Narrow, value: narrow }
+      - { label: Default, value: default }
+      - { label: Wide, value: wide }
+      - { label: Full, value: full }

@@ -1,0 +1,32 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:variable name="profileLabel" value="{f:translate(key: 'LLL:EXT:agency_theme/Resources/Private/Language/locallang.xlf:block.profile')}" />
+<section class="section section--{data.sectionBackground}" data-spacing="{data.sectionSpacing}">
+    <div class="container container--{data.width}">
+        <header class="section-header">
+            <h2 class="section-header__title">{data.headline}</h2>
+            <f:if condition="{data.lead}"><p class="section-header__lead">{data.lead}</p></f:if>
+        </header>
+        <f:if condition="{data.items}">
+            <ul class="cards cards--team" role="list">
+                <f:for each="{data.items}" as="item">
+                    <li class="card person-card">
+                        <f:if condition="{item.image}">
+                            <div class="person-card__media">
+                                <f:for each="{item.image}" as="file">
+                                    <f:image image="{file}" width="400c" height="400c" loading="lazy" decoding="async" alt="{f:if(condition: file.alternative, then: file.alternative, else: item.name)}" class="person-card__image" />
+                                </f:for>
+                            </div>
+                        </f:if>
+                        <div class="person-card__body">
+                            <h3 class="card__title">{item.name}</h3>
+                            <p class="person-card__role">{item.role}</p>
+                            <f:if condition="{item.bio}"><p class="card__text">{item.bio}</p></f:if>
+                            <f:if condition="{item.link.url}"><p class="card__action"><f:link.typolink parameter="{item.link}" class="btn btn--secondary">{f:if(condition: item.linkLabel, then: item.linkLabel, else: profileLabel)}</f:link.typolink></p></f:if>
+                        </div>
+                    </li>
+                </f:for>
+            </ul>
+        </f:if>
+    </div>
+</section>
+</html>

@@ -1,0 +1,27 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<!--
+  Partial: Components/Card
+  Purpose: Dispatcher — delegates to specific card partials to avoid duplication.
+  Arguments:
+    - variant (string, required): "project" | "service" | "person" | "testimonial"
+    - data (array/object, required): payload for the specific card (see target partial for shape)
+  Usage: <f:render partial="Components/Card" arguments="variant: 'project', data: project" />
+  Internals: switch via f:switch.
+-->
+<f:switch expression="{variant}">
+    <f:case value="project"><f:render partial="Components/ProjectCard" arguments="{project: data}" /></f:case>
+    <f:case value="service"><f:render partial="Components/ServiceCard" arguments="{service: data}" /></f:case>
+    <f:case value="person"><f:render partial="Components/PersonCard" arguments="{person: data}" /></f:case>
+    <f:case value="testimonial"><f:render partial="Components/Testimonial" arguments="{testimonial: data}" /></f:case>
+    <f:defaultCase>
+        <!-- Fallback: generic card — keep markup minimal, no lorem ipsum -->
+        <article class="card">
+            <f:if condition="{data.title}"><h3 class="card__title">{data.title}</h3></f:if>
+            <f:if condition="{data.text}"><p class="card__text">{data.text}</p></f:if>
+            <f:if condition="{data.href}">
+                <f:render partial="Components/Button" arguments="{label: data.linkLabel, href: data.href, variant: 'ghost'}" />
+            </f:if>
+        </article>
+    </f:defaultCase>
+</f:switch>
+</html>

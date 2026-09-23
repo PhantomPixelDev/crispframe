@@ -1,0 +1,20 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<section class="section section--{data.sectionBackground}" data-spacing="{data.sectionSpacing}">
+    <div class="container container--{data.width}">
+        <div class="cta{f:if(condition: '{data.sectionBackground} == \'dark\'', then: ' cta--dark')}{f:if(condition: '{data.sectionBackground} == \'brand\'', then: ' cta--brand')}">
+            <h2 class="cta__title">{data.headline}</h2>
+            <f:if condition="{data.text}"><p class="cta__text">{data.text}</p></f:if>
+            <f:if condition="({data.primaryLink.url} && {data.primaryLinkLabel}) || ({data.secondaryLink.url} && {data.secondaryLinkLabel})">
+                <div class="cta__actions">
+                    <f:if condition="{data.primaryLink.url} && {data.primaryLinkLabel}">
+                        <f:link.typolink parameter="{data.primaryLink}" class="btn btn--primary">{data.primaryLinkLabel}</f:link.typolink>
+                    </f:if>
+                    <f:if condition="{data.secondaryLink.url} && {data.secondaryLinkLabel}">
+                        <f:link.typolink parameter="{data.secondaryLink}" class="btn btn--secondary">{data.secondaryLinkLabel}</f:link.typolink>
+                    </f:if>
+                </div>
+            </f:if>
+        </div>
+    </div>
+</section>
+</html>

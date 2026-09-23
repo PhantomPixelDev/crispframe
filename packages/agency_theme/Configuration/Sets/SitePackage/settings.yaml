@@ -1,0 +1,45 @@
+# Site settings — neutral defaults.
+# Values are exposed as {site.settings.*} in Fluid and via Site Settings API.
+# No hardcoded real company URLs; use # or / placeholders where a link is required.
+
+brand:
+  companyName: 'Your Company'
+  tagline: ''
+  logo: ''
+  logoAlt: 'Your Company'
+
+contact:
+  email: ''
+  phone: ''
+  address: ''
+
+social:
+  linkedin: '#'
+  instagram: '#'
+  github: '#'
+  x: '#'
+  youtube: '#'
+
+footer:
+  text: ''
+  legalLink: '/'
+  privacyLink: '/'
+  servicesParent: 0
+  showCta: true
+  ctaHeading: 'Let us build something useful.'
+  ctaText: 'Tell us what you are working on.'
+
+cta:
+  primaryLabel: 'Contact us'
+  primaryLink: '#'
+  secondaryLabel: 'View work'
+  secondaryLink: '#'
+  showHeader: true
+
+styles:
+  contentWidth: 'standard'
+  palette: 'ocean'
+  typeScale: 'standard'
+  corners: 'soft'
+  spacing: 'balanced'
+  stickyHeader: true

@@ -1,0 +1,24 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:variable name="learnMoreLabel" value="{f:translate(key: 'LLL:EXT:agency_theme/Resources/Private/Language/locallang.xlf:block.learnMore')}" />
+<section class="section section--{data.sectionBackground}" data-spacing="{data.sectionSpacing}">
+    <div class="container container--{data.width}">
+        <div class="text-image{f:if(condition: '{data.imagePosition} == \'left\'', then: ' text-image--reverse')}{f:if(condition: data.image, else: ' text-image--text-only')}">
+            <div class="text-image__content">
+                <h2 class="text-image__title">{data.headline}</h2>
+                <f:if condition="{data.lead}"><p class="text-image__lead">{data.lead}</p></f:if>
+                <f:if condition="{data.text}"><div class="prose"><p>{data.text -> f:format.nl2br()}</p></div></f:if>
+                <f:if condition="{data.link.url}">
+                    <p><f:link.typolink parameter="{data.link}" class="btn btn--primary">{f:if(condition: data.linkLabel, then: data.linkLabel, else: learnMoreLabel)}</f:link.typolink></p>
+                </f:if>
+            </div>
+            <f:if condition="{data.image}">
+                <div class="text-image__media">
+                    <f:for each="{data.image}" as="file">
+                        <f:image image="{file}" width="800c" height="600c" loading="lazy" decoding="async" alt="{f:if(condition: data.imageAlt, then: data.imageAlt, else: file.alternative)}" class="text-image__image" />
+                    </f:for>
+                </div>
+            </f:if>
+        </div>
+    </div>
+</section>
+</html>

@@ -1,0 +1,82 @@
+name: crispframe/contact
+title: 'Contact'
+description: 'Contact details and optional image with an anchor for the primary CTA.'
+group: Crispframe
+fields:
+  - identifier: headline
+    type: Text
+    label: 'Headline'
+    required: true
+    default: "Let's talk"
+  - identifier: lead
+    type: Textarea
+    label: 'Lead paragraph'
+    default: 'We reply within one business day. No forms that go nowhere.'
+  - identifier: email
+    type: Text
+    label: 'Email address'
+    default: 'hello@crispframe.example'
+  - identifier: phone
+    type: Text
+    label: 'Phone number'
+    default: '+49 30 1234 5678'
+  - identifier: address
+    type: Textarea
+    label: 'Address'
+    default: 'Crispframe Agency — Rosenthaler Str. 42, 10178 Berlin, Germany'
+  - identifier: hours
+    type: Textarea
+    label: 'Office hours'
+    default: 'Monday–Friday, 09:00–18:00 CET'
+  - identifier: note
+    type: Textarea
+    label: 'Additional note'
+    default: 'Prefer email? Write to hello@crispframe.example and we will get back to you within 24 hours.'
+  - identifier: image
+    type: File
+    label: 'Side image'
+    description: 'Optional — e.g. office or map placeholder.'
+    allowed: 'common-image-types'
+  - identifier: sectionSpacing
+    type: Select
+    renderType: selectSingle
+    label: 'Section spacing'
+    description: 'Vertical spacing before and after the section.'
+    default: 'default'
+    items:
+      - label: 'Small'
+        value: 'small'
+      - label: 'Default'
+        value: 'default'
+      - label: 'Large'
+        value: 'large'
+  - identifier: sectionBackground
+    type: Select
+    renderType: selectSingle
+    label: 'Section background'
+    description: 'Background variant for the section.'
+    default: 'default'
+    items:
+      - label: 'Default'
+        value: 'default'
+      - label: 'Subtle'
+        value: 'subtle'
+      - label: 'Dark'
+        value: 'dark'
+      - label: 'Brand'
+        value: 'brand'
+  - identifier: width
+    type: Select
+    renderType: selectSingle
+    label: 'Container width'
+    description: 'Maximum width of the content container.'
+    default: 'default'
+    items:
+      - label: 'Narrow'
+        value: 'narrow'
+      - label: 'Default'
+        value: 'default'
+      - label: 'Wide'
+        value: 'wide'
+      - label: 'Full'
+        value: 'full'

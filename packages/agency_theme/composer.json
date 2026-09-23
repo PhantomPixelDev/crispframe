@@ -1,0 +1,33 @@
+{
+    "name": "crispframe/agency-theme",
+    "description": "Reusable corporate site package for TYPO3 13.4 LTS",
+    "type": "typo3-cms-extension",
+    "license": "GPL-2.0-or-later",
+    "keywords": ["TYPO3", "sitepackage", "agency", "cms"],
+    "require": {
+        "friendsoftypo3/content-blocks": "^1.6",
+        "typo3/cms-core": "^13.4",
+        "typo3/cms-form": "^13.4",
+        "typo3/cms-frontend": "^13.4",
+        "typo3/cms-fluid-styled-content": "^13.4",
+        "typo3/cms-rte-ckeditor": "^13.4",
+        "typo3/cms-seo": "^13.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Crispframe\\AgencyTheme\\": "Classes/"
+        }
+    },
+    "extra": {
+        "typo3/cms": {
+            "extension-key": "agency_theme"
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "typo3/class-alias-loader": true,
+            "typo3/cms-composer-installers": true
+        },
+        "sort-packages": true
+    }
+}

@@ -1,0 +1,87 @@
+name: crispframe/text-image
+title: 'Text with image'
+description: 'Two-column text and image combination with configurable image position.'
+group: Crispframe
+fields:
+  - identifier: headline
+    type: Text
+    label: 'Headline'
+    required: true
+    default: 'Design that respects content'
+  - identifier: lead
+    type: Textarea
+    label: 'Lead paragraph'
+    default: 'Clean typography, considered whitespace and performance by default.'
+  - identifier: text
+    type: Textarea
+    label: 'Body text'
+    default: 'Every page is built for editors first. Structured content, reusable components and a preview you can trust — so publishing feels effortless and every release stays on brand.'
+  - identifier: image
+    type: File
+    label: 'Image'
+    allowed: 'common-image-types'
+  - identifier: imageAlt
+    type: Text
+    label: 'Image alt text override'
+    default: ''
+  - identifier: imagePosition
+    type: Select
+    renderType: selectSingle
+    label: 'Image position'
+    default: 'right'
+    items:
+      - label: 'Image on left'
+        value: 'left'
+      - label: 'Image on right'
+        value: 'right'
+  - identifier: linkLabel
+    type: Text
+    label: 'Button label'
+    default: 'About us'
+  - identifier: link
+    type: Link
+    label: 'Button link'
+    default: '#about'
+  - identifier: sectionSpacing
+    type: Select
+    renderType: selectSingle
+    label: 'Section spacing'
+    description: 'Vertical spacing before and after the section.'
+    default: 'default'
+    items:
+      - label: 'Small'
+        value: 'small'
+      - label: 'Default'
+        value: 'default'
+      - label: 'Large'
+        value: 'large'
+  - identifier: sectionBackground
+    type: Select
+    renderType: selectSingle
+    label: 'Section background'
+    description: 'Background variant for the section.'
+    default: 'default'
+    items:
+      - label: 'Default'
+        value: 'default'
+      - label: 'Subtle'
+        value: 'subtle'
+      - label: 'Dark'
+        value: 'dark'
+      - label: 'Brand'
+        value: 'brand'
+  - identifier: width
+    type: Select
+    renderType: selectSingle
+    label: 'Container width'
+    description: 'Maximum width of the content container.'
+    default: 'default'
+    items:
+      - label: 'Narrow'
+        value: 'narrow'
+      - label: 'Default'
+        value: 'default'
+      - label: 'Wide'
+        value: 'wide'
+      - label: 'Full'
+        value: 'full'

@@ -1,0 +1,48 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<section id="contact" class="section section--{data.sectionBackground}" data-spacing="{data.sectionSpacing}">
+    <div class="container container--{data.width}">
+        <header class="section-header">
+            <h2 class="section-header__title">{data.headline}</h2>
+            <f:if condition="{data.lead}"><p class="section-header__lead">{data.lead}</p></f:if>
+        </header>
+        <div class="contact">
+            <div class="contact__details">
+                <dl class="contact__list">
+                    <f:if condition="{data.email}">
+                        <div class="contact__item">
+                            <dt class="contact__label"><f:translate key="LLL:EXT:agency_theme/Resources/Private/Language/locallang.xlf:block.email" /></dt>
+                            <dd class="contact__value"><a href="mailto:{data.email}">{data.email}</a></dd>
+                        </div>
+                    </f:if>
+                    <f:if condition="{data.phone}">
+                        <div class="contact__item">
+                            <dt class="contact__label"><f:translate key="LLL:EXT:agency_theme/Resources/Private/Language/locallang.xlf:block.phone" /></dt>
+                            <dd class="contact__value"><a href="tel:{data.phone}">{data.phone}</a></dd>
+                        </div>
+                    </f:if>
+                    <f:if condition="{data.address}">
+                        <div class="contact__item">
+                            <dt class="contact__label"><f:translate key="LLL:EXT:agency_theme/Resources/Private/Language/locallang.xlf:block.address" /></dt>
+                            <dd class="contact__value">{data.address -> f:format.nl2br()}</dd>
+                        </div>
+                    </f:if>
+                    <f:if condition="{data.hours}">
+                        <div class="contact__item">
+                            <dt class="contact__label"><f:translate key="LLL:EXT:agency_theme/Resources/Private/Language/locallang.xlf:block.hours" /></dt>
+                            <dd class="contact__value">{data.hours -> f:format.nl2br()}</dd>
+                        </div>
+                    </f:if>
+                </dl>
+                <f:if condition="{data.note}"><p class="contact__note">{data.note -> f:format.nl2br()}</p></f:if>
+            </div>
+            <f:if condition="{data.image}">
+                <div class="contact__media">
+                    <f:for each="{data.image}" as="file">
+                        <f:image image="{file}" width="640c" height="480c" loading="lazy" decoding="async" alt="{f:if(condition: file.alternative, then: file.alternative, else: data.headline)}" class="contact__image" />
+                    </f:for>
+                </div>
+            </f:if>
+        </div>
+    </div>
+</section>
+</html>

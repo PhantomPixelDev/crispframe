@@ -1,0 +1,105 @@
+name: crispframe/services
+title: Services
+description: Overview of agency services in a card grid.
+group: Crispframe
+fields:
+- identifier: headline
+  type: Text
+  label: Headline
+  required: true
+  default: Services built for growth
+- identifier: lead
+  type: Textarea
+  label: Lead paragraph
+  default: From first sketch to scalable platform — pick the engagement that fits
+    your stage.
+- identifier: items
+  type: Collection
+  label: Services
+  description: Add 3 to 6 services.
+  minitems: 3
+  maxitems: 6
+  fields:
+  - identifier: title
+    type: Text
+    label: Service title
+    required: true
+    default: Digital Strategy
+    description: 'Placeholder: Digital Strategy'
+  - identifier: description
+    type: Textarea
+    label: Description
+    default: Roadmaps that connect business goals to measurable outcomes.
+    description: 'Placeholder: Roadmaps that connect business goals to measurable
+      outcomes.'
+  - identifier: icon
+    type: Select
+    renderType: selectSingle
+    label: Icon
+    default: none
+    items:
+    - { label: None, value: none }
+    - { label: Strategy, value: strategy }
+    - { label: Design, value: design }
+    - { label: Code, value: code }
+    - { label: Star, value: star }
+    - { label: Check, value: check }
+    - { label: Arrow, value: arrow-right }
+  - identifier: iconFile
+    type: File
+    label: Custom SVG icon (overrides icon)
+    allowed: svg
+    maxitems: 1
+  - identifier: linkLabel
+    type: Text
+    label: Link label
+    default: Learn more
+    description: 'Placeholder: Learn more'
+  - identifier: link
+    type: Link
+    label: Link
+    default: '#'
+    description: 'Placeholder: #'
+- identifier: sectionSpacing
+  type: Select
+  renderType: selectSingle
+  label: Section spacing
+  description: Vertical spacing before and after the section.
+  default: default
+  items:
+  - label: Small
+    value: small
+  - label: Default
+    value: default
+  - label: Large
+    value: large
+- identifier: sectionBackground
+  type: Select
+  renderType: selectSingle
+  label: Section background
+  description: Background variant for the section.
+  default: default
+  items:
+  - label: Default
+    value: default
+  - label: Subtle
+    value: subtle
+  - label: Dark
+    value: dark
+  - label: Brand
+    value: brand
+- identifier: width
+  type: Select
+  renderType: selectSingle
+  label: Container width
+  description: Maximum width of the content container.
+  default: default
+  items:
+  - label: Narrow
+    value: narrow
+  - label: Default
+    value: default
+  - label: Wide
+    value: wide
+  - label: Full
+    value: full

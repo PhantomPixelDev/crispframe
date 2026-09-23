@@ -1,0 +1,27 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<!--
+  Partial: Components/SectionHeader
+  Arguments:
+    - kicker (string?)  : Eyebrow / label above title (e.g. "Selected work")
+    - title (string, required): Section heading text
+    - lead (string?)    : Supporting paragraph
+    - align (string?)   : "left" | "center" | "right" (default "left") -> .section-header--align
+    - headingLevel (int?) : 2|3 (default 2) — which heading rank to emit
+    - id (string?)      : optional id for aria-labelledby linking
+  Usage: wrap in <section aria-labelledby="...">; this partial emits heading with id if provided.
+-->
+<f:variable name="alignClass">{f:if(condition: align, then: align, else: 'left')}</f:variable>
+<f:variable name="lvl">{f:if(condition: headingLevel, then: headingLevel, else: 2)}</f:variable>
+<header class="section-header section-header--{alignClass}">
+    <f:if condition="{kicker}">
+        <p class="section-header__kicker">{kicker}</p>
+    </f:if>
+    <f:if condition="{lvl} == 3">
+        <f:then><h3{f:if(condition: id, then: ' id="{id}"')} class="section-header__title">{title}</h3></f:then>
+        <f:else><h2{f:if(condition: id, then: ' id="{id}"')} class="section-header__title">{title}</h2></f:else>
+    </f:if>
+    <f:if condition="{lead}">
+        <p class="section-header__lead">{lead}</p>
+    </f:if>
+</header>
+</html>

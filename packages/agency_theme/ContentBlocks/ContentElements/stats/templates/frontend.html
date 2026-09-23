@@ -1,0 +1,20 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<section class="section section--{data.sectionBackground}" data-spacing="{data.sectionSpacing}">
+    <div class="container container--{data.width}">
+        <header class="section-header">
+            <h2 class="section-header__title">{data.headline}</h2>
+            <f:if condition="{data.lead}"><p class="section-header__lead">{data.lead}</p></f:if>
+        </header>
+        <f:if condition="{data.items}">
+            <dl class="stats">
+                <f:for each="{data.items}" as="item">
+                    <div class="stats__item">
+                        <dt class="stats__label">{item.label}</dt>
+                        <dd class="stats__value">{item.value}</dd>
+                    </div>
+                </f:for>
+            </dl>
+        </f:if>
+    </div>
+</section>
+</html>

@@ -1,0 +1,195 @@
+<?xml version='1.0' encoding='utf-8'?>
+<xliff version="1.2">
+  <file datatype="plaintext" original="labels.xlf" source-language="en" product-name="crispframe/agency-theme" target-language="de">
+    <body>
+      <trans-unit id="label">
+        <source>Crispframe Agency Theme</source>
+        <target>Crispframe Unternehmensvorlage</target>
+      </trans-unit>
+      <trans-unit id="categories.brand">
+        <source>Brand</source>
+        <target>Marke</target>
+      </trans-unit>
+      <trans-unit id="categories.contact">
+        <source>Contact</source>
+        <target>Kontakt</target>
+      </trans-unit>
+      <trans-unit id="categories.social">
+        <source>Social</source>
+        <target>Soziale Netzwerke</target>
+      </trans-unit>
+      <trans-unit id="categories.footer">
+        <source>Footer</source>
+        <target>Footer</target>
+      </trans-unit>
+      <trans-unit id="categories.cta">
+        <source>Call to Action</source>
+        <target>Handlungsaufforderung</target>
+      </trans-unit>
+      <trans-unit id="categories.styles">
+        <source>Styles</source>
+        <target>Gestaltung</target>
+      </trans-unit>
+      <trans-unit id="settings.brand.companyName">
+        <source>Company name</source>
+        <target>Unternehmensname</target>
+      </trans-unit>
+      <trans-unit id="settings.description.brand.companyName">
+        <source>Displayed in header, footer and meta fallbacks.</source>
+        <target>Wird in Kopf- und Fußbereich sowie als Meta-Fallback angezeigt.</target>
+      </trans-unit>
+      <trans-unit id="settings.brand.tagline">
+        <source>Tagline</source>
+        <target>Kurzbeschreibung</target>
+      </trans-unit>
+      <trans-unit id="settings.description.brand.tagline">
+        <source>Short brand statement used in hero and footer.</source>
+        <target>Kurze Markenaussage für Einstiegsbereich und Footer.</target>
+      </trans-unit>
+      <trans-unit id="settings.brand.logo">
+        <source>Logo</source>
+        <target>Logo</target>
+      </trans-unit>
+      <trans-unit id="settings.description.brand.logo">
+        <source>Primary brand mark. SVG preferred.</source>
+        <target>Primäres Markenzeichen. SVG wird empfohlen.</target>
+      </trans-unit>
+      <trans-unit id="settings.brand.logoAlt">
+        <source>Logo alt text</source>
+        <target>Alternativer Text für das Logo</target>
+      </trans-unit>
+      <trans-unit id="settings.contact.email">
+        <source>Public email</source>
+        <target>Öffentliche E-Mail-Adresse</target>
+      </trans-unit>
+      <trans-unit id="settings.contact.phone">
+        <source>Phone</source>
+        <target>Telefon</target>
+      </trans-unit>
+      <trans-unit id="settings.description.contact.phone">
+        <source>E.164 preferred, e.g. +49 30 000000.</source>
+        <target>E.164 wird empfohlen, z. B. +49 30 000000.</target>
+      </trans-unit>
+      <trans-unit id="settings.contact.address">
+        <source>Address</source>
+        <target>Adresse</target>
+      </trans-unit>
+      <trans-unit id="settings.description.contact.address">
+        <source>Single-line or multiline postal address.</source>
+        <target>Ein- oder mehrzeilige Postanschrift.</target>
+      </trans-unit>
+      <trans-unit id="settings.social.linkedin">
+        <source>LinkedIn URL</source>
+        <target>LinkedIn-URL</target>
+      </trans-unit>
+      <trans-unit id="settings.social.instagram">
+        <source>Instagram URL</source>
+        <target>Instagram-URL</target>
+      </trans-unit>
+      <trans-unit id="settings.social.github">
+        <source>GitHub URL</source>
+        <target>GitHub-URL</target>
+      </trans-unit>
+      <trans-unit id="settings.social.x">
+        <source>X / Twitter URL</source>
+        <target>X-/Twitter-URL</target>
+      </trans-unit>
+      <trans-unit id="settings.social.youtube">
+        <source>YouTube URL</source>
+        <target>YouTube-URL</target>
+      </trans-unit>
+      <trans-unit id="settings.footer.text">
+        <source>Footer text</source>
+        <target>Footertext</target>
+      </trans-unit>
+      <trans-unit id="settings.description.footer.text">
+        <source>Copyright / colophon line rendered in the footer.</source>
+        <target>Copyright- oder Impressumshinweis im Footer.</target>
+      </trans-unit>
+      <trans-unit id="settings.footer.legalLink">
+        <source>Legal notice link</source>
+        <target>Link zum Impressum</target>
+      </trans-unit>
+      <trans-unit id="settings.footer.privacyLink">
+        <source>Privacy policy link</source>
+        <target>Link zur Datenschutzerklärung</target>
+      </trans-unit>
+      <trans-unit id="settings.footer.servicesParent">
+        <source>Services parent page UID</source>
+        <target>Übergeordnete Seite für Leistungen</target>
+      </trans-unit>
+      <trans-unit id="settings.description.footer.servicesParent">
+        <source>Page whose children populate the footer Services column. 0 disables the column (default). Set to a page UID (e.g. Services page) to enable.</source>
+        <target>Unterseiten dieser Seite füllen die Leistungsspalte im Footer. 0 blendet sie aus.</target>
+      </trans-unit>
+      <trans-unit id="settings.footer.showCta">
+        <source>Show footer call to action</source>
+        <target>Handlungsaufforderung im Footer anzeigen</target>
+      </trans-unit>
+      <trans-unit id="settings.footer.ctaHeading">
+        <source>Footer call to action heading</source>
+        <target>Überschrift der Footer-Handlungsaufforderung</target>
+      </trans-unit>
+      <trans-unit id="settings.footer.ctaText">
+        <source>Footer call to action text</source>
+        <target>Text der Footer-Handlungsaufforderung</target>
+      </trans-unit>
+      <trans-unit id="settings.cta.primaryLabel">
+        <source>Primary CTA label</source>
+        <target>Beschriftung der ersten Handlungsaufforderung</target>
+      </trans-unit>
+      <trans-unit id="settings.cta.primaryLink">
+        <source>Primary CTA link</source>
+        <target>Link der ersten Handlungsaufforderung</target>
+      </trans-unit>
+      <trans-unit id="settings.cta.secondaryLabel">
+        <source>Secondary CTA label</source>
+        <target>Beschriftung der zweiten Handlungsaufforderung</target>
+      </trans-unit>
+      <trans-unit id="settings.cta.secondaryLink">
+        <source>Secondary CTA link</source>
+        <target>Link der zweiten Handlungsaufforderung</target>
+      </trans-unit>
+      <trans-unit id="settings.styles.contentWidth">
+        <source>Content width</source>
+        <target>Inhaltsbreite</target>
+      </trans-unit>
+      <trans-unit id="settings.description.styles.contentWidth">
+        <source>Maximum width of the main content area.</source>
+        <target>Maximale Breite des Hauptinhalts.</target>
+      </trans-unit>
+      <trans-unit id="settings.styles.palette">
+        <source>Colour palette</source>
+        <target>Farbpalette</target>
+      </trans-unit>
+      <trans-unit id="settings.styles.typeScale">
+        <source>Type scale</source>
+        <target>Schriftgrößen</target>
+      </trans-unit>
+      <trans-unit id="settings.styles.corners">
+        <source>Corner style</source>
+        <target>Eckenstil</target>
+      </trans-unit>
+      <trans-unit id="settings.styles.spacing">
+        <source>Section spacing</source>
+        <target>Abschnittsabstand</target>
+      </trans-unit>
+      <trans-unit id="settings.styles.stickyHeader">
+        <source>Sticky header</source>
+        <target>Fixierter Kopfbereich</target>
+      </trans-unit>
+      <trans-unit id="settings.description.styles.stickyHeader">
+        <source>Keep the navigation visible while scrolling.</source>
+        <target>Navigation beim Scrollen sichtbar halten.</target>
+      </trans-unit>
+      <trans-unit id="settings.cta.showHeader">
+        <source>Show header button</source>
+        <target>Schaltfläche im Kopfbereich anzeigen</target>
+      </trans-unit>
+      <trans-unit id="settings.description.cta.showHeader">
+        <source>The button appears when a valid primary CTA link is configured.</source>
+        <target>Die Schaltfläche erscheint, wenn ein gültiger Link für die erste Handlungsaufforderung gesetzt ist.</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

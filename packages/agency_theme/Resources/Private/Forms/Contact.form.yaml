@@ -1,0 +1,60 @@
+identifier: crispframe-contact
+label: 'Contact inquiry'
+type: Form
+prototypeName: standard
+renderingOptions:
+  submitButtonLabel: 'Send inquiry'
+
+finishers:
+  - identifier: EmailToReceiver
+    options:
+      subject: 'Website inquiry'
+      recipients:
+        contact@example.invalid: 'Site owner'
+      senderAddress: 'forms@example.invalid'
+      senderName: 'Website contact form'
+      replyToRecipients:
+        '{email}': '{name}'
+      attachUploads: false
+  - identifier: Confirmation
+    options:
+      message: 'Thank you. Your inquiry has been sent.'
+
+renderables:
+  - identifier: contact-page
+    type: Page
+    label: 'Contact'
+    renderables:
+      - identifier: name
+        type: Text
+        label: 'Name'
+        properties:
+          fluidAdditionalAttributes:
+            autocomplete: name
+            required: required
+        validators:
+          - identifier: NotEmpty
+      - identifier: company
+        type: Text
+        label: 'Company (optional)'
+        properties:
+          fluidAdditionalAttributes:
+            autocomplete: organization
+      - identifier: email
+        type: Email
+        label: 'Email'
+        properties:
+          fluidAdditionalAttributes:
+            autocomplete: email
+            required: required
+        validators:
+          - identifier: NotEmpty
+          - identifier: EmailAddress
+      - identifier: message
+        type: Textarea
+        label: 'How can we help?'
+        properties:
+          fluidAdditionalAttributes:
+            required: required
+        validators:
+          - identifier: NotEmpty

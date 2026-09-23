@@ -1,0 +1,14 @@
+<f:layout name="Default" />
+
+<f:section name="Main">
+    <div class="page page--minimal">
+        <f:if condition="{breadcrumb}">
+            <div class="container container--default">
+                <f:render partial="Components/Breadcrumb" arguments="{breadcrumb: breadcrumb}" />
+            </div>
+        </f:if>
+        <div class="page-body page-body--narrow">
+            <f:format.raw>{contentMain}</f:format.raw>
+        </div>
+    </div>
+</f:section>

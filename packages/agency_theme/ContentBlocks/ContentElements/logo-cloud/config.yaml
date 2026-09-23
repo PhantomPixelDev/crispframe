@@ -1,0 +1,77 @@
+name: crispframe/logo-cloud
+title: Logo cloud
+description: Row of client or partner logos with optional links.
+group: Crispframe
+fields:
+- identifier: headline
+  type: Text
+  label: Headline
+  default: Trusted by ambitious teams
+- identifier: lead
+  type: Textarea
+  label: Lead paragraph
+  default: From funded startups to established mid-market leaders.
+- identifier: items
+  type: Collection
+  label: Logos
+  description: Add 3 to 8 logos. Use SVG or PNG with transparent background.
+  minitems: 3
+  maxitems: 8
+  fields:
+  - identifier: logo
+    type: File
+    label: Logo image
+    allowed: 'common-image-types'
+  - identifier: name
+    type: Text
+    label: Company name
+    required: true
+    default: Nordlicht Labs
+    description: 'Placeholder: Nordlicht Labs'
+  - identifier: link
+    type: Link
+    label: Link
+    description: Optional — e.g. case study.
+- identifier: sectionSpacing
+  type: Select
+  renderType: selectSingle
+  label: Section spacing
+  description: Vertical spacing before and after the section.
+  default: default
+  items:
+  - label: Small
+    value: small
+  - label: Default
+    value: default
+  - label: Large
+    value: large
+- identifier: sectionBackground
+  type: Select
+  renderType: selectSingle
+  label: Section background
+  description: Background variant for the section.
+  default: default
+  items:
+  - label: Default
+    value: default
+  - label: Subtle
+    value: subtle
+  - label: Dark
+    value: dark
+  - label: Brand
+    value: brand
+- identifier: width
+  type: Select
+  renderType: selectSingle
+  label: Container width
+  description: Maximum width of the content container.
+  default: default
+  items:
+  - label: Narrow
+    value: narrow
+  - label: Default
+    value: default
+  - label: Wide
+    value: wide
+  - label: Full
+    value: full

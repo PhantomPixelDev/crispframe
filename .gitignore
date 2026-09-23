@@ -1,0 +1,16 @@
+# DDEV runtime state
+.ddev/db/
+
+# Composer
+/vendor/
+
+# TYPO3 runtime (generated)
+/var
+/public/
+/typo3temp/
+config/system/settings.php
+.playwright-cli/
+.clean-*.log
+.tmp-*.html
+*.log
+.omo/

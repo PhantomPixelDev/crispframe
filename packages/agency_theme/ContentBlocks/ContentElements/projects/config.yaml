@@ -1,0 +1,95 @@
+name: crispframe/projects
+title: Projects
+description: Selected work with image, category and link.
+group: Crispframe
+fields:
+- identifier: headline
+  type: Text
+  label: Headline
+  required: true
+  default: Selected work
+- identifier: lead
+  type: Textarea
+  label: Lead paragraph
+  default: A sample of platforms and websites we have shipped recently.
+- identifier: items
+  type: Collection
+  label: Projects
+  description: Add 2 to 6 projects.
+  minitems: 2
+  maxitems: 6
+  fields:
+  - identifier: title
+    type: Text
+    label: Project title
+    required: true
+    default: Nordlicht Commerce Relaunch
+    description: 'Placeholder: Nordlicht Commerce Relaunch'
+  - identifier: category
+    type: Text
+    label: Category
+    description: e.g. E-commerce, Corporate site
+    default: E-commerce
+  - identifier: description
+    type: Textarea
+    label: Short description
+    default: Headless TYPO3 storefront that lifted conversion by 34%.
+    description: 'Placeholder: Headless TYPO3 storefront that lifted conversion by
+      34%.'
+  - identifier: image
+    type: File
+    label: Project image
+    allowed: 'common-image-types'
+  - identifier: linkLabel
+    type: Text
+    label: Link label
+    default: View project
+    description: 'Placeholder: View project'
+  - identifier: link
+    type: Link
+    label: Link
+    default: '#'
+    description: 'Placeholder: #'
+- identifier: sectionSpacing
+  type: Select
+  renderType: selectSingle
+  label: Section spacing
+  description: Vertical spacing before and after the section.
+  default: default
+  items:
+  - label: Small
+    value: small
+  - label: Default
+    value: default
+  - label: Large
+    value: large
+- identifier: sectionBackground
+  type: Select
+  renderType: selectSingle
+  label: Section background
+  description: Background variant for the section.
+  default: default
+  items:
+  - label: Default
+    value: default
+  - label: Subtle
+    value: subtle
+  - label: Dark
+    value: dark
+  - label: Brand
+    value: brand
+- identifier: width
+  type: Select
+  renderType: selectSingle
+  label: Container width
+  description: Maximum width of the content container.
+  default: default
+  items:
+  - label: Narrow
+    value: narrow
+  - label: Default
+    value: default
+  - label: Wide
+    value: wide
+  - label: Full
+    value: full

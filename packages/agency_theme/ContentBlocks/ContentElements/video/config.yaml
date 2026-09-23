@@ -1,0 +1,68 @@
+name: crispframe/video
+title: Video
+description: Privacy-friendly YouTube or Vimeo video with a local poster and transcript.
+group: Crispframe
+fields:
+  - identifier: headline
+    type: Text
+    label: Headline
+    required: true
+    default: See how we work
+  - identifier: lead
+    type: Textarea
+    label: Introduction
+  - identifier: provider
+    type: Select
+    renderType: selectSingle
+    label: Video provider
+    default: youtube
+    items:
+      - { label: YouTube, value: youtube }
+      - { label: Vimeo, value: vimeo }
+  - identifier: videoId
+    type: Text
+    label: Video ID
+    description: YouTube ID (11 characters) or Vimeo numeric ID. The embed loads only after a visitor clicks play.
+    required: true
+  - identifier: poster
+    type: File
+    label: Poster image
+    description: Local 16:9 image, ideally 1200 × 675 pixels.
+    allowed: common-image-types
+    maxitems: 1
+  - identifier: caption
+    type: Text
+    label: Caption
+  - identifier: transcript
+    type: Textarea
+    label: Transcript
+    description: Plain text transcript for accessibility and visitors who do not play the video.
+  - identifier: sectionSpacing
+    type: Select
+    renderType: selectSingle
+    label: Section spacing
+    default: default
+    items:
+      - { label: Small, value: small }
+      - { label: Default, value: default }
+      - { label: Large, value: large }
+  - identifier: sectionBackground
+    type: Select
+    renderType: selectSingle
+    label: Section background
+    default: default
+    items:
+      - { label: Default, value: default }
+      - { label: Subtle, value: subtle }
+      - { label: Dark, value: dark }
+      - { label: Brand, value: brand }
+  - identifier: width
+    type: Select
+    renderType: selectSingle
+    label: Container width
+    default: default
+    items:
+      - { label: Narrow, value: narrow }
+      - { label: Default, value: default }
+      - { label: Wide, value: wide }
+      - { label: Full, value: full }

@@ -1,0 +1,21 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<section class="section section--{data.sectionBackground}" data-spacing="{data.sectionSpacing}">
+    <div class="container container--{data.width}">
+        <header class="section-header">
+            <h2 class="section-header__title">{data.headline}</h2>
+            <f:if condition="{data.lead}"><p class="section-header__lead">{data.lead}</p></f:if>
+        </header>
+        <f:if condition="{data.items}">
+            <ol class="process" role="list">
+                <f:for each="{data.items}" as="item" iteration="it">
+                    <li class="process__step">
+                        <span class="process__number" aria-hidden="true">{it.cycle}</span>
+                        <h3 class="process__title">{item.title}</h3>
+                        <p class="process__text">{item.description}</p>
+                    </li>
+                </f:for>
+            </ol>
+        </f:if>
+    </div>
+</section>
+</html>

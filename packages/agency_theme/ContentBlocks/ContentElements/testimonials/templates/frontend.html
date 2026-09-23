@@ -1,0 +1,30 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<section class="section section--{data.sectionBackground}" data-spacing="{data.sectionSpacing}">
+    <div class="container container--{data.width}">
+        <header class="section-header">
+            <h2 class="section-header__title">{data.headline}</h2>
+            <f:if condition="{data.lead}"><p class="section-header__lead">{data.lead}</p></f:if>
+        </header>
+        <f:if condition="{data.items}">
+            <ul class="cards cards--testimonials" role="list">
+                <f:for each="{data.items}" as="item">
+                    <li class="card testimonial">
+                        <figure class="testimonial__figure">
+                            <blockquote class="testimonial__quote"><p>{item.quote}</p></blockquote>
+                            <figcaption class="testimonial__author">
+                                <f:if condition="{item.avatar}">
+                                    <f:for each="{item.avatar}" as="file">
+                                        <f:image image="{file}" width="80c" height="80c" loading="lazy" decoding="async" alt="{item.author}" class="testimonial__avatar" />
+                                    </f:for>
+                                </f:if>
+                                <span class="testimonial__name">{item.author}</span>
+                                <f:if condition="{item.role}"><span class="testimonial__role">{item.role}</span></f:if>
+                            </figcaption>
+                        </figure>
+                    </li>
+                </f:for>
+            </ul>
+        </f:if>
+    </div>
+</section>
+</html>

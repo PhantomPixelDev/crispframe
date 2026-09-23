@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file datatype="plaintext" original="labels.xlf" source-language="en" date="2026-09-22T20:39:39+00:00" product-name="crispframe/cta">
+    <header/>
+    <body>
+      <trans-unit id="title">
+        <source>Call to action</source>
+      </trans-unit>
+      <trans-unit id="description">
+        <source>Prominent call to action with headline and up to two buttons.</source>
+      </trans-unit>
+      <trans-unit id="headline.label">
+        <source>Headline</source>
+      </trans-unit>
+      <trans-unit id="text.label">
+        <source>Supporting text</source>
+      </trans-unit>
+      <trans-unit id="primaryLinkLabel.label">
+        <source>Primary button label</source>
+      </trans-unit>
+      <trans-unit id="primaryLink.label">
+        <source>Primary button link</source>
+      </trans-unit>
+      <trans-unit id="secondaryLinkLabel.label">
+        <source>Secondary button label</source>
+      </trans-unit>
+      <trans-unit id="secondaryLink.label">
+        <source>Secondary button link</source>
+      </trans-unit>
+      <trans-unit id="sectionSpacing.label">
+        <source>Section spacing</source>
+      </trans-unit>
+      <trans-unit id="sectionSpacing.description">
+        <source>Vertical spacing before and after the section.</source>
+      </trans-unit>
+      <trans-unit id="sectionSpacing.items.small.label">
+        <source>Small</source>
+      </trans-unit>
+      <trans-unit id="sectionSpacing.items.default.label">
+        <source>Default</source>
+      </trans-unit>
+      <trans-unit id="sectionSpacing.items.large.label">
+        <source>Large</source>
+      </trans-unit>
+      <trans-unit id="sectionBackground.label">
+        <source>Section background</source>
+      </trans-unit>
+      <trans-unit id="sectionBackground.description">
+        <source>Background variant for the section.</source>
+      </trans-unit>
+      <trans-unit id="sectionBackground.items.default.label">
+        <source>Default</source>
+      </trans-unit>
+      <trans-unit id="sectionBackground.items.subtle.label">
+        <source>Subtle</source>
+      </trans-unit>
+      <trans-unit id="sectionBackground.items.dark.label">
+        <source>Dark</source>
+      </trans-unit>
+      <trans-unit id="sectionBackground.items.brand.label">
+        <source>Brand</source>
+      </trans-unit>
+      <trans-unit id="width.label">
+        <source>Container width</source>
+      </trans-unit>
+      <trans-unit id="width.description">
+        <source>Maximum width of the content container.</source>
+      </trans-unit>
+      <trans-unit id="width.items.narrow.label">
+        <source>Narrow</source>
+      </trans-unit>
+      <trans-unit id="width.items.default.label">
+        <source>Default</source>
+      </trans-unit>
+      <trans-unit id="width.items.wide.label">
+        <source>Wide</source>
+      </trans-unit>
+      <trans-unit id="width.items.full.label">
+        <source>Full</source>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

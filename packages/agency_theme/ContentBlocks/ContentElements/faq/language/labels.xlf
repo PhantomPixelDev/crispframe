@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file datatype="plaintext" original="labels.xlf" source-language="en" date="2026-09-22T20:39:39+00:00" product-name="crispframe/faq">
+    <header/>
+    <body>
+      <trans-unit id="title">
+        <source>FAQ</source>
+      </trans-unit>
+      <trans-unit id="description">
+        <source>Frequently asked questions rendered as accessible disclosure widgets.</source>
+      </trans-unit>
+      <trans-unit id="headline.label">
+        <source>Headline</source>
+      </trans-unit>
+      <trans-unit id="lead.label">
+        <source>Lead paragraph</source>
+      </trans-unit>
+      <trans-unit id="items.label">
+        <source>Questions</source>
+      </trans-unit>
+      <trans-unit id="items.description">
+        <source>Add up to 8 questions.</source>
+      </trans-unit>
+      <trans-unit id="items.question.label">
+        <source>Question</source>
+      </trans-unit>
+      <trans-unit id="items.question.description">
+        <source>Placeholder: How long does a typical project take?</source>
+      </trans-unit>
+      <trans-unit id="items.answer.label">
+        <source>Answer</source>
+      </trans-unit>
+      <trans-unit id="items.answer.description">
+        <source>Placeholder: Discovery takes 2 weeks, build 6–10 weeks. We ship an MVP early and iterate in sprints.</source>
+      </trans-unit>
+      <trans-unit id="sectionSpacing.label">
+        <source>Section spacing</source>
+      </trans-unit>
+      <trans-unit id="sectionSpacing.description">
+        <source>Vertical spacing before and after the section.</source>
+      </trans-unit>
+      <trans-unit id="sectionSpacing.items.small.label">
+        <source>Small</source>
+      </trans-unit>
+      <trans-unit id="sectionSpacing.items.default.label">
+        <source>Default</source>
+      </trans-unit>
+      <trans-unit id="sectionSpacing.items.large.label">
+        <source>Large</source>
+      </trans-unit>
+      <trans-unit id="sectionBackground.label">
+        <source>Section background</source>
+      </trans-unit>
+      <trans-unit id="sectionBackground.description">
+        <source>Background variant for the section.</source>
+      </trans-unit>
+      <trans-unit id="sectionBackground.items.default.label">
+        <source>Default</source>
+      </trans-unit>
+      <trans-unit id="sectionBackground.items.subtle.label">
+        <source>Subtle</source>
+      </trans-unit>
+      <trans-unit id="sectionBackground.items.dark.label">
+        <source>Dark</source>
+      </trans-unit>
+      <trans-unit id="sectionBackground.items.brand.label">
+        <source>Brand</source>
+      </trans-unit>
+      <trans-unit id="width.label">
+        <source>Container width</source>
+      </trans-unit>
+      <trans-unit id="width.description">
+        <source>Maximum width of the content container.</source>
+      </trans-unit>
+      <trans-unit id="width.items.narrow.label">
+        <source>Narrow</source>
+      </trans-unit>
+      <trans-unit id="width.items.default.label">
+        <source>Default</source>
+      </trans-unit>
+      <trans-unit id="width.items.wide.label">
+        <source>Wide</source>
+      </trans-unit>
+      <trans-unit id="width.items.full.label">
+        <source>Full</source>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

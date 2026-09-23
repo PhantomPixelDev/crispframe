@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff version="1.2"><file source-language="en" datatype="plaintext" original="messages" product-name="agency_theme"><body>
+<trans-unit id="gallery.open"><source>View image</source></trans-unit>
+<trans-unit id="gallery.dialog"><source>Image gallery</source></trans-unit>
+<trans-unit id="gallery.close"><source>Close gallery</source></trans-unit>
+<trans-unit id="gallery.previous"><source>Previous image</source></trans-unit>
+<trans-unit id="gallery.next"><source>Next image</source></trans-unit>
+<trans-unit id="error.title"><source>Page not found</source></trans-unit>
+<trans-unit id="error.message"><source>That page may have moved or the address may be incorrect.</source></trans-unit>
+<trans-unit id="error.home"><source>Go to homepage</source></trans-unit>
+<trans-unit id="error.hint"><source>Try the navigation or return to the homepage.</source></trans-unit>
+<trans-unit id="site.skip"><source>Skip to main content</source></trans-unit>
+<trans-unit id="site.home"><source>Home</source></trans-unit>
+<trans-unit id="site.menu"><source>Menu</source></trans-unit>
+<trans-unit id="site.toggleMenu"><source>Toggle navigation menu</source></trans-unit>
+<trans-unit id="site.primary"><source>Primary navigation</source></trans-unit>
+<trans-unit id="site.mobile"><source>Primary mobile navigation</source></trans-unit>
+<trans-unit id="site.footerNav"><source>Footer navigation</source></trans-unit>
+<trans-unit id="site.navigate"><source>Navigate</source></trans-unit>
+<trans-unit id="site.services"><source>Services</source></trans-unit>
+<trans-unit id="site.contact"><source>Contact</source></trans-unit>
+<trans-unit id="site.social"><source>Social links</source></trans-unit>
+<trans-unit id="site.privacy"><source>Privacy</source></trans-unit>
+<trans-unit id="site.imprint"><source>Legal notice</source></trans-unit>
+<trans-unit id="site.rights"><source>All rights reserved.</source></trans-unit>
+<trans-unit id="site.breadcrumb"><source>Breadcrumb</source></trans-unit>
+<trans-unit id="site.languages"><source>Languages</source></trans-unit>
+<trans-unit id="site.htmlLang"><source>en</source></trans-unit>
+<trans-unit id="block.learnMore"><source>Learn more</source></trans-unit>
+<trans-unit id="block.viewProject"><source>View project</source></trans-unit>
+<trans-unit id="block.profile"><source>Profile</source></trans-unit>
+<trans-unit id="block.email"><source>Email</source></trans-unit>
+<trans-unit id="block.phone"><source>Phone</source></trans-unit>
+<trans-unit id="block.address"><source>Address</source></trans-unit>
+<trans-unit id="block.hours"><source>Office hours</source></trans-unit>
+<trans-unit id="video.play"><source>Play video</source></trans-unit>
+<trans-unit id="video.transcript"><source>Read transcript</source></trans-unit>
+<trans-unit id="pricing.period"><source>Billing period</source></trans-unit>
+<trans-unit id="pricing.monthly"><source>Monthly</source></trans-unit>
+<trans-unit id="pricing.yearly"><source>Yearly</source></trans-unit>
+<trans-unit id="pricing.featured"><source>Most popular</source></trans-unit>
+</body></file></xliff>

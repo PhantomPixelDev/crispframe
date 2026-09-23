@@ -1,0 +1,92 @@
+<?xml version='1.0' encoding='utf-8'?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file datatype="plaintext" original="labels.xlf" source-language="en" date="2026-09-22T20:39:39+00:00" product-name="crispframe/gallery" target-language="de">
+    <header />
+    <body>
+      <trans-unit id="title">
+        <source>Gallery</source>
+        <target>Galerie</target>
+      </trans-unit>
+      <trans-unit id="description">
+        <source>Image gallery with captions and a keyboard-friendly lightbox.</source>
+        <target>Bildergalerie mit Bildunterschriften und per Tastatur bedienbarer Großansicht.</target>
+      </trans-unit>
+      <trans-unit id="headline.label">
+        <source>Headline</source>
+        <target>Überschrift</target>
+      </trans-unit>
+      <trans-unit id="lead.label">
+        <source>Introduction</source>
+        <target>Einleitung</target>
+      </trans-unit>
+      <trans-unit id="items.label">
+        <source>Gallery images</source>
+        <target>Galeriebilder</target>
+      </trans-unit>
+      <trans-unit id="items.image.label">
+        <source>Image</source>
+        <target>Bild</target>
+      </trans-unit>
+      <trans-unit id="items.caption.label">
+        <source>Caption</source>
+        <target>Bildunterschrift</target>
+      </trans-unit>
+      <trans-unit id="sectionSpacing.label">
+        <source>Section spacing</source>
+        <target>Abschnittsabstand</target>
+      </trans-unit>
+      <trans-unit id="sectionSpacing.items.small.label">
+        <source>Small</source>
+        <target>Klein</target>
+      </trans-unit>
+      <trans-unit id="sectionSpacing.items.default.label">
+        <source>Default</source>
+        <target>Standard</target>
+      </trans-unit>
+      <trans-unit id="sectionSpacing.items.large.label">
+        <source>Large</source>
+        <target>Groß</target>
+      </trans-unit>
+      <trans-unit id="sectionBackground.label">
+        <source>Section background</source>
+        <target>Abschnittshintergrund</target>
+      </trans-unit>
+      <trans-unit id="sectionBackground.items.default.label">
+        <source>Default</source>
+        <target>Standard</target>
+      </trans-unit>
+      <trans-unit id="sectionBackground.items.subtle.label">
+        <source>Subtle</source>
+        <target>Dezent</target>
+      </trans-unit>
+      <trans-unit id="sectionBackground.items.dark.label">
+        <source>Dark</source>
+        <target>Dunkel</target>
+      </trans-unit>
+      <trans-unit id="sectionBackground.items.brand.label">
+        <source>Brand</source>
+        <target>Markenfarbe</target>
+      </trans-unit>
+      <trans-unit id="width.label">
+        <source>Container width</source>
+        <target>Containerbreite</target>
+      </trans-unit>
+      <trans-unit id="width.items.narrow.label">
+        <source>Narrow</source>
+        <target>Schmal</target>
+      </trans-unit>
+      <trans-unit id="width.items.default.label">
+        <source>Default</source>
+        <target>Standard</target>
+      </trans-unit>
+      <trans-unit id="width.items.wide.label">
+        <source>Wide</source>
+        <target>Breit</target>
+      </trans-unit>
+      <trans-unit id="width.items.full.label">
+        <source>Full</source>
+        <target>Volle Breite</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

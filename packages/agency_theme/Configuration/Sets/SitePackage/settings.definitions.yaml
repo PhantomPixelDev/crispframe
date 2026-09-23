@@ -1,0 +1,184 @@
+categories:
+  brand:
+  contact:
+  social:
+  footer:
+  cta:
+  styles:
+
+settings:
+  # ── Brand ──────────────────────────────────────────────────────────
+  brand.companyName:
+    type: string
+    category: brand
+    default: 'Your Company'
+
+  brand.tagline:
+    type: string
+    category: brand
+    default: ''
+
+  brand.logo:
+    type: string
+    category: brand
+    default: ''
+
+  brand.logoAlt:
+    type: string
+    category: brand
+    default: 'Your Company'
+
+  # ── Contact ────────────────────────────────────────────────────────
+  contact.email:
+    type: string
+    category: contact
+    default: ''
+
+  contact.phone:
+    type: string
+    category: contact
+    default: ''
+
+  contact.address:
+    type: string
+    category: contact
+    default: ''
+
+  # ── Social ─────────────────────────────────────────────────────────
+  social.linkedin:
+    type: string
+    category: social
+    default: '#'
+
+  social.instagram:
+    type: string
+    category: social
+    default: '#'
+
+  social.github:
+    type: string
+    category: social
+    default: '#'
+
+  social.x:
+    type: string
+    category: social
+    default: '#'
+
+  social.youtube:
+    type: string
+    category: social
+    default: '#'
+
+  # ── Footer ─────────────────────────────────────────────────────────
+  footer.text:
+    type: string
+    category: footer
+    default: ''
+
+  footer.legalLink:
+    type: string
+    category: footer
+    default: '/'
+
+  footer.privacyLink:
+    type: string
+    category: footer
+    default: '/'
+
+  footer.servicesParent:
+    type: int
+    category: footer
+    default: 0
+
+  footer.showCta:
+    type: bool
+    category: footer
+    default: true
+
+  footer.ctaHeading:
+    type: string
+    category: footer
+    default: 'Let us build something useful.'
+
+  footer.ctaText:
+    type: string
+    category: footer
+    default: 'Tell us what you are working on.'
+
+  # ── CTA ────────────────────────────────────────────────────────────
+  cta.primaryLabel:
+    type: string
+    category: cta
+    default: 'Contact us'
+
+  cta.primaryLink:
+    type: string
+    category: cta
+    default: '#'
+
+  cta.secondaryLabel:
+    type: string
+    category: cta
+    default: 'View work'
+
+  cta.secondaryLink:
+    type: string
+    category: cta
+    default: '#'
+
+  # ── Styles ─────────────────────────────────────────────────────────
+  styles.contentWidth:
+    type: string
+    category: styles
+    default: 'standard'
+    enum:
+      compact: 'Compact'
+      standard: 'Standard'
+      wide: 'Wide'
+
+  styles.palette:
+    type: string
+    category: styles
+    default: 'ocean'
+    enum:
+      ocean: 'Ocean blue'
+      forest: 'Forest green'
+      plum: 'Plum'
+      ember: 'Ember'
+
+  styles.typeScale:
+    type: string
+    category: styles
+    default: 'standard'
+    enum:
+      standard: 'Standard'
+      expressive: 'Expressive'
+
+  styles.corners:
+    type: string
+    category: styles
+    default: 'soft'
+    enum:
+      sharp: 'Sharp'
+      soft: 'Soft'
+      round: 'Rounded'
+
+  styles.spacing:
+    type: string
+    category: styles
+    default: 'balanced'
+    enum:
+      compact: 'Compact'
+      balanced: 'Balanced'
+      airy: 'Airy'
+
+  styles.stickyHeader:
+    type: bool
+    category: styles
+    default: true
+
+  cta.showHeader:
+    type: bool
+    category: cta
+    default: true

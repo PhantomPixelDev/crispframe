@@ -1,0 +1,23 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<section class="section section--{data.sectionBackground}" data-spacing="{data.sectionSpacing}">
+    <div class="container container--{data.width}">
+        <header class="section-header">
+            <h2 class="section-header__title">{data.headline}</h2>
+            <f:if condition="{data.lead}"><p class="section-header__lead">{data.lead}</p></f:if>
+        </header>
+        <f:if condition="{data.items}">
+            <div class="faq">
+                <f:for each="{data.items}" as="item">
+                    <details class="faq__item">
+                        <summary class="faq__question">{item.question}</summary>
+                        <div class="faq__answer"><p>{item.answer -> f:format.nl2br()}</p></div>
+                    </details>
+                </f:for>
+            </div>
+        </f:if>
+    </div>
+</section>
+<f:if condition="{data.items}">
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[<f:for each="{data.items}" as="item" iteration="it"><f:variable name="q" value="{'@type': 'Question', name: item.question, acceptedAnswer: {'@type': 'Answer', text: item.answer}}" />{q -> f:format.json() -> f:format.raw()}<f:if condition="{it.isLast} == 0">,</f:if></f:for>]}</script>
+</f:if>
+</html>

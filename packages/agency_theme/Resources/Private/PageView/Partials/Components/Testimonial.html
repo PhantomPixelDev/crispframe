@@ -1,0 +1,35 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<!--
+  Partial: Components/Testimonial
+  Arguments (testimonial):
+    - quote (string, required) : testimonial text
+    - author (string, required): person name
+    - role (string?)           : title + company (e.g. "CEO, Northwind")
+    - avatar (FileReference|string?) : optional portrait
+    - rating (int?)            : 1-5 stars (decorative, aria-label provided)
+  Accessibility: blockquote semantic, rating uses aria-label, decorative stars aria-hidden.
+-->
+<figure class="card card--testimonial">
+    <div class="card__quote-mark" aria-hidden="true"><f:render partial="Components/Icon" arguments="{name: 'quote', decorative: 1, size: 32}" /></div>
+    <blockquote class="card__quote"><p>{testimonial.quote}</p></blockquote>
+    <f:if condition="{testimonial.rating}">
+        <p class="card__rating" role="img" aria-label="Rated {testimonial.rating} out of 5">
+            <f:for each="{0:1,1:1,2:1,3:1,4:1}" as="n" iteration="it">
+                <f:if condition="{it.cycle} <= {testimonial.rating}">
+                    <f:then><f:render partial="Components/Icon" arguments="{name: 'star', decorative: 1, size: 14, class: 'is-filled'}" /></f:then>
+                    <f:else><f:render partial="Components/Icon" arguments="{name: 'star', decorative: 1, size: 14}" /></f:else>
+                </f:if>
+            </f:for>
+        </p>
+    </f:if>
+    <figcaption class="card__author">
+        <f:if condition="{testimonial.avatar}">
+            <f:render partial="Components/Image" arguments="{file: testimonial.avatar, alt: '{testimonial.author}', maxWidth: 80, class: 'card__avatar'}" />
+        </f:if>
+        <span class="card__author-name">{testimonial.author}</span>
+        <f:if condition="{testimonial.role}">
+            <span class="card__author-role">{testimonial.role}</span>
+        </f:if>
+    </figcaption>
+</figure>
+</html>

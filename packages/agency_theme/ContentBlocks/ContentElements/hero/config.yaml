@@ -1,0 +1,95 @@
+name: crispframe/hero
+title: 'Hero'
+description: 'Large introductory section with headline, supporting copy, calls to action and an optional visual.'
+group: Crispframe
+fields:
+  - identifier: eyebrow
+    type: Text
+    label: 'Eyebrow'
+    description: 'Small label shown above the headline.'
+    default: 'Digital agency for ambitious brands'
+  - identifier: headline
+    type: Text
+    label: 'Headline'
+    description: 'Main headline of the hero.'
+    required: true
+    default: 'We build digital products that grow your business'
+  - identifier: subheadline
+    type: Textarea
+    label: 'Supporting text'
+    description: 'Short paragraph below the headline.'
+    default: 'Crispframe combines strategy, design and engineering to ship TYPO3 and web platforms that are fast, accessible and easy to edit.'
+  - identifier: primaryLinkLabel
+    type: Text
+    label: 'Primary button label'
+    default: 'Start a project'
+  - identifier: primaryLink
+    type: Link
+    label: 'Primary button link'
+    description: 'Leave empty to hide. Use page, URL or email.'
+    default: '#contact'
+  - identifier: secondaryLinkLabel
+    type: Text
+    label: 'Secondary button label'
+    default: 'View our work'
+  - identifier: secondaryLink
+    type: Link
+    label: 'Secondary button link'
+    default: '#projects'
+  - identifier: image
+    type: File
+    label: 'Hero image'
+    description: 'Optional large visual. Recommended 1280x960, WebP or JPG.'
+    allowed: 'common-image-types'
+  - identifier: imageAlt
+    type: Text
+    label: 'Image alt text override'
+    description: 'Leave empty to use file metadata.'
+    default: ''
+  - identifier: isHero
+    type: Checkbox
+    label: 'Use h1 for headline'
+    description: 'Enable only for the first block on the page to keep a single h1.'
+  - identifier: sectionSpacing
+    type: Select
+    renderType: selectSingle
+    label: 'Section spacing'
+    description: 'Vertical spacing before and after the section.'
+    default: 'default'
+    items:
+      - label: 'Small'
+        value: 'small'
+      - label: 'Default'
+        value: 'default'
+      - label: 'Large'
+        value: 'large'
+  - identifier: sectionBackground
+    type: Select
+    renderType: selectSingle
+    label: 'Section background'
+    description: 'Background variant for the section.'
+    default: 'default'
+    items:
+      - label: 'Default'
+        value: 'default'
+      - label: 'Subtle'
+        value: 'subtle'
+      - label: 'Dark'
+        value: 'dark'
+      - label: 'Brand'
+        value: 'brand'
+  - identifier: width
+    type: Select
+    renderType: selectSingle
+    label: 'Container width'
+    description: 'Maximum width of the content container.'
+    default: 'default'
+    items:
+      - label: 'Narrow'
+        value: 'narrow'
+      - label: 'Default'
+        value: 'default'
+      - label: 'Wide'
+        value: 'wide'
+      - label: 'Full'
+        value: 'full'

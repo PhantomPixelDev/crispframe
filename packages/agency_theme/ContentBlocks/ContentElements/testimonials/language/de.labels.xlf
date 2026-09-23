@@ -1,0 +1,128 @@
+<?xml version='1.0' encoding='utf-8'?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file datatype="plaintext" original="labels.xlf" source-language="en" date="2026-09-22T20:39:42+00:00" product-name="crispframe/testimonials" target-language="de">
+    <header />
+    <body>
+      <trans-unit id="title">
+        <source>Testimonials</source>
+        <target>Kundenstimmen</target>
+      </trans-unit>
+      <trans-unit id="description">
+        <source>Customer quotes with attribution. Up to three testimonials.</source>
+        <target>Kundenstimmen mit Namensnennung. Bis zu drei Einträge.</target>
+      </trans-unit>
+      <trans-unit id="headline.label">
+        <source>Headline</source>
+        <target>Überschrift</target>
+      </trans-unit>
+      <trans-unit id="lead.label">
+        <source>Lead paragraph</source>
+        <target>Einleitungsabsatz</target>
+      </trans-unit>
+      <trans-unit id="items.label">
+        <source>Testimonials</source>
+        <target>Kundenstimmen</target>
+      </trans-unit>
+      <trans-unit id="items.description">
+        <source>Add up to 3 testimonials.</source>
+        <target>Fügen Sie bis zu 3 Kundenstimmen hinzu.</target>
+      </trans-unit>
+      <trans-unit id="items.quote.label">
+        <source>Quote</source>
+        <target>Zitat</target>
+      </trans-unit>
+      <trans-unit id="items.quote.description">
+        <source>Placeholder: Crispframe shipped our platform in ten weeks — on time and without a content freeze.</source>
+        <target>Beispiel: Unsere Plattform war in zehn Wochen online – pünktlich und ohne Redaktionsstopp.</target>
+      </trans-unit>
+      <trans-unit id="items.author.label">
+        <source>Author name</source>
+        <target>Name der zitierten Person</target>
+      </trans-unit>
+      <trans-unit id="items.author.description">
+        <source>Placeholder: Laura Meier</source>
+        <target>Beispiel: Laura Meier</target>
+      </trans-unit>
+      <trans-unit id="items.role.label">
+        <source>Role and company</source>
+        <target>Funktion und Unternehmen</target>
+      </trans-unit>
+      <trans-unit id="items.role.description">
+        <source>Placeholder: Head of Digital, Nordlicht Labs</source>
+        <target>Beispiel: Leitung Digital, Muster GmbH</target>
+      </trans-unit>
+      <trans-unit id="items.avatar.label">
+        <source>Avatar</source>
+        <target>Profilbild</target>
+      </trans-unit>
+      <trans-unit id="sectionSpacing.label">
+        <source>Section spacing</source>
+        <target>Abschnittsabstand</target>
+      </trans-unit>
+      <trans-unit id="sectionSpacing.description">
+        <source>Vertical spacing before and after the section.</source>
+        <target>Vertikaler Abstand vor und nach dem Abschnitt.</target>
+      </trans-unit>
+      <trans-unit id="sectionSpacing.items.small.label">
+        <source>Small</source>
+        <target>Klein</target>
+      </trans-unit>
+      <trans-unit id="sectionSpacing.items.default.label">
+        <source>Default</source>
+        <target>Standard</target>
+      </trans-unit>
+      <trans-unit id="sectionSpacing.items.large.label">
+        <source>Large</source>
+        <target>Groß</target>
+      </trans-unit>
+      <trans-unit id="sectionBackground.label">
+        <source>Section background</source>
+        <target>Abschnittshintergrund</target>
+      </trans-unit>
+      <trans-unit id="sectionBackground.description">
+        <source>Background variant for the section.</source>
+        <target>Hintergrundvariante für den Abschnitt.</target>
+      </trans-unit>
+      <trans-unit id="sectionBackground.items.default.label">
+        <source>Default</source>
+        <target>Standard</target>
+      </trans-unit>
+      <trans-unit id="sectionBackground.items.subtle.label">
+        <source>Subtle</source>
+        <target>Dezent</target>
+      </trans-unit>
+      <trans-unit id="sectionBackground.items.dark.label">
+        <source>Dark</source>
+        <target>Dunkel</target>
+      </trans-unit>
+      <trans-unit id="sectionBackground.items.brand.label">
+        <source>Brand</source>
+        <target>Markenfarbe</target>
+      </trans-unit>
+      <trans-unit id="width.label">
+        <source>Container width</source>
+        <target>Containerbreite</target>
+      </trans-unit>
+      <trans-unit id="width.description">
+        <source>Maximum width of the content container.</source>
+        <target>Maximale Breite des Inhaltsbereichs.</target>
+      </trans-unit>
+      <trans-unit id="width.items.narrow.label">
+        <source>Narrow</source>
+        <target>Schmal</target>
+      </trans-unit>
+      <trans-unit id="width.items.default.label">
+        <source>Default</source>
+        <target>Standard</target>
+      </trans-unit>
+      <trans-unit id="width.items.wide.label">
+        <source>Wide</source>
+        <target>Breit</target>
+      </trans-unit>
+      <trans-unit id="width.items.full.label">
+        <source>Full</source>
+        <target>Volle Breite</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

@@ -1,0 +1,87 @@
+name: crispframe/testimonials
+title: Testimonials
+description: Customer quotes with attribution. Up to three testimonials.
+group: Crispframe
+fields:
+- identifier: headline
+  type: Text
+  label: Headline
+  required: true
+  default: What clients say
+- identifier: lead
+  type: Textarea
+  label: Lead paragraph
+  default: Long-term partnerships over one-off projects.
+- identifier: items
+  type: Collection
+  label: Testimonials
+  description: Add up to 3 testimonials.
+  minitems: 1
+  maxitems: 3
+  fields:
+  - identifier: quote
+    type: Textarea
+    label: Quote
+    required: true
+    default: Crispframe shipped our platform in ten weeks — on time and without a
+      content freeze.
+    description: 'Placeholder: Crispframe shipped our platform in ten weeks — on time
+      and without a content freeze.'
+  - identifier: author
+    type: Text
+    label: Author name
+    required: true
+    default: Laura Meier
+    description: 'Placeholder: Laura Meier'
+  - identifier: role
+    type: Text
+    label: Role and company
+    default: Head of Digital, Nordlicht Labs
+    description: 'Placeholder: Head of Digital, Nordlicht Labs'
+  - identifier: avatar
+    type: File
+    label: Avatar
+    allowed: 'common-image-types'
+- identifier: sectionSpacing
+  type: Select
+  renderType: selectSingle
+  label: Section spacing
+  description: Vertical spacing before and after the section.
+  default: default
+  items:
+  - label: Small
+    value: small
+  - label: Default
+    value: default
+  - label: Large
+    value: large
+- identifier: sectionBackground
+  type: Select
+  renderType: selectSingle
+  label: Section background
+  description: Background variant for the section.
+  default: default
+  items:
+  - label: Default
+    value: default
+  - label: Subtle
+    value: subtle
+  - label: Dark
+    value: dark
+  - label: Brand
+    value: brand
+- identifier: width
+  type: Select
+  renderType: selectSingle
+  label: Container width
+  description: Maximum width of the content container.
+  default: default
+  items:
+  - label: Narrow
+    value: narrow
+  - label: Default
+    value: default
+  - label: Wide
+    value: wide
+  - label: Full
+    value: full

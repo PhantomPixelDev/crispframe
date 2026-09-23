@@ -1,0 +1,7 @@
+name: crispframe/agency-theme
+label: 'Crispframe Agency Theme'
+
+dependencies:
+  - typo3/fluid-styled-content
+  - typo3/form
+  - typo3/seo-sitemap

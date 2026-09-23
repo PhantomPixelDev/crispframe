@@ -1,0 +1,37 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<!--
+  Partial: Components/ServiceCard
+  Arguments (service):
+    - title (string, required)
+    - description (string?) : body copy (2-3 lines ideal)
+    - href (string?)        : link to service detail
+    - icon (string?)        : icon name for Components/Icon (e.g. "strategy", "design", "code")
+    - features (array?)     : [label] bullet points
+  Tone: premium minimal corporate, no lorem ipsum.
+-->
+<article class="card card--service">
+    <f:if condition="{service.icon}">
+        <div class="card__icon" aria-hidden="true">
+            <f:render partial="Components/Icon" arguments="{name: service.icon, decorative: 1, size: 28}" />
+        </div>
+    </f:if>
+    <h3 class="card__title">{service.title}</h3>
+    <f:if condition="{service.description}">
+        <p class="card__text">{service.description}</p>
+    </f:if>
+    <f:if condition="{service.features}">
+        <ul class="card__features" role="list">
+            <f:for each="{service.features}" as="feature">
+                <li class="card__feature">
+                    <f:render partial="Components/Icon" arguments="{name: 'check', decorative: 1, size: 14}" /> {feature.label}
+                </li>
+            </f:for>
+        </ul>
+    </f:if>
+    <f:if condition="{service.href}">
+        <p class="card__action">
+            <a href="{service.href}" class="card__link card__link--arrow">Explore service <f:render partial="Components/Icon" arguments="{name: 'arrow-right', decorative: 1, size: 16}" /></a>
+        </p>
+    </f:if>
+</article>
+</html>

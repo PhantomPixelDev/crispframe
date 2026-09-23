@@ -1,0 +1,35 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<!--
+  Partial: Components/Breadcrumb
+  Arguments:
+    - breadcrumb (array, required): ordered list of title, link, current?. Last item is current page (no link, aria-current="page").
+    - ariaLabel (string?)          : nav aria-label (default "Breadcrumb")
+    - showHomeIcon (bool?)         : show home icon before first crumb (default false)
+  Notes: semantic <nav aria-label="Breadcrumb"><ol>. Works without JS. Minimal, no duplicate code.
+-->
+<f:if condition="{breadcrumb -> f:count()} > 1">
+    <nav class="breadcrumb" aria-label="{f:if(condition: ariaLabel, then: ariaLabel, else: 'Breadcrumb')}">
+        <ol class="breadcrumb__list" role="list">
+            <f:for each="{breadcrumb}" as="crumb" iteration="it">
+                <li class="breadcrumb__item{f:if(condition: crumb.current, then: ' is-current')}">
+                    <f:if condition="{crumb.current}">
+                        <f:then>
+                            <span class="breadcrumb__current" aria-current="page">{crumb.title}</span>
+                        </f:then>
+                        <f:else>
+                            <a href="{crumb.link}" class="breadcrumb__link">
+                                <f:if condition="{showHomeIcon} && {it.isFirst}">
+                                    <f:render partial="Components/Icon" arguments="{name: 'home', decorative: 1, size: 14}" /> </f:if>{crumb.title}
+                            </a>
+                        </f:else>
+                    </f:if>
+                    <f:if condition="{it.isLast} == 0">
+                        <span class="breadcrumb__sep" aria-hidden="true">/</span>
+                    </f:if>
+                </li>
+            </f:for>
+        </ol>
+    </nav>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[<f:for each="{breadcrumb}" as="crumb" iteration="it"><f:if condition="{crumb.link}"><f:then><f:variable name="c" value="{'@type': 'ListItem', position: it.cycle, name: crumb.title, item: crumb.link}" /></f:then><f:else><f:variable name="c" value="{'@type': 'ListItem', position: it.cycle, name: crumb.title}" /></f:else></f:if>{c -> f:format.json() -> f:format.raw()}<f:if condition="{it.isLast} == 0">,</f:if></f:for>]}</script>
+</f:if>
+</html>

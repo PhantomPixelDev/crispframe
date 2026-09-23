@@ -1,0 +1,14 @@
+<f:layout name="Default" />
+
+<f:section name="Main">
+    <div class="page page--landing">
+        <f:if condition="{contentHero}">
+            <div class="page-hero">
+                <f:format.raw>{contentHero}</f:format.raw>
+            </div>
+        </f:if>
+        <div class="page-body">
+            <f:format.raw>{contentMain}</f:format.raw>
+        </div>
+    </div>
+</f:section>

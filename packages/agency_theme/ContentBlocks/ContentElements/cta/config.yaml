@@ -1,0 +1,74 @@
+name: crispframe/cta
+title: 'Call to action'
+description: 'Prominent call to action with headline and up to two buttons.'
+group: Crispframe
+fields:
+  - identifier: headline
+    type: Text
+    label: 'Headline'
+    required: true
+    default: 'Ready to move faster?'
+  - identifier: text
+    type: Textarea
+    label: 'Supporting text'
+    default: 'Tell us about your project and we will outline scope, timeline and investment within 48 hours.'
+  - identifier: primaryLinkLabel
+    type: Text
+    label: 'Primary button label'
+    default: 'Start a project'
+  - identifier: primaryLink
+    type: Link
+    label: 'Primary button link'
+    required: true
+    default: '#contact'
+  - identifier: secondaryLinkLabel
+    type: Text
+    label: 'Secondary button label'
+    default: ''
+  - identifier: secondaryLink
+    type: Link
+    label: 'Secondary button link'
+    default: ''
+  - identifier: sectionSpacing
+    type: Select
+    renderType: selectSingle
+    label: 'Section spacing'
+    description: 'Vertical spacing before and after the section.'
+    default: 'default'
+    items:
+      - label: 'Small'
+        value: 'small'
+      - label: 'Default'
+        value: 'default'
+      - label: 'Large'
+        value: 'large'
+  - identifier: sectionBackground
+    type: Select
+    renderType: selectSingle
+    label: 'Section background'
+    description: 'Background variant for the section.'
+    default: 'default'
+    items:
+      - label: 'Default'
+        value: 'default'
+      - label: 'Subtle'
+        value: 'subtle'
+      - label: 'Dark'
+        value: 'dark'
+      - label: 'Brand'
+        value: 'brand'
+  - identifier: width
+    type: Select
+    renderType: selectSingle
+    label: 'Container width'
+    description: 'Maximum width of the content container.'
+    default: 'default'
+    items:
+      - label: 'Narrow'
+        value: 'narrow'
+      - label: 'Default'
+        value: 'default'
+      - label: 'Wide'
+        value: 'wide'
+      - label: 'Full'
+        value: 'full'

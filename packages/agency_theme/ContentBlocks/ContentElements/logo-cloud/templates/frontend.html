@@ -1,0 +1,37 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<section class="section section--{data.sectionBackground}" data-spacing="{data.sectionSpacing}">
+    <div class="container container--{data.width}">
+        <f:if condition="{data.headline} || {data.lead}">
+            <header class="section-header">
+                <f:if condition="{data.headline}"><h2 class="section-header__title">{data.headline}</h2></f:if>
+                <f:if condition="{data.lead}"><p class="section-header__lead">{data.lead}</p></f:if>
+            </header>
+        </f:if>
+        <f:if condition="{data.items}">
+            <ul class="logo-cloud" role="list">
+                <f:for each="{data.items}" as="item">
+                    <li class="logo-cloud__item">
+                        <f:if condition="{item.link.url}">
+                            <f:then>
+                                <f:link.typolink parameter="{item.link}" title="{item.name}">
+                                    <f:for each="{item.logo}" as="file">
+                                        <f:image image="{file}" width="240c" height="120c" loading="lazy" decoding="async" alt="{f:if(condition: file.alternative, then: file.alternative, else: item.name)}" class="logo-cloud__logo" />
+                                    </f:for>
+                                    <span class="logo-cloud__name">{item.name}</span>
+                                </f:link.typolink>
+                            </f:then>
+                            <f:else>
+                                <f:for each="{item.logo}" as="file">
+                                    <f:image image="{file}" width="240c" height="120c" loading="lazy" decoding="async" alt="{f:if(condition: file.alternative, then: file.alternative, else: item.name)}" class="logo-cloud__logo" />
+                                </f:for>
+                                <span class="logo-cloud__name">{item.name}</span>
+                            </f:else>
+                        </f:if>
+                    </li>
+                </f:for>
+            </ul>
+        </f:if>
+    </div>
+</section>
+</html>
+

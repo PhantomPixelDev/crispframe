@@ -1,0 +1,152 @@
+<?xml version='1.0' encoding='utf-8'?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file datatype="plaintext" original="labels.xlf" source-language="en" date="2026-09-22T20:39:41+00:00" product-name="crispframe/pricing" target-language="de">
+    <header />
+    <body>
+      <trans-unit id="title">
+        <source>Pricing</source>
+        <target>Preise</target>
+      </trans-unit>
+      <trans-unit id="description">
+        <source>Editable service tiers with monthly and yearly prices.</source>
+        <target>Bearbeitbare Leistungspakete mit monatlichen und jährlichen Preisen.</target>
+      </trans-unit>
+      <trans-unit id="headline.label">
+        <source>Headline</source>
+        <target>Überschrift</target>
+      </trans-unit>
+      <trans-unit id="lead.label">
+        <source>Introduction</source>
+        <target>Einleitung</target>
+      </trans-unit>
+      <trans-unit id="tiers.label">
+        <source>Pricing tiers</source>
+        <target>Preispakete</target>
+      </trans-unit>
+      <trans-unit id="tiers.name.label">
+        <source>Tier name</source>
+        <target>Paketname</target>
+      </trans-unit>
+      <trans-unit id="tiers.summary.label">
+        <source>Short description</source>
+        <target>Kurzbeschreibung</target>
+      </trans-unit>
+      <trans-unit id="tiers.monthlyPrice.label">
+        <source>Monthly price</source>
+        <target>Monatlicher Preis</target>
+      </trans-unit>
+      <trans-unit id="tiers.monthlyPrice.description">
+        <source>Include the currency symbol, e.g. €950. Use “On request” if needed.</source>
+        <target>Währungssymbol angeben, z. B. 950 €. Bei Bedarf „Auf Anfrage“ verwenden.</target>
+      </trans-unit>
+      <trans-unit id="tiers.yearlyPrice.label">
+        <source>Price when billed yearly</source>
+        <target>Preis bei jährlicher Abrechnung</target>
+      </trans-unit>
+      <trans-unit id="tiers.yearlyPrice.description">
+        <source>Displayed after the visitor selects Yearly; include the currency symbol.</source>
+        <target>Wird bei jährlicher Abrechnung angezeigt; Währungssymbol angeben.</target>
+      </trans-unit>
+      <trans-unit id="tiers.hideSuffix.label">
+        <source>Hide billing suffix</source>
+        <target>Abrechnungszusatz ausblenden</target>
+      </trans-unit>
+      <trans-unit id="tiers.hideSuffix.description">
+        <source>Enable for custom quotes such as “On request”.</source>
+        <target>Für individuelle Angebote wie „Auf Anfrage“ aktivieren.</target>
+      </trans-unit>
+      <trans-unit id="tiers.features.label">
+        <source>Included features</source>
+        <target>Enthaltene Leistungen</target>
+      </trans-unit>
+      <trans-unit id="tiers.features.description">
+        <source>Use a bulleted list. Keep each benefit short and concrete.</source>
+        <target>Verwenden Sie eine Liste mit kurzen, konkreten Vorteilen.</target>
+      </trans-unit>
+      <trans-unit id="tiers.ctaLabel.label">
+        <source>Button label</source>
+        <target>Schaltflächenbeschriftung</target>
+      </trans-unit>
+      <trans-unit id="tiers.ctaLink.label">
+        <source>Button link</source>
+        <target>Schaltflächenlink</target>
+      </trans-unit>
+      <trans-unit id="tiers.featured.label">
+        <source>Highlight this tier</source>
+        <target>Dieses Paket hervorheben</target>
+      </trans-unit>
+      <trans-unit id="monthlySuffix.label">
+        <source>Monthly price suffix</source>
+        <target>Zusatz zum Monatspreis</target>
+      </trans-unit>
+      <trans-unit id="yearlySuffix.label">
+        <source>Yearly price suffix</source>
+        <target>Zusatz zum Jahrespreis</target>
+      </trans-unit>
+      <trans-unit id="footnote.label">
+        <source>Pricing note</source>
+        <target>Preishinweis</target>
+      </trans-unit>
+      <trans-unit id="footnote.description">
+        <source>Clarify taxes, setup costs or custom quotes.</source>
+        <target>Erläutern Sie Steuern, Einrichtungskosten oder individuelle Angebote.</target>
+      </trans-unit>
+      <trans-unit id="sectionSpacing.label">
+        <source>Section spacing</source>
+        <target>Abschnittsabstand</target>
+      </trans-unit>
+      <trans-unit id="sectionSpacing.items.small.label">
+        <source>Small</source>
+        <target>Klein</target>
+      </trans-unit>
+      <trans-unit id="sectionSpacing.items.default.label">
+        <source>Default</source>
+        <target>Standard</target>
+      </trans-unit>
+      <trans-unit id="sectionSpacing.items.large.label">
+        <source>Large</source>
+        <target>Groß</target>
+      </trans-unit>
+      <trans-unit id="sectionBackground.label">
+        <source>Section background</source>
+        <target>Abschnittshintergrund</target>
+      </trans-unit>
+      <trans-unit id="sectionBackground.items.default.label">
+        <source>Default</source>
+        <target>Standard</target>
+      </trans-unit>
+      <trans-unit id="sectionBackground.items.subtle.label">
+        <source>Subtle</source>
+        <target>Dezent</target>
+      </trans-unit>
+      <trans-unit id="sectionBackground.items.dark.label">
+        <source>Dark</source>
+        <target>Dunkel</target>
+      </trans-unit>
+      <trans-unit id="sectionBackground.items.brand.label">
+        <source>Brand</source>
+        <target>Markenfarbe</target>
+      </trans-unit>
+      <trans-unit id="width.label">
+        <source>Container width</source>
+        <target>Containerbreite</target>
+      </trans-unit>
+      <trans-unit id="width.items.narrow.label">
+        <source>Narrow</source>
+        <target>Schmal</target>
+      </trans-unit>
+      <trans-unit id="width.items.default.label">
+        <source>Default</source>
+        <target>Standard</target>
+      </trans-unit>
+      <trans-unit id="width.items.wide.label">
+        <source>Wide</source>
+        <target>Breit</target>
+      </trans-unit>
+      <trans-unit id="width.items.full.label">
+        <source>Full</source>
+        <target>Volle Breite</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

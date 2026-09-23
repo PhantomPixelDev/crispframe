@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 960" role="img" aria-label="Abstract blue workspace illustration">
+  <defs>
+    <linearGradient id="a" x2="1" y2="1">
+      <stop stop-color="#eff5fc"></stop>
+      <stop offset="1" stop-color="#c8d9ee"></stop>
+    </linearGradient>
+    <linearGradient id="b" x2="0" y2="1">
+      <stop stop-color="#3067b8"></stop>
+      <stop offset="1" stop-color="#123a70"></stop>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="960" fill="url(#a)"></rect>
+  <circle cx="1080" cy="160" r="300" fill="#fff" opacity=".45"></circle>
+  <rect x="125" y="150" width="1030" height="660" rx="32" fill="#fff" opacity=".86"></rect>
+  <rect x="170" y="195" width="940" height="570" rx="18" fill="#e9f0f8"></rect>
+  <rect x="215" y="245" width="335" height="470" rx="16" fill="url(#b)"></rect>
+  <rect x="600" y="245" width="460" height="64" rx="12" fill="#94afcc"></rect>
+  <rect x="600" y="340" width="410" height="22" rx="11" fill="#bed0e4"></rect>
+  <rect x="600" y="385" width="360" height="22" rx="11" fill="#bed0e4"></rect>
+  <rect x="600" y="470" width="205" height="205" rx="16" fill="#a6cae4"></rect>
+  <rect x="835" y="470" width="225" height="205" rx="16" fill="#6f9bbb"></rect>
+</svg>

@@ -1,0 +1,71 @@
+name: crispframe/intro
+title: 'Intro'
+description: 'Centered introductory text with headline, lead paragraph and optional copy.'
+group: Crispframe
+fields:
+  - identifier: headline
+    type: Text
+    label: 'Headline'
+    required: true
+    default: 'Strategy, design and code — under one roof'
+  - identifier: lead
+    type: Textarea
+    label: 'Lead paragraph'
+    description: 'Larger introductory sentence.'
+    default: 'We help mid-market companies modernise their digital presence without the agency overhead.'
+  - identifier: text
+    type: Textarea
+    label: 'Supporting text'
+    description: 'Additional paragraphs. Line breaks are preserved.'
+    default: 'From discovery to launch, one senior team owns the entire journey. No handoffs, no surprises — just measurable progress every sprint.'
+  - identifier: linkLabel
+    type: Text
+    label: 'Button label'
+    default: ''
+  - identifier: link
+    type: Link
+    label: 'Button link'
+    default: ''
+  - identifier: sectionSpacing
+    type: Select
+    renderType: selectSingle
+    label: 'Section spacing'
+    description: 'Vertical spacing before and after the section.'
+    default: 'default'
+    items:
+      - label: 'Small'
+        value: 'small'
+      - label: 'Default'
+        value: 'default'
+      - label: 'Large'
+        value: 'large'
+  - identifier: sectionBackground
+    type: Select
+    renderType: selectSingle
+    label: 'Section background'
+    description: 'Background variant for the section.'
+    default: 'default'
+    items:
+      - label: 'Default'
+        value: 'default'
+      - label: 'Subtle'
+        value: 'subtle'
+      - label: 'Dark'
+        value: 'dark'
+      - label: 'Brand'
+        value: 'brand'
+  - identifier: width
+    type: Select
+    renderType: selectSingle
+    label: 'Container width'
+    description: 'Maximum width of the content container.'
+    default: 'default'
+    items:
+      - label: 'Narrow'
+        value: 'narrow'
+      - label: 'Default'
+        value: 'default'
+      - label: 'Wide'
+        value: 'wide'
+      - label: 'Full'
+        value: 'full'

@@ -1,0 +1,78 @@
+name: crispframe/faq
+title: FAQ
+description: Frequently asked questions rendered as accessible disclosure widgets.
+group: Crispframe
+fields:
+- identifier: headline
+  type: Text
+  label: Headline
+  required: true
+  default: Questions, answered
+- identifier: lead
+  type: Textarea
+  label: Lead paragraph
+  default: Everything you need to know before we start.
+- identifier: items
+  type: Collection
+  label: Questions
+  description: Add up to 8 questions.
+  minitems: 2
+  maxitems: 8
+  fields:
+  - identifier: question
+    type: Text
+    label: Question
+    required: true
+    default: How long does a typical project take?
+    description: 'Placeholder: How long does a typical project take?'
+  - identifier: answer
+    type: Textarea
+    label: Answer
+    required: true
+    default: Discovery takes 2 weeks, build 6–10 weeks. We ship an MVP early and iterate
+      in sprints.
+    description: 'Placeholder: Discovery takes 2 weeks, build 6–10 weeks. We ship
+      an MVP early and iterate in sprints.'
+- identifier: sectionSpacing
+  type: Select
+  renderType: selectSingle
+  label: Section spacing
+  description: Vertical spacing before and after the section.
+  default: default
+  items:
+  - label: Small
+    value: small
+  - label: Default
+    value: default
+  - label: Large
+    value: large
+- identifier: sectionBackground
+  type: Select
+  renderType: selectSingle
+  label: Section background
+  description: Background variant for the section.
+  default: default
+  items:
+  - label: Default
+    value: default
+  - label: Subtle
+    value: subtle
+  - label: Dark
+    value: dark
+  - label: Brand
+    value: brand
+- identifier: width
+  type: Select
+  renderType: selectSingle
+  label: Container width
+  description: Maximum width of the content container.
+  default: default
+  items:
+  - label: Narrow
+    value: narrow
+  - label: Default
+    value: default
+  - label: Wide
+    value: wide
+  - label: Full
+    value: full

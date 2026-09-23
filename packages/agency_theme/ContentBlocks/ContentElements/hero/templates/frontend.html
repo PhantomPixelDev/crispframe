@@ -1,0 +1,43 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:comment>Hero — heading is h1 only when isHero is checked, otherwise h2. Default h2 is safe for a11y.</f:comment>
+<section class="section section--{data.sectionBackground} hero-section" data-spacing="{data.sectionSpacing}">
+    <div class="container container--{data.width}">
+        <div class="hero">
+            <div class="hero__content">
+                <f:if condition="{data.eyebrow}"><p class="hero__eyebrow">{data.eyebrow}</p></f:if>
+                <f:if condition="{data.isHero}">
+                    <f:then><h1 class="hero__title">{data.headline}</h1></f:then>
+                    <f:else><h2 class="hero__title">{data.headline}</h2></f:else>
+                </f:if>
+                <f:if condition="{data.subheadline}"><p class="hero__lead">{data.subheadline}</p></f:if>
+                <f:if condition="({data.primaryLink.url} && {data.primaryLinkLabel}) || ({data.secondaryLink.url} && {data.secondaryLinkLabel})">
+                    <div class="hero__actions">
+                        <f:if condition="{data.primaryLink.url} && {data.primaryLinkLabel}">
+                            <f:link.typolink parameter="{data.primaryLink}" class="btn btn--primary">{data.primaryLinkLabel}</f:link.typolink>
+                        </f:if>
+                        <f:if condition="{data.secondaryLink.url} && {data.secondaryLinkLabel}">
+                            <f:link.typolink parameter="{data.secondaryLink}" class="btn btn--secondary">{data.secondaryLinkLabel}</f:link.typolink>
+                        </f:if>
+                    </div>
+                </f:if>
+            </div>
+            <f:if condition="{data.image}">
+                <f:then>
+                    <div class="hero__media">
+                        <f:for each="{data.image}" as="file">
+                            <f:image image="{file}" width="1280c" height="960c" loading="eager" decoding="async" fetchpriority="high" alt="{f:if(condition: data.imageAlt, then: data.imageAlt, else: file.alternative)}" class="hero__image" />
+                        </f:for>
+                    </div>
+                </f:then>
+                <f:else>
+                    <div class="hero__art" aria-hidden="true">
+                        <span class="hero__art-ring"></span>
+                        <span class="hero__art-card hero__art-card--back"></span>
+                        <span class="hero__art-card hero__art-card--front"></span>
+                    </div>
+                </f:else>
+            </f:if>
+        </div>
+    </div>
+</section>
+</html>

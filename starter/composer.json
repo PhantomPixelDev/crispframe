@@ -1,0 +1,27 @@
+{
+    "name": "crispframe/agency-starter",
+    "description": "Clean TYPO3 13.4 starter project for Crispframe",
+    "type": "project",
+    "license": "GPL-2.0-or-later",
+    "require": {
+        "crispframe/agency-theme": "^1.0",
+        "typo3/cms-backend": "^13.4",
+        "typo3/cms-core": "^13.4",
+        "typo3/cms-extensionmanager": "^13.4",
+        "typo3/cms-filelist": "^13.4",
+        "typo3/cms-install": "^13.4",
+        "typo3/cms-redirects": "^13.4"
+    },
+    "extra": {
+        "typo3/cms": {
+            "web-dir": "public"
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "typo3/class-alias-loader": true,
+            "typo3/cms-composer-installers": true
+        },
+        "sort-packages": true
+    }
+}

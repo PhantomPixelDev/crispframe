@@ -1,0 +1,24 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<section class="section section--{data.sectionBackground}" data-spacing="{data.sectionSpacing}">
+    <div class="container container--{data.width}">
+        <header class="section-header">
+            <h2 class="section-header__title">{data.headline}</h2>
+            <f:if condition="{data.lead}"><p class="section-header__lead">{data.lead}</p></f:if>
+        </header>
+        <f:if condition="{data.items}">
+            <ul class="cards cards--features" role="list">
+                <f:for each="{data.items}" as="item">
+                    <li class="card card--feature">
+                        <f:if condition="{item.iconFile}">
+                            <f:then><f:for each="{item.iconFile}" as="iconFile"><f:image image="{iconFile}" width="24" height="24" alt="" class="card__icon card__icon--custom" /></f:for></f:then>
+                            <f:else><f:if condition="{item.icon} != 'none'"><span class="card__icon"><svg width="24" height="24" aria-hidden="true" focusable="false"><use href="{f:uri.resource(path: 'Icons/sprite.svg', extensionName: 'AgencyTheme')}#icon-{item.icon}" /></svg></span></f:if></f:else>
+                        </f:if>
+                        <h3 class="card__title">{item.title}</h3>
+                        <f:if condition="{item.description}"><p class="card__text">{item.description}</p></f:if>
+                    </li>
+                </f:for>
+            </ul>
+        </f:if>
+    </div>
+</section>
+</html>

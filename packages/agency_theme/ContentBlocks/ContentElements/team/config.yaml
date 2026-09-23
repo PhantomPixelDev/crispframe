@@ -1,0 +1,94 @@
+name: crispframe/team
+title: Team
+description: Team members with photo, role and short bio.
+group: Crispframe
+fields:
+- identifier: headline
+  type: Text
+  label: Headline
+  required: true
+  default: The people behind Crispframe
+- identifier: lead
+  type: Textarea
+  label: Lead paragraph
+  default: Small senior team, low overhead, high ownership.
+- identifier: items
+  type: Collection
+  label: Members
+  description: Add 2 to 6 team members.
+  minitems: 2
+  maxitems: 6
+  fields:
+  - identifier: name
+    type: Text
+    label: Name
+    required: true
+    default: Maya Keller
+    description: 'Placeholder: Maya Keller'
+  - identifier: role
+    type: Text
+    label: Role
+    required: true
+    default: Managing Director
+    description: 'Placeholder: Managing Director'
+  - identifier: bio
+    type: Textarea
+    label: Short bio
+    default: Product strategist with 15 years in digital transformation.
+    description: 'Placeholder: Product strategist with 15 years in digital transformation.'
+  - identifier: image
+    type: File
+    label: Portrait
+    allowed: 'common-image-types'
+  - identifier: linkLabel
+    type: Text
+    label: Link label
+    default: Profile
+    description: 'Placeholder: Profile — shown on the team card button'
+  - identifier: link
+    type: Link
+    label: Profile link
+    description: Optional — e.g. LinkedIn.
+- identifier: sectionSpacing
+  type: Select
+  renderType: selectSingle
+  label: Section spacing
+  description: Vertical spacing before and after the section.
+  default: default
+  items:
+  - label: Small
+    value: small
+  - label: Default
+    value: default
+  - label: Large
+    value: large
+- identifier: sectionBackground
+  type: Select
+  renderType: selectSingle
+  label: Section background
+  description: Background variant for the section.
+  default: default
+  items:
+  - label: Default
+    value: default
+  - label: Subtle
+    value: subtle
+  - label: Dark
+    value: dark
+  - label: Brand
+    value: brand
+- identifier: width
+  type: Select
+  renderType: selectSingle
+  label: Container width
+  description: Maximum width of the content container.
+  default: default
+  items:
+  - label: Narrow
+    value: narrow
+  - label: Default
+    value: default
+  - label: Wide
+    value: wide
+  - label: Full
+    value: full

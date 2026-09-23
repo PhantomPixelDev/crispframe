@@ -1,0 +1,78 @@
+name: crispframe/process
+title: Process
+description: Step-by-step process from discovery to launch.
+group: Crispframe
+fields:
+- identifier: headline
+  type: Text
+  label: Headline
+  required: true
+  default: How we work
+- identifier: lead
+  type: Textarea
+  label: Lead paragraph
+  default: A proven five-step process — transparent, collaborative and built for predictable
+    delivery.
+- identifier: items
+  type: Collection
+  label: Steps
+  description: Add 3 to 6 steps.
+  minitems: 3
+  maxitems: 6
+  fields:
+  - identifier: title
+    type: Text
+    label: Step title
+    required: true
+    default: Discovery
+    description: 'Placeholder: Discovery'
+  - identifier: description
+    type: Textarea
+    label: Description
+    required: true
+    default: Workshops and research to define goals and success metrics.
+    description: 'Placeholder: Workshops and research to define goals and success
+      metrics.'
+- identifier: sectionSpacing
+  type: Select
+  renderType: selectSingle
+  label: Section spacing
+  description: Vertical spacing before and after the section.
+  default: default
+  items:
+  - label: Small
+    value: small
+  - label: Default
+    value: default
+  - label: Large
+    value: large
+- identifier: sectionBackground
+  type: Select
+  renderType: selectSingle
+  label: Section background
+  description: Background variant for the section.
+  default: default
+  items:
+  - label: Default
+    value: default
+  - label: Subtle
+    value: subtle
+  - label: Dark
+    value: dark
+  - label: Brand
+    value: brand
+- identifier: width
+  type: Select
+  renderType: selectSingle
+  label: Container width
+  description: Maximum width of the content container.
+  default: default
+  items:
+  - label: Narrow
+    value: narrow
+  - label: Default
+    value: default
+  - label: Wide
+    value: wide
+  - label: Full
+    value: full

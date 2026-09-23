@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff version="1.2"><file source-language="en" datatype="plaintext" original="messages" product-name="agency_theme"><body>
+<trans-unit id="crispframe-contact.element.crispframe-contact.renderingOptions.submitButtonLabel"><source>Send inquiry</source></trans-unit>
+<trans-unit id="crispframe-contact.element.contact-page.properties.label"><source>Contact</source></trans-unit>
+<trans-unit id="crispframe-contact.element.name.properties.label"><source>Name</source></trans-unit>
+<trans-unit id="crispframe-contact.element.company.properties.label"><source>Company (optional)</source></trans-unit>
+<trans-unit id="crispframe-contact.element.email.properties.label"><source>Email</source></trans-unit>
+<trans-unit id="crispframe-contact.element.message.properties.label"><source>How can we help?</source></trans-unit>
+<trans-unit id="crispframe-contact.finisher.Confirmation.message"><source>Thank you. Your inquiry has been sent.</source></trans-unit>
+<trans-unit id="crispframe-contact.finisher.EmailToReceiver.subject"><source>Website inquiry</source></trans-unit>
+</body></file></xliff>

@@ -1,0 +1,103 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<!--
+  Partial: Site/Footer — 4 columns (brand, nav, services, contact) + legal row.
+  Reads from site.settings.* (settings.definitions source of truth).
+-->
+<footer class="site-footer" role="contentinfo">
+    <div class="site-footer__inner">
+        <f:if condition="{site.settings.footer.showCta} && {site.settings.cta.primaryLink} && {site.settings.cta.primaryLink} != '#' && {site.settings.cta.primaryLabel}">
+            <div class="site-footer__prelude">
+                <div>
+                    <h2 class="site-footer__prelude-title">{site.settings.footer.ctaHeading}</h2>
+                    <f:if condition="{site.settings.footer.ctaText}"><p class="site-footer__prelude-text">{site.settings.footer.ctaText}</p></f:if>
+                </div>
+                <div class="site-footer__prelude-actions">
+                    <f:link.typolink parameter="{site.settings.cta.primaryLink}" class="btn site-footer__prelude-primary">{site.settings.cta.primaryLabel}</f:link.typolink>
+                    <f:if condition="{site.settings.cta.secondaryLink} && {site.settings.cta.secondaryLink} != '#' && {site.settings.cta.secondaryLabel}">
+                        <f:link.typolink parameter="{site.settings.cta.secondaryLink}" class="btn site-footer__prelude-secondary">{site.settings.cta.secondaryLabel}</f:link.typolink>
+                    </f:if>
+                </div>
+            </div>
+        </f:if>
+        <div class="site-footer__grid site-footer__cols">
+            <!-- Col 1: Brand + blurb + socials -->
+            <div class="site-footer__col site-footer__col--brand site-footer__brand">
+                <a href="{f:uri.page(pageUid: site.rootPageId)}" class="site-footer__logo" aria-label="{site.settings.brand.companyName}">
+                    <span class="site-footer__logotype">{f:if(condition: site.settings.brand.companyName, then: site.settings.brand.companyName, else: 'Your Company')}</span>
+                </a>
+                <f:if condition="{site.settings.brand.tagline}">
+                    <p class="site-footer__tagline site-footer__blurb">{site.settings.brand.tagline}</p>
+                </f:if>
+                <f:if condition="{site.settings.footer.text}">
+                    <p class="site-footer__blurb">{site.settings.footer.text}</p>
+                </f:if>
+                <f:if condition="({site.settings.social.linkedin} && {site.settings.social.linkedin} != '#') || ({site.settings.social.github} && {site.settings.social.github} != '#') || ({site.settings.social.x} && {site.settings.social.x} != '#') || ({site.settings.social.instagram} && {site.settings.social.instagram} != '#') || ({site.settings.social.youtube} && {site.settings.social.youtube} != '#')">
+                <ul class="site-footer__socials" role="list" aria-label="{f:translate(key: 'LLL:EXT:agency_theme/Resources/Private/Language/locallang.xlf:site.social')}">
+                    <f:if condition="{site.settings.social.linkedin} && {site.settings.social.linkedin} != '#'"><li><a href="{site.settings.social.linkedin}" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="site-footer__social-link"><f:render partial="Components/Icon" arguments="{name: 'linkedin', decorative: 1, size: 20}" /></a></li></f:if>
+                    <f:if condition="{site.settings.social.github} && {site.settings.social.github} != '#'"><li><a href="{site.settings.social.github}" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="site-footer__social-link"><f:render partial="Components/Icon" arguments="{name: 'github', decorative: 1, size: 20}" /></a></li></f:if>
+                    <f:if condition="{site.settings.social.x} && {site.settings.social.x} != '#'"><li><a href="{site.settings.social.x}" target="_blank" rel="noopener noreferrer" aria-label="X" class="site-footer__social-link"><f:render partial="Components/Icon" arguments="{name: 'x', decorative: 1, size: 20}" /></a></li></f:if>
+                    <f:if condition="{site.settings.social.instagram} && {site.settings.social.instagram} != '#'"><li><a href="{site.settings.social.instagram}" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="site-footer__social-link"><f:render partial="Components/Icon" arguments="{name: 'instagram', decorative: 1, size: 20}" /></a></li></f:if>
+                    <f:if condition="{site.settings.social.youtube} && {site.settings.social.youtube} != '#'"><li><a href="{site.settings.social.youtube}" target="_blank" rel="noopener noreferrer" aria-label="YouTube" class="site-footer__social-link"><f:render partial="Components/Icon" arguments="{name: 'youtube', decorative: 1, size: 20}" /></a></li></f:if>
+                </ul>
+                </f:if>
+            </div>
+
+            <!-- Col 2: Navigation -->
+            <f:if condition="{menuMain}">
+            <nav class="site-footer__col site-footer__col--nav" aria-label="{f:translate(key: 'LLL:EXT:agency_theme/Resources/Private/Language/locallang.xlf:site.footerNav')}">
+                <h2 class="site-footer__heading"><f:translate key="LLL:EXT:agency_theme/Resources/Private/Language/locallang.xlf:site.navigate" /></h2>
+                    <ul class="site-footer__list site-footer__nav" role="list">
+                        <f:for each="{menuMain}" as="item">
+                            <li><a href="{item.link}" class="site-footer__link">{item.title}</a></li>
+                        </f:for>
+                    </ul>
+            </nav>
+            </f:if>
+
+            <f:if condition="{menuServices}">
+                <nav class="site-footer__col site-footer__col--services" aria-label="{f:translate(key: 'LLL:EXT:agency_theme/Resources/Private/Language/locallang.xlf:site.services')}">
+                    <h2 class="site-footer__heading"><f:translate key="LLL:EXT:agency_theme/Resources/Private/Language/locallang.xlf:site.services" /></h2>
+                    <ul class="site-footer__list site-footer__nav" role="list">
+                        <f:for each="{menuServices}" as="svc"><li><a href="{svc.link}" class="site-footer__link">{svc.title}</a></li></f:for>
+                    </ul>
+                </nav>
+            </f:if>
+
+            <!-- Col 4: Contact -->
+            <f:if condition="{site.settings.contact.email} || {site.settings.contact.phone} || {site.settings.contact.address}">
+            <div class="site-footer__col site-footer__col--contact">
+                <h2 class="site-footer__heading"><f:translate key="LLL:EXT:agency_theme/Resources/Private/Language/locallang.xlf:site.contact" /></h2>
+                <address class="site-footer__address">
+                    <f:if condition="{site.settings.contact.email}">
+                        <p><a href="mailto:{site.settings.contact.email}" class="site-footer__link">{site.settings.contact.email}</a></p>
+                    </f:if>
+                    <f:if condition="{site.settings.contact.phone}">
+                        <p><a href="tel:{site.settings.contact.phone}" class="site-footer__link">{site.settings.contact.phone}</a></p>
+                    </f:if>
+                    <f:if condition="{site.settings.contact.address}">
+                        <p class="site-footer__text"><f:format.nl2br>{site.settings.contact.address}</f:format.nl2br></p>
+                    </f:if>
+                </address>
+            </div>
+            </f:if>
+        </div>
+
+        <!-- Legal row — supports both __legal and __bottom for CSS alias -->
+        <div class="site-footer__legal site-footer__bottom">
+            <p class="site-footer__copyright">
+                &copy; <span data-current-year><f:format.date format="Y">now</f:format.date></span> {f:if(condition: site.settings.brand.companyName, then: site.settings.brand.companyName, else: 'Your Company')}. <f:translate key="LLL:EXT:agency_theme/Resources/Private/Language/locallang.xlf:site.rights" />
+            </p>
+            <f:if condition="({site.settings.footer.privacyLink} && {site.settings.footer.privacyLink} != '/' && {site.settings.footer.privacyLink} != '#') || ({site.settings.footer.legalLink} && {site.settings.footer.legalLink} != '/' && {site.settings.footer.legalLink} != '#')">
+            <ul class="site-footer__legal-links" role="list">
+                <f:if condition="{site.settings.footer.privacyLink} && {site.settings.footer.privacyLink} != '/' && {site.settings.footer.privacyLink} != '#'">
+                    <li><a href="{site.settings.footer.privacyLink}" class="site-footer__link site-footer__link--legal"><f:translate key="LLL:EXT:agency_theme/Resources/Private/Language/locallang.xlf:site.privacy" /></a></li>
+                </f:if>
+                <f:if condition="{site.settings.footer.legalLink} && {site.settings.footer.legalLink} != '/' && {site.settings.footer.legalLink} != '#'">
+                    <li><a href="{site.settings.footer.legalLink}" class="site-footer__link site-footer__link--legal"><f:translate key="LLL:EXT:agency_theme/Resources/Private/Language/locallang.xlf:site.imprint" /></a></li>
+                </f:if>
+            </ul>
+            </f:if>
+        </div>
+    </div>
+</footer>
+</html>

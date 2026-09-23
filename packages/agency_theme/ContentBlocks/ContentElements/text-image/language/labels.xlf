@@ -1,0 +1,95 @@
+<?xml version="1.0"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file datatype="plaintext" original="labels.xlf" source-language="en" date="2026-09-22T20:39:42+00:00" product-name="crispframe/text-image">
+    <header/>
+    <body>
+      <trans-unit id="title">
+        <source>Text with image</source>
+      </trans-unit>
+      <trans-unit id="description">
+        <source>Two-column text and image combination with configurable image position.</source>
+      </trans-unit>
+      <trans-unit id="headline.label">
+        <source>Headline</source>
+      </trans-unit>
+      <trans-unit id="lead.label">
+        <source>Lead paragraph</source>
+      </trans-unit>
+      <trans-unit id="text.label">
+        <source>Body text</source>
+      </trans-unit>
+      <trans-unit id="image.label">
+        <source>Image</source>
+      </trans-unit>
+      <trans-unit id="imageAlt.label">
+        <source>Image alt text override</source>
+      </trans-unit>
+      <trans-unit id="imagePosition.label">
+        <source>Image position</source>
+      </trans-unit>
+      <trans-unit id="imagePosition.items.left.label">
+        <source>Image on left</source>
+      </trans-unit>
+      <trans-unit id="imagePosition.items.right.label">
+        <source>Image on right</source>
+      </trans-unit>
+      <trans-unit id="linkLabel.label">
+        <source>Button label</source>
+      </trans-unit>
+      <trans-unit id="link.label">
+        <source>Button link</source>
+      </trans-unit>
+      <trans-unit id="sectionSpacing.label">
+        <source>Section spacing</source>
+      </trans-unit>
+      <trans-unit id="sectionSpacing.description">
+        <source>Vertical spacing before and after the section.</source>
+      </trans-unit>
+      <trans-unit id="sectionSpacing.items.small.label">
+        <source>Small</source>
+      </trans-unit>
+      <trans-unit id="sectionSpacing.items.default.label">
+        <source>Default</source>
+      </trans-unit>
+      <trans-unit id="sectionSpacing.items.large.label">
+        <source>Large</source>
+      </trans-unit>
+      <trans-unit id="sectionBackground.label">
+        <source>Section background</source>
+      </trans-unit>
+      <trans-unit id="sectionBackground.description">
+        <source>Background variant for the section.</source>
+      </trans-unit>
+      <trans-unit id="sectionBackground.items.default.label">
+        <source>Default</source>
+      </trans-unit>
+      <trans-unit id="sectionBackground.items.subtle.label">
+        <source>Subtle</source>
+      </trans-unit>
+      <trans-unit id="sectionBackground.items.dark.label">
+        <source>Dark</source>
+      </trans-unit>
+      <trans-unit id="sectionBackground.items.brand.label">
+        <source>Brand</source>
+      </trans-unit>
+      <trans-unit id="width.label">
+        <source>Container width</source>
+      </trans-unit>
+      <trans-unit id="width.description">
+        <source>Maximum width of the content container.</source>
+      </trans-unit>
+      <trans-unit id="width.items.narrow.label">
+        <source>Narrow</source>
+      </trans-unit>
+      <trans-unit id="width.items.default.label">
+        <source>Default</source>
+      </trans-unit>
+      <trans-unit id="width.items.wide.label">
+        <source>Wide</source>
+      </trans-unit>
+      <trans-unit id="width.items.full.label">
+        <source>Full</source>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

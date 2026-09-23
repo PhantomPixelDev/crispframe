@@ -1,0 +1,28 @@
+base: '/'
+dependencies:
+  - crispframe/agency-theme
+errorHandling:
+  - errorCode: 404
+    errorHandler: Fluid
+    errorFluidTemplate: 'EXT:agency_theme/Resources/Private/Error/404.html'
+languages:
+  - title: English
+    enabled: true
+    languageId: 0
+    base: /
+    locale: en_US.UTF-8
+    navigationTitle: English
+    hreflang: en
+    direction: ltr
+    flag: en
+  - title: Deutsch
+    enabled: true
+    languageId: 1
+    base: /de/
+    locale: de_DE.UTF-8
+    navigationTitle: Deutsch
+    hreflang: de
+    direction: ltr
+    flag: de
+rootPageId: 1
+websiteTitle: 'Your Company'

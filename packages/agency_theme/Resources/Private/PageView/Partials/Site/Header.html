@@ -1,0 +1,61 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<!--
+  Partial: Site/Header
+  Single source header — logo, primary nav, CTA, mobile toggle.
+  Reads from site.settings.* (settings.definitions is source of truth) and menuMain.
+-->
+<f:variable name="mobileNavLabel" value="{f:translate(key: 'LLL:EXT:agency_theme/Resources/Private/Language/locallang.xlf:site.mobile')}" />
+<header class="site-header" id="site-header" role="banner">
+    <div class="site-header__inner">
+        <a href="{f:uri.page(pageUid: site.rootPageId)}" class="site-header__brand" aria-label="{site.settings.brand.companyName}">
+            <f:if condition="{site.settings.brand.logo}">
+                <f:then>
+                    <img src="{site.settings.brand.logo}" alt="{site.settings.brand.logoAlt}" class="site-header__logo" width="160" height="40" loading="eager" decoding="async" />
+                </f:then>
+                <f:else>
+                    <span class="site-header__logomark"><f:render partial="Components/Icon" arguments="{name: 'logomark', size: 28, decorative: 1}" /></span>
+                    <span class="site-header__logotype">{f:if(condition: site.settings.brand.companyName, then: site.settings.brand.companyName, else: 'Your Company')}</span>
+                </f:else>
+            </f:if>
+        </a>
+
+        <div class="site-header__nav" id="site-header-nav">
+            <f:render partial="Site/Navigation" arguments="{menuMain: menuMain}" />
+        </div>
+
+        <div class="site-header__actions cluster">
+            <f:if condition="{languageNavigation.1}">
+                <nav class="language-switch" aria-label="{f:translate(key: 'LLL:EXT:agency_theme/Resources/Private/Language/locallang.xlf:site.languages')}">
+                    <f:for each="{languageNavigation}" as="language">
+                        <f:if condition="{language.available}"><f:then><a href="{language.link}" hreflang="{language.hreflang}" lang="{language.hreflang}" aria-current="{f:if(condition: language.active, then: 'page')}" class="{f:if(condition: language.active, then: 'is-active')}">{language.navigationTitle}</a></f:then><f:else><span aria-disabled="true">{language.navigationTitle}</span></f:else></f:if>
+                    </f:for>
+                </nav>
+            </f:if>
+            <f:if condition="{site.settings.cta.showHeader} && {site.settings.cta.primaryLabel} && {site.settings.cta.primaryLink} && {site.settings.cta.primaryLink} != '#'">
+                    <f:link.typolink parameter="{site.settings.cta.primaryLink}" class="btn btn--primary btn--sm site-header__cta">{site.settings.cta.primaryLabel}</f:link.typolink>
+            </f:if>
+
+            <button
+                type="button"
+                class="nav-toggle"
+                id="nav-toggle"
+                aria-expanded="false"
+                aria-controls="mobile-menu"
+                aria-label="{f:translate(key: 'LLL:EXT:agency_theme/Resources/Private/Language/locallang.xlf:site.toggleMenu')}"
+            >
+                <span class="nav-toggle__bar" aria-hidden="true"></span>
+                <span class="visually-hidden nav-toggle__label"><f:translate key="LLL:EXT:agency_theme/Resources/Private/Language/locallang.xlf:site.menu" /></span>
+            </button>
+        </div>
+    </div>
+
+    <div class="site-header__mobile" id="mobile-menu" hidden>
+        <f:render partial="Site/Navigation" arguments="{menuMain: menuMain, modifierClass: 'site-nav--mobile', ariaLabel: mobileNavLabel}" />
+        <f:if condition="{site.settings.cta.showHeader} && {site.settings.cta.primaryLabel} && {site.settings.cta.primaryLink} && {site.settings.cta.primaryLink} != '#'">
+            <div class="site-header__mobile-cta">
+                <f:link.typolink parameter="{site.settings.cta.primaryLink}" class="btn btn--primary btn--block">{site.settings.cta.primaryLabel}</f:link.typolink>
+            </div>
+        </f:if>
+    </div>
+</header>
+</html>

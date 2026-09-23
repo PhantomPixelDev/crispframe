@@ -1,0 +1,76 @@
+name: crispframe/stats
+title: Stats
+description: Key figures as a definition list. Use for proof points and credibility.
+group: Crispframe
+fields:
+- identifier: headline
+  type: Text
+  label: Headline
+  required: true
+  default: Results that speak for themselves
+- identifier: lead
+  type: Textarea
+  label: Lead paragraph
+  default: We measure success in shipped products and lasting partnerships.
+- identifier: items
+  type: Collection
+  label: Statistics
+  description: Add 2 to 4 statistics.
+  minitems: 2
+  maxitems: 4
+  fields:
+  - identifier: value
+    type: Text
+    label: Value
+    description: e.g. 120+, 98%, 4.9/5
+    required: true
+    default: 120+
+  - identifier: label
+    type: Text
+    label: Label
+    description: What the number describes.
+    required: true
+    default: projects shipped
+- identifier: sectionSpacing
+  type: Select
+  renderType: selectSingle
+  label: Section spacing
+  description: Vertical spacing before and after the section.
+  default: default
+  items:
+  - label: Small
+    value: small
+  - label: Default
+    value: default
+  - label: Large
+    value: large
+- identifier: sectionBackground
+  type: Select
+  renderType: selectSingle
+  label: Section background
+  description: Background variant for the section.
+  default: default
+  items:
+  - label: Default
+    value: default
+  - label: Subtle
+    value: subtle
+  - label: Dark
+    value: dark
+  - label: Brand
+    value: brand
+- identifier: width
+  type: Select
+  renderType: selectSingle
+  label: Container width
+  description: Maximum width of the content container.
+  default: default
+  items:
+  - label: Narrow
+    value: narrow
+  - label: Default
+    value: default
+  - label: Wide
+    value: wide
+  - label: Full
+    value: full

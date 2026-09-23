@@ -1,0 +1,96 @@
+name: crispframe/pricing
+title: Pricing
+description: Editable service tiers with monthly and yearly prices.
+group: Crispframe
+fields:
+  - identifier: headline
+    type: Text
+    label: Headline
+    required: true
+    default: Choose the right level of support
+  - identifier: lead
+    type: Textarea
+    label: Introduction
+  - identifier: tiers
+    type: Collection
+    label: Pricing tiers
+    minitems: 2
+    maxitems: 4
+    fields:
+      - identifier: name
+        type: Text
+        label: Tier name
+        required: true
+      - identifier: summary
+        type: Textarea
+        label: Short description
+      - identifier: monthlyPrice
+        type: Text
+        label: Monthly price
+        description: Include the currency symbol, e.g. €950. Use “On request” if needed.
+        required: true
+      - identifier: yearlyPrice
+        type: Text
+        label: Price when billed yearly
+        description: Displayed after the visitor selects Yearly; include the currency symbol.
+        required: true
+      - identifier: hideSuffix
+        type: Checkbox
+        label: Hide billing suffix
+        description: Enable for custom quotes such as “On request”.
+      - identifier: features
+        type: Textarea
+        enableRichtext: true
+        label: Included features
+        description: Use a bulleted list. Keep each benefit short and concrete.
+      - identifier: ctaLabel
+        type: Text
+        label: Button label
+        default: Get in touch
+      - identifier: ctaLink
+        type: Link
+        label: Button link
+      - identifier: featured
+        type: Checkbox
+        label: Highlight this tier
+  - identifier: monthlySuffix
+    type: Text
+    label: Monthly price suffix
+    default: / month
+  - identifier: yearlySuffix
+    type: Text
+    label: Yearly price suffix
+    default: / month, billed yearly
+  - identifier: footnote
+    type: Textarea
+    label: Pricing note
+    description: Clarify taxes, setup costs or custom quotes.
+  - identifier: sectionSpacing
+    type: Select
+    renderType: selectSingle
+    label: Section spacing
+    default: default
+    items:
+      - { label: Small, value: small }
+      - { label: Default, value: default }
+      - { label: Large, value: large }
+  - identifier: sectionBackground
+    type: Select
+    renderType: selectSingle
+    label: Section background
+    default: default
+    items:
+      - { label: Default, value: default }
+      - { label: Subtle, value: subtle }
+      - { label: Dark, value: dark }
+      - { label: Brand, value: brand }
+  - identifier: width
+    type: Select
+    renderType: selectSingle
+    label: Container width
+    default: default
+    items:
+      - { label: Narrow, value: narrow }
+      - { label: Default, value: default }
+      - { label: Wide, value: wide }
+      - { label: Full, value: full }

@@ -1,0 +1,10 @@
+/* utilities.css — Accessibility helpers | Depends on tokens.css
+   .visually-hidden/.sr-only + --focusable | .skip-link | .measure | .text-muted | .truncate | .hidden */
+.visually-hidden,.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.visually-hidden--focusable:focus,.visually-hidden--focusable:focus-visible,.sr-only--focusable:focus,.sr-only--focusable:focus-visible{position:static;width:auto;height:auto;margin:0;overflow:visible;clip:auto;white-space:normal}
+.skip-link{position:absolute;top:var(--space-sm);inset-inline-start:var(--space-sm);z-index:var(--z-overlay);padding:.6rem 1rem;font-size:var(--text-sm);font-weight:var(--font-weight-medium);color:#fff;background:var(--color-dark);border-radius:var(--radius-sm);text-decoration:none;transform:translateY(-150%);transition:transform var(--transition-fast)}
+.skip-link:focus,.skip-link:focus-visible{transform:translateY(0);outline:2px solid var(--color-focus);outline-offset:2px}
+.measure{max-width:var(--measure)}
+.text-muted{color:var(--color-text-muted)}
+.truncate{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.hidden{display:none}

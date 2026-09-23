@@ -1,0 +1,148 @@
+<?xml version='1.0' encoding='utf-8'?>
+<xliff version="1.2">
+  <file datatype="plaintext" original="labels.xlf" source-language="en" product-name="crispframe/agency-theme">
+    <body>
+      <trans-unit id="label">
+        <source>Crispframe Agency Theme</source>
+      </trans-unit>
+      <trans-unit id="categories.brand">
+        <source>Brand</source>
+      </trans-unit>
+      <trans-unit id="categories.contact">
+        <source>Contact</source>
+      </trans-unit>
+      <trans-unit id="categories.social">
+        <source>Social</source>
+      </trans-unit>
+      <trans-unit id="categories.footer">
+        <source>Footer</source>
+      </trans-unit>
+      <trans-unit id="categories.cta">
+        <source>Call to Action</source>
+      </trans-unit>
+      <trans-unit id="categories.styles">
+        <source>Styles</source>
+      </trans-unit>
+      <trans-unit id="settings.brand.companyName">
+        <source>Company name</source>
+      </trans-unit>
+      <trans-unit id="settings.description.brand.companyName">
+        <source>Displayed in header, footer and meta fallbacks.</source>
+      </trans-unit>
+      <trans-unit id="settings.brand.tagline">
+        <source>Tagline</source>
+      </trans-unit>
+      <trans-unit id="settings.description.brand.tagline">
+        <source>Short brand statement used in hero and footer.</source>
+      </trans-unit>
+      <trans-unit id="settings.brand.logo">
+        <source>Logo</source>
+      </trans-unit>
+      <trans-unit id="settings.description.brand.logo">
+        <source>Primary brand mark. SVG preferred.</source>
+      </trans-unit>
+      <trans-unit id="settings.brand.logoAlt">
+        <source>Logo alt text</source>
+      </trans-unit>
+      <trans-unit id="settings.contact.email">
+        <source>Public email</source>
+      </trans-unit>
+      <trans-unit id="settings.contact.phone">
+        <source>Phone</source>
+      </trans-unit>
+      <trans-unit id="settings.description.contact.phone">
+        <source>E.164 preferred, e.g. +49 30 000000.</source>
+      </trans-unit>
+      <trans-unit id="settings.contact.address">
+        <source>Address</source>
+      </trans-unit>
+      <trans-unit id="settings.description.contact.address">
+        <source>Single-line or multiline postal address.</source>
+      </trans-unit>
+      <trans-unit id="settings.social.linkedin">
+        <source>LinkedIn URL</source>
+      </trans-unit>
+      <trans-unit id="settings.social.instagram">
+        <source>Instagram URL</source>
+      </trans-unit>
+      <trans-unit id="settings.social.github">
+        <source>GitHub URL</source>
+      </trans-unit>
+      <trans-unit id="settings.social.x">
+        <source>X / Twitter URL</source>
+      </trans-unit>
+      <trans-unit id="settings.social.youtube">
+        <source>YouTube URL</source>
+      </trans-unit>
+      <trans-unit id="settings.footer.text">
+        <source>Footer text</source>
+      </trans-unit>
+      <trans-unit id="settings.description.footer.text">
+        <source>Copyright / colophon line rendered in the footer.</source>
+      </trans-unit>
+      <trans-unit id="settings.footer.legalLink">
+        <source>Legal notice link</source>
+      </trans-unit>
+      <trans-unit id="settings.footer.privacyLink">
+        <source>Privacy policy link</source>
+      </trans-unit>
+      <trans-unit id="settings.footer.servicesParent">
+        <source>Services parent page UID</source>
+      </trans-unit>
+      <trans-unit id="settings.description.footer.servicesParent">
+        <source>Page whose children populate the footer Services column. 0 disables the column (default). Set to a page UID (e.g. Services page) to enable.</source>
+      </trans-unit>
+      <trans-unit id="settings.footer.showCta">
+        <source>Show footer call to action</source>
+      </trans-unit>
+      <trans-unit id="settings.footer.ctaHeading">
+        <source>Footer call to action heading</source>
+      </trans-unit>
+      <trans-unit id="settings.footer.ctaText">
+        <source>Footer call to action text</source>
+      </trans-unit>
+      <trans-unit id="settings.cta.primaryLabel">
+        <source>Primary CTA label</source>
+      </trans-unit>
+      <trans-unit id="settings.cta.primaryLink">
+        <source>Primary CTA link</source>
+      </trans-unit>
+      <trans-unit id="settings.cta.secondaryLabel">
+        <source>Secondary CTA label</source>
+      </trans-unit>
+      <trans-unit id="settings.cta.secondaryLink">
+        <source>Secondary CTA link</source>
+      </trans-unit>
+      <trans-unit id="settings.styles.contentWidth">
+        <source>Content width</source>
+      </trans-unit>
+      <trans-unit id="settings.description.styles.contentWidth">
+        <source>Maximum width of the main content area.</source>
+      </trans-unit>
+      <trans-unit id="settings.styles.palette">
+        <source>Colour palette</source>
+      </trans-unit>
+      <trans-unit id="settings.styles.typeScale">
+        <source>Type scale</source>
+      </trans-unit>
+      <trans-unit id="settings.styles.corners">
+        <source>Corner style</source>
+      </trans-unit>
+      <trans-unit id="settings.styles.spacing">
+        <source>Section spacing</source>
+      </trans-unit>
+      <trans-unit id="settings.styles.stickyHeader">
+        <source>Sticky header</source>
+      </trans-unit>
+      <trans-unit id="settings.description.styles.stickyHeader">
+        <source>Keep the navigation visible while scrolling.</source>
+      </trans-unit>
+      <trans-unit id="settings.cta.showHeader">
+        <source>Show header button</source>
+      </trans-unit>
+      <trans-unit id="settings.description.cta.showHeader">
+        <source>The button appears when a valid primary CTA link is configured.</source>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

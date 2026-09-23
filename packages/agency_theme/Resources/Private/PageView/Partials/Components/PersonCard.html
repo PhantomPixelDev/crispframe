@@ -1,0 +1,40 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<!--
+  Partial: Components/PersonCard
+  Arguments (person):
+    - name (string, required)
+    - role (string?)        : job title (e.g. "Creative Director")
+    - image (FileReference|string?) : portrait
+    - alt (string?)         : alt fallback to name
+    - bio (string?)         : short bio
+    - email (string?)       : mailto
+    - socials (array?)      : [label, href, icon]
+  Accessibility: image alt meaningful; socials with aria-label.
+-->
+<article class="card card--person">
+    <f:if condition="{person.image}">
+        <div class="card__media">
+            <f:render partial="Components/Image" arguments="{file: person.image, alt: '{f:if(condition: person.alt, then: person.alt, else: person.name)}', maxWidth: 480, class: 'card__image card__image--person'}" />
+        </div>
+    </f:if>
+    <div class="card__body">
+        <h3 class="card__title">{person.name}</h3>
+        <f:if condition="{person.role}">
+            <p class="card__role">{person.role}</p>
+        </f:if>
+        <f:if condition="{person.bio}">
+            <p class="card__text">{person.bio}</p>
+        </f:if>
+        <f:if condition="{person.socials} || {person.email}">
+            <ul class="card__socials" role="list" aria-label="Contact {person.name}">
+                <f:if condition="{person.email}">
+                    <li><a href="mailto:{person.email}" aria-label="Email {person.name}" class="card__social-link"><f:render partial="Components/Icon" arguments="{name: 'mail', decorative: 1, size: 18}" /></a></li>
+                </f:if>
+                <f:for each="{person.socials}" as="social">
+                    <li><a href="{social.href}" target="_blank" rel="noopener noreferrer" aria-label="{social.label}" class="card__social-link"><f:render partial="Components/Icon" arguments="{name: social.icon, decorative: 1, size: 18}" /></a></li>
+                </f:for>
+            </ul>
+        </f:if>
+    </div>
+</article>
+</html>

@@ -1,0 +1,12 @@
+name: crispframe
+type: typo3
+docroot: public
+php_version: "8.3"
+webserver_type: nginx-fpm
+router_http_port: "80"
+router_https_port: "443"
+database:
+  type: mariadb
+  version: "11.8"
+web_environment:
+  - TYPO3_CONTEXT=Development

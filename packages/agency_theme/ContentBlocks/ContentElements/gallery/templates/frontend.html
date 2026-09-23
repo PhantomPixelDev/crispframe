@@ -1,0 +1,38 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<section class="section section--{data.sectionBackground}" data-spacing="{data.sectionSpacing}">
+    <div class="container container--{data.width}" data-gallery>
+        <header class="section-header">
+            <h2 class="section-header__title">{data.headline}</h2>
+            <f:if condition="{data.lead}"><p class="section-header__lead">{data.lead}</p></f:if>
+        </header>
+        <f:if condition="{data.items}">
+            <ul class="gallery-grid" role="list">
+                <f:for each="{data.items}" as="item">
+                    <f:for each="{item.image}" as="file">
+                        <li class="gallery-grid__item">
+                            <figure>
+                                <a href="{f:uri.image(image: file, width: 1600)}" data-gallery-open data-gallery-alt="{f:if(condition: file.alternative, then: file.alternative, else: item.caption)}" data-gallery-caption="{item.caption}" aria-label="{f:translate(key: 'LLL:EXT:agency_theme/Resources/Private/Language/locallang.xlf:gallery.open')}: {f:if(condition: item.caption, then: item.caption, else: data.headline)}">
+                                    <f:image image="{file}" width="640c" height="480c" loading="lazy" decoding="async" alt="{f:if(condition: file.alternative, then: file.alternative, else: item.caption)}" />
+                                </a>
+                                <f:if condition="{item.caption}"><figcaption>{item.caption}</figcaption></f:if>
+                            </figure>
+                        </li>
+                    </f:for>
+                </f:for>
+            </ul>
+            <dialog class="gallery-lightbox" aria-label="{f:translate(key: 'LLL:EXT:agency_theme/Resources/Private/Language/locallang.xlf:gallery.dialog')}">
+                <div class="gallery-lightbox__bar">
+                    <span data-gallery-counter aria-live="polite"></span>
+                    <button type="button" data-gallery-close aria-label="{f:translate(key: 'LLL:EXT:agency_theme/Resources/Private/Language/locallang.xlf:gallery.close')}">×</button>
+                </div>
+                <img data-gallery-image alt="" />
+                <p data-gallery-caption></p>
+                <div class="gallery-lightbox__controls">
+                    <button type="button" data-gallery-prev>{f:translate(key: 'LLL:EXT:agency_theme/Resources/Private/Language/locallang.xlf:gallery.previous')}</button>
+                    <button type="button" data-gallery-next>{f:translate(key: 'LLL:EXT:agency_theme/Resources/Private/Language/locallang.xlf:gallery.next')}</button>
+                </div>
+            </dialog>
+        </f:if>
+    </div>
+</section>
+</html>

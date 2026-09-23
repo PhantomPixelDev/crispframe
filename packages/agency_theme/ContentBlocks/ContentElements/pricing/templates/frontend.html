@@ -1,0 +1,30 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<section class="section section--{data.sectionBackground}" data-spacing="{data.sectionSpacing}">
+    <div class="container container--{data.width}" data-pricing>
+        <header class="section-header">
+            <h2 class="section-header__title">{data.headline}</h2>
+            <f:if condition="{data.lead}"><p class="section-header__lead">{data.lead}</p></f:if>
+        </header>
+        <div class="pricing-switch" role="group" aria-label="{f:translate(key: 'LLL:EXT:agency_theme/Resources/Private/Language/locallang.xlf:pricing.period')}" data-pricing-toggle hidden>
+            <button type="button" data-pricing-period="month" aria-pressed="true"><f:translate key="LLL:EXT:agency_theme/Resources/Private/Language/locallang.xlf:pricing.monthly" /></button>
+            <button type="button" data-pricing-period="year" aria-pressed="false"><f:translate key="LLL:EXT:agency_theme/Resources/Private/Language/locallang.xlf:pricing.yearly" /></button>
+        </div>
+        <f:if condition="{data.tiers}">
+            <ul class="pricing-grid" role="list">
+                <f:for each="{data.tiers}" as="tier">
+                    <li class="pricing-card{f:if(condition: tier.featured, then: ' pricing-card--featured')}">
+                        <f:if condition="{tier.featured}"><p class="pricing-card__badge"><f:translate key="LLL:EXT:agency_theme/Resources/Private/Language/locallang.xlf:pricing.featured" /></p></f:if>
+                        <h3 class="pricing-card__name">{tier.name}</h3>
+                        <f:if condition="{tier.summary}"><p class="pricing-card__summary">{tier.summary}</p></f:if>
+                        <p class="pricing-card__price"><span data-price-month>{tier.monthlyPrice}</span><span data-price-year hidden>{tier.yearlyPrice}</span></p>
+                        <f:if condition="{tier.hideSuffix}"><f:else><p class="pricing-card__suffix"><span data-suffix-month>{data.monthlySuffix}</span><span data-suffix-year hidden>{data.yearlySuffix}</span></p></f:else></f:if>
+                        <f:if condition="{tier.features}"><div class="pricing-card__features">{tier.features -> f:format.html()}</div></f:if>
+                        <f:if condition="{tier.ctaLink.url} && {tier.ctaLabel}"><f:link.typolink parameter="{tier.ctaLink}" class="btn btn--primary pricing-card__action">{tier.ctaLabel}</f:link.typolink></f:if>
+                    </li>
+                </f:for>
+            </ul>
+        </f:if>
+        <f:if condition="{data.footnote}"><p class="pricing-note">{data.footnote}</p></f:if>
+    </div>
+</section>
+</html>

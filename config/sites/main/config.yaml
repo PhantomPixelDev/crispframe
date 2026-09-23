@@ -1,0 +1,60 @@
+base: 'http://localhost:8080/'
+baseVariants: {  }
+errorHandling:
+  - errorCode: 404
+    errorHandler: Fluid
+    errorFluidTemplate: 'EXT:agency_theme/Resources/Private/Error/404.html'
+dependencies:
+  - crispframe/agency-theme
+languages:
+  -
+    title: English
+    enabled: true
+    languageId: 0
+    base: /
+    typo3Language: default
+    locale: en_US.UTF-8
+    iso-639-1: en
+    navigationTitle: English
+    hreflang: en
+    direction: ltr
+    flag: en
+    websiteTitle: 'Crispframe Demo'
+  -
+    title: Deutsch
+    enabled: true
+    languageId: 1
+    base: /de/
+    typo3Language: de
+    locale: de_DE.UTF-8
+    iso-639-1: de
+    navigationTitle: Deutsch
+    hreflang: de
+    direction: ltr
+    flag: de
+rootPageId: 1
+websiteTitle: 'Crispframe Demo'
+settings:
+  brand:
+    companyName: 'Crispframe Studio'
+    tagline: 'Strategy, design and engineering for ambitious brands.'
+    logoAlt: 'Crispframe Studio'
+  contact:
+    email: 'hello@crispframe.example'
+    phone: '+49 30 000000'
+    address: 'Torstraße 140, 10119 Berlin'
+  social:
+    linkedin: 'https://www.linkedin.com'
+    github: 'https://github.com'
+    x: 'https://x.com'
+    instagram: '#'
+    youtube: '#'
+  footer:
+    text: 'We design and build digital products that make complex businesses easier to use.'
+    legalLink: '#'
+    privacyLink: '#'
+  cta:
+    primaryLabel: 'Start a project'
+    primaryLink: '/contact'
+    secondaryLabel: 'View work'
+    secondaryLink: '/work'

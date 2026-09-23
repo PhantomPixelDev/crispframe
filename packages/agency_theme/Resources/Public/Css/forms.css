@@ -1,0 +1,16 @@
+/* TYPO3 Form Framework, scoped to the bundled contact form. */
+.frame-type-form_formframework{width:min(100% - 2*var(--container-gutter),var(--container-sm));margin:var(--space-3xl) auto}
+form[id^="crispframe-contact"]{padding:clamp(1.5rem,4vw,3.5rem);border:1px solid var(--color-border);border-radius:var(--radius-md);background:var(--color-bg);box-shadow:var(--shadow-sm)}
+form[id^="crispframe-contact"] h2{font-size:var(--text-h2);line-height:var(--leading-tight);letter-spacing:var(--tracking-tight);margin-block-end:var(--space-xl)}
+form[id^="crispframe-contact"] .form-element{margin-block-end:var(--space-lg)}
+form[id^="crispframe-contact"] .form-label{display:block;margin-block-end:.45rem;font-size:var(--text-sm);font-weight:var(--font-weight-semibold);color:var(--color-text)}
+form[id^="crispframe-contact"] .form-control{display:block;width:100%;min-height:3rem;padding:.75rem .9rem;border:1px solid var(--color-border-strong);border-radius:var(--radius-sm);background:var(--color-bg);color:var(--color-text);font:inherit;line-height:1.4;transition:border-color var(--transition-fast),box-shadow var(--transition-fast)}
+form[id^="crispframe-contact"] textarea.form-control{min-height:10rem;resize:vertical}
+form[id^="crispframe-contact"] .form-control:hover{border-color:var(--color-text-muted)}
+form[id^="crispframe-contact"] .form-control:focus{outline:2px solid var(--color-focus);outline-offset:2px;border-color:var(--color-focus)}
+form[id^="crispframe-contact"] .form-control[aria-invalid="true"],form[id^="crispframe-contact"] .form-element.has-error .form-control{border-color:#b42318}
+form[id^="crispframe-contact"] .invalid-feedback{display:block;margin-block-start:.4rem;color:#b42318;font-size:var(--text-sm)}
+form[id^="crispframe-contact"] button[type="submit"],form[id^="crispframe-contact"] input[type="submit"]{display:inline-flex;justify-content:center;min-height:3rem;padding:.75rem 1.35rem;border:1px solid var(--color-brand);border-radius:var(--radius-sm);background:var(--color-brand);color:#fff;font:inherit;font-size:var(--text-sm);font-weight:var(--font-weight-semibold);cursor:pointer;transition:background var(--transition-fast),border-color var(--transition-fast)}
+form[id^="crispframe-contact"] button[type="submit"]:hover,form[id^="crispframe-contact"] input[type="submit"]:hover{background:var(--color-brand-hover);border-color:var(--color-brand-hover)}
+form[id^="crispframe-contact"] button[type="submit"]:focus-visible,form[id^="crispframe-contact"] input[type="submit"]:focus-visible{outline:2px solid var(--color-focus);outline-offset:3px}
+form[id^="crispframe-contact"] .form-navigation{margin-block-start:var(--space-xl)}

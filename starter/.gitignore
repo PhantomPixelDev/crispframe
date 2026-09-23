@@ -1,0 +1,7 @@
+/vendor/
+/var/
+/public/_assets/
+/public/typo3temp/
+/public/fileadmin/
+/config/system/settings.php
+/config/system/additional.php

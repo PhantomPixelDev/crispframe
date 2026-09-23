@@ -1,0 +1,56 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<!--
+  Partial: Components/ProjectCard
+  Arguments (project):
+    - title (string, required)
+    - href (string?)        : link to project detail
+    - image (FileReference|string?) : cover image
+    - alt (string?)         : image alt (falls back to title)
+    - category (string?)    : e.g. "Brand Strategy"
+    - year (string?)        : e.g. "2025"
+    - excerpt (string?)     : short description
+    - tags (array?)         : [label] for footer chips
+  CSS: .card, .card--project, .card__media, .card__body, .card__meta, etc.
+-->
+<article class="card card--project">
+    <f:if condition="{project.href}">
+        <f:then>
+            <a href="{project.href}" class="card__media-link" aria-label="{project.title}">
+                <f:if condition="{project.image}">
+                    <f:render partial="Components/Image" arguments="{file: project.image, alt: '{f:if(condition: project.alt, then: project.alt, else: project.title)}', maxWidth: 640, class: 'card__image'}" />
+                </f:if>
+            </a>
+        </f:then>
+        <f:else>
+            <f:if condition="{project.image}">
+                <div class="card__media">
+                    <f:render partial="Components/Image" arguments="{file: project.image, alt: '{f:if(condition: project.alt, then: project.alt, else: project.title)}', maxWidth: 640, class: 'card__image'}" />
+                </div>
+            </f:if>
+        </f:else>
+    </f:if>
+    <div class="card__body">
+        <f:if condition="{project.category} || {project.year}">
+            <p class="card__meta">
+                <f:if condition="{project.category}"><span class="card__category">{project.category}</span></f:if>
+                <f:if condition="{project.category} && {project.year}"><span aria-hidden="true"> · </span></f:if>
+                <f:if condition="{project.year}"><span class="card__year">{project.year}</span></f:if>
+            </p>
+        </f:if>
+        <h3 class="card__title">
+            <f:if condition="{project.href}">
+                <f:then><a href="{project.href}" class="card__link">{project.title}</a></f:then>
+                <f:else>{project.title}</f:else>
+            </f:if>
+        </h3>
+        <f:if condition="{project.excerpt}">
+            <p class="card__excerpt">{project.excerpt}</p>
+        </f:if>
+        <f:if condition="{project.tags}">
+            <ul class="card__tags" role="list">
+                <f:for each="{project.tags}" as="tag"><li class="card__tag">{tag.label}</li></f:for>
+            </ul>
+        </f:if>
+    </div>
+</article>
+</html>

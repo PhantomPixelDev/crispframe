@@ -1,0 +1,44 @@
+<f:asset.css identifier="agency-tokens" href="EXT:agency_theme/Resources/Public/Css/tokens.css" priority="5" />
+<f:asset.css identifier="agency-base" href="EXT:agency_theme/Resources/Public/Css/base.css" priority="10" />
+<f:asset.css identifier="agency-layout" href="EXT:agency_theme/Resources/Public/Css/layout.css" priority="20" />
+<f:asset.css identifier="agency-components" href="EXT:agency_theme/Resources/Public/Css/components.css" priority="30" />
+<f:asset.css identifier="agency-utilities" href="EXT:agency_theme/Resources/Public/Css/utilities.css" priority="40" />
+<f:asset.css identifier="agency-themes" href="EXT:agency_theme/Resources/Public/Css/themes.css" priority="50" />
+<f:asset.css identifier="agency-forms" href="EXT:agency_theme/Resources/Public/Css/forms.css" priority="60" />
+<f:asset.css identifier="agency-blocks" href="EXT:agency_theme/Resources/Public/Css/blocks.css" priority="70" />
+
+<div class="site-shell" data-palette="{site.settings.styles.palette}" data-width="{site.settings.styles.contentWidth}" data-type-scale="{site.settings.styles.typeScale}" data-corners="{site.settings.styles.corners}" data-rhythm="{site.settings.styles.spacing}" data-sticky-header="{f:if(condition: site.settings.styles.stickyHeader, then: 'true', else: 'false')}">
+<a class="skip-link" href="#main-content"><f:translate key="LLL:EXT:agency_theme/Resources/Private/Language/locallang.xlf:site.skip" /></a>
+
+<f:render partial="Site/Header" optional="true" arguments="{_all}" />
+
+<main id="main-content" tabindex="-1">
+    <f:render section="Main" />
+</main>
+
+<f:render partial="Site/Footer" optional="true" arguments="{_all}" />
+</div>
+<f:if condition="{site.settings.brand.companyName}">
+    <f:variable name="smLinkedin" value="" />
+    <f:variable name="smGithub" value="" />
+    <f:variable name="smX" value="" />
+    <f:variable name="smInstagram" value="" />
+    <f:variable name="smYoutube" value="" />
+    <f:variable name="siteUrl" value="{site.configuration.base}" />
+    <f:if condition="{site.configuration.base} == ''"><f:variable name="siteUrl" value="{site.base}" /></f:if>
+    <f:if condition="{site.settings.social.linkedin} && {site.settings.social.linkedin} != '#'"><f:variable name="smLinkedin" value="{site.settings.social.linkedin}" /></f:if>
+    <f:if condition="{site.settings.social.github} && {site.settings.social.github} != '#'"><f:variable name="smGithub" value="{site.settings.social.github}" /></f:if>
+    <f:if condition="{site.settings.social.x} && {site.settings.social.x} != '#'"><f:variable name="smX" value="{site.settings.social.x}" /></f:if>
+    <f:if condition="{site.settings.social.instagram} && {site.settings.social.instagram} != '#'"><f:variable name="smInstagram" value="{site.settings.social.instagram}" /></f:if>
+    <f:if condition="{site.settings.social.youtube} && {site.settings.social.youtube} != '#'"><f:variable name="smYoutube" value="{site.settings.social.youtube}" /></f:if>
+    <f:variable name="org" value="{'@context': 'https://schema.org', '@type': 'Organization', name: site.settings.brand.companyName, url: siteUrl, email: site.settings.contact.email, telephone: site.settings.contact.phone, address: {'@type': 'PostalAddress', streetAddress: site.settings.contact.address}, sameAs: {0: smLinkedin, 1: smGithub, 2: smX, 3: smInstagram, 4: smYoutube}}" />
+    <script type="application/ld+json">{org -> f:format.json() -> f:format.raw()}</script>
+</f:if>
+
+<f:asset.script identifier="agency-main" src="EXT:agency_theme/Resources/Public/JavaScript/main.js" priority="10" />
+<f:asset.script identifier="agency-accordion" src="EXT:agency_theme/Resources/Public/JavaScript/accordion.js" priority="20" />
+<f:asset.script identifier="agency-video" src="EXT:agency_theme/Resources/Public/JavaScript/video.js" priority="30" />
+<f:asset.script identifier="agency-pricing" src="EXT:agency_theme/Resources/Public/JavaScript/pricing.js" priority="40" />
+<f:asset.script identifier="agency-gallery" src="EXT:agency_theme/Resources/Public/JavaScript/gallery.js" priority="50" />
+
+
