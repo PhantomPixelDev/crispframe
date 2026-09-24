@@ -51,6 +51,8 @@ async (page) => {
   await page.goto(base + '/de/wissen');
   expect(await page.locator('.child-pages__link[href^="/de/wissen/"]').count() === 2, 'German page teasers must use German routes');
   expect((await page.locator('.child-pages__image').first().getAttribute('alt')).includes('Kolleginnen'), 'German page media alt text is missing');
+  expect((await page.locator('.child-pages__image').last().getAttribute('alt')).includes('Ein Team'), 'Second German page media alt text is missing');
+  expect((await page.locator('.child-pages__image').first().getAttribute('src')) !== (await page.locator('.child-pages__image').last().getAttribute('src')), 'German page teasers must retain distinct images');
   await page.goto(base + '/insights/clear-service-pages');
   expect(await page.locator('.article-layout__sidebar .author-card').count() === 1, 'Article sidebar needs its author card');
   expect(await page.locator('.pull-quote blockquote').count() === 1, 'Article quotation is missing');
