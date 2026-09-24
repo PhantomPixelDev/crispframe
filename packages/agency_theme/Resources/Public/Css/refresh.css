@@ -160,3 +160,99 @@ h1,h2,h3,h4{font-weight:680;letter-spacing:-.045em}
 .form__input:focus,.form__textarea:focus,.form__select:focus{border-color:var(--color-brand);box-shadow:0 0 0 4px color-mix(in srgb,var(--color-focus) 16%,transparent)}
 @media(max-width:63.99rem){.hero-section .hero{grid-template-columns:1fr;gap:var(--space-2xl)}.hero__title{max-width:13ch}}
 @media(max-width:47.99rem){.section{padding-block:clamp(3.5rem,14vw,5rem)}.section-header__title{font-size:clamp(2rem,9vw,3rem)}.hero__title{font-size:clamp(2.8rem,14vw,4.4rem)}.card:hover,.project-card:hover,.person-card:hover,.pricing-card:hover{transform:none}}
+
+/* Icon-led cards: give the visual anchor room to breathe while preserving
+   existing icon IDs, custom uploads, and the compact mobile layout. */
+.service-card,.card--feature{
+  position:relative;
+  isolation:isolate;
+  overflow:hidden;
+  gap:var(--space-md);
+  padding:clamp(1.5rem,3vw,2.5rem);
+}
+.service-card::before,.card--feature::before{
+  content:"";
+  position:absolute;
+  z-index:-1;
+  width:9rem;
+  height:9rem;
+  inset:auto -3rem -4rem auto;
+  border:1px solid color-mix(in srgb,var(--color-brand) 24%,transparent);
+  border-radius:50%;
+  opacity:.55;
+  pointer-events:none;
+}
+.service-card::after,.card--feature::after{
+  content:"";
+  position:absolute;
+  z-index:-1;
+  width:5rem;
+  height:5rem;
+  inset:-2rem auto auto -2rem;
+  border-radius:50%;
+  background:color-mix(in srgb,var(--color-brand) 10%,transparent);
+  pointer-events:none;
+}
+.service-card>.card__icon,.card--feature>.card__icon{
+  position:relative;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  align-self:flex-start;
+  width:4.5rem;
+  height:4.5rem;
+  flex:none;
+  overflow:hidden;
+  border:1px solid color-mix(in srgb,var(--color-brand) 28%,var(--color-border));
+  border-radius:1.25rem;
+  background:
+    radial-gradient(circle at 25% 15%,color-mix(in srgb,var(--color-brand) 22%,transparent),transparent 58%),
+    linear-gradient(145deg,color-mix(in srgb,var(--color-bg-muted) 82%,var(--color-brand)),var(--color-bg));
+  color:var(--color-brand-ink);
+  box-shadow:0 12px 26px color-mix(in srgb,var(--color-brand) 13%,transparent),inset 0 1px 0 rgba(255,255,255,.55);
+}
+.service-card>.card__icon::after,.card--feature>.card__icon::after{
+  content:"";
+  position:absolute;
+  inset:.35rem;
+  border:1px solid color-mix(in srgb,var(--color-brand) 20%,transparent);
+  border-radius:.9rem;
+  pointer-events:none;
+}
+.service-card>.card__icon svg,.card--feature>.card__icon svg{
+  position:relative;
+  z-index:1;
+  width:2.45rem;
+  height:2.45rem;
+  stroke-width:1.7;
+}
+.service-card>.card__icon--custom,.card--feature>.card__icon--custom{
+  box-sizing:border-box;
+  padding:1.1rem;
+  object-fit:contain;
+}
+.service-card .card__title,.card--feature .card__title{margin-block-start:.15rem}
+.service-card .card__text,.card--feature .card__text{max-width:38ch}
+.service-card:hover>.card__icon,.card--feature:hover>.card__icon{border-color:var(--color-brand);box-shadow:0 16px 30px color-mix(in srgb,var(--color-brand) 20%,transparent),inset 0 1px 0 rgba(255,255,255,.65)}
+.resource-list__icon{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:3.25rem;
+  height:3.25rem;
+  flex:none;
+  border:1px solid color-mix(in srgb,var(--color-brand) 22%,var(--color-border));
+  border-radius:1rem;
+  background:linear-gradient(145deg,color-mix(in srgb,var(--color-bg-muted) 75%,var(--color-brand)),var(--color-bg));
+  color:var(--color-brand-ink);
+  box-shadow:0 8px 18px color-mix(in srgb,var(--color-brand) 10%,transparent);
+}
+.resource-list__icon svg{width:1.65rem;height:1.65rem;stroke-width:1.7}
+@media(max-width:47.99rem){
+  .service-card>.card__icon,.card--feature>.card__icon{width:4rem;height:4rem;border-radius:1.1rem}
+  .service-card>.card__icon svg,.card--feature>.card__icon svg{width:2.2rem;height:2.2rem}
+  .service-card>.card__icon--custom,.card--feature>.card__icon--custom{padding:.95rem}
+}
+@media(prefers-reduced-motion:reduce){
+  .service-card:hover>.card__icon,.card--feature:hover>.card__icon{box-shadow:0 12px 26px color-mix(in srgb,var(--color-brand) 13%,transparent),inset 0 1px 0 rgba(255,255,255,.55)}
+}

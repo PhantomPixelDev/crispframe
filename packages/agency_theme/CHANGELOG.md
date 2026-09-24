@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.4.2 — 2026-09-24
+
+- Reworked service and feature card icons into larger editorial visual anchors with layered palette-aware surfaces, inset outlines, and softer depth.
+- Added the same icon treatment to resource links and preserved existing Lucide IDs, custom SVG uploads, responsive sizing, focus behavior, and reduced-motion support.
+
 ## 1.4.1 — 2026-09-24
 
 - Refreshed the visual system with a locally bundled Plus Jakarta Sans variable font, stronger editorial type hierarchy, warmer surfaces, refined cards, buttons, heroes, header, footer, and responsive spacing.
