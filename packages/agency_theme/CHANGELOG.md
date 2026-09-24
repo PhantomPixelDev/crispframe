@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.4.1 — 2026-09-24
+
+- Refreshed the visual system with a locally bundled Plus Jakarta Sans variable font, stronger editorial type hierarchy, warmer surfaces, refined cards, buttons, heroes, header, footer, and responsive spacing.
+- Updated all four palettes and refreshed Home, Work, Contact, Insights, Resources, and Article screenshots.
+- Preserved existing block markup, settings, translations, reduced-motion behavior, and accessibility checks.
+
 ## 1.4.0 — 2026-09-24
 
 - Added child page teasers, tabs, pull quote, resource list and author card Content Blocks, with English and German editor labels.

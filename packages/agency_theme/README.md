@@ -39,6 +39,7 @@ These screenshots show the [optional demo package](https://github.com/PhantomPix
 - **Site settings:** branding, contact details, navigation and footer links, CTAs, content width, typography, corners, spacing, sticky header, and ocean/forest/plum/ember palettes.
 - **Publishing basics:** responsive PageView layouts, a branded 404, SEO metadata and structured data, language switcher, keyboard-friendly interactions, and reduced-motion support.
 - **Icon choices:** a curated, locally bundled [Lucide](https://lucide.dev/) selection for services and features, plus custom SVG upload. Existing icon identifiers remain available; no icon CDN or JavaScript package is needed at runtime.
+- **Visual system:** a locally bundled Plus Jakarta Sans variable font, four palette presets, expressive/standard type scales, compact/airy spacing, narrow/default/wide content widths, and sharp/round corner settings. The font is licensed under the SIL Open Font License; see `Resources/Public/Fonts/OFL-PlusJakartaSans.txt`.
 - **Contact form:** TYPO3 Form Framework definition with editable recipient overrides. Mail transport and real addresses are set by the site owner.
 
 ## Get started
@@ -69,6 +70,10 @@ The demo uses TYPO3's initialisation mechanism and should be installed only on a
 Composer installs these extensions automatically through this package's requirements. `ext_emconf.php` declares the same required extensions for classic TYPO3 installations.
 
 The Site Set includes TYPO3's Form Framework and SEO sitemap sets (`typo3/form`, `typo3/seo-sitemap`). Create your own site configuration with its base URL, root page, and languages. See the [page recipes](Documentation/PageRecipes.md) for services, product, and organization layouts.
+
+## Visual customization
+
+The visual layer is designed to be adjusted from Site Settings without changing block markup. Choose `ocean`, `forest`, `plum`, or `ember` for the palette; `standard` or `expressive` for the type scale; `compact`, `default`, or `wide` for content width; `sharp`, `default`, or `round` for corners; and `compact`, `default`, or `airy` for section rhythm. The default values preserve the Crispframe editorial layout. The bundled Plus Jakarta Sans font is self-hosted and includes German characters, so production sites do not need an external font request.
 
 For maintainers, [Release.md](Documentation/Release.md) describes clean-checkout verification, tags and Packagist publication. [Accessibility.md](Documentation/Accessibility.md) records the automated scope and launch checks.
 
