@@ -1,11 +1,28 @@
-# Crispframe Agency Theme
+# Crispframe Agency Theme for TYPO3
 
+[![Latest release](https://img.shields.io/github/v/release/PhantomPixelDev/crispframe-agency-theme?display_name=tag&sort=semver)](https://github.com/PhantomPixelDev/crispframe-agency-theme/releases)
 [![Packagist version](https://img.shields.io/packagist/v/crispframe/agency-theme?label=Packagist)](https://packagist.org/packages/crispframe/agency-theme)
+[![Packagist downloads](https://img.shields.io/packagist/dm/crispframe/agency-theme?label=downloads)](https://packagist.org/packages/crispframe/agency-theme)
 ![TYPO3 13.4 and 14.3](https://img.shields.io/badge/TYPO3-13.4%20%7C%2014.3_LTS-f49700)
+[![PHP 8.2+](https://img.shields.io/badge/PHP-8.2%2B-777bb4)](https://www.php.net/)
 [![License: GPL-2.0-or-later](https://img.shields.io/badge/license-GPL--2.0--or--later-blue)](LICENSE)
 [![Release checks](https://github.com/PhantomPixelDev/crispframe/actions/workflows/ci.yml/badge.svg)](https://github.com/PhantomPixelDev/crispframe/actions/workflows/ci.yml)
 
-A reusable corporate site package for **TYPO3 13.4 and 14.3 LTS**. Build a services, product, or organization website with editable Content Blocks, four style palettes, and English/German interface labels. The theme has no build step and does not import demo content into an existing site. New starter sites use TYPO3 14.3.
+**Crispframe is a reusable, open-source TYPO3 sitepackage for modern corporate, agency, services, product, and organization websites.** It supports TYPO3 13.4 and 14.3 LTS, PHP 8.2+, English and German, responsive Content Blocks, configurable visual palettes, accessible interactions, SEO defaults, and a TYPO3 Form Framework contact form.
+
+The theme is intentionally safe to install into an existing project: it provides templates, Site Sets, Content Blocks, styles, icons, and integrations, but does not import demo pages or overwrite site-specific content. New TYPO3 14 starter sites can add the optional bilingual demo package when they need example content.
+
+**Keywords:** TYPO3 sitepackage, TYPO3 theme, corporate website template, agency website, TYPO3 Content Blocks, TYPO3 14, TYPO3 13, bilingual TYPO3, German TYPO3, accessible website template, Composer TYPO3 extension.
+
+## Contents
+
+- [Preview](#preview)
+- [Features](#features)
+- [Installation](#installation)
+- [Requirements](#requirements)
+- [Visual customization](#visual-customization)
+- [SEO and publishing](#seo-and-publishing)
+- [Documentation](#documentation)
 
 ## Preview
 
@@ -33,7 +50,7 @@ A reusable corporate site package for **TYPO3 13.4 and 14.3 LTS**. Build a servi
 
 These screenshots show the [optional demo package](https://github.com/PhantomPixelDev/crispframe-agency-demo). Its branding, copy, photos, and prices are examples that you can edit in TYPO3.
 
-## What is included
+## Features
 
 - **24 Content Blocks:** hero, intro, text/image, features, services, stats, logos, testimonials, projects, team, FAQ, CTA, contact, process, pricing, video, gallery, comparison, timeline, child page teasers, tabs, pull quote, resource list, and author card.
 - **Site settings:** branding, contact details, navigation and footer links, CTAs, content width, typography, corners, spacing, sticky header, and ocean/forest/plum/ember palettes.
@@ -42,7 +59,7 @@ These screenshots show the [optional demo package](https://github.com/PhantomPix
 - **Visual system:** a locally bundled Plus Jakarta Sans variable font, four palette presets, expressive/standard type scales, compact/airy spacing, narrow/default/wide content widths, and sharp/round corner settings. The font is licensed under the SIL Open Font License; see `Resources/Public/Fonts/OFL-PlusJakartaSans.txt`.
 - **Contact form:** TYPO3 Form Framework definition with editable recipient overrides. Mail transport and real addresses are set by the site owner.
 
-## Get started
+## Installation
 
 In a TYPO3 13.4.15+ or 14.3.7+ Composer project, install the theme from [Packagist](https://packagist.org/packages/crispframe/agency-theme):
 
@@ -175,9 +192,31 @@ In Fluid: `{site.settings.brand.companyName}`, `{site.settings.contact.email}`, 
 - **JSON-LD:** `Layouts/Default.html` emits `Organization` (name, url, email, telephone, address, sameAs) guarded by `companyName` with empty-safe skips and JS-escaped values. `ContentBlocks/faq` emits `FAQPage` from its items. `Partials/Components/Breadcrumb.html` emits `BreadcrumbList` whenever breadcrumbs render. All scripts are `f:if` guarded to avoid empty blocks.
 - **Robots / hreflang:** the theme includes a language menu and English/German labels; configure language bases, `robots.txt` and hreflang in your site's configuration. The optional starter includes `/de/`. See `Documentation/SeoSetup.md`.
 
+## SEO and publishing
+
+Crispframe includes a practical SEO foundation for TYPO3 integrators:
+
+- Canonical URLs, page descriptions, Open Graph, Twitter cards, theme color, and viewport metadata.
+- Organization, FAQPage, and BreadcrumbList JSON-LD with empty-safe fallbacks.
+- XML sitemap support through TYPO3 SEO Sitemap.
+- English/German language navigation and hreflang-ready site configuration.
+- Editable page SEO titles, descriptions, social images, and alternative text.
+- No hardcoded agency domain, company name, contact address, or production credentials.
+
+Use [SeoSetup.md](Documentation/SeoSetup.md) for sitemap, robots, language, and canonical configuration before launch.
+
+## Documentation
+
+- [First-run checklist](Documentation/FirstRun.md) — branding, navigation, mail transport, legal links, SEO, and publishing.
+- [Page recipes](Documentation/PageRecipes.md) — services, product, organization, Insights, Resources, and Article layouts.
+- [Accessibility checks](Documentation/Accessibility.md) — automated and manual launch checks.
+- [SEO setup](Documentation/SeoSetup.md) — sitemap, robots, canonical, and hreflang setup.
+- [Release procedure](Documentation/Release.md) — clean installs, CI, package tags, and Packagist publication.
+
 ## No build step
 
-- No npm, no bundler, no webfonts, no icon libs beyond `sprite.svg`.
+- No npm or bundler is required at runtime.
+- Fonts, icons, CSS, and JavaScript are bundled locally; there are no external font or icon CDN requests.
 - System fonts via `tokens.css` (`--font-sans`/`--font-mono`).
 - BEM-lite class names, CSS custom properties for theming.
 - JS is vanilla and defer-safe.

@@ -1,6 +1,13 @@
-# crispframe
+# Crispframe TYPO3 corporate sitepackage
 
-Monorepo for the Crispframe TYPO3 theme.
+[![Theme release](https://img.shields.io/github/v/release/PhantomPixelDev/crispframe-agency-theme?display_name=tag&sort=semver)](https://github.com/PhantomPixelDev/crispframe-agency-theme/releases)
+[![TYPO3 13 and 14](https://img.shields.io/badge/TYPO3-13.4%20%7C%2014.3_LTS-f49700)](packages/agency_theme/README.md)
+[![CI](https://github.com/PhantomPixelDev/crispframe/actions/workflows/ci.yml/badge.svg)](https://github.com/PhantomPixelDev/crispframe/actions/workflows/ci.yml)
+[![License](https://img.shields.io/badge/license-GPL--2.0--or--later-blue)](packages/agency_theme/LICENSE)
+
+Modern open-source TYPO3 corporate website template and sitepackage for agencies, services companies, product teams, and organizations. Crispframe includes 24 editable Content Blocks, bilingual English/German labels, four visual palettes, responsive layouts, accessible vanilla JavaScript, SEO defaults, and a TYPO3 Form Framework contact flow.
+
+![Crispframe modern TYPO3 corporate homepage](packages/agency_theme/Documentation/Images/home-desktop.webp)
 
 ## Packages
 
