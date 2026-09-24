@@ -26,3 +26,14 @@ languages:
     flag: de
 rootPageId: 1
 websiteTitle: 'Example Company'
+settings:
+  brand:
+    companyName: 'Example Company'
+    tagline: 'Clear digital experiences for people and organizations.'
+    taglineDe: 'Klare digitale Erlebnisse für Menschen und Organisationen.'
+  footer:
+    text: 'A small team making useful digital experiences.'
+    textDe: 'Ein kleines Team für nützliche digitale Erlebnisse.'
+  cta:
+    primaryPage: 3
+    secondaryPage: 2

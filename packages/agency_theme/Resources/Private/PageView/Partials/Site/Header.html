@@ -5,6 +5,8 @@
   Reads from site.settings.* (settings.definitions is source of truth) and menuMain.
 -->
 <f:variable name="mobileNavLabel" value="{f:translate(key: 'LLL:EXT:agency_theme/Resources/Private/Language/locallang.xlf:site.mobile')}" />
+<f:variable name="primaryCtaLabel" value="{site.settings.cta.primaryLabel}" />
+<f:if condition="{currentLanguage} == 'de'"><f:variable name="primaryCtaLabel" value="{site.settings.cta.primaryLabelDe}" /></f:if>
 <header class="site-header" id="site-header" role="banner">
     <div class="site-header__inner">
         <a href="{f:uri.page(pageUid: site.rootPageId)}" class="site-header__brand" aria-label="{site.settings.brand.companyName}">
@@ -32,8 +34,8 @@
                     </f:for>
                 </nav>
             </f:if>
-            <f:if condition="{site.settings.cta.showHeader} && {site.settings.cta.primaryLabel} && {site.settings.cta.primaryLink} && {site.settings.cta.primaryLink} != '#'">
-                    <f:link.typolink parameter="{site.settings.cta.primaryLink}" class="btn btn--primary btn--sm site-header__cta">{site.settings.cta.primaryLabel}</f:link.typolink>
+            <f:if condition="{site.settings.cta.showHeader}">
+                <f:render partial="Components/SiteAction" arguments="{pageUid: site.settings.cta.primaryPage, legacyLink: site.settings.cta.primaryLink, label: primaryCtaLabel, class: 'btn btn--primary btn--sm site-header__cta'}" />
             </f:if>
 
             <button
@@ -52,9 +54,9 @@
 
     <div class="site-header__mobile" id="mobile-menu" hidden>
         <f:render partial="Site/Navigation" arguments="{menuMain: menuMain, modifierClass: 'site-nav--mobile', ariaLabel: mobileNavLabel}" />
-        <f:if condition="{site.settings.cta.showHeader} && {site.settings.cta.primaryLabel} && {site.settings.cta.primaryLink} && {site.settings.cta.primaryLink} != '#'">
+        <f:if condition="{site.settings.cta.showHeader} && {primaryCtaLabel} && ({site.settings.cta.primaryPage} || ({site.settings.cta.primaryLink} && {site.settings.cta.primaryLink} != '#' && {site.settings.cta.primaryLink} != '/'))">
             <div class="site-header__mobile-cta">
-                <f:link.typolink parameter="{site.settings.cta.primaryLink}" class="btn btn--primary btn--block">{site.settings.cta.primaryLabel}</f:link.typolink>
+                <f:render partial="Components/SiteAction" arguments="{pageUid: site.settings.cta.primaryPage, legacyLink: site.settings.cta.primaryLink, label: primaryCtaLabel, class: 'btn btn--primary btn--block'}" />
             </div>
         </f:if>
     </div>

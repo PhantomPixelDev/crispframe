@@ -2,7 +2,7 @@
 <f:comment>Hero — heading is h1 only when isHero is checked, otherwise h2. Default h2 is safe for a11y.</f:comment>
 <section class="section section--{data.sectionBackground} hero-section" data-spacing="{data.sectionSpacing}">
     <div class="container container--{data.width}">
-        <div class="hero">
+        <div class="hero" data-image-position="{data.imagePosition}" data-media-crop="{data.mediaCrop}">
             <div class="hero__content">
                 <f:if condition="{data.eyebrow}"><p class="hero__eyebrow">{data.eyebrow}</p></f:if>
                 <f:if condition="{data.isHero}">
@@ -25,7 +25,11 @@
                 <f:then>
                     <div class="hero__media">
                         <f:for each="{data.image}" as="file">
-                            <f:image image="{file}" width="1280c" height="960c" loading="eager" decoding="async" fetchpriority="high" alt="{f:if(condition: data.imageAlt, then: data.imageAlt, else: file.alternative)}" class="hero__image" />
+                            <f:variable name="cropWidth" value="1280c" />
+                            <f:variable name="cropHeight" value="960c" />
+                            <f:if condition="{data.mediaCrop} == 'square'"><f:variable name="cropWidth" value="960c" /><f:variable name="cropHeight" value="960c" /></f:if>
+                            <f:if condition="{data.mediaCrop} == 'portrait'"><f:variable name="cropWidth" value="960c" /><f:variable name="cropHeight" value="1200c" /></f:if>
+                            <f:image image="{file}" width="{cropWidth}" height="{cropHeight}" loading="eager" decoding="async" fetchpriority="high" alt="{f:if(condition: data.imageAlt, then: data.imageAlt, else: file.alternative)}" class="hero__image" />
                         </f:for>
                     </div>
                 </f:then>

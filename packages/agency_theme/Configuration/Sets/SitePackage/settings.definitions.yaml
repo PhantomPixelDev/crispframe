@@ -18,6 +18,11 @@ settings:
     category: brand
     default: ''
 
+  brand.taglineDe:
+    type: string
+    category: brand
+    default: ''
+
   brand.logo:
     type: string
     category: brand
@@ -76,18 +81,33 @@ settings:
     category: footer
     default: ''
 
+  footer.textDe:
+    type: string
+    category: footer
+    default: ''
+
   footer.legalLink:
     type: string
     category: footer
     default: '/'
+
+  footer.legalPage:
+    type: page
+    category: footer
+    default: 0
 
   footer.privacyLink:
     type: string
     category: footer
     default: '/'
 
+  footer.privacyPage:
+    type: page
+    category: footer
+    default: 0
+
   footer.servicesParent:
-    type: int
+    type: page
     category: footer
     default: 0
 
@@ -101,10 +121,20 @@ settings:
     category: footer
     default: 'Let us build something useful.'
 
+  footer.ctaHeadingDe:
+    type: string
+    category: footer
+    default: 'Lassen Sie uns etwas Nützliches schaffen.'
+
   footer.ctaText:
     type: string
     category: footer
     default: 'Tell us what you are working on.'
+
+  footer.ctaTextDe:
+    type: string
+    category: footer
+    default: 'Erzählen Sie uns von Ihrem Vorhaben.'
 
   # ── CTA ────────────────────────────────────────────────────────────
   cta.primaryLabel:
@@ -112,20 +142,40 @@ settings:
     category: cta
     default: 'Contact us'
 
+  cta.primaryLabelDe:
+    type: string
+    category: cta
+    default: 'Kontakt aufnehmen'
+
   cta.primaryLink:
     type: string
     category: cta
     default: '#'
+
+  cta.primaryPage:
+    type: page
+    category: cta
+    default: 0
 
   cta.secondaryLabel:
     type: string
     category: cta
     default: 'View work'
 
+  cta.secondaryLabelDe:
+    type: string
+    category: cta
+    default: 'Projekte ansehen'
+
   cta.secondaryLink:
     type: string
     category: cta
     default: '#'
+
+  cta.secondaryPage:
+    type: page
+    category: cta
+    default: 0
 
   # ── Styles ─────────────────────────────────────────────────────────
   styles.contentWidth:

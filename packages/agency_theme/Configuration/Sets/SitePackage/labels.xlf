@@ -143,6 +143,18 @@
       <trans-unit id="settings.description.cta.showHeader">
         <source>The button appears when a valid primary CTA link is configured.</source>
       </trans-unit>
+      <trans-unit id="settings.brand.taglineDe"><source>German tagline</source></trans-unit>
+      <trans-unit id="settings.footer.textDe"><source>German footer description</source></trans-unit>
+      <trans-unit id="settings.footer.legalPage"><source>Legal notice page</source></trans-unit>
+      <trans-unit id="settings.footer.privacyPage"><source>Privacy page</source></trans-unit>
+      <trans-unit id="settings.footer.ctaHeadingDe"><source>German footer invitation heading</source></trans-unit>
+      <trans-unit id="settings.footer.ctaTextDe"><source>German footer invitation text</source></trans-unit>
+      <trans-unit id="settings.cta.primaryLabelDe"><source>German primary button label</source></trans-unit>
+      <trans-unit id="settings.cta.primaryPage"><source>Primary button page</source></trans-unit>
+      <trans-unit id="settings.cta.secondaryLabelDe"><source>German secondary button label</source></trans-unit>
+      <trans-unit id="settings.cta.secondaryPage"><source>Secondary button page</source></trans-unit>
+      <trans-unit id="settings.description.cta.primaryPage"><source>Choose a page to follow the visitor's language. Takes precedence over the legacy URL.</source></trans-unit>
+      <trans-unit id="settings.description.cta.secondaryPage"><source>Choose a page to follow the visitor's language. Takes precedence over the legacy URL.</source></trans-unit>
     </body>
   </file>
 </xliff>

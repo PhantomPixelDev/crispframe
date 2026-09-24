@@ -3,19 +3,33 @@
   Partial: Site/Footer — 4 columns (brand, nav, services, contact) + legal row.
   Reads from site.settings.* (settings.definitions source of truth).
 -->
+<f:variable name="primaryCtaLabel" value="{site.settings.cta.primaryLabel}" />
+<f:variable name="secondaryCtaLabel" value="{site.settings.cta.secondaryLabel}" />
+<f:variable name="footerCtaHeading" value="{site.settings.footer.ctaHeading}" />
+<f:variable name="footerCtaText" value="{site.settings.footer.ctaText}" />
+<f:variable name="footerTagline" value="{site.settings.brand.tagline}" />
+<f:variable name="footerDescription" value="{site.settings.footer.text}" />
+<f:variable name="privacyLabel" value="{f:translate(key: 'LLL:EXT:agency_theme/Resources/Private/Language/locallang.xlf:site.privacy')}" />
+<f:variable name="imprintLabel" value="{f:translate(key: 'LLL:EXT:agency_theme/Resources/Private/Language/locallang.xlf:site.imprint')}" />
+<f:if condition="{currentLanguage} == 'de'">
+    <f:variable name="primaryCtaLabel" value="{site.settings.cta.primaryLabelDe}" />
+    <f:variable name="secondaryCtaLabel" value="{site.settings.cta.secondaryLabelDe}" />
+    <f:variable name="footerCtaHeading" value="{site.settings.footer.ctaHeadingDe}" />
+    <f:variable name="footerCtaText" value="{site.settings.footer.ctaTextDe}" />
+    <f:variable name="footerTagline" value="{site.settings.brand.taglineDe}" />
+    <f:variable name="footerDescription" value="{site.settings.footer.textDe}" />
+</f:if>
 <footer class="site-footer" role="contentinfo">
     <div class="site-footer__inner">
-        <f:if condition="{site.settings.footer.showCta} && {site.settings.cta.primaryLink} && {site.settings.cta.primaryLink} != '#' && {site.settings.cta.primaryLabel}">
+        <f:if condition="{site.settings.footer.showCta} && {primaryCtaLabel} && ({site.settings.cta.primaryPage} || ({site.settings.cta.primaryLink} && {site.settings.cta.primaryLink} != '#' && {site.settings.cta.primaryLink} != '/'))">
             <div class="site-footer__prelude">
                 <div>
-                    <h2 class="site-footer__prelude-title">{site.settings.footer.ctaHeading}</h2>
-                    <f:if condition="{site.settings.footer.ctaText}"><p class="site-footer__prelude-text">{site.settings.footer.ctaText}</p></f:if>
+                    <f:if condition="{footerCtaHeading}"><h2 class="site-footer__prelude-title">{footerCtaHeading}</h2></f:if>
+                    <f:if condition="{footerCtaText}"><p class="site-footer__prelude-text">{footerCtaText}</p></f:if>
                 </div>
                 <div class="site-footer__prelude-actions">
-                    <f:link.typolink parameter="{site.settings.cta.primaryLink}" class="btn site-footer__prelude-primary">{site.settings.cta.primaryLabel}</f:link.typolink>
-                    <f:if condition="{site.settings.cta.secondaryLink} && {site.settings.cta.secondaryLink} != '#' && {site.settings.cta.secondaryLabel}">
-                        <f:link.typolink parameter="{site.settings.cta.secondaryLink}" class="btn site-footer__prelude-secondary">{site.settings.cta.secondaryLabel}</f:link.typolink>
-                    </f:if>
+                    <f:render partial="Components/SiteAction" arguments="{pageUid: site.settings.cta.primaryPage, legacyLink: site.settings.cta.primaryLink, label: primaryCtaLabel, class: 'btn site-footer__prelude-primary'}" />
+                    <f:render partial="Components/SiteAction" arguments="{pageUid: site.settings.cta.secondaryPage, legacyLink: site.settings.cta.secondaryLink, label: secondaryCtaLabel, class: 'btn site-footer__prelude-secondary'}" />
                 </div>
             </div>
         </f:if>
@@ -25,11 +39,11 @@
                 <a href="{f:uri.page(pageUid: site.rootPageId)}" class="site-footer__logo" aria-label="{site.settings.brand.companyName}">
                     <span class="site-footer__logotype">{f:if(condition: site.settings.brand.companyName, then: site.settings.brand.companyName, else: 'Your Company')}</span>
                 </a>
-                <f:if condition="{site.settings.brand.tagline}">
-                    <p class="site-footer__tagline site-footer__blurb">{site.settings.brand.tagline}</p>
+                <f:if condition="{footerTagline}">
+                    <p class="site-footer__tagline site-footer__blurb">{footerTagline}</p>
                 </f:if>
-                <f:if condition="{site.settings.footer.text}">
-                    <p class="site-footer__blurb">{site.settings.footer.text}</p>
+                <f:if condition="{footerDescription}">
+                    <p class="site-footer__blurb">{footerDescription}</p>
                 </f:if>
                 <f:if condition="({site.settings.social.linkedin} && {site.settings.social.linkedin} != '#') || ({site.settings.social.github} && {site.settings.social.github} != '#') || ({site.settings.social.x} && {site.settings.social.x} != '#') || ({site.settings.social.instagram} && {site.settings.social.instagram} != '#') || ({site.settings.social.youtube} && {site.settings.social.youtube} != '#')">
                 <ul class="site-footer__socials" role="list" aria-label="{f:translate(key: 'LLL:EXT:agency_theme/Resources/Private/Language/locallang.xlf:site.social')}">
@@ -87,13 +101,13 @@
             <p class="site-footer__copyright">
                 &copy; <span data-current-year><f:format.date format="Y">now</f:format.date></span> {f:if(condition: site.settings.brand.companyName, then: site.settings.brand.companyName, else: 'Your Company')}. <f:translate key="LLL:EXT:agency_theme/Resources/Private/Language/locallang.xlf:site.rights" />
             </p>
-            <f:if condition="({site.settings.footer.privacyLink} && {site.settings.footer.privacyLink} != '/' && {site.settings.footer.privacyLink} != '#') || ({site.settings.footer.legalLink} && {site.settings.footer.legalLink} != '/' && {site.settings.footer.legalLink} != '#')">
+            <f:if condition="{site.settings.footer.privacyPage} || {site.settings.footer.legalPage} || ({site.settings.footer.privacyLink} && {site.settings.footer.privacyLink} != '/' && {site.settings.footer.privacyLink} != '#') || ({site.settings.footer.legalLink} && {site.settings.footer.legalLink} != '/' && {site.settings.footer.legalLink} != '#')">
             <ul class="site-footer__legal-links" role="list">
-                <f:if condition="{site.settings.footer.privacyLink} && {site.settings.footer.privacyLink} != '/' && {site.settings.footer.privacyLink} != '#'">
-                    <li><a href="{site.settings.footer.privacyLink}" class="site-footer__link site-footer__link--legal"><f:translate key="LLL:EXT:agency_theme/Resources/Private/Language/locallang.xlf:site.privacy" /></a></li>
+                <f:if condition="{site.settings.footer.privacyPage} || ({site.settings.footer.privacyLink} && {site.settings.footer.privacyLink} != '/' && {site.settings.footer.privacyLink} != '#')">
+                    <li><f:render partial="Components/SiteAction" arguments="{pageUid: site.settings.footer.privacyPage, legacyLink: site.settings.footer.privacyLink, label: privacyLabel, class: 'site-footer__link site-footer__link--legal'}" /></li>
                 </f:if>
-                <f:if condition="{site.settings.footer.legalLink} && {site.settings.footer.legalLink} != '/' && {site.settings.footer.legalLink} != '#'">
-                    <li><a href="{site.settings.footer.legalLink}" class="site-footer__link site-footer__link--legal"><f:translate key="LLL:EXT:agency_theme/Resources/Private/Language/locallang.xlf:site.imprint" /></a></li>
+                <f:if condition="{site.settings.footer.legalPage} || ({site.settings.footer.legalLink} && {site.settings.footer.legalLink} != '/' && {site.settings.footer.legalLink} != '#')">
+                    <li><f:render partial="Components/SiteAction" arguments="{pageUid: site.settings.footer.legalPage, legacyLink: site.settings.footer.legalLink, label: imprintLabel, class: 'site-footer__link site-footer__link--legal'}" /></li>
                 </f:if>
             </ul>
             </f:if>

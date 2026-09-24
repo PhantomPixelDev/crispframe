@@ -39,6 +39,9 @@
 .badge{background:var(--color-bg-muted);border-color:var(--color-border);color:var(--color-brand-ink)}
 .form__input:focus,.form__textarea:focus,.form__select:focus{box-shadow:0 0 0 3px color-mix(in srgb,var(--color-focus) 18%,transparent)}
 .hero-section .hero{gap:clamp(2rem,5vw,5rem);min-height:0}
+.hero-section .hero[data-image-position="left"] .hero__media,.hero-section .hero[data-image-position="left"] .hero__art{order:-1}
+.hero-section .hero[data-media-crop="square"] .hero__media{aspect-ratio:1}
+.hero-section .hero[data-media-crop="portrait"] .hero__media{aspect-ratio:4/5}
 .hero-section .hero__content{gap:clamp(.85rem,1.6vw,1.5rem)}
 .hero__title{max-width:13ch;line-height:1.04}
 .hero__lead{font-size:clamp(1.05rem,1.6vw,1.3rem);max-width:43ch}
@@ -82,6 +85,23 @@
 .site-footer__prelude{border:0;box-shadow:var(--shadow)}
 .site-footer__prelude-title{max-width:18ch}
 .form__input,.form__textarea,.form__select{min-height:3rem;padding:.7rem .85rem}
+/* Native TYPO3 content can sit between Crispframe blocks without custom templates. */
+.page>.frame:not([class*="frame-type-crispframe_"]){width:min(100% - 2*var(--container-gutter),var(--container-default));margin:var(--space-2xl) auto;color:var(--color-text)}
+.page>.frame:not([class*="frame-type-crispframe_"]):first-child{margin-block-start:var(--space-3xl)}
+.frame-type-text,.frame-type-textmedia,.frame-type-textpic,.frame-type-table,.frame-type-uploads{overflow-wrap:anywhere}
+.frame-type-text .ce-bodytext,.frame-type-textmedia .ce-bodytext,.frame-type-textpic .ce-bodytext{max-width:72ch;line-height:var(--leading-normal)}
+.frame-type-text .ce-bodytext>*+*,.frame-type-textmedia .ce-bodytext>*+*,.frame-type-textpic .ce-bodytext>*+*{margin-block-start:var(--space-md)}
+.frame-type-text a,.frame-type-textmedia a,.frame-type-textpic a,.frame-type-uploads a{color:var(--color-brand-ink);text-decoration:underline;text-underline-offset:.16em}
+.frame-type-text a:focus-visible,.frame-type-textmedia a:focus-visible,.frame-type-textpic a:focus-visible,.frame-type-uploads a:focus-visible{outline:3px solid var(--color-focus);outline-offset:3px}
+.frame-type-textmedia .ce-gallery,.frame-type-textpic .ce-gallery,.frame-type-image .ce-gallery{max-width:100%;overflow:hidden}
+.frame-type-textmedia .ce-gallery img,.frame-type-textpic .ce-gallery img,.frame-type-image .ce-gallery img{display:block;max-width:100%;height:auto;border-radius:var(--radius-md)}
+.frame-type-textmedia .ce-gallery figcaption,.frame-type-textpic .ce-gallery figcaption,.frame-type-image .ce-gallery figcaption{padding-block:var(--space-xs);font-size:var(--text-sm);color:var(--color-text-muted)}
+.frame-type-table .ce-table{display:block;max-width:100%;overflow-x:auto;border:1px solid var(--color-border);border-radius:var(--radius-md)}
+.frame-type-table table{min-width:32rem;margin:0;background:var(--color-bg)}
+.frame-type-table th{background:var(--color-bg-subtle);color:var(--color-text)}
+.frame-type-table caption{padding:var(--space-md);text-align:start;font-weight:var(--font-weight-semibold)}
+.frame-type-uploads .ce-uploads{list-style:none;padding:0;margin:0;display:grid;gap:var(--space-sm)}
+.frame-type-uploads .ce-uploads li{padding:var(--space-md);border:1px solid var(--color-border);border-radius:var(--radius-sm);background:var(--color-bg-subtle)}
 @media(max-width:63.99rem){.site-header__nav{gap:var(--space-sm)}.site-header .nav__link{padding-inline:.65rem}}
 @media(max-width:55.99rem){
   .site-header__inner{min-height:4.25rem;gap:.5rem}

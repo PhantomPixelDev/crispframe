@@ -1,11 +1,11 @@
 # Crispframe Agency Theme
 
 [![Packagist version](https://img.shields.io/packagist/v/crispframe/agency-theme?label=Packagist)](https://packagist.org/packages/crispframe/agency-theme)
-![TYPO3 13.4](https://img.shields.io/badge/TYPO3-13.4_LTS-f49700)
+![TYPO3 13.4 and 14.3](https://img.shields.io/badge/TYPO3-13.4%20%7C%2014.3_LTS-f49700)
 [![License: GPL-2.0-or-later](https://img.shields.io/badge/license-GPL--2.0--or--later-blue)](LICENSE)
 [![Release checks](https://github.com/PhantomPixelDev/crispframe/actions/workflows/ci.yml/badge.svg)](https://github.com/PhantomPixelDev/crispframe/actions/workflows/ci.yml)
 
-A reusable corporate site package for **TYPO3 13.4 LTS**. Build a services, product, or organization website with editable Content Blocks, four style palettes, and English/German interface labels. The theme has no build step and does not import demo content into an existing site.
+A reusable corporate site package for **TYPO3 13.4 and 14.3 LTS**. Build a services, product, or organization website with editable Content Blocks, four style palettes, and English/German interface labels. The theme has no build step and does not import demo content into an existing site. New starter sites use TYPO3 14.3.
 
 ## Preview
 
@@ -18,6 +18,8 @@ A reusable corporate site package for **TYPO3 13.4 LTS**. Build a services, prod
 | Work page | Contact page |
 | --- | --- |
 | <img src="Documentation/Images/work-desktop.webp" alt="Work page with project photography" width="640"> | <img src="Documentation/Images/contact-desktop.webp" alt="Contact page with meeting space photography" width="640"> |
+
+![German case study with the image on the left and an editable project narrative](Documentation/Images/case-study-de-desktop.webp)
 
 | Services page | About page |
 | --- | --- |
@@ -35,10 +37,10 @@ These screenshots show the [optional demo package](https://github.com/PhantomPix
 
 ## Get started
 
-In a TYPO3 13.4 Composer project, install the theme from [Packagist](https://packagist.org/packages/crispframe/agency-theme):
+In a TYPO3 13.4.15+ or 14.3.7+ Composer project, install the theme from [Packagist](https://packagist.org/packages/crispframe/agency-theme):
 
 ```bash
-composer require crispframe/agency-theme:^1.2
+composer require crispframe/agency-theme:^1.3
 ```
 
 Add the **Crispframe Agency Theme** Site Set under Admin → Site Management → Sites → *Your site* → Sets. Then follow the [first-run checklist](Documentation/FirstRun.md) to set branding, contact recipients, legal links, and SEO details.
@@ -46,7 +48,7 @@ Add the **Crispframe Agency Theme** Site Set under Admin → Site Management →
 For a **new empty site**, the [starter project](https://github.com/PhantomPixelDev/crispframe/tree/main/starter) and [optional demo package](https://packagist.org/packages/crispframe/agency-demo) provide an editable English/German page tree with examples of every block:
 
 ```bash
-composer require crispframe/agency-demo:^1.2
+composer require crispframe/agency-demo:^1.3
 vendor/bin/typo3 extension:setup --extension=agency_demo
 ```
 
@@ -54,9 +56,9 @@ The demo uses TYPO3's initialisation mechanism and should be installed only on a
 
 ## Requirements
 
-- TYPO3 13.4 (core, form, fluid-styled-content, rte-ckeditor ^13.4)
+- TYPO3 13.4.15+ or 14.3.7+ (core, form, fluid-styled-content, rte-ckeditor)
 - PHP 8.2+
-- `friendsoftypo3/content-blocks` ^1.6 for the structured elements
+- `friendsoftypo3/content-blocks` ^1.6 on TYPO3 13 or ^2.4 on TYPO3 14
 
 Composer installs these extensions automatically through this package's requirements. `ext_emconf.php` declares the same required extensions for classic TYPO3 installations.
 
@@ -75,7 +77,7 @@ Before accepting live inquiries, edit the Form content element's finisher overri
 The Site Set lives at `Configuration/Sets/SitePackage/`:
 
 - `config.yaml` — set `crispframe/agency-theme`, depends on `typo3/fluid-styled-content`, `typo3/form`, `typo3/seo-sitemap`
-- `settings.definitions.yaml` / `settings.yaml` — brand, contact, social, footer (`footer.servicesParent` — int page UID, 0 disables Services column), CTA, style presets
+- `settings.definitions.yaml` / `settings.yaml` — brand, contact, social, footer (`footer.servicesParent` — page picker that retains existing stored UIDs; 0 disables Services column), CTA page pickers and legacy URLs, style presets
 - `setup.typoscript` — PageView paths, rendering (Default/Landing/Minimal), menus (`menuMain`, `menuServices` via `footer.servicesParent`, `breadcrumb` rootline), meta fallbacks (description ← page field → brand tagline → company name, `og:site_name` ← company name, `og:type` website, `twitter:card` summary, `theme-color` `#0f172a`), Form + SEO canonical/sitemap via `typo3/seo-sitemap`
 - `page.tsconfig` — backend layouts (Default, Landing hero+main, Minimal), RTE preset, wizard
 

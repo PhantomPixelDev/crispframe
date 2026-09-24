@@ -111,6 +111,13 @@
       <trans-unit id="width.items.full.label">
         <source>Full</source>
       </trans-unit>
+      <trans-unit id="imagePosition.label"><source>Image side</source></trans-unit>
+      <trans-unit id="imagePosition.items.right.label"><source>Right</source></trans-unit>
+      <trans-unit id="imagePosition.items.left.label"><source>Left</source></trans-unit>
+      <trans-unit id="mediaCrop.label"><source>Image crop</source></trans-unit>
+      <trans-unit id="mediaCrop.items.landscape.label"><source>Landscape</source></trans-unit>
+      <trans-unit id="mediaCrop.items.square.label"><source>Square</source></trans-unit>
+      <trans-unit id="mediaCrop.items.portrait.label"><source>Portrait</source></trans-unit>
     </body>
   </file>
 </xliff>

@@ -1,19 +1,35 @@
 async (page) => {
   const base = page.url().match(/^https?:\/\/[^/]+/)[0];
   const expect = (condition, message) => { if (!condition) throw new Error(message); };
-  for (const path of ['/', '/work', '/contact', '/services', '/about', '/components', '/de/', '/de/work', '/de/contact', '/de/leistungen', '/de/ueber-uns', '/de/components']) {
+  for (const path of ['/', '/work', '/contact', '/services', '/about', '/components', '/work/clearer-public-service', '/work/customer-workspace', '/de/', '/de/work', '/de/contact', '/de/leistungen', '/de/ueber-uns', '/de/components', '/de/work/clearer-public-service', '/de/work/customer-workspace']) {
     const response = await page.goto(base + path);
     expect(response && response.status() === 200, `${path} must return 200`);
     const language = await page.locator('html').getAttribute('lang');
     expect(language === (path.startsWith('/de/') ? 'de' : 'en'), `${path} has wrong language: ${language}`);
     expect(await page.locator('link[rel="canonical"]').count() > 0, `${path} is missing canonical`);
-    if (['/', '/work', '/contact', '/services', '/about', '/de/', '/de/work', '/de/contact', '/de/leistungen', '/de/ueber-uns'].includes(path)) {
+    if (['/', '/work', '/contact', '/services', '/about', '/work/clearer-public-service', '/work/customer-workspace', '/de/', '/de/work', '/de/contact', '/de/leistungen', '/de/ueber-uns', '/de/work/clearer-public-service', '/de/work/customer-workspace'].includes(path)) {
       const heroImage = page.locator('.hero__media img').first();
       expect(await heroImage.count() === 1, `${path} is missing its editorial hero image`);
       expect((await heroImage.getAttribute('alt') || '').length > 10, `${path} needs useful hero alt text`);
       expect(await heroImage.evaluate(image => image.complete && image.naturalWidth > 0), `${path} hero image did not load`);
     }
   }
+  await page.goto(base + '/de/work');
+  expect(await page.locator('.project-card a[href^="/de/work/"]').count() >= 2, 'German Work cards must link to German case studies');
+  for (const image of await page.locator('.project-card__image').all()) {
+    await image.scrollIntoViewIfNeeded();
+    expect(await image.evaluate(element => element.complete && element.naturalWidth > 0), 'Project card image did not load');
+    expect((await image.getAttribute('alt') || '').match(/Mitarbeitende/), 'Project card alt text is not translated');
+  }
+  await page.goto(base + '/de/work/customer-workspace');
+  expect(await page.locator('.hero[data-image-position="left"][data-media-crop="square"]').count() === 1, 'Hero layout and crop options did not render');
+  expect((await page.locator('meta[name="description"]').getAttribute('content')).includes('Arbeitsbereich'), 'German case-study description is not localized');
+  expect((await page.locator('.hero__media img').getAttribute('alt')).includes('Zwei Mitarbeitende'), 'German case-study alt text is not localized');
+  expect(await page.locator('meta[property="og:title"]').count() === 1, 'Duplicate or missing Open Graph title');
+  expect(await page.locator('.hero__actions a[href="/de/contact"]').count() === 1, 'German case CTA should use the localized page');
+  expect(await page.locator('.frame-type-text').count() === 1, 'Native TYPO3 text should render between case-study blocks');
+  await page.getByRole('navigation', { name: 'Sprachen' }).getByRole('link', { name: 'English' }).click();
+  expect(page.url().endsWith('/work/customer-workspace'), 'Case-study language switch lost the current page');
   for (const path of ['/services', '/de/leistungen']) {
     await page.goto(base + path);
     expect(await page.locator('.comparison tbody tr').count() >= 2, `${path} needs comparison rows`);
@@ -84,7 +100,7 @@ async (page) => {
   await page.getByRole('button', { name: 'Send inquiry' }).click();
   expect((await page.locator('body').innerText()).includes('Thank you. Your inquiry has been sent.'), 'Contact confirmation missing');
   await page.emulateMedia({ reducedMotion: 'reduce' });
-  for (const path of ['/', '/work', '/contact', '/services', '/about', '/components', '/de/', '/de/leistungen', '/de/ueber-uns']) {
+  for (const path of ['/', '/work', '/contact', '/services', '/about', '/components', '/work/clearer-public-service', '/work/customer-workspace', '/de/', '/de/leistungen', '/de/ueber-uns', '/de/work/clearer-public-service', '/de/work/customer-workspace']) {
     await page.goto(base + path);
     for (const width of [390, 768, 1440]) {
       await page.setViewportSize({ width, height: 900 });
@@ -95,5 +111,5 @@ async (page) => {
       }
     }
   }
-  return 'Browser smoke passed: bilingual pages, breadcrumbs, new blocks, SEO, 404, gallery, pricing, video, contact form, four palettes, three widths and reduced motion.';
+  return 'Browser smoke passed: bilingual case studies, page links, Hero options, breadcrumbs, SEO, 404, gallery, pricing, video, contact form, four palettes, three widths and reduced motion.';
 }

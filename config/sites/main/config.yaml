@@ -38,6 +38,7 @@ settings:
   brand:
     companyName: 'Crispframe Studio'
     tagline: 'Strategy, design and engineering for ambitious brands.'
+    taglineDe: 'Strategie, Design und Entwicklung für ambitionierte Organisationen.'
     logoAlt: 'Crispframe Studio'
   contact:
     email: 'hello@crispframe.example'
@@ -51,10 +52,13 @@ settings:
     youtube: '#'
   footer:
     text: 'We design and build digital products that make complex businesses easier to use.'
+    textDe: 'Wir gestalten und entwickeln digitale Produkte, die komplexe Aufgaben einfacher machen.'
     legalLink: '#'
     privacyLink: '#'
   cta:
     primaryLabel: 'Start a project'
     primaryLink: '/contact'
+    primaryPage: 3
     secondaryLabel: 'View work'
     secondaryLink: '/work'
+    secondaryPage: 2

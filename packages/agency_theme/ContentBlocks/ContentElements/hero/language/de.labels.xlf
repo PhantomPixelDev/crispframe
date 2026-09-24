@@ -147,6 +147,13 @@
         <source>Full</source>
         <target>Volle Breite</target>
       </trans-unit>
+      <trans-unit id="imagePosition.label"><source>Image side</source><target>Bildseite</target></trans-unit>
+      <trans-unit id="imagePosition.items.right.label"><source>Right</source><target>Rechts</target></trans-unit>
+      <trans-unit id="imagePosition.items.left.label"><source>Left</source><target>Links</target></trans-unit>
+      <trans-unit id="mediaCrop.label"><source>Image crop</source><target>Bildzuschnitt</target></trans-unit>
+      <trans-unit id="mediaCrop.items.landscape.label"><source>Landscape</source><target>Querformat</target></trans-unit>
+      <trans-unit id="mediaCrop.items.square.label"><source>Square</source><target>Quadratisch</target></trans-unit>
+      <trans-unit id="mediaCrop.items.portrait.label"><source>Portrait</source><target>Hochformat</target></trans-unit>
     </body>
   </file>
 </xliff>

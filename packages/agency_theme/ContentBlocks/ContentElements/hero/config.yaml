@@ -46,6 +46,23 @@ fields:
     label: 'Image alt text override'
     description: 'Leave empty to use file metadata.'
     default: ''
+  - identifier: imagePosition
+    type: Select
+    renderType: selectSingle
+    label: 'Image side'
+    default: right
+    items:
+      - { label: Right, value: right }
+      - { label: Left, value: left }
+  - identifier: mediaCrop
+    type: Select
+    renderType: selectSingle
+    label: 'Image crop'
+    default: landscape
+    items:
+      - { label: Landscape, value: landscape }
+      - { label: Square, value: square }
+      - { label: Portrait, value: portrait }
   - identifier: isHero
     type: Checkbox
     label: 'Use h1 for headline'

@@ -1,6 +1,6 @@
 {
     "name": "crispframe/agency-theme",
-    "description": "Reusable corporate site package for TYPO3 13.4 LTS",
+    "description": "Reusable corporate site package for TYPO3 13.4 and 14.3 LTS",
     "homepage": "https://github.com/PhantomPixelDev/crispframe-agency-theme",
     "type": "typo3-cms-extension",
     "license": "GPL-2.0-or-later",
@@ -10,13 +10,13 @@
         "source": "https://github.com/PhantomPixelDev/crispframe-agency-theme"
     },
     "require": {
-        "friendsoftypo3/content-blocks": "^1.6",
-        "typo3/cms-core": "^13.4",
-        "typo3/cms-form": "^13.4",
-        "typo3/cms-frontend": "^13.4",
-        "typo3/cms-fluid-styled-content": "^13.4",
-        "typo3/cms-rte-ckeditor": "^13.4",
-        "typo3/cms-seo": "^13.4"
+        "friendsoftypo3/content-blocks": "^1.6 || ^2.4",
+        "typo3/cms-core": "^13.4.15 || ^14.3.7",
+        "typo3/cms-form": "^13.4.15 || ^14.3.7",
+        "typo3/cms-frontend": "^13.4.15 || ^14.3.7",
+        "typo3/cms-fluid-styled-content": "^13.4.15 || ^14.3.7",
+        "typo3/cms-rte-ckeditor": "^13.4.15 || ^14.3.7",
+        "typo3/cms-seo": "^13.4.15 || ^14.3.7"
     },
     "autoload": {
         "psr-4": {

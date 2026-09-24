@@ -4,6 +4,8 @@ set -eu
 # Exercise distribution archives, not Composer path repositories. Run in a PHP
 # environment with Composer, Python 3 and zip (the local Podman web container has all three).
 root=$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)
+typo3_major=${CRISPFRAME_TYPO3_MAJOR:-14}
+case "$typo3_major" in 13|14) ;; *) echo "CRISPFRAME_TYPO3_MAJOR must be 13 or 14" >&2; exit 2;; esac
 work=$(mktemp -d "${TMPDIR:-/tmp}/crispframe-release.XXXXXX")
 trap 'rm -rf "$work"' EXIT
 mkdir -p "$work/artifacts" "$work/theme" "$work/demo" "$work/site"
@@ -11,15 +13,24 @@ cp -R "$root/packages/agency_theme/." "$work/theme/"
 cp -R "$root/packages/agency_demo/." "$work/demo/"
 cp "$root/starter/composer.json" "$work/site/composer.json"
 
-python3 - "$work/theme/composer.json" "$work/demo/composer.json" <<'PY'
+python3 - "$work/theme/composer.json" "$work/demo/composer.json" "$work/site/composer.json" "$typo3_major" <<'PY'
 import json
 import sys
-for path in sys.argv[1:]:
+for path in sys.argv[1:3]:
     with open(path, encoding='utf-8') as file:
         package = json.load(file)
-    package['version'] = '1.2.0'
+    package['version'] = '1.3.0'
     with open(path, 'w', encoding='utf-8') as file:
         json.dump(package, file, indent=2)
+if sys.argv[4] == '13':
+    path = sys.argv[3]
+    with open(path, encoding='utf-8') as file:
+        starter = json.load(file)
+    for name in starter['require']:
+        if name.startswith('typo3/'):
+            starter['require'][name] = '^13.4.15'
+    with open(path, 'w', encoding='utf-8') as file:
+        json.dump(starter, file, indent=2)
 PY
 
 (cd "$work/theme" && zip -qr "$work/artifacts/agency-theme.zip" .)
@@ -32,7 +43,7 @@ test -f vendor/crispframe/agency-theme/LICENSE
 test -f vendor/crispframe/agency-theme/Resources/Private/ThirdParty/LUCIDE-LICENSE
 test ! -d vendor/crispframe/agency-demo
 
-composer require crispframe/agency-demo:^1.2 --no-interaction --prefer-dist --no-progress
+composer require crispframe/agency-demo:^1.3 --no-interaction --prefer-dist --no-progress
 test -f vendor/crispframe/agency-demo/Initialisation/data.xml
 test -f vendor/crispframe/agency-demo/Initialisation/Site/main/config.yaml
 TYPO3_SETUP_ADMIN_PASSWORD='CleanInstall1234!' vendor/bin/typo3 setup --driver=sqlite --dbname="$work/site/var/site.sqlite" --admin-username=admin --admin-email=admin@example.invalid --project-name='Crispframe clean install' --server-type=apache --no-interaction
@@ -47,16 +58,16 @@ from pathlib import Path
 database = sqlite3.connect(sys.argv[1])
 pages = database.execute("SELECT COUNT(*) FROM pages WHERE deleted = 0").fetchone()[0]
 translations = database.execute("SELECT COUNT(*) FROM pages WHERE deleted = 0 AND sys_language_uid = 1").fetchone()[0]
-files = [row[0] for row in database.execute("SELECT identifier FROM sys_file WHERE identifier LIKE '%workspace.svg' OR identifier LIKE '%collaboration.svg' OR identifier LIKE '%studio-team.webp' OR identifier LIKE '%project-worktable.webp' OR identifier LIKE '%meeting-space.webp' OR identifier LIKE '%services-team.webp' OR identifier LIKE '%about-team.webp'")]
+files = [row[0] for row in database.execute("SELECT identifier FROM sys_file WHERE identifier LIKE '%workspace.svg' OR identifier LIKE '%collaboration.svg' OR identifier LIKE '%studio-team.webp' OR identifier LIKE '%project-worktable.webp' OR identifier LIKE '%meeting-space.webp' OR identifier LIKE '%services-team.webp' OR identifier LIKE '%about-team.webp' OR identifier LIKE '%case-study-service.webp' OR identifier LIKE '%case-study-product.webp'")]
 blocks = {row[0] for row in database.execute("SELECT DISTINCT CType FROM tt_content WHERE CType LIKE 'crispframe_%' AND deleted = 0")}
-assert pages >= 12, f'Expected twelve bilingual example pages, found {pages}'
-assert translations >= 6, f'Expected six German pages, found {translations}'
-assert len(files) >= 7, f'Expected two gallery images and five hero photos, found {files}'
+assert pages >= 16, f'Expected sixteen bilingual example pages, found {pages}'
+assert translations >= 8, f'Expected eight German pages, found {translations}'
+assert len(files) >= 9, f'Expected demo galleries and case study photos, found {files}'
 assert len(blocks) == 19, f'Expected all 19 block types, found {sorted(blocks)}'
 heroes = database.execute("SELECT COUNT(*) FROM tt_content WHERE CType = 'crispframe_hero' AND crispframe_hero_image = 1 AND crispframe_hero_imageAlt != '' AND deleted = 0").fetchone()[0]
-assert heroes >= 10, f'Expected English and German image references for five heroes, found {heroes}'
+assert heroes >= 14, f'Expected English and German image references for seven heroes, found {heroes}'
 localized_hero_refs = database.execute("SELECT COUNT(*) FROM sys_file_reference WHERE fieldname = 'crispframe_hero_image' AND sys_language_uid = 1 AND l10n_parent > 0 AND deleted = 0").fetchone()[0]
-assert localized_hero_refs >= 5, f'Expected five linked German hero image references, found {localized_hero_refs}'
+assert localized_hero_refs >= 7, f'Expected seven linked German hero image references, found {localized_hero_refs}'
 for identifier in files:
     image = Path(sys.argv[1]).parents[2] / 'public' / 'fileadmin' / identifier.lstrip('/')
     assert image.is_file(), f'Missing imported gallery image: {image}'
@@ -87,13 +98,17 @@ for attempt in range(30):
         time.sleep(1)
 else:
     raise SystemExit('Clean starter HTTP server did not become ready')
-for path in ['/work', '/contact', '/services', '/about', '/components', '/de/', '/de/contact', '/de/leistungen', '/de/ueber-uns', '/de/components']:
+for path in ['/work', '/contact', '/services', '/about', '/components', '/de/', '/de/contact', '/de/leistungen', '/de/ueber-uns', '/de/components', '/work/clearer-public-service', '/work/customer-workspace', '/de/work/clearer-public-service', '/de/work/customer-workspace']:
     with urllib.request.urlopen('http://127.0.0.1:8765' + path) as response:
         assert response.status == 200, (path, response.status)
 with urllib.request.urlopen('http://127.0.0.1:8765/') as response:
     home = response.read().decode('utf-8')
-for empty_section in ['site-footer__socials', 'site-footer__legal-links', 'site-footer__col--contact', 'site-footer__col--services', 'site-header__cta']:
+for empty_section in ['site-footer__socials', 'site-footer__legal-links', 'site-footer__col--contact', 'site-footer__col--services']:
     assert empty_section not in home, f'Default site unexpectedly shows {empty_section}'
+assert 'site-header__cta' in home and 'href="/contact"' in home
+with urllib.request.urlopen('http://127.0.0.1:8765/de/') as response:
+    german = response.read().decode('utf-8')
+assert 'Kontakt aufnehmen' in german and 'href="/de/contact"' in german
 for path in ['/missing-page', '/de/fehlende-seite']:
     try:
         urllib.request.urlopen('http://127.0.0.1:8765' + path)

@@ -1,5 +1,5 @@
 # Crispframe Agency Theme — Site Set TypoScript
-# TYPO3 13.4, PAGEVIEW syntax. The PAGE object must exist for TYPO3 to
+# TYPO3 13.4 and 14.3 PAGEVIEW syntax. The PAGE object must exist for TYPO3 to
 # render frontend pages ("No page configured for type=0" otherwise).
 
 page = PAGE
@@ -13,6 +13,8 @@ page {
         }
 
         variables {
+            currentLanguage = TEXT
+            currentLanguage.data = siteLanguage:locale:languageCode
             # Content columns. styles.content.get comes from fluid-styled-content
             # (declared as set dependency in this set's config.yaml).
             contentMain < styles.content.get
@@ -20,7 +22,7 @@ page {
             contentHero < styles.content.get
             contentHero.select.where = colPos = 1
 
-            }
+        }
 
         dataProcessing {
             10 = menu
@@ -67,6 +69,10 @@ page {
         theme-color = #0f172a
     }
 }
+
+[siteLanguage("locale") == "de_DE"]
+page.meta.description.ifEmpty.data = site:settings.brand.taglineDe
+[END]
 
 plugin.tx_form.settings.yamlConfigurations.100 = EXT:agency_theme/Configuration/Form/FormSetup.yaml
 

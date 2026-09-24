@@ -190,6 +190,18 @@
         <source>The button appears when a valid primary CTA link is configured.</source>
         <target>Die Schaltfläche erscheint, wenn ein gültiger Link für die erste Handlungsaufforderung gesetzt ist.</target>
       </trans-unit>
+      <trans-unit id="settings.brand.taglineDe"><source>German tagline</source><target>Deutscher Slogan</target></trans-unit>
+      <trans-unit id="settings.footer.textDe"><source>German footer description</source><target>Deutscher Footer-Text</target></trans-unit>
+      <trans-unit id="settings.footer.legalPage"><source>Legal notice page</source><target>Impressumsseite</target></trans-unit>
+      <trans-unit id="settings.footer.privacyPage"><source>Privacy page</source><target>Datenschutzseite</target></trans-unit>
+      <trans-unit id="settings.footer.ctaHeadingDe"><source>German footer invitation heading</source><target>Deutsche Footer-Überschrift</target></trans-unit>
+      <trans-unit id="settings.footer.ctaTextDe"><source>German footer invitation text</source><target>Deutscher Footer-Einladungstext</target></trans-unit>
+      <trans-unit id="settings.cta.primaryLabelDe"><source>German primary button label</source><target>Deutscher Text der ersten Schaltfläche</target></trans-unit>
+      <trans-unit id="settings.cta.primaryPage"><source>Primary button page</source><target>Zielseite der ersten Schaltfläche</target></trans-unit>
+      <trans-unit id="settings.cta.secondaryLabelDe"><source>German secondary button label</source><target>Deutscher Text der zweiten Schaltfläche</target></trans-unit>
+      <trans-unit id="settings.cta.secondaryPage"><source>Secondary button page</source><target>Zielseite der zweiten Schaltfläche</target></trans-unit>
+      <trans-unit id="settings.description.cta.primaryPage"><source>Choose a page to follow the visitor's language. Takes precedence over the legacy URL.</source><target>Eine Seite wählen, damit der Link der Besuchersprache folgt. Hat Vorrang vor der bisherigen URL.</target></trans-unit>
+      <trans-unit id="settings.description.cta.secondaryPage"><source>Choose a page to follow the visitor's language. Takes precedence over the legacy URL.</source><target>Eine Seite wählen, damit der Link der Besuchersprache folgt. Hat Vorrang vor der bisherigen URL.</target></trans-unit>
     </body>
   </file>
 </xliff>

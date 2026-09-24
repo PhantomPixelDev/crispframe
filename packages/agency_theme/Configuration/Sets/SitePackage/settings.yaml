@@ -5,6 +5,7 @@
 brand:
   companyName: 'Your Company'
   tagline: ''
+  taglineDe: ''
   logo: ''
   logoAlt: 'Your Company'
 
@@ -22,18 +23,27 @@ social:
 
 footer:
   text: ''
+  textDe: ''
   legalLink: '/'
+  legalPage: 0
   privacyLink: '/'
+  privacyPage: 0
   servicesParent: 0
   showCta: true
   ctaHeading: 'Let us build something useful.'
+  ctaHeadingDe: 'Lassen Sie uns etwas Nützliches schaffen.'
   ctaText: 'Tell us what you are working on.'
+  ctaTextDe: 'Erzählen Sie uns von Ihrem Vorhaben.'
 
 cta:
   primaryLabel: 'Contact us'
+  primaryLabelDe: 'Kontakt aufnehmen'
   primaryLink: '#'
+  primaryPage: 0
   secondaryLabel: 'View work'
+  secondaryLabelDe: 'Projekte ansehen'
   secondaryLink: '#'
+  secondaryPage: 0
   showHeader: true
 
 styles:
