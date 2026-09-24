@@ -12,6 +12,8 @@
       <trans-unit id="headline.label">
         <source>Headline</source>
       </trans-unit>
+      <trans-unit id="isPageTitle.label"><source>Use as page heading (h1)</source></trans-unit>
+      <trans-unit id="isPageTitle.description"><source>Enable only for the first heading on a page.</source></trans-unit>
       <trans-unit id="lead.label">
         <source>Lead paragraph</source>
       </trans-unit>

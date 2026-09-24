@@ -1,0 +1,55 @@
+name: crispframe/author-card
+title: Author card
+description: A person profile for articles and case studies.
+group: Crispframe
+fields:
+  - identifier: name
+    type: Text
+    label: Name
+    required: true
+  - identifier: role
+    type: Text
+    label: Role
+  - identifier: bio
+    type: Textarea
+    label: Short biography
+  - identifier: portrait
+    type: File
+    label: Portrait
+    allowed: common-image-types
+    maxitems: 1
+  - identifier: linkLabel
+    type: Text
+    label: Link label
+  - identifier: link
+    type: Link
+    label: Link
+  - identifier: sectionSpacing
+    type: Select
+    renderType: selectSingle
+    label: Section spacing
+    default: small
+    items:
+      - { label: Small, value: small }
+      - { label: Default, value: default }
+      - { label: Large, value: large }
+  - identifier: sectionBackground
+    type: Select
+    renderType: selectSingle
+    label: Section background
+    default: default
+    items:
+      - { label: Default, value: default }
+      - { label: Subtle, value: subtle }
+      - { label: Dark, value: dark }
+      - { label: Brand, value: brand }
+  - identifier: width
+    type: Select
+    renderType: selectSingle
+    label: Container width
+    default: default
+    items:
+      - { label: Narrow, value: narrow }
+      - { label: Default, value: default }
+      - { label: Wide, value: wide }
+      - { label: Full, value: full }

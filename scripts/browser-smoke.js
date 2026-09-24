@@ -1,7 +1,7 @@
 async (page) => {
   const base = page.url().match(/^https?:\/\/[^/]+/)[0];
   const expect = (condition, message) => { if (!condition) throw new Error(message); };
-  for (const path of ['/', '/work', '/contact', '/services', '/about', '/components', '/work/clearer-public-service', '/work/customer-workspace', '/de/', '/de/work', '/de/contact', '/de/leistungen', '/de/ueber-uns', '/de/components', '/de/work/clearer-public-service', '/de/work/customer-workspace']) {
+  for (const path of ['/', '/work', '/contact', '/services', '/about', '/components', '/insights', '/resources', '/insights/clear-service-pages', '/insights/content-checklist', '/work/clearer-public-service', '/work/customer-workspace', '/de/', '/de/work', '/de/contact', '/de/leistungen', '/de/ueber-uns', '/de/components', '/de/wissen', '/de/ressourcen', '/de/wissen/klare-service-seiten', '/de/wissen/inhaltscheckliste', '/de/work/clearer-public-service', '/de/work/customer-workspace']) {
     const response = await page.goto(base + path);
     expect(response && response.status() === 200, `${path} must return 200`);
     const language = await page.locator('html').getAttribute('lang');
@@ -42,6 +42,33 @@ async (page) => {
     });
     expect(breadcrumb.rows === 1 && breadcrumb.separators === 1 && breadcrumb.pseudo === 'none', `${path} breadcrumb is not a single row with one separator`);
   }
+  await page.goto(base + '/insights');
+  expect(await page.locator('.child-pages__item').count() === 2, 'Insights must list two child pages');
+  for (const image of await page.locator('.child-pages__image').all()) {
+    await image.scrollIntoViewIfNeeded();
+    expect(await image.evaluate(element => element.complete && element.naturalWidth > 0), 'Child-page image did not load');
+  }
+  await page.goto(base + '/de/wissen');
+  expect(await page.locator('.child-pages__link[href^="/de/wissen/"]').count() === 2, 'German page teasers must use German routes');
+  expect((await page.locator('.child-pages__image').first().getAttribute('alt')).includes('Kolleginnen'), 'German page media alt text is missing');
+  await page.goto(base + '/insights/clear-service-pages');
+  expect(await page.locator('.article-layout__sidebar .author-card').count() === 1, 'Article sidebar needs its author card');
+  expect(await page.locator('.pull-quote blockquote').count() === 1, 'Article quotation is missing');
+  await page.goto(base + '/insights/content-checklist');
+  expect(await page.locator('.article-layout__sidebar').count() === 0, 'Empty article sidebar must disappear');
+  await page.goto(base + '/resources');
+  expect(await page.locator('[data-tabs]').count() === 2, 'Resources should demonstrate independent tab groups');
+  const firstGroup = page.locator('[data-tabs]').first();
+  const secondGroup = page.locator('[data-tabs]').nth(1);
+  await firstGroup.getByRole('tab').first().focus();
+  await page.keyboard.press('ArrowRight');
+  expect(await firstGroup.getByRole('tab').nth(1).evaluate(element => element === document.activeElement), 'ArrowRight did not move tab focus');
+  await page.keyboard.press('Enter');
+  expect(await firstGroup.getByRole('tab').nth(1).getAttribute('aria-selected') === 'true', 'Enter did not activate the focused tab');
+  expect(await secondGroup.getByRole('tab').first().getAttribute('aria-selected') === 'true', 'First tab group changed the second group');
+  expect(await page.locator('.resource-list__item').count() === 3, 'Resource list is incomplete');
+  await page.goto(base + '/de/ressourcen');
+  expect(await page.locator('.resource-list__link[href^="/de/"]').count() === 3, 'German resource links must remain localized');
   for (const path of ['/missing-page', '/de/fehlende-seite']) {
     const response = await page.goto(base + path);
     expect(response && response.status() === 404, `${path} must return 404`);
@@ -49,6 +76,11 @@ async (page) => {
   }
   await page.setViewportSize({ width: 390, height: 900 });
   await page.goto(base + '/');
+  const ctaColors = await page.locator('.cta__actions .btn--primary').first().evaluate(button => ({
+    button: getComputedStyle(button).backgroundColor,
+    surface: getComputedStyle(button.closest('.cta')).backgroundColor,
+  }));
+  expect(ctaColors.button !== ctaColors.surface, 'Brand CTA button blends into its background');
   for (const width of [320, 390, 768, 1440]) {
     await page.setViewportSize({ width, height: 900 });
     const layout = await page.evaluate(() => {
@@ -100,7 +132,7 @@ async (page) => {
   await page.getByRole('button', { name: 'Send inquiry' }).click();
   expect((await page.locator('body').innerText()).includes('Thank you. Your inquiry has been sent.'), 'Contact confirmation missing');
   await page.emulateMedia({ reducedMotion: 'reduce' });
-  for (const path of ['/', '/work', '/contact', '/services', '/about', '/components', '/work/clearer-public-service', '/work/customer-workspace', '/de/', '/de/leistungen', '/de/ueber-uns', '/de/work/clearer-public-service', '/de/work/customer-workspace']) {
+  for (const path of ['/', '/work', '/contact', '/services', '/about', '/components', '/insights', '/resources', '/insights/clear-service-pages', '/insights/content-checklist', '/work/clearer-public-service', '/work/customer-workspace', '/de/', '/de/leistungen', '/de/ueber-uns', '/de/wissen', '/de/ressourcen', '/de/wissen/klare-service-seiten', '/de/wissen/inhaltscheckliste', '/de/work/clearer-public-service', '/de/work/customer-workspace']) {
     await page.goto(base + path);
     for (const width of [390, 768, 1440]) {
       await page.setViewportSize({ width, height: 900 });
@@ -111,5 +143,5 @@ async (page) => {
       }
     }
   }
-  return 'Browser smoke passed: bilingual case studies, page links, Hero options, breadcrumbs, SEO, 404, gallery, pricing, video, contact form, four palettes, three widths and reduced motion.';
+  return 'Browser smoke passed: bilingual editorial pages, tabs, article sidebar, page media, case studies, SEO, 404, contact, four palettes and responsive layouts.';
 }

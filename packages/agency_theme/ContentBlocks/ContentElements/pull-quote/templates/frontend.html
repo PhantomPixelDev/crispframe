@@ -1,0 +1,17 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:if condition="{data.quote}">
+    <section class="section section--{data.sectionBackground}" data-spacing="{data.sectionSpacing}">
+        <div class="container container--{data.width}">
+            <figure class="pull-quote">
+                <blockquote class="pull-quote__text">{data.quote}</blockquote>
+                <f:if condition="{data.attribution} || {data.role} || {data.portrait}">
+                    <figcaption class="pull-quote__credit">
+                        <f:for each="{data.portrait}" as="file"><f:image image="{file}" width="96c" height="96c" loading="lazy" decoding="async" alt="" class="pull-quote__portrait" /></f:for>
+                        <span><f:if condition="{data.attribution}"><strong>{data.attribution}</strong></f:if><f:if condition="{data.role}"><span class="pull-quote__role">{data.role}</span></f:if></span>
+                    </figcaption>
+                </f:if>
+            </figure>
+        </div>
+    </section>
+</f:if>
+</html>

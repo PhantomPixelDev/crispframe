@@ -1,5 +1,16 @@
 # Changelog
 
+## 1.4.0 — 2026-09-24
+
+- Added child page teasers, tabs, pull quote, resource list and author card Content Blocks, with English and German editor labels.
+- Added an Article backend layout with an optional sidebar and new header, footer and breadcrumb settings.
+- Fixed CTA button contrast on brand sections and expanded the optional bilingual editorial demo.
+
+## 1.3.0 — 2026-09-24
+
+- Added dual TYPO3 13/14 support, localized page settings and a bilingual case-study showcase.
+- Added Hero image position/crop controls and styles for standard TYPO3 text, image, table and file links.
+
 ## 1.2.0 — 2026-09-23
 
 - Added editable Comparison and Timeline blocks with English and German editor labels, responsive layouts, palette-aware styling, and empty-state handling.

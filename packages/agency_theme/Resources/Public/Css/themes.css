@@ -47,10 +47,8 @@
 @media(max-width:47.99rem){.hero__art{max-height:19rem}.hero-section .hero{min-height:0}}
 .service-card,.card--feature{gap:var(--space-sm);padding:var(--space-lg)}
 .service-card .card__action{margin-block-start:auto;padding-block-start:var(--space-sm)}
-.section--brand .card .btn--secondary,.section--dark .card .btn--secondary,.section--brand .cta .btn--secondary,.section--dark .cta .btn--secondary{background:var(--color-bg);color:var(--color-text);border-color:var(--color-border-strong)}
-.section--brand .card .btn--secondary:hover,.section--dark .card .btn--secondary:hover,.section--brand .cta .btn--secondary:hover,.section--dark .cta .btn--secondary:hover{background:var(--color-bg-subtle);color:var(--color-text);border-color:var(--color-text-muted)}
-.section--brand .cta .btn--primary,.section--dark .cta .btn--primary{background:var(--color-brand);color:#fff;border-color:var(--color-brand)}
-.section--brand .cta .btn--primary:hover,.section--dark .cta .btn--primary:hover{background:var(--color-brand-hover);color:#fff;border-color:var(--color-brand-hover)}
+.section--brand .card .btn--secondary,.section--dark .card .btn--secondary{background:var(--color-bg);color:var(--color-text);border-color:var(--color-border-strong)}
+.section--brand .card .btn--secondary:hover,.section--dark .card .btn--secondary:hover{background:var(--color-bg-subtle);color:var(--color-text);border-color:var(--color-text-muted)}
 .section--brand .stats__value,.section--brand .stats__label,.section--brand .stat__value,.section--brand .stat__label{color:#fff}
 .section--dark .stats__value,.section--dark .stats__label,.section--dark .stat__value,.section--dark .stat__label{color:var(--color-on-dark)}
 .section--dark .stats__label,.section--dark .stat__label{color:var(--color-on-dark-muted)}

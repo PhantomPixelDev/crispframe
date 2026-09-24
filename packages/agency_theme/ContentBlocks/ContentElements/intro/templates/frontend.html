@@ -3,7 +3,7 @@
 <section class="section section--{data.sectionBackground}" data-spacing="{data.sectionSpacing}">
     <div class="container container--{data.width}">
         <header class="section-header section-header--center">
-            <h2 class="section-header__title">{data.headline}</h2>
+            <f:if condition="{data.isPageTitle}"><f:then><h1 class="section-header__title">{data.headline}</h1></f:then><f:else><h2 class="section-header__title">{data.headline}</h2></f:else></f:if>
             <f:if condition="{data.lead}"><p class="section-header__lead">{data.lead}</p></f:if>
         </header>
         <f:if condition="{data.text}"><div class="prose prose--intro"><p>{data.text -> f:format.nl2br()}</p></div></f:if>

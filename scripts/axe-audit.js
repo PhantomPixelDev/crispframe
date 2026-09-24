@@ -1,7 +1,7 @@
 async (page) => {
   const base = page.url().match(/^https?:\/\/[^/]+/)[0];
   const failures = [];
-  for (const path of ['/', '/work', '/contact', '/services', '/about', '/components', '/work/customer-workspace', '/de/', '/de/work', '/de/contact', '/de/work/customer-workspace']) {
+  for (const path of ['/', '/work', '/contact', '/services', '/about', '/components', '/resources', '/insights/clear-service-pages', '/work/customer-workspace', '/de/', '/de/work', '/de/contact', '/de/ressourcen', '/de/wissen/klare-service-seiten', '/de/work/customer-workspace']) {
     for (const width of [390, 768, 1440]) {
       await page.setViewportSize({ width, height: 900 });
       await page.goto(base + path);
@@ -23,5 +23,5 @@ async (page) => {
     }
   }
   if (failures.length) throw new Error(JSON.stringify(failures));
-  return 'axe WCAG 2.2 AA tagged checks passed on eleven English and German pages, three widths and four palettes.';
+  return 'axe WCAG 2.2 AA tagged checks passed on fifteen English and German pages, three widths and four palettes.';
 }

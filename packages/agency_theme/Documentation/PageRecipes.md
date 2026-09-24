@@ -1,6 +1,6 @@
 # Page recipes from existing blocks
 
-Each row is an editable TYPO3 content element. Start with a short page tree (Home, Services or Product, About, Contact, Legal, Privacy) and translate the page records and content records for German. The first hero on a page can use `isHero` for its h1; subsequent headings stay h2. Leave optional collections empty to hide them.
+Each row is an editable TYPO3 content element. Start with a short page tree (Home, Services or Product, About, Contact, Legal, Privacy) and translate the page records and content records for German. Use `isHero` on a Hero or **Use as page heading (h1)** on an Intro for the page's first heading; subsequent headings stay h2. Leave optional collections empty to hide them.
 
 ## Services company
 
@@ -28,5 +28,15 @@ Each row is an editable TYPO3 content element. Start with a short page tree (Hom
 | Our work | Services → Projects → Gallery → Testimonials | Programs, documented results, captions and attributed quotes. |
 | People | Intro → Timeline → Team → Process → FAQ | Governance, milestones, roles and ways to participate. |
 | Contact | Contact → TYPO3 Form | Real addresses and privacy information. |
+
+## Editorial pages and resources
+
+| Page | Block order | What to enter |
+| --- | --- | --- |
+| Insights landing | Intro → Child page teasers | Select the Insights page as parent; translated child page records provide titles, descriptions, links and optional page images automatically. |
+| Article | Hero → Core text → Pull quote, with Author card in the Article sidebar | Use the Hero h1 option, useful body headings and a named source for the quotation. The sidebar disappears when empty. |
+| Resources | Intro → Tabs → Resource list | Group two to five short topics in tabs; link to pages, files or external resources through TYPO3 link fields. |
+
+Site Settings also offer standard or compact headers, full or minimal footers, and an option to hide breadcrumbs. Their defaults retain the original layout.
 
 Use the four palettes as starting points, then check text contrast after replacing the example imagery and copy. Keep external video and newsletter integrations subject to the site's own consent and service choices.

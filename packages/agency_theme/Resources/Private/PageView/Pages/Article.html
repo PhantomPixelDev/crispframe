@@ -1,0 +1,15 @@
+<f:layout name="Default" />
+
+<f:section name="Main">
+    <div class="page page--article">
+        <f:if condition="{site.settings.navigation.showBreadcrumbs} && {breadcrumb}">
+            <div class="container container--default">
+                <f:render partial="Components/Breadcrumb" arguments="{breadcrumb: breadcrumb}" />
+            </div>
+        </f:if>
+        <div class="article-layout{f:if(condition: contentSidebar, then: ' article-layout--with-sidebar')}">
+            <div class="article-layout__main"><f:format.raw>{contentMain}</f:format.raw></div>
+            <f:if condition="{contentSidebar}"><aside class="article-layout__sidebar"><f:format.raw>{contentSidebar}</f:format.raw></aside></f:if>
+        </div>
+    </div>
+</f:section>

@@ -1,0 +1,68 @@
+name: crispframe/resource-list
+title: Resource list
+description: Curated links to pages, external sites, or files.
+group: Crispframe
+fields:
+  - identifier: headline
+    type: Text
+    label: Headline
+    required: true
+  - identifier: lead
+    type: Textarea
+    label: Introduction
+  - identifier: items
+    type: Collection
+    label: Resources
+    minitems: 1
+    maxitems: 12
+    fields:
+      - identifier: label
+        type: Text
+        label: Link label
+        required: true
+      - identifier: description
+        type: Textarea
+        label: Description
+      - identifier: link
+        type: Link
+        label: Link
+      - identifier: icon
+        type: Select
+        renderType: selectSingle
+        label: Icon
+        default: arrow-right
+        items:
+          - { label: Arrow, value: arrow-right }
+          - { label: Guide, value: layers-3 }
+          - { label: Work, value: briefcase-business }
+          - { label: Website, value: globe-2 }
+          - { label: None, value: none }
+  - identifier: sectionSpacing
+    type: Select
+    renderType: selectSingle
+    label: Section spacing
+    default: default
+    items:
+      - { label: Small, value: small }
+      - { label: Default, value: default }
+      - { label: Large, value: large }
+  - identifier: sectionBackground
+    type: Select
+    renderType: selectSingle
+    label: Section background
+    default: default
+    items:
+      - { label: Default, value: default }
+      - { label: Subtle, value: subtle }
+      - { label: Dark, value: dark }
+      - { label: Brand, value: brand }
+  - identifier: width
+    type: Select
+    renderType: selectSingle
+    label: Container width
+    default: default
+    items:
+      - { label: Narrow, value: narrow }
+      - { label: Default, value: default }
+      - { label: Wide, value: wide }
+      - { label: Full, value: full }

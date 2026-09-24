@@ -1,0 +1,26 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:if condition="{data.items}">
+    <section class="section section--{data.sectionBackground}" data-spacing="{data.sectionSpacing}">
+        <div class="container container--{data.width}">
+            <header class="section-header">
+                <h2 class="section-header__title">{data.headline}</h2>
+                <f:if condition="{data.lead}"><p class="section-header__lead">{data.lead}</p></f:if>
+            </header>
+            <div class="editorial-tabs" data-tabs>
+                <div class="editorial-tabs__controls" role="tablist" aria-label="{data.headline}" hidden>
+                    <f:for each="{data.items}" as="item" iteration="iteration">
+                        <button type="button" role="tab" id="tab-{data.uid}-{iteration.index}" aria-controls="panel-{data.uid}-{iteration.index}" aria-selected="{f:if(condition: iteration.isFirst, then: 'true', else: 'false')}" tabindex="{f:if(condition: iteration.isFirst, then: '0', else: '-1')}" class="editorial-tabs__tab">{item.label}</button>
+                    </f:for>
+                </div>
+                <f:for each="{data.items}" as="item" iteration="iteration">
+                    <section class="editorial-tabs__panel" id="panel-{data.uid}-{iteration.index}" role="tabpanel" aria-labelledby="tab-{data.uid}-{iteration.index}" tabindex="0">
+                        <h3 class="editorial-tabs__heading">{f:if(condition: item.title, then: item.title, else: item.label)}</h3>
+                        <f:if condition="{item.text}"><div class="editorial-tabs__text">{item.text -> f:format.html()}</div></f:if>
+                        <f:for each="{item.image}" as="file"><f:image image="{file}" width="960c" height="640c" loading="lazy" decoding="async" alt="{file.alternative}" class="editorial-tabs__image" /></f:for>
+                    </section>
+                </f:for>
+            </div>
+        </div>
+    </section>
+</f:if>
+</html>

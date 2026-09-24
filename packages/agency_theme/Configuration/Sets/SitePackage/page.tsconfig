@@ -64,6 +64,32 @@ mod.web_layout.BackendLayouts {
             }
         }
     }
+    Article {
+        title = Article with sidebar
+        icon = EXT:agency_theme/Resources/Public/Icons/sprite.svg
+        config {
+            backend_layout {
+                colCount = 2
+                rowCount = 1
+                rows {
+                    1 {
+                        columns {
+                            1 {
+                                name = Main content
+                                colPos = 0
+                                identifier = main
+                            }
+                            2 {
+                                name = Sidebar
+                                colPos = 2
+                                identifier = sidebar
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
     Minimal {
         title = Minimal
         icon = EXT:agency_theme/Resources/Public/Icons/sprite.svg
@@ -104,6 +130,7 @@ TCEFORM.tt_content.frame_class.disabled = 1
 # Show colPos labels clearly
 TCEFORM.tt_content.colPos.altLabels.0 = Main content
 TCEFORM.tt_content.colPos.altLabels.1 = Hero
+TCEFORM.tt_content.colPos.altLabels.2 = Sidebar
 
 # ── Page module: hide arbitrary header layouts editors should not pick ─
 # Keep only default + 1-3

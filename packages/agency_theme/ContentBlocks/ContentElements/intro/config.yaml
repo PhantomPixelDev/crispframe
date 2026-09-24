@@ -8,6 +8,10 @@ fields:
     label: 'Headline'
     required: true
     default: 'Strategy, design and code — under one roof'
+  - identifier: isPageTitle
+    type: Checkbox
+    label: 'Use as page heading (h1)'
+    description: 'Enable only for the first heading on a page.'
   - identifier: lead
     type: Textarea
     label: 'Lead paragraph'

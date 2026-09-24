@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file datatype="plaintext" original="labels.xlf" source-language="en" product-name="crispframe/child-pages">
+    <body>
+      <trans-unit id="title">
+        <source>Child page teasers</source>
+      </trans-unit>
+      <trans-unit id="description">
+        <source>Show translated child pages as cards or a compact list.</source>
+      </trans-unit>
+      <trans-unit id="headline.label">
+        <source>Headline</source>
+      </trans-unit>
+      <trans-unit id="lead.label">
+        <source>Introduction</source>
+      </trans-unit>
+      <trans-unit id="parentPage.label">
+        <source>Parent page</source>
+      </trans-unit>
+      <trans-unit id="parentPage.description">
+        <source>Show visible direct children of this page.</source>
+      </trans-unit>
+      <trans-unit id="layout.label">
+        <source>Layout</source>
+      </trans-unit>
+      <trans-unit id="layout.items.cards.label">
+        <source>Cards</source>
+      </trans-unit>
+      <trans-unit id="layout.items.list.label">
+        <source>Compact list</source>
+      </trans-unit>
+      <trans-unit id="sectionSpacing.label">
+        <source>Section spacing</source>
+      </trans-unit>
+      <trans-unit id="sectionSpacing.items.small.label">
+        <source>Small</source>
+      </trans-unit>
+      <trans-unit id="sectionSpacing.items.default.label">
+        <source>Default</source>
+      </trans-unit>
+      <trans-unit id="sectionSpacing.items.large.label">
+        <source>Large</source>
+      </trans-unit>
+      <trans-unit id="sectionBackground.label">
+        <source>Section background</source>
+      </trans-unit>
+      <trans-unit id="sectionBackground.items.default.label">
+        <source>Default</source>
+      </trans-unit>
+      <trans-unit id="sectionBackground.items.subtle.label">
+        <source>Subtle</source>
+      </trans-unit>
+      <trans-unit id="sectionBackground.items.dark.label">
+        <source>Dark</source>
+      </trans-unit>
+      <trans-unit id="sectionBackground.items.brand.label">
+        <source>Brand</source>
+      </trans-unit>
+      <trans-unit id="width.label">
+        <source>Container width</source>
+      </trans-unit>
+      <trans-unit id="width.items.narrow.label">
+        <source>Narrow</source>
+      </trans-unit>
+      <trans-unit id="width.items.default.label">
+        <source>Default</source>
+      </trans-unit>
+      <trans-unit id="width.items.wide.label">
+        <source>Wide</source>
+      </trans-unit>
+      <trans-unit id="width.items.full.label">
+        <source>Full</source>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

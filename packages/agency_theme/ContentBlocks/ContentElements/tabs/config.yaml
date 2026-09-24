@@ -1,0 +1,63 @@
+name: crispframe/tabs
+title: Tabs
+description: Two to five panels of related content.
+group: Crispframe
+fields:
+  - identifier: headline
+    type: Text
+    label: Headline
+    required: true
+  - identifier: lead
+    type: Textarea
+    label: Introduction
+  - identifier: items
+    type: Collection
+    label: Panels
+    minitems: 2
+    maxitems: 5
+    fields:
+      - identifier: label
+        type: Text
+        label: Tab label
+        required: true
+      - identifier: title
+        type: Text
+        label: Panel title
+      - identifier: text
+        type: Textarea
+        enableRichtext: true
+        label: Panel text
+      - identifier: image
+        type: File
+        label: Panel image
+        allowed: common-image-types
+        maxitems: 1
+  - identifier: sectionSpacing
+    type: Select
+    renderType: selectSingle
+    label: Section spacing
+    default: default
+    items:
+      - { label: Small, value: small }
+      - { label: Default, value: default }
+      - { label: Large, value: large }
+  - identifier: sectionBackground
+    type: Select
+    renderType: selectSingle
+    label: Section background
+    default: default
+    items:
+      - { label: Default, value: default }
+      - { label: Subtle, value: subtle }
+      - { label: Dark, value: dark }
+      - { label: Brand, value: brand }
+  - identifier: width
+    type: Select
+    renderType: selectSingle
+    label: Container width
+    default: default
+    items:
+      - { label: Narrow, value: narrow }
+      - { label: Default, value: default }
+      - { label: Wide, value: wide }
+      - { label: Full, value: full }

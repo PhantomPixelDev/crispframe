@@ -21,6 +21,8 @@ page {
             contentMain.select.where = colPos = 0
             contentHero < styles.content.get
             contentHero.select.where = colPos = 1
+            contentSidebar < styles.content.get
+            contentSidebar.select.where = colPos = 2
 
         }
 
@@ -70,9 +72,21 @@ page {
     }
 }
 
+tt_content.crispframe_childpages.dataProcessing {
+    20 = menu
+    20 {
+        as = childPages
+        special = directory
+        special.value.field = crispframe_childpages_parentPage
+        titleField = nav_title // title
+        includeNotInMenu = 0
+        if.isTrue.field = crispframe_childpages_parentPage
+    }
+    30 = Crispframe\AgencyTheme\DataProcessing\ChildPageMediaProcessor
+}
+
 [siteLanguage("locale") == "de_DE"]
 page.meta.description.ifEmpty.data = site:settings.brand.taglineDe
 [END]
 
 plugin.tx_form.settings.yamlConfigurations.100 = EXT:agency_theme/Configuration/Form/FormSetup.yaml
-

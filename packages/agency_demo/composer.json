@@ -9,7 +9,7 @@
         "source": "https://github.com/PhantomPixelDev/crispframe-agency-demo"
     },
     "require": {
-        "crispframe/agency-theme": "^1.3",
+        "crispframe/agency-theme": "^1.4",
         "typo3/cms-impexp": "^13.4.15 || ^14.3.7"
     },
     "extra": {

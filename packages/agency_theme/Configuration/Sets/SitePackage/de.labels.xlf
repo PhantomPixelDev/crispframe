@@ -202,6 +202,14 @@
       <trans-unit id="settings.cta.secondaryPage"><source>Secondary button page</source><target>Zielseite der zweiten Schaltfläche</target></trans-unit>
       <trans-unit id="settings.description.cta.primaryPage"><source>Choose a page to follow the visitor's language. Takes precedence over the legacy URL.</source><target>Eine Seite wählen, damit der Link der Besuchersprache folgt. Hat Vorrang vor der bisherigen URL.</target></trans-unit>
       <trans-unit id="settings.description.cta.secondaryPage"><source>Choose a page to follow the visitor's language. Takes precedence over the legacy URL.</source><target>Eine Seite wählen, damit der Link der Besuchersprache folgt. Hat Vorrang vor der bisherigen URL.</target></trans-unit>
+      <trans-unit id="categories.navigation"><source>Navigation</source><target>Navigation</target></trans-unit>
+      <trans-unit id="settings.footer.layout"><source>Footer layout</source><target>Footer-Layout</target></trans-unit>
+      <trans-unit id="settings.styles.headerVariant"><source>Header size</source><target>Größe des Kopfbereichs</target></trans-unit>
+      <trans-unit id="settings.navigation.showBreadcrumbs"><source>Show breadcrumbs</source><target>Brotkrumennavigation anzeigen</target></trans-unit>
+      <trans-unit id="settings.footer.layout.enum.full"><source>Full footer</source><target>Vollständiger Footer</target></trans-unit>
+      <trans-unit id="settings.footer.layout.enum.minimal"><source>Minimal footer</source><target>Einfacher Footer</target></trans-unit>
+      <trans-unit id="settings.styles.headerVariant.enum.standard"><source>Standard</source><target>Standard</target></trans-unit>
+      <trans-unit id="settings.styles.headerVariant.enum.compact"><source>Compact</source><target>Kompakt</target></trans-unit>
     </body>
   </file>
 </xliff>

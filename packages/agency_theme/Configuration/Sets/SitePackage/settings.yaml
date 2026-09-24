@@ -30,6 +30,7 @@ footer:
   privacyPage: 0
   servicesParent: 0
   showCta: true
+  layout: 'full'
   ctaHeading: 'Let us build something useful.'
   ctaHeadingDe: 'Lassen Sie uns etwas Nützliches schaffen.'
   ctaText: 'Tell us what you are working on.'
@@ -53,3 +54,7 @@ styles:
   corners: 'soft'
   spacing: 'balanced'
   stickyHeader: true
+  headerVariant: 'standard'
+
+navigation:
+  showBreadcrumbs: true

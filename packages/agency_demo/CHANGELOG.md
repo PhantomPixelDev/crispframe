@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.4.0 — 2026-09-24
+
+- Added translated Insights and Resources pages, two editable articles, child-page cards and all five editorial block examples.
+- Demonstrated localized page media, an Article sidebar with an author card, and an empty sidebar layout.
+- Requires `crispframe/agency-theme` 1.4 or newer. Install only on a fresh site; never reimport over edited content.
+
+## 1.3.0 — 2026-09-24
+
+- Added bilingual Work case studies and translated metadata, page references and Hero images.
+
 ## 1.2.0 — 2026-09-23
 
 - Added editable Services and About page recipes in English and German, each with an original replaceable hero photo and localized alt text.

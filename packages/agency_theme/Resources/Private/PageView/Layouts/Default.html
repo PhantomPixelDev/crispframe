@@ -6,9 +6,10 @@
 <f:asset.css identifier="agency-themes" href="EXT:agency_theme/Resources/Public/Css/themes.css" priority="50" />
 <f:asset.css identifier="agency-forms" href="EXT:agency_theme/Resources/Public/Css/forms.css" priority="60" />
 <f:asset.css identifier="agency-blocks" href="EXT:agency_theme/Resources/Public/Css/blocks.css" priority="70" />
+<f:asset.css identifier="agency-editorial" href="EXT:agency_theme/Resources/Public/Css/editorial.css" priority="75" />
 <f:asset.css identifier="agency-refresh" href="EXT:agency_theme/Resources/Public/Css/refresh.css" priority="80" />
 
-<div class="site-shell" data-palette="{site.settings.styles.palette}" data-width="{site.settings.styles.contentWidth}" data-type-scale="{site.settings.styles.typeScale}" data-corners="{site.settings.styles.corners}" data-rhythm="{site.settings.styles.spacing}" data-sticky-header="{f:if(condition: site.settings.styles.stickyHeader, then: 'true', else: 'false')}">
+<div class="site-shell" data-palette="{site.settings.styles.palette}" data-width="{site.settings.styles.contentWidth}" data-type-scale="{site.settings.styles.typeScale}" data-corners="{site.settings.styles.corners}" data-rhythm="{site.settings.styles.spacing}" data-sticky-header="{f:if(condition: site.settings.styles.stickyHeader, then: 'true', else: 'false')}" data-header-variant="{site.settings.styles.headerVariant}" data-footer-variant="{site.settings.footer.layout}">
 <a class="skip-link" href="#main-content"><f:translate key="LLL:EXT:agency_theme/Resources/Private/Language/locallang.xlf:site.skip" /></a>
 
 <f:render partial="Site/Header" optional="true" arguments="{_all}" />
@@ -41,5 +42,6 @@
 <f:asset.script identifier="agency-video" src="EXT:agency_theme/Resources/Public/JavaScript/video.js" priority="30" />
 <f:asset.script identifier="agency-pricing" src="EXT:agency_theme/Resources/Public/JavaScript/pricing.js" priority="40" />
 <f:asset.script identifier="agency-gallery" src="EXT:agency_theme/Resources/Public/JavaScript/gallery.js" priority="50" />
+<f:asset.script identifier="agency-tabs" src="EXT:agency_theme/Resources/Public/JavaScript/tabs.js" priority="60" />
 
 

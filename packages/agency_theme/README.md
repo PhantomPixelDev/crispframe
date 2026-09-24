@@ -21,6 +21,12 @@ A reusable corporate site package for **TYPO3 13.4 and 14.3 LTS**. Build a servi
 
 ![German case study with the image on the left and an editable project narrative](Documentation/Images/case-study-de-desktop.webp)
 
+| Insights page and automatic article teasers | Resources with keyboard-friendly tabs and curated links |
+| --- | --- |
+| <img src="Documentation/Images/insights-desktop.webp" alt="Insights page with two article cards generated from child pages" width="640"> | <img src="Documentation/Images/resources-desktop.webp" alt="Resources page with tabs and link cards" width="640"> |
+
+![Article layout with a main column, pull quote, and optional author sidebar](Documentation/Images/article-desktop.webp)
+
 | Services page | About page |
 | --- | --- |
 | <img src="Documentation/Images/services-desktop.webp" alt="Services page with an editable comparison and timeline" width="640"> | <img src="Documentation/Images/about-desktop.webp" alt="About page with team photography and principles" width="640"> |
@@ -29,7 +35,7 @@ These screenshots show the [optional demo package](https://github.com/PhantomPix
 
 ## What is included
 
-- **19 Content Blocks:** hero, intro, text/image, features, services, stats, logos, testimonials, projects, team, FAQ, CTA, contact, process, pricing, video, gallery, comparison, and timeline.
+- **24 Content Blocks:** hero, intro, text/image, features, services, stats, logos, testimonials, projects, team, FAQ, CTA, contact, process, pricing, video, gallery, comparison, timeline, child page teasers, tabs, pull quote, resource list, and author card.
 - **Site settings:** branding, contact details, navigation and footer links, CTAs, content width, typography, corners, spacing, sticky header, and ocean/forest/plum/ember palettes.
 - **Publishing basics:** responsive PageView layouts, a branded 404, SEO metadata and structured data, language switcher, keyboard-friendly interactions, and reduced-motion support.
 - **Icon choices:** a curated, locally bundled [Lucide](https://lucide.dev/) selection for services and features, plus custom SVG upload. Existing icon identifiers remain available; no icon CDN or JavaScript package is needed at runtime.
@@ -40,7 +46,7 @@ These screenshots show the [optional demo package](https://github.com/PhantomPix
 In a TYPO3 13.4.15+ or 14.3.7+ Composer project, install the theme from [Packagist](https://packagist.org/packages/crispframe/agency-theme):
 
 ```bash
-composer require crispframe/agency-theme:^1.3
+composer require crispframe/agency-theme:^1.4
 ```
 
 Add the **Crispframe Agency Theme** Site Set under Admin → Site Management → Sites → *Your site* → Sets. Then follow the [first-run checklist](Documentation/FirstRun.md) to set branding, contact recipients, legal links, and SEO details.
@@ -48,7 +54,7 @@ Add the **Crispframe Agency Theme** Site Set under Admin → Site Management →
 For a **new empty site**, the [starter project](https://github.com/PhantomPixelDev/crispframe/tree/main/starter) and [optional demo package](https://packagist.org/packages/crispframe/agency-demo) provide an editable English/German page tree with examples of every block:
 
 ```bash
-composer require crispframe/agency-demo:^1.3
+composer require crispframe/agency-demo:^1.4
 vendor/bin/typo3 extension:setup --extension=agency_demo
 ```
 
@@ -88,7 +94,7 @@ All brand/URL data comes from **Site Settings** — no hardcoded company URLs or
 No build step. Edit and reload:
 
 - CSS: `Resources/Public/Css/` — tokens, base, layout, components, utilities, theme presets, form, block and visual refresh styles (loaded by the PageView layout)
-- JS: `Resources/Public/JavaScript/` — `main.js` (nav, skip-link, year, sticky), `accordion.js`, `pricing.js`, `video.js` and `gallery.js`
+- JS: `Resources/Public/JavaScript/` — `main.js` (nav, skip-link, year, sticky), `accordion.js`, `pricing.js`, `video.js`, `gallery.js` and `tabs.js`
 - Icons: `Resources/Public/Icons/sprite.svg` — referenced through TYPO3's public asset URL by the icon partial
 - Fluid: `Resources/Private/PageView/{Layouts,Pages,Partials/}` — layouts `Default`/`Landing`/`Minimal`, partials `Site/Header`, `Site/Navigation`, `Site/Footer`, `Components/*`
 

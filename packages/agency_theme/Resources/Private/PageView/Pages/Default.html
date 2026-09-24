@@ -2,7 +2,7 @@
 
 <f:section name="Main">
     <div class="page page--default">
-        <f:if condition="{breadcrumb}">
+        <f:if condition="{site.settings.navigation.showBreadcrumbs} && {breadcrumb}">
             <div class="container container--default">
                 <f:render partial="Components/Breadcrumb" arguments="{breadcrumb: breadcrumb}" />
             </div>

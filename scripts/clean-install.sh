@@ -19,7 +19,7 @@ import sys
 for path in sys.argv[1:3]:
     with open(path, encoding='utf-8') as file:
         package = json.load(file)
-    package['version'] = '1.3.0'
+    package['version'] = '1.4.0'
     with open(path, 'w', encoding='utf-8') as file:
         json.dump(package, file, indent=2)
 if sys.argv[4] == '13':
@@ -43,7 +43,7 @@ test -f vendor/crispframe/agency-theme/LICENSE
 test -f vendor/crispframe/agency-theme/Resources/Private/ThirdParty/LUCIDE-LICENSE
 test ! -d vendor/crispframe/agency-demo
 
-composer require crispframe/agency-demo:^1.3 --no-interaction --prefer-dist --no-progress
+composer require crispframe/agency-demo:^1.4 --no-interaction --prefer-dist --no-progress
 test -f vendor/crispframe/agency-demo/Initialisation/data.xml
 test -f vendor/crispframe/agency-demo/Initialisation/Site/main/config.yaml
 TYPO3_SETUP_ADMIN_PASSWORD='CleanInstall1234!' vendor/bin/typo3 setup --driver=sqlite --dbname="$work/site/var/site.sqlite" --admin-username=admin --admin-email=admin@example.invalid --project-name='Crispframe clean install' --server-type=apache --no-interaction
@@ -60,10 +60,10 @@ pages = database.execute("SELECT COUNT(*) FROM pages WHERE deleted = 0").fetchon
 translations = database.execute("SELECT COUNT(*) FROM pages WHERE deleted = 0 AND sys_language_uid = 1").fetchone()[0]
 files = [row[0] for row in database.execute("SELECT identifier FROM sys_file WHERE identifier LIKE '%workspace.svg' OR identifier LIKE '%collaboration.svg' OR identifier LIKE '%studio-team.webp' OR identifier LIKE '%project-worktable.webp' OR identifier LIKE '%meeting-space.webp' OR identifier LIKE '%services-team.webp' OR identifier LIKE '%about-team.webp' OR identifier LIKE '%case-study-service.webp' OR identifier LIKE '%case-study-product.webp'")]
 blocks = {row[0] for row in database.execute("SELECT DISTINCT CType FROM tt_content WHERE CType LIKE 'crispframe_%' AND deleted = 0")}
-assert pages >= 16, f'Expected sixteen bilingual example pages, found {pages}'
-assert translations >= 8, f'Expected eight German pages, found {translations}'
+assert pages >= 24, f'Expected twenty-four bilingual example pages, found {pages}'
+assert translations >= 12, f'Expected twelve German pages, found {translations}'
 assert len(files) >= 9, f'Expected demo galleries and case study photos, found {files}'
-assert len(blocks) == 19, f'Expected all 19 block types, found {sorted(blocks)}'
+assert len(blocks) == 24, f'Expected all 24 block types, found {sorted(blocks)}'
 heroes = database.execute("SELECT COUNT(*) FROM tt_content WHERE CType = 'crispframe_hero' AND crispframe_hero_image = 1 AND crispframe_hero_imageAlt != '' AND deleted = 0").fetchone()[0]
 assert heroes >= 14, f'Expected English and German image references for seven heroes, found {heroes}'
 localized_hero_refs = database.execute("SELECT COUNT(*) FROM sys_file_reference WHERE fieldname = 'crispframe_hero_image' AND sys_language_uid = 1 AND l10n_parent > 0 AND deleted = 0").fetchone()[0]
@@ -71,7 +71,7 @@ assert localized_hero_refs >= 7, f'Expected seven linked German hero image refer
 for identifier in files:
     image = Path(sys.argv[1]).parents[2] / 'public' / 'fileadmin' / identifier.lstrip('/')
     assert image.is_file(), f'Missing imported gallery image: {image}'
-print(f'Clean install passed: {pages} pages, {translations} German translations, 19 block types, {len(files)} imported images.')
+print(f'Clean install passed: {pages} pages, {translations} German translations, 24 block types, {len(files)} imported images.')
 PY
 
 if [ "${CRISPFRAME_BROWSER_SMOKE:-0}" = '1' ]; then
@@ -98,7 +98,7 @@ for attempt in range(30):
         time.sleep(1)
 else:
     raise SystemExit('Clean starter HTTP server did not become ready')
-for path in ['/work', '/contact', '/services', '/about', '/components', '/de/', '/de/contact', '/de/leistungen', '/de/ueber-uns', '/de/components', '/work/clearer-public-service', '/work/customer-workspace', '/de/work/clearer-public-service', '/de/work/customer-workspace']:
+for path in ['/work', '/contact', '/services', '/about', '/components', '/insights', '/resources', '/insights/clear-service-pages', '/insights/content-checklist', '/de/', '/de/contact', '/de/leistungen', '/de/ueber-uns', '/de/components', '/de/wissen', '/de/ressourcen', '/de/wissen/klare-service-seiten', '/de/wissen/inhaltscheckliste', '/work/clearer-public-service', '/work/customer-workspace', '/de/work/clearer-public-service', '/de/work/customer-workspace']:
     with urllib.request.urlopen('http://127.0.0.1:8765' + path) as response:
         assert response.status == 200, (path, response.status)
 with urllib.request.urlopen('http://127.0.0.1:8765/') as response:

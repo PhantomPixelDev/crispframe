@@ -1,0 +1,28 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:if condition="{childPages}">
+    <section class="section section--{data.sectionBackground}" data-spacing="{data.sectionSpacing}">
+        <div class="container container--{data.width}">
+            <header class="section-header">
+                <h2 class="section-header__title">{data.headline}</h2>
+                <f:if condition="{data.lead}"><p class="section-header__lead">{data.lead}</p></f:if>
+            </header>
+            <ul class="child-pages child-pages--{data.layout}" role="list">
+                <f:for each="{childPages}" as="page">
+                    <li class="child-pages__item">
+                        <a href="{page.link}" class="child-pages__link">
+                            <f:if condition="{page.teaserImage}">
+                                <f:image image="{page.teaserImage}" width="800c" height="520c" loading="lazy" decoding="async" alt="{page.teaserImage.alternative}" class="child-pages__image" />
+                            </f:if>
+                            <span class="child-pages__content">
+                                <span class="child-pages__title">{page.title}</span>
+                                <f:if condition="{page.teaserSummary}"><span class="child-pages__summary">{page.teaserSummary}</span></f:if>
+                            </span>
+                            <span class="child-pages__arrow" aria-hidden="true">→</span>
+                        </a>
+                    </li>
+                </f:for>
+            </ul>
+        </div>
+    </section>
+</f:if>
+</html>

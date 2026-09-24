@@ -1,0 +1,56 @@
+name: crispframe/child-pages
+title: Child page teasers
+description: Show translated child pages as cards or a compact list.
+group: Crispframe
+fields:
+  - identifier: headline
+    type: Text
+    label: Headline
+    required: true
+  - identifier: lead
+    type: Textarea
+    label: Introduction
+  - identifier: parentPage
+    type: Relation
+    label: Parent page
+    description: Show visible direct children of this page.
+    allowed: pages
+    relationship: manyToOne
+    minitems: 1
+  - identifier: layout
+    type: Select
+    renderType: selectSingle
+    label: Layout
+    default: cards
+    items:
+      - { label: Cards, value: cards }
+      - { label: Compact list, value: list }
+  - identifier: sectionSpacing
+    type: Select
+    renderType: selectSingle
+    label: Section spacing
+    default: default
+    items:
+      - { label: Small, value: small }
+      - { label: Default, value: default }
+      - { label: Large, value: large }
+  - identifier: sectionBackground
+    type: Select
+    renderType: selectSingle
+    label: Section background
+    default: default
+    items:
+      - { label: Default, value: default }
+      - { label: Subtle, value: subtle }
+      - { label: Dark, value: dark }
+      - { label: Brand, value: brand }
+  - identifier: width
+    type: Select
+    renderType: selectSingle
+    label: Container width
+    default: default
+    items:
+      - { label: Narrow, value: narrow }
+      - { label: Default, value: default }
+      - { label: Wide, value: wide }
+      - { label: Full, value: full }

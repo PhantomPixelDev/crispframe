@@ -155,6 +155,14 @@
       <trans-unit id="settings.cta.secondaryPage"><source>Secondary button page</source></trans-unit>
       <trans-unit id="settings.description.cta.primaryPage"><source>Choose a page to follow the visitor's language. Takes precedence over the legacy URL.</source></trans-unit>
       <trans-unit id="settings.description.cta.secondaryPage"><source>Choose a page to follow the visitor's language. Takes precedence over the legacy URL.</source></trans-unit>
+      <trans-unit id="categories.navigation"><source>Navigation</source></trans-unit>
+      <trans-unit id="settings.footer.layout"><source>Footer layout</source></trans-unit>
+      <trans-unit id="settings.styles.headerVariant"><source>Header size</source></trans-unit>
+      <trans-unit id="settings.navigation.showBreadcrumbs"><source>Show breadcrumbs</source></trans-unit>
+      <trans-unit id="settings.footer.layout.enum.full"><source>Full footer</source></trans-unit>
+      <trans-unit id="settings.footer.layout.enum.minimal"><source>Minimal footer</source></trans-unit>
+      <trans-unit id="settings.styles.headerVariant.enum.standard"><source>Standard</source></trans-unit>
+      <trans-unit id="settings.styles.headerVariant.enum.compact"><source>Compact</source></trans-unit>
     </body>
   </file>
 </xliff>

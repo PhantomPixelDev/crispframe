@@ -1,0 +1,49 @@
+name: crispframe/pull-quote
+title: Pull quote
+description: A prominent quotation within an article or case study.
+group: Crispframe
+fields:
+  - identifier: quote
+    type: Textarea
+    label: Quotation
+    required: true
+  - identifier: attribution
+    type: Text
+    label: Attribution
+  - identifier: role
+    type: Text
+    label: Role or organization
+  - identifier: portrait
+    type: File
+    label: Portrait
+    allowed: common-image-types
+    maxitems: 1
+  - identifier: sectionSpacing
+    type: Select
+    renderType: selectSingle
+    label: Section spacing
+    default: default
+    items:
+      - { label: Small, value: small }
+      - { label: Default, value: default }
+      - { label: Large, value: large }
+  - identifier: sectionBackground
+    type: Select
+    renderType: selectSingle
+    label: Section background
+    default: subtle
+    items:
+      - { label: Default, value: default }
+      - { label: Subtle, value: subtle }
+      - { label: Dark, value: dark }
+      - { label: Brand, value: brand }
+  - identifier: width
+    type: Select
+    renderType: selectSingle
+    label: Container width
+    default: narrow
+    items:
+      - { label: Narrow, value: narrow }
+      - { label: Default, value: default }
+      - { label: Wide, value: wide }
+      - { label: Full, value: full }
