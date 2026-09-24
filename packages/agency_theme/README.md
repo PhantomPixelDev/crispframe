@@ -55,7 +55,7 @@ These screenshots show the [optional demo package](https://github.com/PhantomPix
 - **24 Content Blocks:** hero, intro, text/image, features, services, stats, logos, testimonials, projects, team, FAQ, CTA, contact, process, pricing, video, gallery, comparison, timeline, child page teasers, tabs, pull quote, resource list, and author card.
 - **Site settings:** branding, contact details, navigation and footer links, CTAs, content width, typography, corners, spacing, sticky header, and ocean/forest/plum/ember palettes.
 - **Publishing basics:** responsive PageView layouts, a branded 404, SEO metadata and structured data, language switcher, keyboard-friendly interactions, and reduced-motion support.
-- **Icon choices:** a curated, locally bundled [Lucide](https://lucide.dev/) selection for services and features, plus custom SVG upload. Existing icon identifiers remain available; no icon CDN or JavaScript package is needed at runtime.
+- **Icon choices:** a curated, locally bundled [Lucide](https://lucide.dev/) selection for services and features, presented in large editorial card surfaces, plus custom SVG upload. Existing icon identifiers remain available; no icon CDN or JavaScript package is needed at runtime.
 - **Visual system:** a locally bundled Plus Jakarta Sans variable font, four palette presets, expressive/standard type scales, compact/airy spacing, narrow/default/wide content widths, and sharp/round corner settings. The font is licensed under the SIL Open Font License; see `Resources/Public/Fonts/OFL-PlusJakartaSans.txt`.
 - **Contact form:** TYPO3 Form Framework definition with editable recipient overrides. Mail transport and real addresses are set by the site owner.
 
