@@ -28,8 +28,8 @@
     <f:variable name="smX" value="" />
     <f:variable name="smInstagram" value="" />
     <f:variable name="smYoutube" value="" />
-    <f:variable name="siteUrl" value="{site.configuration.base}" />
-    <f:if condition="{site.configuration.base} == ''"><f:variable name="siteUrl" value="{site.base}" /></f:if>
+    <f:variable name="siteUrl" value="{site.base}" />
+    <f:if condition="{site.base} == ''"><f:variable name="siteUrl" value="{site.configuration.base}" /></f:if>
     <f:if condition="{site.settings.social.linkedin} && {site.settings.social.linkedin} != '#'"><f:variable name="smLinkedin" value="{site.settings.social.linkedin}" /></f:if>
     <f:if condition="{site.settings.social.github} && {site.settings.social.github} != '#'"><f:variable name="smGithub" value="{site.settings.social.github}" /></f:if>
     <f:if condition="{site.settings.social.x} && {site.settings.social.x} != '#'"><f:variable name="smX" value="{site.settings.social.x}" /></f:if>
