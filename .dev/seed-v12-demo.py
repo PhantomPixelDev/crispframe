@@ -1,6 +1,6 @@
 """Maintainer-only, additive authoring script for the v1.2 demo export.
 
-Run inside the local Podman web container after extension:setup. The public demo
+Run inside the local Compose web container after extension:setup. The public demo
 distribution installs only the exported Initialisation/data.xml, never this script.
 """
 

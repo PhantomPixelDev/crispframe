@@ -2,7 +2,7 @@
 set -eu
 
 # Exercise distribution archives, not Composer path repositories. Run in a PHP
-# environment with Composer, Python 3 and zip (the local Podman web container has all three).
+# environment with Composer, Python 3 and zip (the local Compose web container has all three).
 root=$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)
 typo3_major=${CRISPFRAME_TYPO3_MAJOR:-14}
 case "$typo3_major" in 13|14) ;; *) echo "CRISPFRAME_TYPO3_MAJOR must be 13 or 14" >&2; exit 2;; esac
