@@ -5,6 +5,8 @@ services:
     environment:
       TYPO3_CONTEXT: Development/VPS
       CRISPFRAME_BASE_URL: https://dev-crispframe.ppxl.dev/
+      CRISPFRAME_REVERSE_PROXY_IP: 172.16.0.0/12
+      CRISPFRAME_TRUSTED_HOST_PATTERN: ^dev-crispframe\.ppxl\.dev$
     volumes:
       - var:/app/var
       - config:/data/config

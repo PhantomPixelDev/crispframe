@@ -94,7 +94,7 @@ Podman users can run the same commands by substituting `podman compose`. The bro
 
 ### VPS development override
 
-[`compose.vps.yaml`](compose.vps.yaml) extends the local stack for the Crispframe development VPS. It removes published application ports, joins the shared `edge` network, persists TYPO3 system settings and uploads, and sets the canonical development URL through `CRISPFRAME_BASE_URL`:
+[`compose.vps.yaml`](compose.vps.yaml) extends the local stack for the Crispframe development VPS. It removes published application ports, joins the shared `edge` network, persists TYPO3 system settings and uploads, sets the canonical development URL through `CRISPFRAME_BASE_URL`, and limits TYPO3's trusted reverse proxy and host configuration to the registered development host:
 
 ```shell
 docker compose -f compose.yaml -f compose.vps.yaml up -d
