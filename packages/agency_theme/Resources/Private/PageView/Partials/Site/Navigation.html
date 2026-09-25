@@ -15,7 +15,7 @@
                     <div class="nav__parent-row">
                         <a href="{item.link}" class="site-nav__link nav__link{f:if(condition: item.active, then: ' nav__link--active')}"{f:if(condition: item.current, then: ' aria-current="page"')}{f:if(condition: item.target, then: ' target="{item.target}"')}{f:if(condition: '{item.target} == _blank', then: ' rel="noopener noreferrer"')}>{item.title}</a>
                         <f:if condition="{item.children}">
-                            <button type="button" class="nav__submenu-toggle" aria-expanded="false" aria-controls="submenu-{navInstance}-{item.data.uid}" aria-label="{f:translate(key: 'LLL:EXT:agency_theme/Resources/Private/Language/locallang.xlf:site.toggleSubmenu', arguments: {0: item.title})}"><span aria-hidden="true"></span></button>
+                            <button type="button" class="nav__submenu-toggle" aria-expanded="false" aria-controls="submenu-{navInstance}-{item.data.uid}" aria-label="Toggle submenu for {item.title}"><span aria-hidden="true"></span></button>
                         </f:if>
                     </div>
                     <f:if condition="{item.children}">
