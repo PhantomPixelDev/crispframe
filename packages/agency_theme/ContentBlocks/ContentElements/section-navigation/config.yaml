@@ -1,0 +1,49 @@
+name: crispframe/section-navigation
+title: Section navigation
+description: Automatic links to content elements marked for section menus on the current page.
+group: Crispframe
+fields:
+  - identifier: headline
+    type: Text
+    label: Heading
+    default: On this page
+  - identifier: layout
+    type: Select
+    renderType: selectSingle
+    label: Layout
+    default: list
+    items:
+      - { label: List, value: list }
+      - { label: Inline, value: inline }
+  - identifier: sticky
+    type: Checkbox
+    label: Keep visible while scrolling
+  - identifier: sectionSpacing
+    type: Select
+    renderType: selectSingle
+    label: Section spacing
+    default: small
+    items:
+      - { label: Small, value: small }
+      - { label: Default, value: default }
+      - { label: Large, value: large }
+  - identifier: sectionBackground
+    type: Select
+    renderType: selectSingle
+    label: Section background
+    default: subtle
+    items:
+      - { label: Default, value: default }
+      - { label: Subtle, value: subtle }
+      - { label: Dark, value: dark }
+      - { label: Brand, value: brand }
+  - identifier: width
+    type: Select
+    renderType: selectSingle
+    label: Container width
+    default: default
+    items:
+      - { label: Narrow, value: narrow }
+      - { label: Default, value: default }
+      - { label: Wide, value: wide }
+      - { label: Full, value: full }

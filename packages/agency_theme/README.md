@@ -8,7 +8,7 @@
 [![License: GPL-2.0-or-later](https://img.shields.io/badge/license-GPL--2.0--or--later-blue)](LICENSE)
 [![Release checks](https://github.com/PhantomPixelDev/crispframe/actions/workflows/ci.yml/badge.svg)](https://github.com/PhantomPixelDev/crispframe/actions/workflows/ci.yml)
 
-**Crispframe is a reusable, open-source TYPO3 sitepackage for modern corporate, agency, services, product, and organization websites.** It supports TYPO3 13.4 and 14.3 LTS, PHP 8.2+, English and German, responsive Content Blocks, configurable visual palettes, accessible interactions, SEO defaults, and a TYPO3 Form Framework contact form.
+**Crispframe is a reusable, open-source TYPO3 sitepackage for modern corporate, agency, services, product, and organization websites.** It supports TYPO3 13.4 and 14.3 LTS, PHP 8.2+, English and German, 27 responsive Content Blocks, dropdown or mega navigation, configurable visual palettes, accessible interactions, SEO defaults, and TYPO3 Form Framework presets.
 
 The theme is intentionally safe to install into an existing project: it provides templates, Site Sets, Content Blocks, styles, icons, and integrations, but does not import demo pages or overwrite site-specific content. New TYPO3 14 starter sites can add the optional bilingual demo package when they need example content.
 
@@ -52,19 +52,19 @@ These screenshots show the [optional demo package](https://github.com/PhantomPix
 
 ## Features
 
-- **24 Content Blocks:** hero, intro, text/image, features, services, stats, logos, testimonials, projects, team, FAQ, CTA, contact, process, pricing, video, gallery, comparison, timeline, child page teasers, tabs, pull quote, resource list, and author card.
-- **Site settings:** branding, contact details, navigation and footer links, CTAs, content width, typography, corners, spacing, sticky header, and ocean/forest/plum/ember palettes.
+- **27 Content Blocks:** hero, intro, text/image, features, services, stats, logos, testimonials, projects, team, FAQ, CTA, contact, process, pricing, video, gallery, comparison, timeline, child page teasers, tabs, pull quote, resource list, author card, section navigation, callout, and office locations.
+- **Site settings:** branding, contact details, dropdown or mega navigation, bilingual announcement bar, two footer page trees, CTAs, content width, typography, corners, spacing, sticky header, and ocean/forest/plum/ember palettes.
 - **Publishing basics:** responsive PageView layouts, a branded 404, SEO metadata and structured data, language switcher, keyboard-friendly interactions, and reduced-motion support.
 - **Icon choices:** a curated, locally bundled [Lucide](https://lucide.dev/) selection for services and features, presented in large editorial card surfaces, plus custom SVG upload. Existing icon identifiers remain available; no icon CDN or JavaScript package is needed at runtime.
 - **Visual system:** a locally bundled Plus Jakarta Sans variable font, four palette presets, expressive/standard type scales, compact/airy spacing, narrow/default/wide content widths, and sharp/round corner settings. The font is licensed under the SIL Open Font License; see `Resources/Public/Fonts/OFL-PlusJakartaSans.txt`.
-- **Contact form:** TYPO3 Form Framework definition with editable recipient overrides. Mail transport and real addresses are set by the site owner.
+- **Conversion forms:** TYPO3 Form Framework definitions for contact and structured project inquiries with editable recipient overrides. Mail transport and real addresses are set by the site owner.
 
 ## Installation
 
 In a TYPO3 13.4.15+ or 14.3.7+ Composer project, install the theme from [Packagist](https://packagist.org/packages/crispframe/agency-theme):
 
 ```bash
-composer require crispframe/agency-theme:^1.4
+composer require crispframe/agency-theme:^1.5
 ```
 
 Add the **Crispframe Agency Theme** Site Set under Admin → Site Management → Sites → *Your site* → Sets. Then follow the [first-run checklist](Documentation/FirstRun.md) to set branding, contact recipients, legal links, and SEO details.
@@ -72,7 +72,7 @@ Add the **Crispframe Agency Theme** Site Set under Admin → Site Management →
 For a **new empty site**, the [starter project](https://github.com/PhantomPixelDev/crispframe/tree/main/starter) and [optional demo package](https://packagist.org/packages/crispframe/agency-demo) provide an editable English/German page tree with examples of every block:
 
 ```bash
-composer require crispframe/agency-demo:^1.4
+composer require crispframe/agency-demo:^1.5
 vendor/bin/typo3 extension:setup --extension=agency_demo
 ```
 
@@ -94,9 +94,9 @@ The visual layer is designed to be adjusted from Site Settings without changing 
 
 For maintainers, [Release.md](Documentation/Release.md) describes clean-checkout verification, tags and Packagist publication. [Accessibility.md](Documentation/Accessibility.md) records the automated scope and launch checks.
 
-## Contact form
+## Forms
 
-The package includes `Resources/Private/Forms/Contact.form.yaml`. On a Contact page, add a **Form** content element and select **Contact inquiry**. The form ships with name, optional company, email and message fields, validation, email delivery and a confirmation message.
+The package includes `Resources/Private/Forms/Contact.form.yaml` and `ProjectInquiry.form.yaml`. On a page, add a **Form** content element and select **Contact inquiry** or **Project inquiry**. The project preset collects service, optional budget and timing, contact details, consent, and a project message.
 
 Before accepting live inquiries, edit the Form content element's finisher overrides: set the receiver address and sender address to addresses for your own domain. The bundled `example.invalid` addresses are safe placeholders. Configure TYPO3's mail transport for your installation; the demo can use Mailpit. The form definition remains read-only inside the extension, so an update cannot overwrite site-specific form content or finisher overrides. The Contact Content Block displays address and phone details; it is independent of the form.
 
@@ -105,7 +105,7 @@ Before accepting live inquiries, edit the Form content element's finisher overri
 The Site Set lives at `Configuration/Sets/SitePackage/`:
 
 - `config.yaml` — set `crispframe/agency-theme`, depends on `typo3/fluid-styled-content`, `typo3/form`, `typo3/seo-sitemap`
-- `settings.definitions.yaml` / `settings.yaml` — brand, contact, social, footer (`footer.servicesParent` — page picker that retains existing stored UIDs; 0 disables Services column), CTA page pickers and legacy URLs, style presets
+- `settings.definitions.yaml` / `settings.yaml` — brand, contact, social, bilingual announcement, navigation submenu mode, footer page pickers, CTA page pickers and legacy URLs, style presets
 - `setup.typoscript` — PageView paths, rendering (Default/Landing/Minimal), menus (`menuMain`, `menuServices` via `footer.servicesParent`, `breadcrumb` rootline), meta fallbacks (description ← page field → brand tagline → company name, `og:site_name` ← company name, `og:type` website, `twitter:card` summary, `theme-color` `#0f172a`), Form + SEO canonical/sitemap via `typo3/seo-sitemap`
 - `page.tsconfig` — backend layouts (Default, Landing hero+main, Minimal), RTE preset, wizard
 
@@ -116,7 +116,7 @@ All brand/URL data comes from **Site Settings** — no hardcoded company URLs or
 No build step. Edit and reload:
 
 - CSS: `Resources/Public/Css/` — tokens, base, layout, components, utilities, theme presets, form, block and visual refresh styles (loaded by the PageView layout)
-- JS: `Resources/Public/JavaScript/` — `main.js` (nav, skip-link, year, sticky), `accordion.js`, `pricing.js`, `video.js`, `gallery.js` and `tabs.js`
+- JS: `Resources/Public/JavaScript/` — `main.js` (navigation, announcement dismissal, section tracking, skip-link, year, sticky), `accordion.js`, `pricing.js`, `video.js`, `gallery.js` and `tabs.js`
 - Icons: `Resources/Public/Icons/sprite.svg` — referenced through TYPO3's public asset URL by the icon partial
 - Fluid: `Resources/Private/PageView/{Layouts,Pages,Partials/}` — layouts `Default`/`Landing`/`Minimal`, partials `Site/Header`, `Site/Navigation`, `Site/Footer`, `Components/*`
 
@@ -166,6 +166,9 @@ Each block is a Content Block (`crispframe/*`) with `config.yaml` fields:
 - Pricing: add 2–4 tiers with monthly and yearly prices, features and CTA links. The monthly price is visible without JavaScript; the yearly toggle appears when JavaScript is available. Enter display prices and suffixes explicitly, including currency and billing interval. Enable **Hide billing suffix** on quote-based tiers.
 - Video: choose YouTube or Vimeo, enter the video ID, and optionally add a local 16:9 poster, caption and plain-text transcript. The external iframe is created only when a visitor clicks Play. Embed playback still uses the provider's own privacy and cookie behavior; configure consent for your deployment as needed.
 - Gallery: add 2–12 images with captions and meaningful alternative text. Thumbnails link to the image when JavaScript is unavailable; the lightbox supports Escape, arrow keys and focus return.
+- Section navigation: marks editorial content with TYPO3's **Include in section menus** option, then generates stable anchor links; active-section highlighting is an optional enhancement.
+- Callout: choose neutral, information, success, warning, or critical presentation. Static notices remain normal document content and do not interrupt assistive technology.
+- Locations: add two to eight offices with address, contact details, hours, image, and optional external map link. No map embed or third-party request is loaded.
 - Accessibility: headings are h2; cards use h3; images have `alt` + `loading`/`decoding` + width/height; FAQ uses native `details/summary`
 
 See `Documentation/HomepageDemo.md` for a complete homepage order with realistic copy.

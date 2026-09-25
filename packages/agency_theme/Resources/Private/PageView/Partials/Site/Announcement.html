@@ -1,0 +1,21 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:variable name="announcementText" value="{site.settings.announcement.text}" />
+<f:variable name="announcementLabel" value="{site.settings.announcement.linkLabel}" />
+<f:if condition="{currentLanguage} == 'de'">
+    <f:variable name="announcementText" value="{site.settings.announcement.textDe}" />
+    <f:variable name="announcementLabel" value="{site.settings.announcement.linkLabelDe}" />
+</f:if>
+<f:if condition="{site.settings.announcement.enabled} && {announcementText}">
+    <aside class="announcement announcement--{site.settings.announcement.appearance}" data-announcement data-announcement-key="{announcementText}" aria-label="{f:translate(key: 'LLL:EXT:agency_theme/Resources/Private/Language/locallang.xlf:site.announcement')}">
+        <div class="announcement__inner">
+            <p class="announcement__text">{announcementText}</p>
+            <f:if condition="{announcementLabel} && ({site.settings.announcement.page} || ({site.settings.announcement.link} && {site.settings.announcement.link} != '#'))">
+                <f:render partial="Components/SiteAction" arguments="{pageUid: site.settings.announcement.page, legacyLink: site.settings.announcement.link, label: announcementLabel, class: 'announcement__link'}" />
+            </f:if>
+            <f:if condition="{site.settings.announcement.dismissible}">
+                <button type="button" class="announcement__dismiss" data-announcement-dismiss aria-label="{f:translate(key: 'LLL:EXT:agency_theme/Resources/Private/Language/locallang.xlf:site.dismissAnnouncement')}">×</button>
+            </f:if>
+        </div>
+    </aside>
+</f:if>
+</html>

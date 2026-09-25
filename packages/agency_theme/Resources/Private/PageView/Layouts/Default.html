@@ -10,9 +10,10 @@
 <f:asset.css identifier="agency-refresh" href="EXT:agency_theme/Resources/Public/Css/refresh.css" priority="80" />
 <link rel="preload" href="{f:uri.resource(path: 'Fonts/PlusJakartaSans-Variable.ttf', extensionName: 'agency_theme')}" as="font" type="font/ttf" crossorigin="anonymous" />
 
-<div class="site-shell" data-palette="{site.settings.styles.palette}" data-width="{site.settings.styles.contentWidth}" data-type-scale="{site.settings.styles.typeScale}" data-corners="{site.settings.styles.corners}" data-rhythm="{site.settings.styles.spacing}" data-sticky-header="{f:if(condition: site.settings.styles.stickyHeader, then: 'true', else: 'false')}" data-header-variant="{site.settings.styles.headerVariant}" data-footer-variant="{site.settings.footer.layout}">
+<div class="site-shell" data-palette="{site.settings.styles.palette}" data-width="{site.settings.styles.contentWidth}" data-type-scale="{site.settings.styles.typeScale}" data-corners="{site.settings.styles.corners}" data-rhythm="{site.settings.styles.spacing}" data-sticky-header="{f:if(condition: site.settings.styles.stickyHeader, then: 'true', else: 'false')}" data-header-variant="{site.settings.styles.headerVariant}" data-footer-variant="{site.settings.footer.layout}" data-submenu-layout="{site.settings.navigation.submenuLayout}">
 <a class="skip-link" href="#main-content"><f:translate key="LLL:EXT:agency_theme/Resources/Private/Language/locallang.xlf:site.skip" /></a>
 
+<f:render partial="Site/Announcement" optional="true" arguments="{_all}" />
 <f:render partial="Site/Header" optional="true" arguments="{_all}" />
 
 <main id="main-content" tabindex="-1">

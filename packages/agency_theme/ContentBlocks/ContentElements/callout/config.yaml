@@ -1,0 +1,60 @@
+name: crispframe/callout
+title: Callout
+description: A prominent editorial notice with an optional action.
+group: Crispframe
+fields:
+  - identifier: appearance
+    type: Select
+    renderType: selectSingle
+    label: Appearance
+    default: information
+    items:
+      - { label: Neutral, value: neutral }
+      - { label: Information, value: information }
+      - { label: Success, value: success }
+      - { label: Warning, value: warning }
+      - { label: Critical, value: critical }
+  - identifier: headline
+    type: Text
+    label: Heading
+    required: true
+    default: Good to know
+  - identifier: body
+    type: Textarea
+    label: Text
+    enableRichtext: true
+  - identifier: linkLabel
+    type: Text
+    label: Link label
+  - identifier: link
+    type: Link
+    label: Link
+  - identifier: sectionSpacing
+    type: Select
+    renderType: selectSingle
+    label: Section spacing
+    default: small
+    items:
+      - { label: Small, value: small }
+      - { label: Default, value: default }
+      - { label: Large, value: large }
+  - identifier: sectionBackground
+    type: Select
+    renderType: selectSingle
+    label: Section background
+    default: default
+    items:
+      - { label: Default, value: default }
+      - { label: Subtle, value: subtle }
+      - { label: Dark, value: dark }
+      - { label: Brand, value: brand }
+  - identifier: width
+    type: Select
+    renderType: selectSingle
+    label: Container width
+    default: narrow
+    items:
+      - { label: Narrow, value: narrow }
+      - { label: Default, value: default }
+      - { label: Wide, value: wide }
+      - { label: Full, value: full }

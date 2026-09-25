@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2"><file datatype="plaintext" original="labels.xlf" source-language="en" product-name="crispframe/section-navigation"><body>
+<trans-unit id="title"><source>Section navigation</source></trans-unit>
+<trans-unit id="description"><source>Automatic links to content elements marked for section menus on the current page.</source></trans-unit>
+<trans-unit id="headline.label"><source>Heading</source></trans-unit><trans-unit id="layout.label"><source>Layout</source></trans-unit>
+<trans-unit id="layout.items.list.label"><source>List</source></trans-unit><trans-unit id="layout.items.inline.label"><source>Inline</source></trans-unit>
+<trans-unit id="sticky.label"><source>Keep visible while scrolling</source></trans-unit><trans-unit id="sectionSpacing.label"><source>Section spacing</source></trans-unit>
+<trans-unit id="sectionSpacing.items.small.label"><source>Small</source></trans-unit><trans-unit id="sectionSpacing.items.default.label"><source>Default</source></trans-unit><trans-unit id="sectionSpacing.items.large.label"><source>Large</source></trans-unit>
+<trans-unit id="sectionBackground.label"><source>Section background</source></trans-unit><trans-unit id="sectionBackground.items.default.label"><source>Default</source></trans-unit><trans-unit id="sectionBackground.items.subtle.label"><source>Subtle</source></trans-unit><trans-unit id="sectionBackground.items.dark.label"><source>Dark</source></trans-unit><trans-unit id="sectionBackground.items.brand.label"><source>Brand</source></trans-unit>
+<trans-unit id="width.label"><source>Container width</source></trans-unit><trans-unit id="width.items.narrow.label"><source>Narrow</source></trans-unit><trans-unit id="width.items.default.label"><source>Default</source></trans-unit><trans-unit id="width.items.wide.label"><source>Wide</source></trans-unit><trans-unit id="width.items.full.label"><source>Full</source></trans-unit>
+</body></file></xliff>

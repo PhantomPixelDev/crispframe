@@ -6,14 +6,20 @@
 -->
 <f:comment>Navigation — included by Site/Header</f:comment>
 <f:variable name="primaryNavLabel" value="{f:translate(key: 'LLL:EXT:agency_theme/Resources/Private/Language/locallang.xlf:site.primary')}" />
+<f:variable name="navInstance" value="{f:if(condition: modifierClass, then: 'mobile', else: 'desktop')}" />
 <nav class="site-nav nav{f:if(condition: modifierClass, then: ' {modifierClass}')}" aria-label="{f:if(condition: ariaLabel, then: ariaLabel, else: primaryNavLabel)}">
     <f:if condition="{menuMain}">
         <ul class="site-nav__list nav__list" role="list">
             <f:for each="{menuMain}" as="item">
                 <li class="site-nav__item nav__item{f:if(condition: item.active, then: ' is-active')}{f:if(condition: item.current, then: ' is-current')}{f:if(condition: item.hasSubPages, then: ' has-children')}">
-                    <a href="{item.link}" class="site-nav__link nav__link{f:if(condition: item.active, then: ' nav__link--active')}"{f:if(condition: item.current, then: ' aria-current="page"')}{f:if(condition: item.target, then: ' target="{item.target}"')}{f:if(condition: '{item.target} == _blank', then: ' rel="noopener noreferrer"')}>{item.title}</a>
+                    <div class="nav__parent-row">
+                        <a href="{item.link}" class="site-nav__link nav__link{f:if(condition: item.active, then: ' nav__link--active')}"{f:if(condition: item.current, then: ' aria-current="page"')}{f:if(condition: item.target, then: ' target="{item.target}"')}{f:if(condition: '{item.target} == _blank', then: ' rel="noopener noreferrer"')}>{item.title}</a>
+                        <f:if condition="{item.children}">
+                            <button type="button" class="nav__submenu-toggle" aria-expanded="false" aria-controls="submenu-{navInstance}-{item.data.uid}" aria-label="{f:translate(key: 'LLL:EXT:agency_theme/Resources/Private/Language/locallang.xlf:site.toggleSubmenu', arguments: {0: item.title})}"><span aria-hidden="true"></span></button>
+                        </f:if>
+                    </div>
                     <f:if condition="{item.children}">
-                        <ul class="site-nav__submenu nav__submenu" role="list">
+                        <ul class="site-nav__submenu nav__submenu" id="submenu-{navInstance}-{item.data.uid}" role="list">
                             <f:for each="{item.children}" as="child">
                                 <li class="site-nav__item nav__item{f:if(condition: child.active, then: ' is-active')}{f:if(condition: child.current, then: ' is-current')}">
                                     <a href="{child.link}" class="site-nav__link nav__link"{f:if(condition: child.current, then: ' aria-current="page"')}>{child.title}</a>

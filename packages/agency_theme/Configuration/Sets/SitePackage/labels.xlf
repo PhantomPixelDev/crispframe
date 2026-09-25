@@ -163,6 +163,23 @@
       <trans-unit id="settings.footer.layout.enum.minimal"><source>Minimal footer</source></trans-unit>
       <trans-unit id="settings.styles.headerVariant.enum.standard"><source>Standard</source></trans-unit>
       <trans-unit id="settings.styles.headerVariant.enum.compact"><source>Compact</source></trans-unit>
+      <trans-unit id="categories.announcement"><source>Announcement</source></trans-unit>
+      <trans-unit id="settings.footer.secondaryParent"><source>Secondary footer parent page</source></trans-unit>
+      <trans-unit id="settings.navigation.submenuLayout"><source>Submenu layout</source></trans-unit>
+      <trans-unit id="settings.navigation.submenuLayout.enum.dropdown"><source>Dropdown menus</source></trans-unit>
+      <trans-unit id="settings.navigation.submenuLayout.enum.mega"><source>Mega menu panels</source></trans-unit>
+      <trans-unit id="settings.announcement.enabled"><source>Show announcement</source></trans-unit>
+      <trans-unit id="settings.announcement.text"><source>Announcement text</source></trans-unit>
+      <trans-unit id="settings.announcement.textDe"><source>German announcement text</source></trans-unit>
+      <trans-unit id="settings.announcement.linkLabel"><source>Link label</source></trans-unit>
+      <trans-unit id="settings.announcement.linkLabelDe"><source>German link label</source></trans-unit>
+      <trans-unit id="settings.announcement.page"><source>Destination page</source></trans-unit>
+      <trans-unit id="settings.announcement.link"><source>Legacy destination URL</source></trans-unit>
+      <trans-unit id="settings.announcement.appearance"><source>Appearance</source></trans-unit>
+      <trans-unit id="settings.announcement.appearance.enum.neutral"><source>Neutral</source></trans-unit>
+      <trans-unit id="settings.announcement.appearance.enum.brand"><source>Brand</source></trans-unit>
+      <trans-unit id="settings.announcement.appearance.enum.dark"><source>Dark</source></trans-unit>
+      <trans-unit id="settings.announcement.dismissible"><source>Allow visitors to dismiss</source></trans-unit>
     </body>
   </file>
 </xliff>

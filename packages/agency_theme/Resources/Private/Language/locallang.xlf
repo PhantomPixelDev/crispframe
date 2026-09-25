@@ -39,4 +39,8 @@
 <trans-unit id="pricing.monthly"><source>Monthly</source></trans-unit>
 <trans-unit id="pricing.yearly"><source>Yearly</source></trans-unit>
 <trans-unit id="pricing.featured"><source>Most popular</source></trans-unit>
+<trans-unit id="site.toggleSubmenu"><source>Toggle {0} submenu</source></trans-unit>
+<trans-unit id="site.announcement"><source>Announcement</source></trans-unit>
+<trans-unit id="site.dismissAnnouncement"><source>Dismiss announcement</source></trans-unit>
+<trans-unit id="site.onThisPage"><source>On this page</source></trans-unit>
 </body></file></xliff>

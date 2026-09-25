@@ -1,0 +1,102 @@
+identifier: crispframe-project-inquiry
+label: 'Project inquiry'
+type: Form
+prototypeName: standard
+renderingOptions:
+  submitButtonLabel: 'Send project inquiry'
+
+finishers:
+  - identifier: EmailToReceiver
+    options:
+      subject: 'New project inquiry'
+      recipients:
+        contact@example.invalid: 'Site owner'
+      senderAddress: 'forms@example.invalid'
+      senderName: 'Website project inquiry'
+      replyToRecipients:
+        '{email}': '{name}'
+      attachUploads: false
+  - identifier: Confirmation
+    options:
+      message: 'Thank you. We will review your project and reply shortly.'
+
+renderables:
+  - identifier: project-page
+    type: Page
+    label: 'Project details'
+    renderables:
+      - identifier: name
+        type: Text
+        label: 'Name'
+        properties:
+          fluidAdditionalAttributes:
+            autocomplete: name
+            required: required
+        validators:
+          - identifier: NotEmpty
+      - identifier: organization
+        type: Text
+        label: 'Organization'
+        properties:
+          fluidAdditionalAttributes:
+            autocomplete: organization
+      - identifier: email
+        type: Email
+        label: 'Email'
+        properties:
+          fluidAdditionalAttributes:
+            autocomplete: email
+            required: required
+        validators:
+          - identifier: NotEmpty
+          - identifier: EmailAddress
+      - identifier: phone
+        type: Telephone
+        label: 'Phone (optional)'
+        properties:
+          fluidAdditionalAttributes:
+            autocomplete: tel
+      - identifier: service
+        type: SingleSelect
+        label: 'Service needed'
+        properties:
+          options:
+            '': 'Please choose'
+            strategy: 'Strategy and discovery'
+            design: 'Design and user experience'
+            development: 'TYPO3 development'
+            ongoing: 'Ongoing improvement'
+            other: 'Other'
+          fluidAdditionalAttributes:
+            required: required
+        validators:
+          - identifier: NotEmpty
+      - identifier: budget
+        type: SingleSelect
+        label: 'Budget range (optional)'
+        properties:
+          options:
+            '': 'Not decided yet'
+            small: 'Under €15,000'
+            medium: '€15,000–€40,000'
+            large: '€40,000–€100,000'
+            enterprise: 'Over €100,000'
+      - identifier: timing
+        type: Text
+        label: 'Preferred timing (optional)'
+      - identifier: message
+        type: Textarea
+        label: 'Tell us about the project'
+        properties:
+          fluidAdditionalAttributes:
+            required: required
+        validators:
+          - identifier: NotEmpty
+      - identifier: consent
+        type: Checkbox
+        label: 'I agree that my details may be used to answer this inquiry.'
+        properties:
+          fluidAdditionalAttributes:
+            required: required
+        validators:
+          - identifier: NotEmpty

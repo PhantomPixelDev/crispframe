@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.5.0 — 2026-09-25
+
+- Added bilingual Locations and Request a Project pages with editable office cards, a callout, and the Project Inquiry form.
+- Added four translated Service child pages, generated section navigation, mega navigation, an announcement example, and a second footer link tree.
+- Demonstrates all 27 Crispframe Content Blocks and requires `crispframe/agency-theme` 1.5 or newer.
+
 ## 1.4.0 — 2026-09-24
 
 - Added translated Insights and Resources pages, two editable articles, child-page cards and all five editorial block examples.

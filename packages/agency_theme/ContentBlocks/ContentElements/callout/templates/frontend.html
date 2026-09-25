@@ -1,0 +1,20 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:if condition="{data.headline} || {data.body}">
+    <section class="section section--{data.sectionBackground}" data-spacing="{data.sectionSpacing}">
+        <div class="container container--{data.width}">
+            <aside class="callout callout--{data.appearance}">
+                <span class="callout__icon" aria-hidden="true">
+                    <svg class="callout__icon-svg" viewBox="0 0 24 24" focusable="false">
+                        <use href="{f:uri.resource(path: 'Icons/sprite.svg', extensionName: 'AgencyTheme')}#icon-lightbulb" />
+                    </svg>
+                </span>
+                <div class="callout__content">
+                    <f:if condition="{data.headline}"><h2 class="callout__title">{data.headline}</h2></f:if>
+                    <f:if condition="{data.body}"><div class="callout__body"><f:format.html>{data.body}</f:format.html></div></f:if>
+                    <f:if condition="{data.link.url} && {data.linkLabel}"><f:link.typolink parameter="{data.link}" class="callout__link">{data.linkLabel}<span aria-hidden="true"> →</span></f:link.typolink></f:if>
+                </div>
+            </aside>
+        </div>
+    </section>
+</f:if>
+</html>

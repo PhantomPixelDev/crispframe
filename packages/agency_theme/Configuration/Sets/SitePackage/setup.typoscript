@@ -56,6 +56,24 @@ page {
                 languages = auto
                 as = languageNavigation
             }
+            50 = menu
+            50 {
+                as = menuSecondary
+                special = directory
+                special.value.data = site:settings.footer.secondaryParent
+                titleField = nav_title // title
+                includeNotInMenu = 0
+                if.isTrue.data = site:settings.footer.secondaryParent
+            }
+            55 = menu
+            55 {
+                as = menuSecondaryParent
+                special = list
+                special.value.data = site:settings.footer.secondaryParent
+                titleField = nav_title // title
+                includeNotInMenu = 1
+                if.isTrue.data = site:settings.footer.secondaryParent
+            }
         }
     }
 
@@ -83,6 +101,10 @@ tt_content.crispframe_childpages.dataProcessing {
         if.isTrue.field = crispframe_childpages_parentPage
     }
     30 = Crispframe\AgencyTheme\DataProcessing\ChildPageMediaProcessor
+}
+
+tt_content.crispframe_sectionnavigation.dataProcessing {
+    20 = Crispframe\AgencyTheme\DataProcessing\SectionNavigationProcessor
 }
 
 [siteLanguage("locale") == "de_DE"]

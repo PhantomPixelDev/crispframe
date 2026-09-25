@@ -36,9 +36,10 @@ vendor/bin/typo3 cache:flush
 vendor/bin/typo3 extension:setup --extension=agency_theme --no-interaction
 CRISPFRAME_SITE_ROOT="$work" python3 "$root/.dev/seed-v13-demo.py"
 CRISPFRAME_SITE_ROOT="$work" python3 "$root/.dev/seed-v14-demo.py"
+CRISPFRAME_SITE_ROOT="$work" python3 "$root/.dev/seed-v15-demo.py"
 vendor/bin/typo3 cache:flush
-vendor/bin/typo3 impexp:export --type=xml --pid=1 --levels=999 --table=tt_content --include-related=_ALL --dependency=agency_theme --title='Crispframe 1.4 bilingual demo' crispframe-demo-v14
-python3 - "$work/public/fileadmin/user_upload/_temp_/importexport/crispframe-demo-v14.xml" "$root/packages/agency_demo/Initialisation/data.xml" <<'PY'
+vendor/bin/typo3 impexp:export --type=xml --pid=1 --levels=999 --table=tt_content --include-related=_ALL --dependency=agency_theme --title='Crispframe 1.5 bilingual demo' crispframe-demo-v15
+python3 - "$work/public/fileadmin/user_upload/_temp_/importexport/crispframe-demo-v15.xml" "$root/packages/agency_demo/Initialisation/data.xml" <<'PY'
 import sys
 from pathlib import Path
 Path(sys.argv[2]).write_bytes(Path(sys.argv[1]).read_bytes().replace(bytes([13, 10]), bytes([10])))

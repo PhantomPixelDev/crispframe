@@ -1,7 +1,7 @@
 async (page) => {
   const base = page.url().match(/^https?:\/\/[^/]+/)[0];
   const expect = (condition, message) => { if (!condition) throw new Error(message); };
-  for (const path of ['/', '/work', '/contact', '/services', '/about', '/components', '/insights', '/resources', '/insights/clear-service-pages', '/insights/content-checklist', '/work/clearer-public-service', '/work/customer-workspace', '/de/', '/de/work', '/de/contact', '/de/leistungen', '/de/ueber-uns', '/de/components', '/de/wissen', '/de/ressourcen', '/de/wissen/klare-service-seiten', '/de/wissen/inhaltscheckliste', '/de/work/clearer-public-service', '/de/work/customer-workspace']) {
+  for (const path of ['/', '/work', '/contact', '/services', '/services/strategy', '/services/experience-design', '/services/typo3-platforms', '/services/improvement', '/about', '/about/locations', '/project-inquiry', '/components', '/insights', '/resources', '/insights/clear-service-pages', '/insights/content-checklist', '/work/clearer-public-service', '/work/customer-workspace', '/de/', '/de/work', '/de/contact', '/de/leistungen', '/de/leistungen/strategie', '/de/leistungen/experience-design', '/de/leistungen/typo3-plattformen', '/de/leistungen/weiterentwicklung', '/de/ueber-uns', '/de/ueber-uns/standorte', '/de/projektanfrage', '/de/components', '/de/wissen', '/de/ressourcen', '/de/wissen/klare-service-seiten', '/de/wissen/inhaltscheckliste', '/de/work/clearer-public-service', '/de/work/customer-workspace']) {
     const response = await page.goto(base + path);
     expect(response && response.status() === 200, `${path} must return 200`);
     const language = await page.locator('html').getAttribute('lang');
@@ -41,7 +41,16 @@ async (page) => {
         pseudo: getComputedStyle(items[1], '::before').content };
     });
     expect(breadcrumb.rows === 1 && breadcrumb.separators === 1 && breadcrumb.pseudo === 'none', `${path} breadcrumb is not a single row with one separator`);
+    expect(await page.locator('[data-section-navigation] a').count() >= 3, `${path} needs generated section navigation`);
+    const sectionLink = page.locator('[data-section-navigation] a').first();
+    expect((await sectionLink.getAttribute('href') || '').startsWith('#c'), `${path} section navigation needs stable content anchors`);
   }
+  await page.goto(base + '/about/locations');
+  expect(await page.locator('.location-card').count() === 2, 'Locations page needs two editable offices');
+  expect(await page.locator('.callout--information').count() === 1, 'Locations page needs the informational callout');
+  expect(await page.locator('.location-card a[href^="https://www.openstreetmap.org/"]').count() === 2, 'Location map actions must be external links without embeds');
+  await page.goto(base + '/de/ueber-uns/standorte');
+  expect((await page.locator('.location-card').first().innerText()).includes('Montag'), 'German location hours are not translated');
   await page.goto(base + '/insights');
   expect(await page.locator('.child-pages__item').count() === 2, 'Insights must list two child pages');
   for (const image of await page.locator('.child-pages__image').all()) {
@@ -78,6 +87,16 @@ async (page) => {
   }
   await page.setViewportSize({ width: 390, height: 900 });
   await page.goto(base + '/');
+  const announcement = page.locator('[data-announcement]');
+  expect(await announcement.count() === 1, 'Demo announcement is missing');
+  const announcementText = await announcement.innerText();
+  await announcement.getByRole('button', { name: /dismiss|schließen/i }).click();
+  expect(await announcement.isHidden(), 'Announcement did not dismiss');
+  await page.reload();
+  expect(await page.locator('[data-announcement]').isHidden(), 'Dismissed announcement reappeared before its message changed');
+  await page.evaluate(() => localStorage.clear());
+  await page.reload();
+  expect((await page.locator('[data-announcement]').innerText()).includes(announcementText.trim().split('\n')[0]), 'Announcement did not return after storage reset');
   const ctaColors = await page.locator('.cta__actions .btn--primary').first().evaluate(button => ({
     button: getComputedStyle(button).backgroundColor,
     surface: getComputedStyle(button.closest('.cta')).backgroundColor,
@@ -133,6 +152,14 @@ async (page) => {
   await page.getByRole('textbox', { name: 'How can we help? *' }).fill('Mail transport integration check');
   await page.getByRole('button', { name: 'Send inquiry' }).click();
   expect((await page.locator('body').innerText()).includes('Thank you. Your inquiry has been sent.'), 'Contact confirmation missing');
+  await page.goto(base + '/project-inquiry');
+  await page.getByRole('textbox', { name: 'Name *' }).fill('Release project');
+  await page.getByRole('textbox', { name: 'Email *' }).fill('project@example.invalid');
+  await page.getByLabel('Service needed *').selectOption('development');
+  await page.getByRole('textbox', { name: 'Tell us about the project *' }).fill('A bilingual corporate platform.');
+  await page.getByLabel(/I agree that my details/).check();
+  await page.getByRole('button', { name: 'Send project inquiry' }).click();
+  expect((await page.locator('body').innerText()).includes('Thank you. We will review your project'), 'Project inquiry confirmation missing');
   await page.emulateMedia({ reducedMotion: 'reduce' });
   for (const path of ['/', '/work', '/contact', '/services', '/about', '/components', '/insights', '/resources', '/insights/clear-service-pages', '/insights/content-checklist', '/work/clearer-public-service', '/work/customer-workspace', '/de/', '/de/leistungen', '/de/ueber-uns', '/de/wissen', '/de/ressourcen', '/de/wissen/klare-service-seiten', '/de/wissen/inhaltscheckliste', '/de/work/clearer-public-service', '/de/work/customer-workspace']) {
     await page.goto(base + path);
@@ -145,5 +172,5 @@ async (page) => {
       }
     }
   }
-  return 'Browser smoke passed: bilingual editorial pages, tabs, article sidebar, page media, case studies, SEO, 404, contact, four palettes and responsive layouts.';
+  return 'Browser smoke passed: bilingual corporate navigation, announcement, section navigation, callouts, locations, project inquiry, editorial pages, SEO, 404, four palettes and responsive layouts.';
 }

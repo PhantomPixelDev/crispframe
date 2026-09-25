@@ -1,0 +1,16 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:if condition="{sectionNavigation}">
+    <f:variable name="navigationLabel" value="{f:translate(key: 'LLL:EXT:agency_theme/Resources/Private/Language/locallang.xlf:site.onThisPage')}" />
+    <f:if condition="{data.headline}"><f:variable name="navigationLabel" value="{data.headline}" /></f:if>
+    <section class="section section--{data.sectionBackground} section-navigation-section" data-spacing="{data.sectionSpacing}">
+        <div class="container container--{data.width}">
+            <nav class="section-navigation section-navigation--{data.layout}{f:if(condition: data.sticky, then: ' section-navigation--sticky')}" data-section-navigation aria-label="{navigationLabel}">
+                <f:if condition="{data.headline}"><h2 class="section-navigation__title">{data.headline}</h2></f:if>
+                <ol class="section-navigation__list">
+                    <f:for each="{sectionNavigation}" as="section"><li><a href="#{section.anchor}">{section.title}</a></li></f:for>
+                </ol>
+            </nav>
+        </div>
+    </section>
+</f:if>
+</html>

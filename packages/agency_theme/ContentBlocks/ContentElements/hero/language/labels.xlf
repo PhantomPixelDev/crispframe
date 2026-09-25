@@ -118,6 +118,16 @@
       <trans-unit id="mediaCrop.items.landscape.label"><source>Landscape</source></trans-unit>
       <trans-unit id="mediaCrop.items.square.label"><source>Square</source></trans-unit>
       <trans-unit id="mediaCrop.items.portrait.label"><source>Portrait</source></trans-unit>
+      <trans-unit id="layout.label"><source>Hero layout</source></trans-unit>
+      <trans-unit id="layout.description"><source>Existing records keep the split layout.</source></trans-unit>
+      <trans-unit id="layout.items.split.label"><source>Split</source></trans-unit>
+      <trans-unit id="layout.items.centered.label"><source>Centered</source></trans-unit>
+      <trans-unit id="layout.items.background.label"><source>Background media</source></trans-unit>
+      <trans-unit id="layout.items.minimal.label"><source>Minimal</source></trans-unit>
+      <trans-unit id="height.label"><source>Hero height</source></trans-unit>
+      <trans-unit id="height.items.small.label"><source>Small</source></trans-unit>
+      <trans-unit id="height.items.medium.label"><source>Medium</source></trans-unit>
+      <trans-unit id="height.items.large.label"><source>Large</source></trans-unit>
     </body>
   </file>
 </xliff>

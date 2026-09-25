@@ -58,6 +58,18 @@ settings:
     textDe: 'Wir gestalten und entwickeln digitale Produkte, die komplexe Aufgaben einfacher machen.'
     legalLink: '#'
     privacyLink: '#'
+    secondaryParent: 19
+  navigation:
+    submenuLayout: mega
+  announcement:
+    enabled: true
+    text: 'Planning a digital project? Tell us what you want to improve.'
+    textDe: 'Planen Sie ein digitales Projekt? Erzählen Sie uns, was Sie verbessern möchten.'
+    linkLabel: 'Request a project'
+    linkLabelDe: 'Projekt anfragen'
+    page: 36
+    appearance: brand
+    dismissible: true
   cta:
     primaryLabel: 'Start a project'
     primaryLink: '/contact'

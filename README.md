@@ -5,13 +5,13 @@
 [![CI](https://github.com/PhantomPixelDev/crispframe/actions/workflows/ci.yml/badge.svg)](https://github.com/PhantomPixelDev/crispframe/actions/workflows/ci.yml)
 [![License](https://img.shields.io/badge/license-GPL--2.0--or--later-blue)](packages/agency_theme/LICENSE)
 
-Modern open-source TYPO3 corporate website template and sitepackage for agencies, services companies, product teams, and organizations. Crispframe includes 24 editable Content Blocks, bilingual English/German labels, four visual palettes, responsive layouts, accessible vanilla JavaScript, SEO defaults, and a TYPO3 Form Framework contact flow.
+Modern open-source TYPO3 corporate website template and sitepackage for agencies, services companies, product teams, and organizations. Crispframe includes 27 editable Content Blocks, bilingual English/German labels, two-level dropdown or mega navigation, four visual palettes, responsive layouts, accessible vanilla JavaScript, SEO defaults, and two TYPO3 Form Framework flows.
 
 ![Crispframe modern TYPO3 corporate homepage](packages/agency_theme/Documentation/Images/home-desktop.webp)
 
 ## Packages
 
-- `packages/agency_theme/` — reusable GPL theme for TYPO3 13.4 and 14.3, with 24 Content Blocks and English/German labels. See [`packages/agency_theme/README.md`](packages/agency_theme/README.md).
+- `packages/agency_theme/` — reusable GPL theme for TYPO3 13.4 and 14.3, with 27 Content Blocks and English/German labels. See [`packages/agency_theme/README.md`](packages/agency_theme/README.md).
 - `packages/agency_demo/` — optional editable bilingual example pages for a new empty site.
 - `starter/` — Composer project without a local path repository. See [`starter/README.md`](starter/README.md).
 
@@ -22,7 +22,7 @@ The release workflow validates syntax, Content Blocks, a fresh Composer archive 
 Docker is only used for this repository's local development environment. A normal TYPO3 installation can add Crispframe directly through Composer:
 
 ```shell
-composer require crispframe/agency-theme:^1.4
+composer require crispframe/agency-theme:^1.5
 vendor/bin/typo3 extension:setup --extension=agency_theme
 ```
 
@@ -115,9 +115,10 @@ docker compose exec web php config/seed-photography.php
 docker compose exec web python3 .dev/seed-v12-demo.py
 docker compose exec web python3 .dev/seed-v13-demo.py
 docker compose exec web python3 .dev/seed-v14-demo.py
+docker compose exec web python3 .dev/seed-v15-demo.py
 docker compose exec web vendor/bin/typo3 cache:flush
 ```
 
-The helpers add editable Home, Work, Contact, Services, About, Insights, Resources, two Work case studies, two articles and a hidden Components page, plus localized gallery and hero images. Existing records are not reimported by the optional distribution package. Inspect Pricing, Video, and Gallery at [http://localhost:8080/components](http://localhost:8080/components). The optional distribution package uses TYPO3 Initialisation instead of these development helpers.
+The helpers add editable Home, Work, Contact, Services, About, Insights, Resources, Locations, Request a Project, four Service detail pages, two Work case studies, two articles and a hidden Components page, plus localized gallery and hero images. Existing records are not reimported by the optional distribution package. Inspect Pricing, Video, and Gallery at [http://localhost:8080/components](http://localhost:8080/components). The optional distribution package uses TYPO3 Initialisation instead of these development helpers.
 
 The seed script and this demo site's URL, branding and database are development examples. Installing `crispframe/agency-theme` in another TYPO3 project does not create pages or copy those site-specific values.

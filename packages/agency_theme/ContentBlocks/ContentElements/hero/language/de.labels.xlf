@@ -154,6 +154,16 @@
       <trans-unit id="mediaCrop.items.landscape.label"><source>Landscape</source><target>Querformat</target></trans-unit>
       <trans-unit id="mediaCrop.items.square.label"><source>Square</source><target>Quadratisch</target></trans-unit>
       <trans-unit id="mediaCrop.items.portrait.label"><source>Portrait</source><target>Hochformat</target></trans-unit>
+      <trans-unit id="layout.label"><source>Hero layout</source><target>Hero-Darstellung</target></trans-unit>
+      <trans-unit id="layout.description"><source>Existing records keep the split layout.</source><target>Bestehende Datensätze behalten die geteilte Darstellung.</target></trans-unit>
+      <trans-unit id="layout.items.split.label"><source>Split</source><target>Geteilt</target></trans-unit>
+      <trans-unit id="layout.items.centered.label"><source>Centered</source><target>Zentriert</target></trans-unit>
+      <trans-unit id="layout.items.background.label"><source>Background media</source><target>Hintergrundbild</target></trans-unit>
+      <trans-unit id="layout.items.minimal.label"><source>Minimal</source><target>Minimal</target></trans-unit>
+      <trans-unit id="height.label"><source>Hero height</source><target>Hero-Höhe</target></trans-unit>
+      <trans-unit id="height.items.small.label"><source>Small</source><target>Klein</target></trans-unit>
+      <trans-unit id="height.items.medium.label"><source>Medium</source><target>Mittel</target></trans-unit>
+      <trans-unit id="height.items.large.label"><source>Large</source><target>Groß</target></trans-unit>
     </body>
   </file>
 </xliff>

@@ -1,8 +1,12 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
 <f:comment>Hero — heading is h1 only when isHero is checked, otherwise h2. Default h2 is safe for a11y.</f:comment>
-<section class="section section--{data.sectionBackground} hero-section" data-spacing="{data.sectionSpacing}">
+<f:variable name="heroLayout" value="split" />
+<f:variable name="heroHeight" value="medium" />
+<f:if condition="{data.layout}"><f:variable name="heroLayout" value="{data.layout}" /></f:if>
+<f:if condition="{data.height}"><f:variable name="heroHeight" value="{data.height}" /></f:if>
+<section class="section section--{data.sectionBackground} hero-section hero-section--{heroLayout}" data-spacing="{data.sectionSpacing}">
     <div class="container container--{data.width}">
-        <div class="hero" data-image-position="{data.imagePosition}" data-media-crop="{data.mediaCrop}">
+        <div class="hero hero--{heroLayout} hero--height-{heroHeight}" data-image-position="{data.imagePosition}" data-media-crop="{data.mediaCrop}">
             <div class="hero__content">
                 <f:if condition="{data.eyebrow}"><p class="hero__eyebrow">{data.eyebrow}</p></f:if>
                 <f:if condition="{data.isHero}">

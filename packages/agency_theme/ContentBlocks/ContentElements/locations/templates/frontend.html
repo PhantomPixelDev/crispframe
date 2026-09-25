@@ -1,0 +1,29 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:if condition="{data.items}">
+    <section class="section section--{data.sectionBackground}" data-spacing="{data.sectionSpacing}">
+        <div class="container container--{data.width}">
+            <header class="section-header">
+                <h2 class="section-header__title">{data.headline}</h2>
+                <f:if condition="{data.lead}"><p class="section-header__lead">{data.lead}</p></f:if>
+            </header>
+            <ul class="locations" role="list">
+                <f:for each="{data.items}" as="item">
+                    <li class="location-card">
+                        <f:if condition="{item.image}"><div class="location-card__media"><f:for each="{item.image}" as="file"><f:image image="{file}" width="720c" height="420c" loading="lazy" decoding="async" alt="{f:if(condition: file.alternative, then: file.alternative, else: item.name)}" /></f:for></div></f:if>
+                        <div class="location-card__body">
+                            <h3 class="location-card__title">{item.name}</h3>
+                            <f:if condition="{item.address}"><address class="location-card__address"><f:format.nl2br>{item.address}</f:format.nl2br></address></f:if>
+                            <dl class="location-card__details">
+                                <f:if condition="{item.phone}"><div><dt><f:translate key="LLL:EXT:agency_theme/Resources/Private/Language/locallang.xlf:block.phone" /></dt><dd><a href="tel:{item.phone}">{item.phone}</a></dd></div></f:if>
+                                <f:if condition="{item.email}"><div><dt><f:translate key="LLL:EXT:agency_theme/Resources/Private/Language/locallang.xlf:block.email" /></dt><dd><a href="mailto:{item.email}">{item.email}</a></dd></div></f:if>
+                                <f:if condition="{item.hours}"><div><dt><f:translate key="LLL:EXT:agency_theme/Resources/Private/Language/locallang.xlf:block.hours" /></dt><dd><f:format.nl2br>{item.hours}</f:format.nl2br></dd></div></f:if>
+                            </dl>
+                            <f:if condition="{item.mapLink.url} && {item.mapLabel}"><f:link.typolink parameter="{item.mapLink}" class="location-card__link">{item.mapLabel}<span aria-hidden="true"> →</span></f:link.typolink></f:if>
+                        </div>
+                    </li>
+                </f:for>
+            </ul>
+        </div>
+    </section>
+</f:if>
+</html>

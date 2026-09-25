@@ -210,6 +210,23 @@
       <trans-unit id="settings.footer.layout.enum.minimal"><source>Minimal footer</source><target>Einfacher Footer</target></trans-unit>
       <trans-unit id="settings.styles.headerVariant.enum.standard"><source>Standard</source><target>Standard</target></trans-unit>
       <trans-unit id="settings.styles.headerVariant.enum.compact"><source>Compact</source><target>Kompakt</target></trans-unit>
+      <trans-unit id="categories.announcement"><source>Announcement</source><target>Hinweisleiste</target></trans-unit>
+      <trans-unit id="settings.footer.secondaryParent"><source>Secondary footer parent page</source><target>Zweite übergeordnete Footer-Seite</target></trans-unit>
+      <trans-unit id="settings.navigation.submenuLayout"><source>Submenu layout</source><target>Darstellung der Untermenüs</target></trans-unit>
+      <trans-unit id="settings.navigation.submenuLayout.enum.dropdown"><source>Dropdown menus</source><target>Dropdown-Menüs</target></trans-unit>
+      <trans-unit id="settings.navigation.submenuLayout.enum.mega"><source>Mega menu panels</source><target>Mega-Menü-Flächen</target></trans-unit>
+      <trans-unit id="settings.announcement.enabled"><source>Show announcement</source><target>Hinweisleiste anzeigen</target></trans-unit>
+      <trans-unit id="settings.announcement.text"><source>Announcement text</source><target>Hinweistext</target></trans-unit>
+      <trans-unit id="settings.announcement.textDe"><source>German announcement text</source><target>Deutscher Hinweistext</target></trans-unit>
+      <trans-unit id="settings.announcement.linkLabel"><source>Link label</source><target>Linkbeschriftung</target></trans-unit>
+      <trans-unit id="settings.announcement.linkLabelDe"><source>German link label</source><target>Deutsche Linkbeschriftung</target></trans-unit>
+      <trans-unit id="settings.announcement.page"><source>Destination page</source><target>Zielseite</target></trans-unit>
+      <trans-unit id="settings.announcement.link"><source>Legacy destination URL</source><target>Bisherige Ziel-URL</target></trans-unit>
+      <trans-unit id="settings.announcement.appearance"><source>Appearance</source><target>Darstellung</target></trans-unit>
+      <trans-unit id="settings.announcement.appearance.enum.neutral"><source>Neutral</source><target>Neutral</target></trans-unit>
+      <trans-unit id="settings.announcement.appearance.enum.brand"><source>Brand</source><target>Markenfarbe</target></trans-unit>
+      <trans-unit id="settings.announcement.appearance.enum.dark"><source>Dark</source><target>Dunkel</target></trans-unit>
+      <trans-unit id="settings.announcement.dismissible"><source>Allow visitors to dismiss</source><target>Schließen durch Besucher erlauben</target></trans-unit>
     </body>
   </file>
 </xliff>

@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.5.0 — 2026-09-25
+
+- Added accessible dropdown and mega navigation for the existing two-level TYPO3 page tree, with automatic compact-header fallback.
+- Added bilingual, dismissible announcement settings and a second footer page-tree column.
+- Added Section Navigation, Callout, and Office Locations Content Blocks, bringing the library to 27 blocks.
+- Added centered, background-media, and minimal Hero variants with three height choices while preserving existing Hero records.
+- Added a bilingual Project Inquiry Form Framework preset and styling for common TYPO3 menu, search, record, and validation output.
+
 ## 1.4.3 — 2026-09-25
 
 - Added adaptive header navigation that switches to the compact menu whenever the available width cannot fit the brand, page links, language switcher, and primary action.

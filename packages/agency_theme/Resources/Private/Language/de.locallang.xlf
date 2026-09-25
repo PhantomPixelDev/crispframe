@@ -39,4 +39,8 @@
 <trans-unit id="pricing.monthly"><source>Monthly</source><target>Monatlich</target></trans-unit>
 <trans-unit id="pricing.yearly"><source>Yearly</source><target>Jährlich</target></trans-unit>
 <trans-unit id="pricing.featured"><source>Most popular</source><target>Besonders beliebt</target></trans-unit>
+<trans-unit id="site.toggleSubmenu"><source>Toggle {0} submenu</source><target>Untermenü {0} öffnen oder schließen</target></trans-unit>
+<trans-unit id="site.announcement"><source>Announcement</source><target>Hinweis</target></trans-unit>
+<trans-unit id="site.dismissAnnouncement"><source>Dismiss announcement</source><target>Hinweis schließen</target></trans-unit>
+<trans-unit id="site.onThisPage"><source>On this page</source><target>Auf dieser Seite</target></trans-unit>
 </body></file></xliff>

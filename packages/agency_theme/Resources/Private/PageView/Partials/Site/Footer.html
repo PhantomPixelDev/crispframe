@@ -77,6 +77,15 @@
                 </nav>
             </f:if>
 
+            <f:if condition="{menuSecondary}">
+                <nav class="site-footer__col site-footer__col--secondary" aria-label="{menuSecondaryParent.0.title}">
+                    <h2 class="site-footer__heading">{menuSecondaryParent.0.title}</h2>
+                    <ul class="site-footer__list site-footer__nav" role="list">
+                        <f:for each="{menuSecondary}" as="secondary"><li><a href="{secondary.link}" class="site-footer__link">{secondary.title}</a></li></f:for>
+                    </ul>
+                </nav>
+            </f:if>
+
             <!-- Col 4: Contact -->
             <f:if condition="{site.settings.contact.email} || {site.settings.contact.phone} || {site.settings.contact.address}">
             <div class="site-footer__col site-footer__col--contact">

@@ -2,6 +2,8 @@
 (function () {
     'use strict';
 
+    document.documentElement.classList.add('has-js');
+
     function ready(callback) {
         if (document.readyState === 'loading') {
             document.addEventListener('DOMContentLoaded', callback);
@@ -22,6 +24,79 @@
         var toggle = document.getElementById('nav-toggle');
         var mobileMenu = document.getElementById('mobile-menu');
         var closeMenu = null;
+
+        document.querySelectorAll('[data-announcement]').forEach(function (announcement) {
+            var keySource = announcement.getAttribute('data-announcement-key') || '';
+            var hash = 0;
+            for (var index = 0; index < keySource.length; index += 1) {
+                hash = ((hash << 5) - hash) + keySource.charCodeAt(index);
+                hash |= 0;
+            }
+            var storageKey = 'crispframe-announcement-' + String(hash);
+            try {
+                if (localStorage.getItem(storageKey) === 'dismissed') {
+                    announcement.hidden = true;
+                }
+            } catch (error) {
+                // Storage can be unavailable in strict privacy modes; the notice stays usable.
+            }
+            var dismiss = announcement.querySelector('[data-announcement-dismiss]');
+            if (dismiss) {
+                dismiss.addEventListener('click', function () {
+                    announcement.hidden = true;
+                    try {
+                        localStorage.setItem(storageKey, 'dismissed');
+                    } catch (error) {
+                        // Dismissing for the current page still works without storage.
+                    }
+                });
+            }
+        });
+
+        var submenuToggles = Array.prototype.slice.call(document.querySelectorAll('.nav__submenu-toggle'));
+        function setSubmenu(toggleButton, open, restoreFocus) {
+            var item = toggleButton.closest('.has-children');
+            if (!item) {
+                return;
+            }
+            item.classList.toggle('is-open', open);
+            toggleButton.setAttribute('aria-expanded', String(open));
+            if (!open && restoreFocus) {
+                toggleButton.focus();
+            }
+        }
+        function closeSiblingSubmenus(toggleButton) {
+            var navigation = toggleButton.closest('.site-nav');
+            submenuToggles.forEach(function (candidate) {
+                if (candidate !== toggleButton && candidate.closest('.site-nav') === navigation) {
+                    setSubmenu(candidate, false, false);
+                }
+            });
+        }
+        submenuToggles.forEach(function (submenuToggle) {
+            submenuToggle.addEventListener('click', function () {
+                var willOpen = submenuToggle.getAttribute('aria-expanded') !== 'true';
+                closeSiblingSubmenus(submenuToggle);
+                setSubmenu(submenuToggle, willOpen, false);
+            });
+        });
+        document.addEventListener('keydown', function (event) {
+            if (event.key !== 'Escape') {
+                return;
+            }
+            var openToggle = document.querySelector('.nav__submenu-toggle[aria-expanded="true"]');
+            if (openToggle) {
+                setSubmenu(openToggle, false, true);
+            }
+        });
+        document.addEventListener('click', function (event) {
+            submenuToggles.forEach(function (submenuToggle) {
+                var item = submenuToggle.closest('.has-children');
+                if (item && !item.contains(event.target)) {
+                    setSubmenu(submenuToggle, false, false);
+                }
+            });
+        });
 
         if (toggle && mobileMenu) {
             var openIcon = toggle.querySelector('.nav-toggle__icon--open');
@@ -159,6 +234,35 @@
                     target.scrollIntoView();
                 }
                 target.focus({preventScroll: true});
+            });
+        });
+
+        document.querySelectorAll('[data-section-navigation]').forEach(function (navigation) {
+            var links = Array.prototype.slice.call(navigation.querySelectorAll('a[href^="#"]'));
+            var targets = links.map(function (link) {
+                return document.querySelector(link.getAttribute('href'));
+            }).filter(Boolean);
+            if (!('IntersectionObserver' in window) || targets.length === 0) {
+                return;
+            }
+            var observer = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (!entry.isIntersecting) {
+                        return;
+                    }
+                    links.forEach(function (link) {
+                        var current = link.getAttribute('href') === '#' + entry.target.id;
+                        link.classList.toggle('is-active', current);
+                        if (current) {
+                            link.setAttribute('aria-current', 'location');
+                        } else {
+                            link.removeAttribute('aria-current');
+                        }
+                    });
+                });
+            }, {rootMargin: '-20% 0px -65% 0px', threshold: 0});
+            targets.forEach(function (target) {
+                observer.observe(target);
             });
         });
 

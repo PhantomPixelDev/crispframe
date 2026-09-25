@@ -54,6 +54,26 @@ fields:
     items:
       - { label: Right, value: right }
       - { label: Left, value: left }
+  - identifier: layout
+    type: Select
+    renderType: selectSingle
+    label: 'Hero layout'
+    description: 'Existing records keep the split layout.'
+    default: split
+    items:
+      - { label: Split, value: split }
+      - { label: Centered, value: centered }
+      - { label: Background media, value: background }
+      - { label: Minimal, value: minimal }
+  - identifier: height
+    type: Select
+    renderType: selectSingle
+    label: 'Hero height'
+    default: medium
+    items:
+      - { label: Small, value: small }
+      - { label: Medium, value: medium }
+      - { label: Large, value: large }
   - identifier: mediaCrop
     type: Select
     renderType: selectSingle

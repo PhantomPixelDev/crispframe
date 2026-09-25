@@ -1,0 +1,75 @@
+name: crispframe/locations
+title: Office locations
+description: Contact cards for offices and service locations without embedded maps.
+group: Crispframe
+fields:
+  - identifier: headline
+    type: Text
+    label: Headline
+    required: true
+    default: Where to find us
+  - identifier: lead
+    type: Textarea
+    label: Introduction
+  - identifier: items
+    type: Collection
+    label: Locations
+    minitems: 1
+    maxitems: 8
+    fields:
+      - identifier: name
+        type: Text
+        label: Location name
+        required: true
+      - identifier: address
+        type: Textarea
+        label: Address
+      - identifier: phone
+        type: Text
+        label: Phone
+      - identifier: email
+        type: Text
+        label: Email
+      - identifier: hours
+        type: Textarea
+        label: Opening hours
+      - identifier: image
+        type: File
+        label: Image
+        allowed: 'common-image-types'
+      - identifier: mapLabel
+        type: Text
+        label: Map link label
+        default: Open map
+      - identifier: mapLink
+        type: Link
+        label: Map link
+  - identifier: sectionSpacing
+    type: Select
+    renderType: selectSingle
+    label: Section spacing
+    default: default
+    items:
+      - { label: Small, value: small }
+      - { label: Default, value: default }
+      - { label: Large, value: large }
+  - identifier: sectionBackground
+    type: Select
+    renderType: selectSingle
+    label: Section background
+    default: default
+    items:
+      - { label: Default, value: default }
+      - { label: Subtle, value: subtle }
+      - { label: Dark, value: dark }
+      - { label: Brand, value: brand }
+  - identifier: width
+    type: Select
+    renderType: selectSingle
+    label: Container width
+    default: default
+    items:
+      - { label: Narrow, value: narrow }
+      - { label: Default, value: default }
+      - { label: Wide, value: wide }
+      - { label: Full, value: full }

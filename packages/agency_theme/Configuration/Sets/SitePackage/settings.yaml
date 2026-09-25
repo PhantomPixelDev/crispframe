@@ -29,6 +29,7 @@ footer:
   privacyLink: '/'
   privacyPage: 0
   servicesParent: 0
+  secondaryParent: 0
   showCta: true
   layout: 'full'
   ctaHeading: 'Let us build something useful.'
@@ -58,3 +59,15 @@ styles:
 
 navigation:
   showBreadcrumbs: true
+  submenuLayout: dropdown
+
+announcement:
+  enabled: false
+  text: ''
+  textDe: ''
+  linkLabel: 'Learn more'
+  linkLabelDe: 'Mehr erfahren'
+  page: 0
+  link: '#'
+  appearance: neutral
+  dismissible: true
