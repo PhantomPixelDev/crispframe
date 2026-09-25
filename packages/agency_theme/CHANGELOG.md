@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.4.3 — 2026-09-25
+
+- Added adaptive header navigation that switches to the compact menu whenever the available width cannot fit the brand, page links, language switcher, and primary action.
+- Refined navigation spacing between tablet and desktop sizes while preserving keyboard controls, Escape-to-close behavior, and focus return.
+- Renamed the bundled variable font asset to a URL-safe filename so TYPO3 can publish and preload it consistently.
+
 ## 1.4.2 — 2026-09-24
 
 - Reworked service and feature card icons into larger editorial visual anchors with layered palette-aware surfaces, inset outlines, and softer depth.
