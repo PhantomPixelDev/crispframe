@@ -18090,7 +18090,7 @@
 				<field index="mount_pid" type="integer">0</field>
 				<field index="sitemap_priority" type="double">0.5</field>
 				<field index="doktype" type="integer">1</field>
-				<field index="title">Components</field>
+				<field index="title">Showcase</field>
 				<field index="slug">/components</field>
 				<field index="TSconfig" type="NULL"></field>
 				<field index="php_tree_stop" type="integer">0</field>
@@ -18098,7 +18098,7 @@
 				<field index="layout" type="integer">0</field>
 				<field index="extendToSubpages" type="integer">0</field>
 				<field index="nav_title"></field>
-				<field index="nav_hide" type="integer">1</field>
+				<field index="nav_hide" type="integer">0</field>
 				<field index="subtitle"></field>
 				<field index="target"></field>
 				<field index="url"></field>
@@ -18171,15 +18171,15 @@
 				<field index="mount_pid" type="integer">0</field>
 				<field index="sitemap_priority" type="double">0.5</field>
 				<field index="doktype" type="integer">1</field>
-				<field index="title">Komponenten</field>
+				<field index="title">Bausteine</field>
 				<field index="slug">/components</field>
 				<field index="TSconfig" type="NULL"></field>
 				<field index="php_tree_stop" type="integer">0</field>
 				<field index="categories" type="integer">0</field>
 				<field index="layout" type="integer">0</field>
 				<field index="extendToSubpages" type="integer">0</field>
-				<field index="nav_title">Komponenten</field>
-				<field index="nav_hide" type="integer">1</field>
+				<field index="nav_title">Bausteine</field>
+				<field index="nav_hide" type="integer">0</field>
 				<field index="subtitle"></field>
 				<field index="target"></field>
 				<field index="url"></field>

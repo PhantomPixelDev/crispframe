@@ -110,6 +110,17 @@ def hero_pair(pid, headline, headline_de, eyebrow, eyebrow_de, sorting=64, layou
 services = db.execute("SELECT uid FROM pages WHERE slug='/services' AND sys_language_uid=0 AND deleted=0").fetchone()[0]
 about = db.execute("SELECT uid FROM pages WHERE slug='/about' AND sys_language_uid=0 AND deleted=0").fetchone()[0]
 
+# Make the block library discoverable in the demo's primary mega navigation.
+components = db.execute("SELECT uid FROM pages WHERE slug='/components' AND sys_language_uid=0 AND deleted=0").fetchone()
+if components:
+    db.execute("UPDATE pages SET title='Showcase', nav_title='Showcase', nav_hide=0 WHERE uid=?", (components[0],))
+    components_de = db.execute("SELECT uid FROM pages WHERE l10n_parent=? AND sys_language_uid=1 AND deleted=0", (components[0],)).fetchone()
+    if components_de:
+        db.execute("UPDATE pages SET title='Bausteine', nav_title='Bausteine', nav_hide=0 WHERE uid=?", (components_de[0],))
+
+# Keep an accidental root-level test page out of the public demo navigation.
+db.execute("UPDATE pages SET nav_hide=1 WHERE slug='/asdasd' AND sys_language_uid=0 AND deleted=0")
+
 service_pages = [
     ('Strategy and discovery', 'Strategie und Analyse', '/services/strategy', '/leistungen/strategie'),
     ('Experience design', 'Experience Design', '/services/experience-design', '/leistungen/experience-design'),

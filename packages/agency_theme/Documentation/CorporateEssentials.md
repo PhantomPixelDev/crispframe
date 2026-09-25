@@ -2,7 +2,7 @@
 
 ## Two-level navigation
 
-Crispframe reads the first two visible levels of the TYPO3 page tree. Set `navigation.submenuLayout` to `dropdown` for compact lists or `mega` for wide panels. The parent page remains a normal link and the adjacent toggle opens its children. On narrow screens and whenever the desktop links do not fit, the header switches to the compact menu automatically.
+Crispframe reads the first two visible levels of the TYPO3 page tree. Set `navigation.submenuLayout` to `dropdown` for compact lists or `mega` for wide panels. The parent page remains a normal link and the adjacent toggle opens its children. The optional demo exposes its Showcase page in the main navigation so visitors can inspect every block. On narrow screens and whenever the desktop links do not fit, the header switches to the compact menu automatically.
 
 Use short translated page titles and navigation titles. Keep the tree to two levels for predictable keyboard, touch, and no-JavaScript behavior.
 
