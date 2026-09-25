@@ -20,4 +20,13 @@ if [ ! -f /app/public/.htaccess ] && [ -f /app/vendor/typo3/cms-install/Resource
     cp /app/vendor/typo3/cms-install/Resources/Private/FolderStructureTemplateFiles/root-htaccess /app/public/.htaccess
 fi
 
+# Named volumes are initially owned by root, and root-run maintenance commands
+# can recreate cache directories. Normalize the writable TYPO3 paths before
+# PHP-FPM starts so frontend and backend requests can update them safely.
+for writable_path in /app/var /data/var /data/config /app/public/fileadmin; do
+    if [ -e "$writable_path" ]; then
+        chown -R application:application "$writable_path"
+    fi
+done
+
 exec /entrypoint supervisord
