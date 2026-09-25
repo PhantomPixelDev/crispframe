@@ -1,0 +1,27 @@
+services:
+  web:
+    container_name: crispframe-dev-web
+    ports: !reset []
+    environment:
+      TYPO3_CONTEXT: Development/VPS
+      CRISPFRAME_BASE_URL: https://dev-crispframe.ppxl.dev/
+    volumes:
+      - config:/data/config
+      - fileadmin:/app/public/fileadmin
+    networks:
+      - default
+      - edge
+
+  mailpit:
+    ports: !reset []
+
+networks:
+  edge:
+    external: true
+    name: edge
+
+volumes:
+  config:
+    name: crispframe-config
+  fileadmin:
+    name: crispframe-fileadmin

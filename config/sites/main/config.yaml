@@ -1,5 +1,8 @@
 base: 'http://localhost:8080/'
-baseVariants: {  }
+baseVariants:
+  -
+    base: '%env("CRISPFRAME_BASE_URL")%'
+    condition: 'getenv("CRISPFRAME_BASE_URL")'
 errorHandling:
   - errorCode: 404
     errorHandler: Fluid

@@ -92,6 +92,16 @@ docker compose exec -T web sh scripts/clean-install.sh
 
 Podman users can run the same commands by substituting `podman compose`. The browser smoke and accessibility scripts use Playwright CLI against the running local demo.
 
+### VPS development override
+
+[`compose.vps.yaml`](compose.vps.yaml) extends the local stack for the Crispframe development VPS. It removes published application ports, joins the shared `edge` network, persists TYPO3 system settings and uploads, and sets the canonical development URL through `CRISPFRAME_BASE_URL`:
+
+```shell
+docker compose -f compose.yaml -f compose.vps.yaml up -d
+```
+
+The edge proxy serves the application at `https://dev-crispframe.ppxl.dev`. This override is intended for the registered Crispframe development host; other deployments should supply their own base URL and edge routing rather than editing the reusable theme package.
+
 ## Local demo
 
 With TYPO3 installed and root page 1 created, prepare the theme and development demo inside the container:
