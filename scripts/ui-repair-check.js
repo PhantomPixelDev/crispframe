@@ -1,5 +1,5 @@
 async (page) => {
-  const base = new URL(page.url()).origin;
+  const base = page.url().match(/^https?:\/\/[^/]+/)[0];
   const check = (condition, message) => { if (!condition) throw new Error(message); };
   const results = [];
   for (const width of [390, 768, 1440]) {

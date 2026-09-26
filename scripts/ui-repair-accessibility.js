@@ -1,5 +1,5 @@
 async (page) => {
-  const base = new URL(page.url()).origin;
+  const base = page.url().match(/^https?:\/\/[^/]+/)[0];
   const failures = [];
   for (const path of ['/components','/','/contact','/project-inquiry','/de/projektanfrage','/about/locations']) {
     for (const width of [390,1440]) {
