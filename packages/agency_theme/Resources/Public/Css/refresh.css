@@ -162,7 +162,7 @@
 body{font-family:var(--font-sans);font-weight:430;letter-spacing:-.006em}
 h1,h2,h3,h4{font-weight:680;letter-spacing:-.045em}
 .section{padding-block:clamp(4rem,9vw,8rem)}
-.section:nth-of-type(even){background:linear-gradient(180deg,color-mix(in srgb,var(--color-bg-subtle) 58%,var(--color-bg)) 0%,var(--color-bg) 100%)}
+.section--default:nth-of-type(even){background:linear-gradient(180deg,color-mix(in srgb,var(--color-bg-subtle) 58%,var(--color-bg)) 0%,var(--color-bg) 100%)}
 .section-header{margin-block-end:clamp(2rem,4vw,4rem)}
 .section-header__kicker,.section__eyebrow,.hero__eyebrow{font-size:.7rem;letter-spacing:.16em}
 .section-header__title{font-size:clamp(2.25rem,4vw,4rem);max-width:18ch}
