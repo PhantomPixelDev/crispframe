@@ -1,5 +1,5 @@
 async (page) => {
-  const base = 'https://dev-crispframe.ppxl.dev';
+  const base = new URL(page.url()).origin;
   const check = (condition, message) => { if (!condition) throw new Error(message); };
   const results = [];
   for (const width of [390, 768, 1440]) {
@@ -16,6 +16,10 @@ async (page) => {
     await panel.locator('a').first().click({trial:true});
     await page.screenshot({path:'output/playwright/menu-' + width + '.png'});
     await page.keyboard.press('Escape');
+    await panel.waitFor({state:'hidden'});
+    await toggle.click();
+    await panel.waitFor({state:'visible'});
+    await toggle.click();
     await panel.waitFor({state:'hidden'});
     if (mobile) {
       check(await page.locator('#mobile-menu').isVisible(), 'Escape closed both menu levels');
