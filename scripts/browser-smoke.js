@@ -119,10 +119,11 @@ async (page) => {
   const menu = page.getByRole('button', { name: 'Toggle navigation menu' });
   await menu.press('Enter');
   expect(await menu.getAttribute('aria-expanded') === 'true', 'Mobile menu did not open by keyboard');
-  const mobileLinks = page.locator('#mobile-menu a');
+  const mobileLinks = page.locator('#mobile-menu a:visible');
   expect(await mobileLinks.count() > 0, 'Mobile menu has no links');
   for (let index = 0; index < await mobileLinks.count(); index++) {
     const link = mobileLinks.nth(index);
+    await link.scrollIntoViewIfNeeded();
     const visible = await link.evaluate(link => {
       const panel = link.closest('#mobile-menu').getBoundingClientRect();
       const rect = link.getBoundingClientRect();
