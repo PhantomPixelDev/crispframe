@@ -86,6 +86,7 @@
             }
             var openToggle = document.querySelector('.nav__submenu-toggle[aria-expanded="true"]');
             if (openToggle) {
+                event.preventDefault();
                 setSubmenu(openToggle, false, true);
             }
         });
@@ -146,7 +147,7 @@
                 setOpen(!isOpen());
             });
             document.addEventListener('keydown', function (event) {
-                if (event.key === 'Escape' && isOpen()) {
+                if (event.key === 'Escape' && !event.defaultPrevented && isOpen()) {
                     setOpen(false);
                 }
             });
