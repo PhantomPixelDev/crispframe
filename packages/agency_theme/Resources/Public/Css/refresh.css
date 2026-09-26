@@ -201,6 +201,10 @@ h1,h2,h3,h4{font-weight:680;letter-spacing:-.045em}
 .service-card:hover,.card--feature:hover{transform:none}
 .resource-list__icon{width:3rem;height:3rem}
 .resource-list__icon svg{width:1.65rem;height:1.65rem;stroke-width:1.8}
+.logo-cloud{list-style:none;margin:0;padding:var(--space-lg) 0;gap:var(--space-xl) clamp(2rem,5vw,5rem)}
+.logo-cloud__item{display:flex;align-items:center;justify-content:center;min-width:0;max-width:100%;white-space:normal;text-align:center;opacity:1;filter:none}
+.logo-cloud__name{font-size:clamp(1rem,1.6vw,1.25rem);letter-spacing:-.025em;overflow-wrap:anywhere}
+.logo-cloud__item img{max-width:100%;max-height:3rem;opacity:1}
 
 /* Corporate essentials: navigation, announcements, hero variants and editorial utilities. */
 .announcement{position:relative;z-index:calc(var(--z-header) + 1);background:var(--color-bg-subtle);color:var(--color-text);border-block-end:1px solid var(--color-border)}

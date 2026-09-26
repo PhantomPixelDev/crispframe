@@ -1,7 +1,7 @@
 /* TYPO3 Form Framework, shared by contact, inquiry and editor-created forms. */
 .frame-type-form_formframework{width:min(100% - 2*var(--container-gutter),var(--container-sm));margin:var(--space-3xl) auto}
 .frame-type-form_formframework form{padding:clamp(1.5rem,4vw,3.5rem);border:1px solid var(--color-border);border-radius:var(--radius-md);background:var(--color-bg);box-shadow:var(--shadow-sm)}
-.frame-type-form_formframework form h2{font-size:var(--text-h2);line-height:var(--leading-tight);letter-spacing:var(--tracking-tight);margin-block-end:var(--space-xl)}
+.frame-type-form_formframework form h2{font-size:clamp(1.65rem,2.5vw,2.25rem);line-height:var(--leading-tight);letter-spacing:var(--tracking-tight);margin-block-end:var(--space-xl)}
 .frame-type-form_formframework form .form-element{margin-block-end:var(--space-lg)}
 .frame-type-form_formframework form .form-label{display:block;margin-block-end:.45rem;font-size:var(--text-sm);font-weight:var(--font-weight-semibold);color:var(--color-text)}
 .frame-type-form_formframework form .form-control{display:block;width:100%;min-height:3rem;padding:.75rem .9rem;border:1px solid var(--color-border-strong);border-radius:var(--radius-sm);background:var(--color-bg);color:var(--color-text);font:inherit;line-height:1.4;transition:border-color var(--transition-fast),box-shadow var(--transition-fast)}
