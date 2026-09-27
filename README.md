@@ -7,7 +7,7 @@
 
 A clean, editable TYPO3 website template for agencies, service companies, product teams, and organizations. Build with **27 Content Blocks**, English/German labels, four palettes, and flexible navigation. Fonts, icons, CSS, and vanilla JavaScript are bundled locally.
 
-**[Explore the live demo →](https://dev-crispframe.ppxl.dev/)** · [Browse all elements](https://dev-crispframe.ppxl.dev/components) · [Installation guide](packages/agency_theme/README.md#installation) · [Report an issue](https://github.com/PhantomPixelDev/crispframe/issues)
+**[Explore the live demo →](https://dev-crispframe.ppxl.dev/)** · [Browse all elements](https://dev-crispframe.ppxl.dev/components) · [Compare style variants](https://dev-crispframe.ppxl.dev/components/style-variants) · [Installation guide](packages/agency_theme/README.md#installation) · [Report an issue](https://github.com/PhantomPixelDev/crispframe/issues)
 
 ![Crispframe homepage with editorial typography and original demo photography](packages/agency_theme/Documentation/Images/home-desktop.webp)
 
@@ -25,7 +25,7 @@ A clean, editable TYPO3 website template for agencies, service companies, produc
 Requires TYPO3 **13.4.15+ or 14.3.7+**, within those supported major versions. See the [full requirements](packages/agency_theme/README.md#requirements).
 
 ```sh
-composer require crispframe/agency-theme:^1.5
+composer require crispframe/agency-theme:^1.6
 vendor/bin/typo3 extension:setup --extension=agency_theme
 vendor/bin/typo3 cache:flush
 ```
@@ -42,7 +42,7 @@ In TYPO3 **Site Management → Sites**, add the **Crispframe Agency Theme** Site
 | Longer articles | Article layout with optional sidebar, author cards, pull quotes, tabs, resource lists, and automatic child-page teasers |
 | Navigation | Two-level dropdown or mega menus, compact mobile navigation, breadcrumbs, section links, and two footer page trees |
 | Inquiries | Contact and project inquiry presets for TYPO3 Form Framework |
-| Branding | Four palettes, local Plus Jakarta Sans font, Lucide icons, width/spacing/corner settings, and header/footer variants |
+| Branding | Four palettes, local Plus Jakarta Sans font, Lucide icons, width/spacing/corner settings, header/footer variants, and [guided block styles](packages/agency_theme/Documentation/StyleVariants.md) |
 | Publishing | SEO metadata, sitemap integration, structured data, language switcher, and a branded 404 |
 
 ### A closer look

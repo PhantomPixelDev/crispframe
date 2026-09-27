@@ -50,6 +50,15 @@ fields:
     label: Link
     default: '#'
     description: 'Placeholder: #'
+- identifier: projectStyle
+  type: Select
+  renderType: selectSingle
+  label: Project presentation
+  description: Choose cards or spacious image-and-text rows.
+  default: cards
+  items:
+  - { label: Cards, value: cards }
+  - { label: Editorial rows, value: rows }
 - identifier: sectionSpacing
   type: Select
   renderType: selectSingle

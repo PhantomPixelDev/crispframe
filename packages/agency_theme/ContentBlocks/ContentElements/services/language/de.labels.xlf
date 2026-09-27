@@ -251,6 +251,10 @@
         <source>Full</source>
         <target>Volle Breite</target>
       </trans-unit>
+      <trans-unit id="cardStyle.label"><source>Service presentation</source><target>Darstellung der Leistungen</target></trans-unit>
+      <trans-unit id="cardStyle.description"><source>Choose contained cards or open icon-and-text columns.</source><target>Wählen Sie Karten oder offene Spalten mit Symbol und Text.</target></trans-unit>
+      <trans-unit id="cardStyle.items.cards.label"><source>Cards</source><target>Karten</target></trans-unit>
+      <trans-unit id="cardStyle.items.open.label"><source>Open columns</source><target>Offene Spalten</target></trans-unit>
     </body>
   </file>
 </xliff>

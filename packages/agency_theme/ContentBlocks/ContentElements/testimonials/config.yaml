@@ -42,6 +42,15 @@ fields:
     type: File
     label: Avatar
     allowed: 'common-image-types'
+- identifier: quoteStyle
+  type: Select
+  renderType: selectSingle
+  label: Quote presentation
+  description: Choose contained cards or open quotes with a divider.
+  default: cards
+  items:
+  - { label: Cards, value: cards }
+  - { label: Open quotes, value: open }
 - identifier: sectionSpacing
   type: Select
   renderType: selectSingle

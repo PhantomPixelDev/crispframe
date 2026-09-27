@@ -93,6 +93,10 @@
       <trans-unit id="width.items.full.label">
         <source>Full</source>
       </trans-unit>
+      <trans-unit id="quoteStyle.label"><source>Quote presentation</source></trans-unit>
+      <trans-unit id="quoteStyle.description"><source>Choose contained cards or open quotes with a subtle divider.</source></trans-unit>
+      <trans-unit id="quoteStyle.items.cards.label"><source>Cards</source></trans-unit>
+      <trans-unit id="quoteStyle.items.open.label"><source>Open quotes</source></trans-unit>
     </body>
   </file>
 </xliff>

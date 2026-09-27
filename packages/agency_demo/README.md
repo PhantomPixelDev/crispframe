@@ -14,7 +14,7 @@ An optional starting point for the [Crispframe TYPO3 theme](https://github.com/P
 Install the theme first, or start from the [starter project](https://github.com/PhantomPixelDev/crispframe/tree/main/starter). Then:
 
 ```sh
-composer require crispframe/agency-demo:^1.5
+composer require crispframe/agency-demo:^1.6
 vendor/bin/typo3 extension:setup --extension=agency_demo
 vendor/bin/typo3 cache:flush
 ```
@@ -33,6 +33,7 @@ TYPO3 Initialisation imports the page tree, example files, and site configuratio
 | Insights and two articles | Automatic child-page teasers, pull quotes, author cards, and an optional sidebar |
 | Resources and Components | Tabs, curated links, pricing, video, gallery, and additional block examples |
 | Locations and four service detail pages | Office cards, callouts, section navigation, and a two-level page tree |
+| Components → Style variants | Editable examples of every Hero, Services, Features, Projects, Testimonials, and CTA presentation in both languages |
 
 Editorial records have English/German versions. Internal links use TYPO3 page references. Images are imported as normal TYPO3 files with editable alternative text.
 

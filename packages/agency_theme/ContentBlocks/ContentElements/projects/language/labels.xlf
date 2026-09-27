@@ -105,6 +105,10 @@
       <trans-unit id="width.items.full.label">
         <source>Full</source>
       </trans-unit>
+      <trans-unit id="projectStyle.label"><source>Project presentation</source></trans-unit>
+      <trans-unit id="projectStyle.description"><source>Choose cards or editorial image-and-text rows.</source></trans-unit>
+      <trans-unit id="projectStyle.items.cards.label"><source>Cards</source></trans-unit>
+      <trans-unit id="projectStyle.items.rows.label"><source>Editorial rows</source></trans-unit>
     </body>
   </file>
 </xliff>

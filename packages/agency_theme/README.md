@@ -27,7 +27,7 @@ Build an editable corporate, agency, or organization website with **27 Content B
 From your Composer project root:
 
 ```sh
-composer require crispframe/agency-theme:^1.5
+composer require crispframe/agency-theme:^1.6
 vendor/bin/typo3 extension:setup --extension=agency_theme
 vendor/bin/typo3 cache:flush
 ```
@@ -44,7 +44,7 @@ Then:
 Use the [TYPO3 14.3 starter project](https://github.com/PhantomPixelDev/crispframe/tree/main/starter). On a **new, empty installation**, add the optional demo:
 
 ```sh
-composer require crispframe/agency-demo:^1.5
+composer require crispframe/agency-demo:^1.6
 vendor/bin/typo3 extension:setup --extension=agency_demo
 vendor/bin/typo3 cache:flush
 ```

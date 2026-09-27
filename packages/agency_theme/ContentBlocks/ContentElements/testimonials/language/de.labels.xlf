@@ -123,6 +123,10 @@
         <source>Full</source>
         <target>Volle Breite</target>
       </trans-unit>
+      <trans-unit id="quoteStyle.label"><source>Quote presentation</source><target>Darstellung der Zitate</target></trans-unit>
+      <trans-unit id="quoteStyle.description"><source>Choose contained cards or open quotes with a subtle divider.</source><target>Wählen Sie Karten oder offene Zitate mit einer dezenten Trennlinie.</target></trans-unit>
+      <trans-unit id="quoteStyle.items.cards.label"><source>Cards</source><target>Karten</target></trans-unit>
+      <trans-unit id="quoteStyle.items.open.label"><source>Open quotes</source><target>Offene Zitate</target></trans-unit>
     </body>
   </file>
 </xliff>

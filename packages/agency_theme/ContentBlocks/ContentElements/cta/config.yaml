@@ -29,6 +29,15 @@ fields:
     type: Link
     label: 'Secondary button link'
     default: ''
+  - identifier: ctaStyle
+    type: Select
+    renderType: selectSingle
+    label: Call-to-action presentation
+    description: Choose a contained panel or an open section.
+    default: panel
+    items:
+      - { label: Contained panel, value: panel }
+      - { label: Open section, value: open }
   - identifier: sectionSpacing
     type: Select
     renderType: selectSingle

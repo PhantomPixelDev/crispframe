@@ -177,6 +177,10 @@
       <trans-unit id="width.items.full.label">
         <source>Full</source>
       </trans-unit>
+      <trans-unit id="featureStyle.label"><source>Feature presentation</source></trans-unit>
+      <trans-unit id="featureStyle.description"><source>Choose contained cards or open icon-and-text columns.</source></trans-unit>
+      <trans-unit id="featureStyle.items.cards.label"><source>Cards</source></trans-unit>
+      <trans-unit id="featureStyle.items.open.label"><source>Open columns</source></trans-unit>
     </body>
   </file>
 </xliff>

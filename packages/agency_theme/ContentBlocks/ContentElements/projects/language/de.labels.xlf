@@ -139,6 +139,10 @@
         <source>Full</source>
         <target>Volle Breite</target>
       </trans-unit>
+      <trans-unit id="projectStyle.label"><source>Project presentation</source><target>Darstellung der Projekte</target></trans-unit>
+      <trans-unit id="projectStyle.description"><source>Choose cards or editorial image-and-text rows.</source><target>Wählen Sie Karten oder redaktionelle Reihen mit Bild und Text.</target></trans-unit>
+      <trans-unit id="projectStyle.items.cards.label"><source>Cards</source><target>Karten</target></trans-unit>
+      <trans-unit id="projectStyle.items.rows.label"><source>Editorial rows</source><target>Redaktionelle Reihen</target></trans-unit>
     </body>
   </file>
 </xliff>

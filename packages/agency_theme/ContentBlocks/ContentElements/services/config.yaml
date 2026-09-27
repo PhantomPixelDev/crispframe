@@ -82,6 +82,15 @@ fields:
     label: Link
     default: '#'
     description: 'Placeholder: #'
+- identifier: cardStyle
+  type: Select
+  renderType: selectSingle
+  label: Service presentation
+  description: Choose contained cards or open icon-and-text columns.
+  default: cards
+  items:
+  - { label: Cards, value: cards }
+  - { label: Open columns, value: open }
 - identifier: sectionSpacing
   type: Select
   renderType: selectSingle

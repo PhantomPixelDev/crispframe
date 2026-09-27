@@ -128,6 +128,11 @@
       <trans-unit id="height.items.small.label"><source>Small</source></trans-unit>
       <trans-unit id="height.items.medium.label"><source>Medium</source></trans-unit>
       <trans-unit id="height.items.large.label"><source>Large</source></trans-unit>
+      <trans-unit id="headlineMeasure.label"><source>Headline width</source></trans-unit>
+      <trans-unit id="headlineMeasure.description"><source>Control how the headline wraps without changing its font size.</source></trans-unit>
+      <trans-unit id="headlineMeasure.items.narrow.label"><source>Narrow</source></trans-unit>
+      <trans-unit id="headlineMeasure.items.standard.label"><source>Standard</source></trans-unit>
+      <trans-unit id="headlineMeasure.items.wide.label"><source>Wide</source></trans-unit>
     </body>
   </file>
 </xliff>

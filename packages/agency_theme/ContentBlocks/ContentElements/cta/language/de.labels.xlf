@@ -103,6 +103,10 @@
         <source>Full</source>
         <target>Volle Breite</target>
       </trans-unit>
+      <trans-unit id="ctaStyle.label"><source>Call-to-action presentation</source><target>Darstellung des Handlungsaufrufs</target></trans-unit>
+      <trans-unit id="ctaStyle.description"><source>Choose a contained panel or an open section.</source><target>Wählen Sie eine umrahmte Fläche oder einen offenen Abschnitt.</target></trans-unit>
+      <trans-unit id="ctaStyle.items.panel.label"><source>Contained panel</source><target>Umrahmte Fläche</target></trans-unit>
+      <trans-unit id="ctaStyle.items.open.label"><source>Open section</source><target>Offener Abschnitt</target></trans-unit>
     </body>
   </file>
 </xliff>

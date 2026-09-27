@@ -83,6 +83,16 @@ fields:
       - { label: Landscape, value: landscape }
       - { label: Square, value: square }
       - { label: Portrait, value: portrait }
+  - identifier: headlineMeasure
+    type: Select
+    renderType: selectSingle
+    label: Headline width
+    description: Control how the headline wraps without changing its font size.
+    default: standard
+    items:
+      - { label: Narrow, value: narrow }
+      - { label: Standard, value: standard }
+      - { label: Wide, value: wide }
   - identifier: isHero
     type: Checkbox
     label: 'Use h1 for headline'

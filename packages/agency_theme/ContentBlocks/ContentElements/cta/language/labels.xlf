@@ -78,6 +78,10 @@
       <trans-unit id="width.items.full.label">
         <source>Full</source>
       </trans-unit>
+      <trans-unit id="ctaStyle.label"><source>Call-to-action presentation</source></trans-unit>
+      <trans-unit id="ctaStyle.description"><source>Choose a contained panel or an open section.</source></trans-unit>
+      <trans-unit id="ctaStyle.items.panel.label"><source>Contained panel</source></trans-unit>
+      <trans-unit id="ctaStyle.items.open.label"><source>Open section</source></trans-unit>
     </body>
   </file>
 </xliff>

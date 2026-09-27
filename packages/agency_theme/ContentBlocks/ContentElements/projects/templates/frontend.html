@@ -1,5 +1,7 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
 <f:variable name="viewProjectLabel" value="{f:translate(key: 'LLL:EXT:agency_theme/Resources/Private/Language/locallang.xlf:block.viewProject')}" />
+<f:variable name="projectStyle" value="cards" />
+<f:if condition="{data.projectStyle}"><f:variable name="projectStyle" value="{data.projectStyle}" /></f:if>
 <section class="section section--{data.sectionBackground}" data-spacing="{data.sectionSpacing}">
     <div class="container container--{data.width}">
         <header class="section-header">
@@ -7,7 +9,7 @@
             <f:if condition="{data.lead}"><p class="section-header__lead">{data.lead}</p></f:if>
         </header>
         <f:if condition="{data.items}">
-            <ul class="cards cards--projects" role="list">
+            <ul class="cards cards--projects cards--projects-{projectStyle}" role="list">
                 <f:for each="{data.items}" as="item">
                     <li class="card project-card">
                         <f:if condition="{item.image}">

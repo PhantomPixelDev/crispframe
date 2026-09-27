@@ -23,7 +23,7 @@ Open your site's URL and follow the TYPO3 installer to configure the database an
 On a **fresh, empty installation**:
 
 ```sh
-composer require crispframe/agency-demo:^1.5
+composer require crispframe/agency-demo:^1.6
 vendor/bin/typo3 extension:setup --extension=agency_demo
 vendor/bin/typo3 cache:flush
 ```

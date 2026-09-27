@@ -164,6 +164,11 @@
       <trans-unit id="height.items.small.label"><source>Small</source><target>Klein</target></trans-unit>
       <trans-unit id="height.items.medium.label"><source>Medium</source><target>Mittel</target></trans-unit>
       <trans-unit id="height.items.large.label"><source>Large</source><target>Groß</target></trans-unit>
+      <trans-unit id="headlineMeasure.label"><source>Headline width</source><target>Überschriftenbreite</target></trans-unit>
+      <trans-unit id="headlineMeasure.description"><source>Control how the headline wraps without changing its font size.</source><target>Steuert den Zeilenumbruch der Überschrift, ohne die Schriftgröße zu ändern.</target></trans-unit>
+      <trans-unit id="headlineMeasure.items.narrow.label"><source>Narrow</source><target>Schmal</target></trans-unit>
+      <trans-unit id="headlineMeasure.items.standard.label"><source>Standard</source><target>Standard</target></trans-unit>
+      <trans-unit id="headlineMeasure.items.wide.label"><source>Wide</source><target>Breit</target></trans-unit>
     </body>
   </file>
 </xliff>

@@ -328,3 +328,39 @@ html:not(.has-js) .nav__submenu-toggle{display:none}
   .location-card__body{padding:var(--space-lg)}
 }
 @media(prefers-reduced-motion:reduce){.nav__submenu-toggle span{transition:none}}
+
+/* Optional 1.6 presentations. The default classes above retain existing output. */
+.hero-section .hero[data-headline-measure="narrow"] .hero__title{max-width:9ch}
+.hero-section .hero[data-headline-measure="wide"] .hero__title{max-width:17ch}
+.hero-section .hero[data-headline-measure] .hero__title{overflow-wrap:break-word}
+@media(max-width:47.99rem){
+  .hero-section .hero[data-headline-measure="narrow"] .hero__title{max-width:min(100%,12ch)}
+  .hero-section .hero[data-headline-measure="wide"] .hero__title{max-width:100%}
+}
+.cards--services-open,.cards--features-open{gap:0 clamp(1.5rem,3vw,3rem)}
+.cards--services-open>.card,.cards--features-open>.card{padding:var(--space-xl) 0;border:0;border-block-start:1px solid var(--color-border);border-radius:0;background:transparent;color:inherit;box-shadow:none}
+.cards--services-open>.card:hover,.cards--features-open>.card:hover{border-color:var(--color-border);box-shadow:none;transform:none}
+.cards--services-open .card__action .btn{min-height:0;padding:0;border:0;border-radius:0;background:transparent;color:var(--color-brand-ink);box-shadow:none}
+.cards--services-open .card__action .btn:hover{color:var(--color-brand);text-decoration:underline;text-underline-offset:.2em;transform:none}
+.cards--projects-rows{grid-template-columns:minmax(0,1fr);gap:0}
+.cards--projects-rows>.project-card{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,3fr);align-items:center;gap:clamp(1.5rem,4vw,4rem);padding-block:var(--space-xl);border:0;border-block-start:1px solid var(--color-border);border-radius:0;background:transparent;color:inherit;box-shadow:none;overflow:visible}
+.cards--projects-rows>.project-card:hover{border-color:var(--color-border);box-shadow:none;transform:none}
+.cards--projects-rows .project-card__media{aspect-ratio:4/3;border-radius:var(--radius-md)}
+.cards--projects-rows .project-card__body{padding:0}
+.cards--projects-rows .card__text{max-width:56ch}
+.cards--testimonials-open>.testimonial{padding:var(--space-sm) 0 var(--space-sm) var(--space-lg);border:0;border-inline-start:2px solid var(--color-brand);border-radius:0;background:transparent;color:inherit;box-shadow:none}
+.cards--testimonials-open .testimonial__quote{font-size:clamp(1.15rem,1.7vw,1.35rem)}
+.cards--testimonials-open .testimonial__author{border:0;padding-block-start:0}
+.cta--open{padding:clamp(1rem,3vw,2rem) 0;border:0;border-radius:0;background:transparent;color:inherit;box-shadow:none}
+.cta--open .cta__text{color:inherit;opacity:.8}
+.cta--open.cta--brand .btn--primary{color:var(--color-brand-ink)}
+.section--dark :is(.cards--services-open,.cards--features-open,.cards--projects-rows,.cards--testimonials-open),.section--brand :is(.cards--services-open,.cards--features-open,.cards--projects-rows,.cards--testimonials-open){color:#fff}
+.section--dark :is(.cards--services-open,.cards--features-open,.cards--projects-rows,.cards--testimonials-open)>*,.section--brand :is(.cards--services-open,.cards--features-open,.cards--projects-rows,.cards--testimonials-open)>*{border-color:rgba(255,255,255,.35)}
+.section--dark .cards--testimonials-open .testimonial__quote,.section--brand .cards--testimonials-open .testimonial__quote{color:#fff}
+.section--dark :is(.cards--services-open,.cards--features-open,.cards--projects-rows,.cards--testimonials-open) :is(.card__text,.project-card__category,.testimonial__role),.section--brand :is(.cards--services-open,.cards--features-open,.cards--projects-rows,.cards--testimonials-open) :is(.card__text,.project-card__category,.testimonial__role){color:rgba(255,255,255,.82)}
+.section--dark :is(.cards--services-open,.cards--features-open) .card__icon,.section--brand :is(.cards--services-open,.cards--features-open) .card__icon{border-color:rgba(255,255,255,.3);background:rgba(255,255,255,.12);color:#fff}
+.section--dark .cards--services-open .card__action .btn,.section--brand .cards--services-open .card__action .btn{color:#fff}
+@media(max-width:47.99rem){
+  .cards--projects-rows>.project-card{grid-template-columns:minmax(0,1fr)}
+  .cards--projects-rows .project-card__body{padding-block:var(--space-sm) 0}
+}

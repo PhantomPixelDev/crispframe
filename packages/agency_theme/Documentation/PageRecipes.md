@@ -39,4 +39,4 @@ Each row is an editable TYPO3 content element. Start with a short page tree (Hom
 
 Site Settings also offer standard or compact headers, full or minimal footers, and an option to hide breadcrumbs. Their defaults retain the original layout.
 
-Use the four palettes as starting points, then check text contrast after replacing the example imagery and copy. Keep external video and newsletter integrations subject to the site's own consent and service choices.
+Use the four palettes as starting points, then check text contrast after replacing the example imagery and copy. For a lighter page rhythm, choose the [per-block style variants](StyleVariants.md) on Hero, Services, Feature grid, Projects, Testimonials, and CTA. Keep external video and newsletter integrations subject to the site's own consent and service choices.

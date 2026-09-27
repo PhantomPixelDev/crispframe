@@ -72,6 +72,15 @@ fields:
     label: Custom SVG icon (overrides icon)
     allowed: svg
     maxitems: 1
+- identifier: featureStyle
+  type: Select
+  renderType: selectSingle
+  label: Feature presentation
+  description: Choose contained cards or open icon-and-text columns.
+  default: cards
+  items:
+  - { label: Cards, value: cards }
+  - { label: Open columns, value: open }
 - identifier: sectionSpacing
   type: Select
   renderType: selectSingle
