@@ -39,6 +39,7 @@ async (page) => {
         const balanced = await section.evaluate(el => parseFloat(getComputedStyle(el).paddingTop));
         check(balanced <= 80, 'Resource list has excessive section padding');
         await page.locator('.site-shell').evaluate(el => el.dataset.rhythm='airy');
+        await page.evaluate(() => new Promise(resolve => requestAnimationFrame(resolve)));
         const airy = await section.evaluate(el => parseFloat(getComputedStyle(el).paddingTop));
         check(airy > balanced, 'Airy spacing setting no longer changes editorial sections');
         await page.locator('.site-shell').evaluate(el => el.dataset.rhythm='balanced');
