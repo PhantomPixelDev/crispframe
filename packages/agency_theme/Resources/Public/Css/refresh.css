@@ -59,6 +59,10 @@
 .hero__art-card--front{left:14%;top:35%;width:51%;height:43%;transform:rotate(-5deg)}
 .cards,.grid,.process,.pricing-grid,.gallery-grid{gap:clamp(1rem,2vw,1.5rem)}
 .card,.project-card,.person-card,.testimonial,.pricing-card,.process__step{box-shadow:var(--shadow-sm);border-color:var(--color-border)}
+@media(min-width:48rem){
+  .cards--testimonials:has(> :only-child){grid-template-columns:minmax(0,42rem)}
+  .cards--testimonials:has(> :nth-child(2):last-child){grid-template-columns:repeat(2,minmax(0,1fr))}
+}
 .card,.project-card,.person-card,.pricing-card{transition:border-color var(--transition-base),box-shadow var(--transition-base)}
 .card:hover,.project-card:hover,.person-card:hover,.pricing-card:hover{border-color:var(--color-border-strong);box-shadow:var(--shadow)}
 .card__body,.project-card__body,.person-card__body{padding:clamp(1.25rem,2vw,2rem)}
@@ -300,6 +304,9 @@ html:not(.has-js) .nav__submenu-toggle{display:none}
 .location-card__details dt{font-size:var(--text-xs);font-weight:var(--font-weight-bold);letter-spacing:.05em;text-transform:uppercase;color:var(--color-text-muted)}
 .location-card__details dd{margin:0;overflow-wrap:anywhere}
 .location-card__link{font-weight:var(--font-weight-bold);text-underline-offset:.2em}
+@media(max-width:30rem){
+  .location-card__details>div{grid-template-columns:minmax(0,1fr);gap:.15rem}
+}
 
 .frame-type-menu_sitemap ul,.frame-type-menu_section ul,.frame-type-menu_pages ul,.frame-type-menu_subpages ul,.frame-type-shortcut ul{display:grid;gap:var(--space-xs);padding:0;list-style:none}
 .frame-type-menu_sitemap a,.frame-type-menu_section a,.frame-type-menu_pages a,.frame-type-menu_subpages a{display:block;padding:.7rem var(--space-md);border:1px solid var(--color-border);border-radius:var(--radius-sm);background:var(--color-bg);color:var(--color-text);text-decoration:none}

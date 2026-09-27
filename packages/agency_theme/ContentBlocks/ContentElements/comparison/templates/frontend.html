@@ -11,7 +11,7 @@
                     <thead><tr><th scope="col"><f:translate key="LLL:EXT:agency_theme/ContentBlocks/ContentElements/comparison/language/labels.xlf:criterion" /></th><th scope="col">{data.firstHeading}</th><th scope="col">{data.secondHeading}</th></tr></thead>
                     <tbody>
                         <f:for each="{data.rows}" as="row">
-                            <tr><th scope="row">{row.label}</th><td>{row.firstValue}</td><td>{row.secondValue}</td></tr>
+                            <tr><th scope="row">{row.label}</th><td data-label="{data.firstHeading}">{row.firstValue}</td><td data-label="{data.secondHeading}">{row.secondValue}</td></tr>
                         </f:for>
                     </tbody>
                 </table>
