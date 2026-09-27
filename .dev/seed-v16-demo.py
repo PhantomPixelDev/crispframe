@@ -47,7 +47,7 @@ def file_references(table, original_uid, new_uid, pid, language, parent_refs=Non
         new_refs.append(clone('sys_file_reference', ref, {
             'pid': pid, 'uid_foreign': new_uid, 'sys_language_uid': language,
             'l10n_parent': parent_refs[index] if parent_refs and index < len(parent_refs) else 0,
-            'l10n_source': 0, 'deleted': 0,
+            'deleted': 0,
         }))
     return new_refs
 
