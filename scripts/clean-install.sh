@@ -138,6 +138,7 @@ PY
         npx --yes --package @playwright/cli playwright-cli open http://127.0.0.1:8765/
         npx --yes --package @playwright/cli playwright-cli run-code --filename "$root/scripts/browser-smoke.js"
         npx --yes --package @playwright/cli playwright-cli run-code --filename "$root/scripts/axe-audit.js"
+        npx --yes --package @playwright/cli playwright-cli run-code --filename "$root/scripts/variant-contrast-audit.js"
         npx --yes --package @playwright/cli playwright-cli close
         if [ -n "${CRISPFRAME_MAILPIT_API:-}" ]; then
             python3 - <<'PY'

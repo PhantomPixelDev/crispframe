@@ -53,7 +53,9 @@ In TYPO3 **Site Management → Sites**, add the **Crispframe Agency Theme** Site
 
 [See the full screenshot gallery →](packages/agency_theme/Documentation/Screenshots.md)
 
-Screenshots were captured from the development demo on **27 September 2026**. The demo can include fixes ahead of the latest Composer release. Its photographs, copy, and prices are replaceable examples; demo content lives in the optional demo package.
+![Editorial project rows on the editable Style variants page](packages/agency_theme/Documentation/Images/style-variants-desktop.webp)
+
+Screenshots were captured from the development demo on **28 September 2026**. The demo can include fixes ahead of the latest Composer release. Its photographs, copy, and prices are replaceable examples; demo content lives in the optional demo package.
 
 ## Make it yours
 

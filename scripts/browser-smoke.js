@@ -66,6 +66,8 @@ async (page) => {
   }
   await page.goto(base + '/components');
   expect(await page.locator('.resource-list__link[href$="/components/style-variants"]').count() === 1, 'Components must link to the style showcase');
+  await page.goto(base + '/de/components');
+  expect(await page.locator('.resource-list__link[href$="/de/components/stilvarianten"]').count() === 1, 'German Components must link to the translated showcase');
   await page.goto(base + '/insights');
   expect(await page.locator('.child-pages__item').count() === 2, 'Insights must list two child pages');
   for (const image of await page.locator('.child-pages__image').all()) {

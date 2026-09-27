@@ -7,7 +7,7 @@
 
 Build an editable corporate, agency, or organization website with **27 Content Blocks**, English/German labels, four palettes, and TYPO3's native editing tools.
 
-**[Live demo →](https://dev-crispframe.ppxl.dev/)** · [All elements](https://dev-crispframe.ppxl.dev/components) · [Get started](#installation) · [Documentation](#documentation)
+**[Live demo →](https://dev-crispframe.ppxl.dev/)** · [All elements](https://dev-crispframe.ppxl.dev/components) · [Style variants](https://dev-crispframe.ppxl.dev/components/style-variants) · [Get started](#installation) · [Documentation](#documentation)
 
 ![Crispframe homepage with editorial typography, clear actions, and demo photography](Documentation/Images/home-desktop.webp)
 
@@ -63,7 +63,9 @@ The [demo package](https://github.com/PhantomPixelDev/crispframe-agency-demo) im
 
 [View Work, Resources, Insights, pricing, and German case-study screenshots →](Documentation/Screenshots.md)
 
-Captured from the live development demo on **27 September 2026**. The demo can include changes ahead of the latest tagged release. Branding, images, copy, and prices are editable examples; they are not imported by the theme.
+![Editorial project rows with a wide image and concise case-study text](Documentation/Images/style-variants-desktop.webp)
+
+Captured from the live development demo on **28 September 2026**. The demo can include changes ahead of the latest tagged release. Branding, images, copy, and prices are editable examples; they are not imported by the theme.
 
 ## Content Blocks
 
@@ -97,7 +99,7 @@ Set these values in **Site Settings**; no CSS edit is required.
 
 Additional settings cover company details, logo, English/German CTA labels, announcements, social links, and two footer page trees. CTA and legal page pickers take precedence over legacy URL fields and keep internal links language-aware.
 
-Content elements also expose their own width, background, and spacing controls. Hero blocks support split, centered, background-media, and minimal layouts.
+Content elements also expose their own width, background, and spacing controls. Hero blocks support split, centered, background-media, and minimal layouts. The [guided style variants](Documentation/StyleVariants.md) add fixed choices for Hero headline width, Services, Feature grid, Projects, Testimonials, and CTA without changing existing records.
 
 ## Forms
 

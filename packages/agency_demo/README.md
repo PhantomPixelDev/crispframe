@@ -7,6 +7,8 @@ An optional starting point for the [Crispframe TYPO3 theme](https://github.com/P
 
 **[Explore the live demo →](https://dev-crispframe.ppxl.dev/)** · [Screenshot gallery](https://github.com/PhantomPixelDev/crispframe-agency-theme/blob/main/Documentation/Screenshots.md) · [New-site starter](https://github.com/PhantomPixelDev/crispframe/tree/main/starter)
 
+The [Style variants showcase](https://dev-crispframe.ppxl.dev/components/style-variants) is an optional child page under Components, with a translated German page and editable examples of every new presentation choice.
+
 ![Crispframe homepage preview](https://raw.githubusercontent.com/PhantomPixelDev/crispframe-agency-theme/main/Documentation/Images/home-desktop.webp)
 
 ## Install on a new, empty site

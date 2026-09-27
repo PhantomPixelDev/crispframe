@@ -1,6 +1,6 @@
 # Crispframe screenshot gallery
 
-Real browser captures from the [development demo](https://dev-crispframe.ppxl.dev/), taken **27 September 2026**. Desktop previews use 1440 px width; mobile previews use 390 px. The contact form and pricing captures use taller viewports.
+Real browser captures from the [development demo](https://dev-crispframe.ppxl.dev/), taken **28 September 2026**. Desktop previews use 1440 px width; mobile previews use 390 px. The contact form and pricing captures use taller viewports.
 
 The demo can contain changes ahead of the latest Composer release. All names, prices, photos, and editorial content shown here are replaceable examples from the optional demo package.
 
@@ -23,6 +23,14 @@ The demo can contain changes ahead of the latest Composer release. All names, pr
 ![Service cards with simple local SVG icons and outlined actions](Images/service-cards.webp)
 
 ![Pricing tiers with monthly and yearly controls](Images/pricing-block.webp)
+
+## Guided style variants
+
+The [editable showcase](https://dev-crispframe.ppxl.dev/components/style-variants) compares all six block controls. See the [choice guide](StyleVariants.md) for short use cases.
+
+![Editorial project rows with a wide image and readable case-study summary](Images/style-variants-desktop.webp)
+
+![German open service columns with icons and quiet actions](Images/style-variants-de-desktop.webp)
 
 ## Contact and inquiries
 
