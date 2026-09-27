@@ -25,7 +25,7 @@ async (page) => {
       check(await page.locator('#mobile-menu').isVisible(), 'Escape closed both menu levels');
       await page.keyboard.press('Escape');
     }
-    for (const path of ['/contact', '/project-inquiry', '/de/contact', '/de/projektanfrage', '/components', '/services', '/about/locations']) {
+    for (const path of ['/contact', '/project-inquiry', '/de/contact', '/de/projektanfrage', '/components', '/services', '/about/locations', '/resources', '/de/ressourcen', '/insights/content-checklist', '/de/wissen/inhaltscheckliste']) {
       const response = await page.goto(base + path);
       check(response.status() === 200, path + ' failed');
       await page.evaluate(() => document.fonts.ready);
@@ -34,6 +34,19 @@ async (page) => {
         check(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1), path + ' overflow at ' + width + ' ' + palette);
       }
       await page.locator('.site-shell').evaluate(el => el.dataset.palette='ocean');
+      if (path === '/resources') {
+        const section = page.locator('.section:has(.resource-list)').first();
+        const balanced = await section.evaluate(el => parseFloat(getComputedStyle(el).paddingTop));
+        check(balanced <= 80, 'Resource list has excessive section padding');
+        await page.locator('.site-shell').evaluate(el => el.dataset.rhythm='airy');
+        const airy = await section.evaluate(el => parseFloat(getComputedStyle(el).paddingTop));
+        check(airy > balanced, 'Airy spacing setting no longer changes editorial sections');
+        await page.locator('.site-shell').evaluate(el => el.dataset.rhythm='balanced');
+      }
+      if (path.endsWith('/content-checklist') || path.endsWith('/inhaltscheckliste')) {
+        const articleText = page.locator('.article-layout__main > .frame-type-text').first();
+        check(await articleText.evaluate(el => parseFloat(getComputedStyle(el).paddingTop) >= 40), 'Article text touches its hero');
+      }
       const form = page.locator('.frame-type-form_formframework form');
       if (await form.count()) {
         const input = form.locator('input[type="text"]:not([aria-hidden="true"])').first();

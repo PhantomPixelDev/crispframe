@@ -56,9 +56,13 @@
 .article-layout__main>.frame-type-text{padding-block:clamp(2.5rem,5vw,4rem)}
 .article-layout__main>.frame-type-text .ce-bodytext{max-width:68ch}
 .article-layout__main>.frame-type-text h2{font-size:clamp(1.75rem,3vw,2.5rem)}
+.page--article .hero-section:not([data-spacing="small"]):not([data-spacing="large"]){padding-block:clamp(2.5rem,4.5vw,4.5rem)}
+.page--article .hero-section .hero{grid-template-columns:minmax(0,1fr) minmax(12rem,.72fr);gap:clamp(1.5rem,3vw,3rem);min-height:0}
+.page--article .hero__title{max-width:16ch;font-size:clamp(2.5rem,4.2vw,4.5rem);letter-spacing:-.055em}
 .article-layout__sidebar .section{padding-block:var(--space-lg)}
 .article-layout__sidebar .section-header__title{font-size:var(--text-h3)}
 @media(min-width:64rem){.article-layout--with-sidebar{grid-template-columns:minmax(0,1fr) minmax(16rem,19rem)}}
+@media(max-width:63.99rem){.page--article .hero-section .hero{grid-template-columns:1fr}}
 @media(max-width:35rem){.author-card{align-items:flex-start;gap:var(--space-md)}.author-card__portrait{width:4rem}.editorial-tabs__panel{padding:var(--space-lg)}.child-pages--list .child-pages__image{width:5rem;min-height:5rem}}
 .site-shell[data-header-variant="compact"] .site-header__inner{min-height:3.75rem}
 .site-shell[data-header-variant="compact"] .site-header .nav__link{padding-block:.45rem}
