@@ -1,17 +1,51 @@
-# Crispframe TYPO3 Demo: bilingual corporate website examples
+# Crispframe demo — editable English and German pages
 
-[![Demo release](https://img.shields.io/github/v/release/PhantomPixelDev/crispframe-agency-demo?display_name=tag&sort=semver)](https://github.com/PhantomPixelDev/crispframe-agency-demo/releases)
-[![Packagist](https://img.shields.io/packagist/v/crispframe/agency-demo?label=Packagist)](https://packagist.org/packages/crispframe/agency-demo)
-[![License: GPL-2.0-or-later](https://img.shields.io/badge/license-GPL--2.0--or--later-blue)](LICENSE)
+[![Packagist](https://img.shields.io/packagist/v/crispframe/agency-demo?label=release)](https://packagist.org/packages/crispframe/agency-demo)
+[![License](https://img.shields.io/badge/license-GPL--2.0--or--later-blue)](LICENSE)
 
-Optional bilingual English/German demo content for the [Crispframe TYPO3 theme](https://github.com/PhantomPixelDev/crispframe-agency-theme). It demonstrates a complete editable corporate site with Home, Work, Services, About, Contact, Insights, Resources, Locations, Request a Project, articles, case studies, forms, SEO fields, mega navigation, announcements, section navigation, callouts, and all 27 blocks.
+An optional starting point for the [Crispframe TYPO3 theme](https://github.com/PhantomPixelDev/crispframe-agency-theme): example pages, original demo photography, translated records, and practical combinations of all **27 Content Blocks**.
 
-This optional distribution contains an editable example page tree. Install it only in a **new, empty TYPO3 project** after `crispframe/agency-theme`. `extension:setup` imports `Initialisation/data.xml` and the sample site configuration. Existing sites should install the theme alone and create their own pages.
+**[Explore the live demo →](https://dev-crispframe.ppxl.dev/)** · [Screenshot gallery](https://github.com/PhantomPixelDev/crispframe-agency-theme/blob/main/Documentation/Screenshots.md) · [New-site starter](https://github.com/PhantomPixelDev/crispframe/tree/main/starter)
 
-The example content uses fictional organization and contact details. Replace all names, prices, links, legal pages, form recipients, and SEO text before publishing. Do not use this package as an update mechanism for edited content.
+![Crispframe homepage preview](https://raw.githubusercontent.com/PhantomPixelDev/crispframe-agency-theme/main/Documentation/Images/home-desktop.webp)
 
-The starter includes seven original, compressed WebP editorial photographs for Home, Work, Contact, Services, About and two case studies. They are imported as normal TYPO3 files and may be replaced or removed in the page editor. English and German hero records each carry their own editable alternative text. The theme package contains no demo photography.
+## Install on a new, empty site
 
-The bilingual page tree contains Home, Work, Contact, Services, About, Insights, Resources, Locations, Request a Project, four Service detail pages, two Work case studies, two articles, plus a hidden Components showcase. Insights uses translated child-page cards and page media; Resources demonstrates tabs and curated links. One article uses the Article sidebar, pull quote and author card; the second shows the empty-sidebar layout. Services demonstrates generated section navigation, the comparison table, and a vertical timeline. Locations demonstrates office cards and a callout. All records are editable in TYPO3. Internal links use page references, so German navigation stays in German.
+Install the theme first, or start from the [starter project](https://github.com/PhantomPixelDev/crispframe/tree/main/starter). Then:
 
-The XML export is generated from the local demo with TYPO3's `impexp:export` command. It includes only the page tree and records under that root. It contains no backend users or credentials.
+```sh
+composer require crispframe/agency-demo:^1.5
+vendor/bin/typo3 extension:setup --extension=agency_demo
+vendor/bin/typo3 cache:flush
+```
+
+TYPO3 Initialisation imports the page tree, example files, and site configuration. Set the site base URL to your own domain, then follow the [first-run checklist](https://github.com/PhantomPixelDev/crispframe-agency-theme/blob/main/Documentation/FirstRun.md).
+
+**Do not import this package over an existing site.** It is a starting point, not an update mechanism for edited content. Existing sites can install the theme alone.
+
+## What is included?
+
+| Pages | What they demonstrate |
+| --- | --- |
+| Home, Services, About | Hero layouts, services, features, proof, and calls to action |
+| Work and two case studies | Project cards, photography, and editable long-form narratives |
+| Contact and Request a project | Contact details and two TYPO3 Form Framework presets |
+| Insights and two articles | Automatic child-page teasers, pull quotes, author cards, and an optional sidebar |
+| Resources and Components | Tabs, curated links, pricing, video, gallery, and additional block examples |
+| Locations and four service detail pages | Office cards, callouts, section navigation, and a two-level page tree |
+
+Editorial records have English/German versions. Internal links use TYPO3 page references. Images are imported as normal TYPO3 files with editable alternative text.
+
+## Before publishing
+
+Replace fictional names, contact details, prices, links, legal pages, form recipients, and SEO text. Configure mail transport and verify a submission. Replace or remove demo photographs as appropriate for your organization.
+
+The import contains no backend users or credentials. You create your own administrator during TYPO3 setup. The reusable theme does not import these pages or install the demo photographs into your site.
+
+The [live development demo](https://dev-crispframe.ppxl.dev/) can include updates ahead of the latest Composer release.
+
+## Compatibility and license
+
+Requires the Crispframe theme and its supported TYPO3 versions: 13.4.15+ or 14.3.7+, within those major versions. See [composer.json](composer.json) for exact constraints.
+
+[GPL-2.0-or-later](LICENSE). For bugs, include your package versions and import steps in a [GitHub issue](https://github.com/PhantomPixelDev/crispframe-agency-demo/issues).
