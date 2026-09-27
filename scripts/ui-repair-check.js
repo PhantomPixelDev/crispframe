@@ -39,9 +39,12 @@ async (page) => {
         const balanced = await section.evaluate(el => parseFloat(getComputedStyle(el).paddingTop));
         check(balanced <= 80, 'Resource list has excessive section padding');
         await page.locator('.site-shell').evaluate(el => el.dataset.rhythm='airy');
-        await page.evaluate(() => new Promise(resolve => requestAnimationFrame(resolve)));
+        await page.waitForFunction(expected => {
+          const section = document.querySelector('.section:has(.resource-list)');
+          return section && parseFloat(getComputedStyle(section).paddingTop) > expected;
+        }, balanced, {timeout: 3000});
         const airy = await section.evaluate(el => parseFloat(getComputedStyle(el).paddingTop));
-        check(airy > balanced, 'Airy spacing setting no longer changes editorial sections');
+        check(airy > balanced, 'Airy spacing setting no longer changes editorial sections at ' + width + 'px (' + balanced + ' → ' + airy + ')');
         await page.locator('.site-shell').evaluate(el => el.dataset.rhythm='balanced');
       }
       if (path.endsWith('/content-checklist') || path.endsWith('/inhaltscheckliste')) {
