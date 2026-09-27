@@ -1,7 +1,7 @@
 async (page) => {
   const base = page.url().match(/^https?:\/\/[^/]+/)[0];
   const expect = (condition, message) => { if (!condition) throw new Error(message); };
-  for (const path of ['/', '/work', '/contact', '/services', '/services/strategy', '/services/experience-design', '/services/typo3-platforms', '/services/improvement', '/about', '/about/locations', '/project-inquiry', '/components', '/insights', '/resources', '/insights/clear-service-pages', '/insights/content-checklist', '/work/clearer-public-service', '/work/customer-workspace', '/de/', '/de/work', '/de/contact', '/de/leistungen', '/de/leistungen/strategie', '/de/leistungen/experience-design', '/de/leistungen/typo3-plattformen', '/de/leistungen/weiterentwicklung', '/de/ueber-uns', '/de/ueber-uns/standorte', '/de/projektanfrage', '/de/components', '/de/wissen', '/de/ressourcen', '/de/wissen/klare-service-seiten', '/de/wissen/inhaltscheckliste', '/de/work/clearer-public-service', '/de/work/customer-workspace']) {
+  for (const path of ['/', '/work', '/contact', '/services', '/services/strategy', '/services/experience-design', '/services/typo3-platforms', '/services/improvement', '/about', '/about/locations', '/project-inquiry', '/components', '/components/style-variants', '/insights', '/resources', '/insights/clear-service-pages', '/insights/content-checklist', '/work/clearer-public-service', '/work/customer-workspace', '/de/', '/de/work', '/de/contact', '/de/leistungen', '/de/leistungen/strategie', '/de/leistungen/experience-design', '/de/leistungen/typo3-plattformen', '/de/leistungen/weiterentwicklung', '/de/ueber-uns', '/de/ueber-uns/standorte', '/de/projektanfrage', '/de/components', '/de/components/stilvarianten', '/de/wissen', '/de/ressourcen', '/de/wissen/klare-service-seiten', '/de/wissen/inhaltscheckliste', '/de/work/clearer-public-service', '/de/work/customer-workspace']) {
     const response = await page.goto(base + path);
     expect(response && response.status() === 200, `${path} must return 200`);
     const language = await page.locator('html').getAttribute('lang');
@@ -51,6 +51,21 @@ async (page) => {
   expect(await page.locator('.location-card a[href^="https://www.openstreetmap.org/"]').count() === 2, 'Location map actions must be external links without embeds');
   await page.goto(base + '/de/ueber-uns/standorte');
   expect((await page.locator('.location-card').first().innerText()).includes('Montag'), 'German location hours are not translated');
+  for (const [path, language] of [['/components/style-variants', 'en'], ['/de/components/stilvarianten', 'de']]) {
+    await page.goto(base + path);
+    expect(await page.locator('.hero[data-headline-measure="narrow"]').count() === 1, `${path} needs the narrow headline`);
+    expect(await page.locator('.hero[data-headline-measure="standard"]').count() === 1, `${path} needs the standard headline`);
+    expect(await page.locator('.hero[data-headline-measure="wide"]').count() === 1, `${path} needs the wide headline`);
+    for (const selector of ['.cards--services-cards', '.cards--services-open', '.cards--features-cards', '.cards--features-open', '.cards--projects-cards', '.cards--projects-rows', '.cards--testimonials-cards', '.cards--testimonials-open', '.cta--panel', '.cta--open']) {
+      expect(await page.locator(selector).count() === 1, `${path} missing ${selector}`);
+    }
+    expect(await page.locator('.cards--projects-rows .project-card__media img').count() > 0, `${path} editorial rows need an image`);
+    expect(await page.locator('.cta--open .btn--primary').count() === 1, `${path} open CTA needs its action`);
+    const expected = language === 'de' ? 'Stilvarianten' : 'Style variants';
+    expect((await page.locator('h1').innerText()).length > 0 && (await page.locator('title').innerText()).includes(expected), `${path} needs localized metadata`);
+  }
+  await page.goto(base + '/components');
+  expect(await page.locator('.resource-list__link[href$="/components/style-variants"]').count() === 1, 'Components must link to the style showcase');
   await page.goto(base + '/insights');
   expect(await page.locator('.child-pages__item').count() === 2, 'Insights must list two child pages');
   for (const image of await page.locator('.child-pages__image').all()) {
@@ -162,7 +177,7 @@ async (page) => {
   await page.getByRole('button', { name: 'Send project inquiry' }).click();
   expect((await page.locator('body').innerText()).includes('Thank you. We will review your project'), 'Project inquiry confirmation missing');
   await page.emulateMedia({ reducedMotion: 'reduce' });
-  for (const path of ['/', '/work', '/contact', '/services', '/about', '/components', '/insights', '/resources', '/insights/clear-service-pages', '/insights/content-checklist', '/work/clearer-public-service', '/work/customer-workspace', '/de/', '/de/leistungen', '/de/ueber-uns', '/de/wissen', '/de/ressourcen', '/de/wissen/klare-service-seiten', '/de/wissen/inhaltscheckliste', '/de/work/clearer-public-service', '/de/work/customer-workspace']) {
+  for (const path of ['/', '/work', '/contact', '/services', '/about', '/components', '/components/style-variants', '/insights', '/resources', '/insights/clear-service-pages', '/insights/content-checklist', '/work/clearer-public-service', '/work/customer-workspace', '/de/', '/de/leistungen', '/de/ueber-uns', '/de/components/stilvarianten', '/de/wissen', '/de/ressourcen', '/de/wissen/klare-service-seiten', '/de/wissen/inhaltscheckliste', '/de/work/clearer-public-service', '/de/work/customer-workspace']) {
     await page.goto(base + path);
     for (const width of [390, 768, 1440]) {
       await page.setViewportSize({ width, height: 900 });

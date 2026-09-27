@@ -86,7 +86,8 @@ for ctype, column, expected in (
         (f'crispframe_{ctype}',)
     )}
     assert set(expected) <= values, f'Missing {ctype} variants: {set(expected) - values}'
-assert database.execute("SELECT COUNT(*) FROM tt_content WHERE CType='crispframe_hero' AND pid NOT IN (SELECT uid FROM pages WHERE slug='/components/style-variants') AND (crispframe_hero_headlineMeasure='' OR crispframe_hero_headlineMeasure IS NULL) AND deleted=0").fetchone()[0] > 0, 'Expected pre-1.6 records to retain an empty style field'
+old_hero_values = {value for (value,) in database.execute("SELECT DISTINCT crispframe_hero_headlineMeasure FROM tt_content WHERE CType='crispframe_hero' AND pid NOT IN (SELECT uid FROM pages WHERE slug='/components/style-variants') AND deleted=0")}
+assert old_hero_values and old_hero_values <= {'', None, 'standard'}, f'Unexpected style on pre-1.6 heroes: {old_hero_values}'
 print(f'Clean install passed: {pages} pages, {translations} German translations, 27 block types, {len(files)} imported images.')
 PY
 

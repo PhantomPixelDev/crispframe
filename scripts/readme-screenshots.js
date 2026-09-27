@@ -22,13 +22,16 @@ async (page) => {
     ['home-desktop','/'],['work-desktop','/work'],['contact-desktop','/contact'],
     ['services-desktop','/services'],['about-desktop','/about'],
     ['insights-desktop','/insights'],['resources-desktop','/resources'],
-    ['article-desktop','/insights/clear-service-pages'],['case-study-de-desktop','/de/work/customer-workspace']
+    ['article-desktop','/insights/clear-service-pages'],['case-study-de-desktop','/de/work/customer-workspace'],
+    ['style-variants-desktop','/components/style-variants'],['style-variants-de-desktop','/de/components/stilvarianten']
   ]) {
     await visit(path);
     const section = {
       '/resources': '.section:has(.editorial-tabs)',
       '/insights': '.section:has(.child-pages)',
       '/services': '.hero-section',
+      '/components/style-variants': '.section:has(.cards--projects-rows)',
+      '/de/components/stilvarianten': '.section:has(.cards--services-open)',
     }[path];
     await capture(name, section);
   }
@@ -43,5 +46,5 @@ async (page) => {
   await page.locator('#nav-toggle').click();
   await page.locator('#mobile-menu .nav__submenu-toggle').first().click();
   await capture('mobile-menu');
-  return '15 live demo screenshots saved to output/playwright/readme-*.png';
+  return '17 live demo screenshots saved to output/playwright/readme-*.png';
 }

@@ -10,6 +10,7 @@ NAMES = (
     "services-desktop", "about-desktop", "insights-desktop",
     "resources-desktop", "article-desktop", "case-study-de-desktop",
     "pricing-block", "service-cards", "mega-menu", "contact-form", "mobile-menu",
+    "style-variants-desktop", "style-variants-de-desktop",
 )
 
 missing = [name for name in NAMES if not (SOURCE / f"readme-{name}.png").is_file()]
