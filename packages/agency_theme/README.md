@@ -65,7 +65,7 @@ The [demo package](https://github.com/PhantomPixelDev/crispframe-agency-demo) im
 
 ![Editorial project rows with a wide image and concise case-study text](Documentation/Images/style-variants-desktop.webp)
 
-Captured from the live development demo on **28 September 2026**. The demo can include changes ahead of the latest tagged release. Branding, images, copy, and prices are editable examples; they are not imported by the theme.
+Captured from the live development demo on **29 September 2026**. The demo can include changes ahead of the latest tagged release. Branding, images, copy, and prices are editable examples; they are not imported by the theme.
 
 ## Content Blocks
 

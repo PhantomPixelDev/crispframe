@@ -1,6 +1,6 @@
 # Crispframe screenshot gallery
 
-Real browser captures from the [development demo](https://dev-crispframe.ppxl.dev/), taken **28 September 2026**. Desktop previews use 1440 px width; mobile previews use 390 px. The contact form and pricing captures use taller viewports.
+Real browser captures from the [development demo](https://dev-crispframe.ppxl.dev/), taken **29 September 2026**. Desktop previews use 1440 px width; mobile previews use 390 px. The contact form and pricing captures use taller viewports.
 
 The demo can contain changes ahead of the latest Composer release. All names, prices, photos, and editorial content shown here are replaceable examples from the optional demo package.
 
