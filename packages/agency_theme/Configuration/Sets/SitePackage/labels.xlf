@@ -180,6 +180,8 @@
       <trans-unit id="settings.announcement.appearance.enum.brand"><source>Brand</source></trans-unit>
       <trans-unit id="settings.announcement.appearance.enum.dark"><source>Dark</source></trans-unit>
       <trans-unit id="settings.announcement.dismissible"><source>Allow visitors to dismiss</source></trans-unit>
+      <trans-unit id="settings.brand.mobileName"><source>Short mobile brand name</source></trans-unit>
+      <trans-unit id="settings.description.brand.mobileName"><source>Optional shorter name for phone headers. Leave empty to use the company name. Uploaded logos are unchanged.</source></trans-unit>
     </body>
   </file>
 </xliff>

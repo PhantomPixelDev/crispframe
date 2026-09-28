@@ -227,6 +227,8 @@
       <trans-unit id="settings.announcement.appearance.enum.brand"><source>Brand</source><target>Markenfarbe</target></trans-unit>
       <trans-unit id="settings.announcement.appearance.enum.dark"><source>Dark</source><target>Dunkel</target></trans-unit>
       <trans-unit id="settings.announcement.dismissible"><source>Allow visitors to dismiss</source><target>Schließen durch Besucher erlauben</target></trans-unit>
+      <trans-unit id="settings.brand.mobileName"><source>Short mobile brand name</source><target>Kurzer Markenname für Mobilgeräte</target></trans-unit>
+      <trans-unit id="settings.description.brand.mobileName"><source>Optional shorter name for phone headers. Leave empty to use the company name. Uploaded logos are unchanged.</source><target>Optionaler kurzer Name für die mobile Kopfzeile. Leer lassen, um den Unternehmensnamen zu verwenden. Hochgeladene Logos bleiben unverändert.</target></trans-unit>
     </body>
   </file>
 </xliff>

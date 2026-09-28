@@ -18,3 +18,11 @@ For a custom design, edit the source file that owns the element:
 The page layout loads these files in that order, with `utilities.css` after components. There is no catch-all refresh stylesheet. Keep changes beside the component they affect. For example, the CTA's panel, open, dark, and brand rules live together in `components.css`; the four palette values live in `themes.css`.
 
 After changing color rules, check both CTA actions on default, subtle, dark, and brand sections in all four palettes. `scripts/cta-contrast-audit.js` checks the deployed demo. Run the browser smoke and clean-install checks before a package release. The demo's content and images remain in the optional demo package.
+
+### Mobile branding and editorial panels
+
+Set **Brand → Short mobile brand name** (`brand.mobileName`) when a company's full name is too long for a phone header. An empty value uses the company name, which can wrap instead of being cut off. Uploaded logos continue to use their existing setting.
+
+Colored sections inside an Article layout have their own horizontal inset. Keep this in `editorial.css`: the outer page gutter does not provide padding inside a colored panel. The sidebar uses a smaller inset to retain readable content width.
+
+All 27 blocks include backend previews with their real headings, introductory text, and collection labels. The previews escape editorial text and omit hidden collection items. Run `php scripts/check-previews.php` from the development repository to render them through Content Blocks' preview layouts. Both clean-install jobs run this check.

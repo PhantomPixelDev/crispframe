@@ -50,14 +50,16 @@
 .editorial-tabs__image{display:block;max-width:100%;height:auto;margin-block-start:var(--space-lg);border-radius:var(--radius-sm)}
 .article-layout{width:min(100% - 2*var(--container-gutter),var(--container-default));margin-inline:auto}
 .article-layout--with-sidebar{display:grid;gap:var(--space-2xl)}
-.article-layout__main,.article-layout__sidebar{min-width:0}
+.article-layout__main,.article-layout__sidebar{min-width:0;container-type:inline-size}
 .article-layout__main .container,.article-layout__sidebar .container{width:100%;max-width:none}
+/* Nested sections cannot rely on the outer page gutter for their panel inset. */
+.article-layout :is(.section--subtle,.section--dark,.section--brand){padding-inline:clamp(1.25rem,4vw,3.5rem)}
+.article-layout__sidebar :is(.section--subtle,.section--dark,.section--brand){padding-inline:var(--space-lg)}
 .article-layout__main>.frame:not([class*="frame-type-crispframe_"]),.article-layout__sidebar>.frame:not([class*="frame-type-crispframe_"]){width:100%;margin-inline:0}
 .article-layout__main>.frame-type-text{padding-block:clamp(2.5rem,5vw,4rem)}
 .article-layout__main>.frame-type-text .ce-bodytext{max-width:68ch}
 .article-layout__main>.frame-type-text h2{font-size:clamp(1.75rem,3vw,2.5rem)}
 .page--article .hero-section:not([data-spacing="small"]):not([data-spacing="large"]){padding-block:clamp(2.5rem,4.5vw,4.5rem)}
-.page--article .article-layout__main>.hero-section{padding-inline:clamp(1.25rem,4vw,3.5rem)}
 .page--article .hero-section .hero{grid-template-columns:minmax(0,1fr) minmax(12rem,.72fr);gap:clamp(1.5rem,3vw,3rem);min-height:0}
 .page--article .hero__title{max-width:16ch;font-size:clamp(2.5rem,4.2vw,4.5rem);letter-spacing:-.055em}
 .article-layout__sidebar .section{padding-block:var(--space-lg)}
@@ -65,6 +67,19 @@
 @media(min-width:64rem){.article-layout--with-sidebar{grid-template-columns:minmax(0,1fr) minmax(16rem,19rem)}}
 @media(max-width:63.99rem){.page--article .hero-section .hero{grid-template-columns:1fr}}
 @media(max-width:35rem){.author-card{align-items:flex-start;gap:var(--space-md)}.author-card__portrait{width:4rem}.editorial-tabs__panel{padding:var(--space-lg)}.child-pages--list .child-pages__image{width:5rem;min-height:5rem}}
+/* Respond to the article column, including a narrow sidebar on wide screens. */
+@container(max-width:48rem){
+  .page--article .hero-section .hero{grid-template-columns:minmax(0,1fr)}
+  .cards--services,.cards--features,.cards--projects,.cards--testimonials,.cards--team,.process{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@container(max-width:32rem){
+  .cards--services,.cards--features,.cards--projects,.cards--testimonials,.cards--team,.process,.text-image,.contact{grid-template-columns:minmax(0,1fr)}
+  .page--article .hero__title{font-size:clamp(2rem,9cqi,3rem)}
+}
+@container(max-width:26rem){
+  .author-card{flex-direction:column;align-items:flex-start;gap:var(--space-md)}
+  .author-card__portrait{width:4rem}
+}
 .site-shell[data-header-variant="compact"] .site-header__inner{min-height:3.75rem}
 .site-shell[data-header-variant="compact"] .site-header .nav__link{padding-block:.45rem}
 .site-shell[data-footer-variant="minimal"] .site-footer__prelude,.site-shell[data-footer-variant="minimal"] .site-footer__col--nav,.site-shell[data-footer-variant="minimal"] .site-footer__col--services,.site-shell[data-footer-variant="minimal"] .site-footer__col--contact{display:none}
@@ -85,6 +100,8 @@
 .frame-type-text,.frame-type-textmedia,.frame-type-textpic,.frame-type-table,.frame-type-uploads{overflow-wrap:anywhere}
 .frame-type-text .ce-bodytext,.frame-type-textmedia .ce-bodytext,.frame-type-textpic .ce-bodytext{max-width:72ch;line-height:var(--leading-normal)}
 .frame-type-text .ce-bodytext>*+*,.frame-type-textmedia .ce-bodytext>*+*,.frame-type-textpic .ce-bodytext>*+*{margin-block-start:var(--space-md)}
+.frame-type-text .frame-header,.frame-type-textmedia .frame-header,.frame-type-textpic .frame-header{margin-block-end:var(--space-md)}
+.child-pages>li,.resource-list>li{margin-block-start:0;max-width:none}
 .frame-type-text a,.frame-type-textmedia a,.frame-type-textpic a,.frame-type-uploads a{color:var(--color-brand-ink);text-decoration:underline;text-underline-offset:.16em}
 .frame-type-text a:focus-visible,.frame-type-textmedia a:focus-visible,.frame-type-textpic a:focus-visible,.frame-type-uploads a:focus-visible{outline:3px solid var(--color-focus);outline-offset:3px}
 .frame-type-textmedia .ce-gallery,.frame-type-textpic .ce-gallery,.frame-type-image .ce-gallery{max-width:100%;overflow:hidden}

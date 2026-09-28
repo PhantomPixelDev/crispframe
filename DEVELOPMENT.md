@@ -86,6 +86,8 @@ Use the optional demo package on a fresh installation when you want sample pages
 - `starter/` — clean Composer project using public packages.
 - `scripts/` — syntax, installation, browser, and accessibility checks.
 
+The maintainer-only `.dev/polish-demo-navigation.py` adds bilingual jump-link blocks to the two long showcase pages. It defaults to a dry run; `--apply` creates a database backup and inserts only missing records. It does not rewrite existing content. Run it only on the development demo or a fresh demo export copy.
+
 ## Refresh the README screenshots
 
 Capture the real running demo with Playwright CLI. This does not import data or change server-side content:

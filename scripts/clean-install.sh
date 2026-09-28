@@ -49,6 +49,7 @@ test -f vendor/crispframe/agency-demo/Initialisation/Site/main/config.yaml
 TYPO3_SETUP_ADMIN_PASSWORD='CleanInstall1234!' vendor/bin/typo3 setup --driver=sqlite --dbname="$work/site/var/site.sqlite" --admin-username=admin --admin-email=admin@example.invalid --project-name='Crispframe clean install' --server-type=apache --no-interaction
 vendor/bin/typo3 extension:setup --extension=agency_demo --no-interaction
 vendor/bin/typo3 content-blocks:lint
+CRISPFRAME_PREVIEW_ROOT="$work/site" php "$root/scripts/check-previews.php"
 test -f config/sites/main/config.yaml
 database_path=$(php -r '$s=require "config/system/settings.php"; echo $s["DB"]["Connections"]["Default"]["path"];')
 python3 - "$database_path" <<'PY'

@@ -100,6 +100,7 @@
 .section-navigation__title{font-size:var(--text-sm);letter-spacing:.08em;text-transform:uppercase}
 .section-navigation__list{display:grid;gap:.35rem;margin:var(--space-sm) 0 0;padding:0;list-style:none;counter-reset:section-links}
 .section-navigation__list li{counter-increment:section-links}
+.section-navigation__list>li{margin-block-start:0;max-width:none}
 .section-navigation__list a{display:flex;gap:.65rem;padding:.4rem .55rem;border-radius:var(--radius-sm);color:var(--color-text-muted);font-size:var(--text-sm);font-weight:var(--font-weight-medium);text-decoration:none}
 .section-navigation__list a::before{content:counter(section-links,decimal-leading-zero);color:var(--color-brand);font-variant-numeric:tabular-nums}
 .section-navigation__list a:hover,.section-navigation__list a.is-active{background:var(--color-bg-muted);color:var(--color-text)}

@@ -20,6 +20,11 @@ settings:
     category: brand
     default: ''
 
+  brand.mobileName:
+    type: string
+    category: brand
+    default: ''
+
   brand.taglineDe:
     type: string
     category: brand

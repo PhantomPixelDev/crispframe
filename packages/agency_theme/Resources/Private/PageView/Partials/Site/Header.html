@@ -16,7 +16,8 @@
                 </f:then>
                 <f:else>
                     <span class="site-header__logomark"><f:render partial="Components/Icon" arguments="{name: 'logomark', size: 28, decorative: 1}" /></span>
-                    <span class="site-header__logotype">{f:if(condition: site.settings.brand.companyName, then: site.settings.brand.companyName, else: 'Your Company')}</span>
+                    <span class="site-header__logotype{f:if(condition: site.settings.brand.mobileName, then: ' site-header__logotype--desktop')}">{f:if(condition: site.settings.brand.companyName, then: site.settings.brand.companyName, else: 'Your Company')}</span>
+                    <f:if condition="{site.settings.brand.mobileName}"><span class="site-header__logotype site-header__logotype--mobile">{site.settings.brand.mobileName}</span></f:if>
                 </f:else>
             </f:if>
         </a>
