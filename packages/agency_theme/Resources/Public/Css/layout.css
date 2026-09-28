@@ -114,7 +114,7 @@
 .btn--block{width:100%}
 
 /* Section rhythm and heading scale. */
-.section{position:relative}
+.section{position:relative;scroll-margin-block-start:calc(var(--header-height) + var(--space-lg))}
 .section--subtle{border-block-color:transparent}
 .section-header{max-width:48rem;margin-block-end:clamp(1.75rem,3vw,3rem)}
 .section-header__kicker,.section__eyebrow,.hero__eyebrow{letter-spacing:.13em;font-weight:var(--font-weight-bold)}

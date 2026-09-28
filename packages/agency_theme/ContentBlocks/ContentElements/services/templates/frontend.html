@@ -2,7 +2,7 @@
 <f:variable name="learnMoreLabel" value="{f:translate(key: 'LLL:EXT:agency_theme/Resources/Private/Language/locallang.xlf:block.learnMore')}" />
 <f:variable name="cardStyle" value="cards" />
 <f:if condition="{data.cardStyle}"><f:variable name="cardStyle" value="{data.cardStyle}" /></f:if>
-<section class="section section--{data.sectionBackground}" data-spacing="{data.sectionSpacing}">
+<section id="c{data.uid}" class="section section--{data.sectionBackground}" data-spacing="{data.sectionSpacing}">
     <div class="container container--{data.width}">
         <header class="section-header">
             <h2 class="section-header__title">{data.headline}</h2>

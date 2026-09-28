@@ -1,7 +1,7 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
 <f:variable name="ctaStyle" value="panel" />
 <f:if condition="{data.ctaStyle}"><f:variable name="ctaStyle" value="{data.ctaStyle}" /></f:if>
-<section class="section section--{data.sectionBackground}" data-spacing="{data.sectionSpacing}">
+<section id="c{data.uid}" class="section section--{data.sectionBackground}" data-spacing="{data.sectionSpacing}">
     <div class="container container--{data.width}">
         <div class="cta cta--{ctaStyle}{f:if(condition: '{data.sectionBackground} == \'dark\'', then: ' cta--dark')}{f:if(condition: '{data.sectionBackground} == \'brand\'', then: ' cta--brand')}">
             <h2 class="cta__title">{data.headline}</h2>

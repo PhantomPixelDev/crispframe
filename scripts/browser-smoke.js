@@ -44,6 +44,10 @@ async (page) => {
     expect(await page.locator('[data-section-navigation] a').count() >= 3, `${path} needs generated section navigation`);
     const sectionLink = page.locator('[data-section-navigation] a').first();
     expect((await sectionLink.getAttribute('href') || '').startsWith('#c'), `${path} section navigation needs stable content anchors`);
+    for (const link of await page.locator('[data-section-navigation] a').all()) {
+      const anchor = await link.getAttribute('href');
+      expect(await page.locator(anchor).count() === 1, `${path} section navigation target ${anchor} is missing or duplicated`);
+    }
   }
   await page.goto(base + '/about/locations');
   expect(await page.locator('.location-card').count() === 2, 'Locations page needs two editable offices');

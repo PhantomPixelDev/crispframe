@@ -1,5 +1,5 @@
 async (page) => {
-  const base = new URL(page.url()).origin;
+  const base = page.url().match(/^https?:\/\/[^/]+/)[0];
   const check = (ok, message) => { if (!ok) throw new Error(message); };
   const paths = ['/', '/de/', '/resources', '/de/ressourcen', '/insights/content-checklist', '/de/wissen/inhaltscheckliste', '/insights/clear-service-pages', '/components/style-variants'];
   let checks = 0;
@@ -46,7 +46,7 @@ async (page) => {
       check(await links.count() === 6, `${path}: showcase must contain six jump links`);
       for (const link of await links.all()) {
         const href = await link.getAttribute('href');
-        const hash = new URL(href, page.url()).hash;
+        const hash = href.includes('#') ? '#' + href.split('#')[1] : '';
         check(hash && await page.locator(hash).count() === 1, `${path}: missing jump target ${hash}`);
       }
     }

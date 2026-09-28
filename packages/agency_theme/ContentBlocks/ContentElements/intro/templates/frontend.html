@@ -1,6 +1,6 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
 <f:variable name="learnMoreLabel" value="{f:translate(key: 'LLL:EXT:agency_theme/Resources/Private/Language/locallang.xlf:block.learnMore')}" />
-<section class="section section--{data.sectionBackground}" data-spacing="{data.sectionSpacing}">
+<section id="c{data.uid}" class="section section--{data.sectionBackground}" data-spacing="{data.sectionSpacing}">
     <div class="container container--{data.width}">
         <header class="section-header section-header--center">
             <f:if condition="{data.isPageTitle}"><f:then><h1 class="section-header__title">{data.headline}</h1></f:then><f:else><h2 class="section-header__title">{data.headline}</h2></f:else></f:if>

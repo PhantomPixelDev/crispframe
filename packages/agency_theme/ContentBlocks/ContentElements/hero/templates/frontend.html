@@ -6,7 +6,7 @@
 <f:if condition="{data.layout}"><f:variable name="heroLayout" value="{data.layout}" /></f:if>
 <f:if condition="{data.height}"><f:variable name="heroHeight" value="{data.height}" /></f:if>
 <f:if condition="{data.headlineMeasure}"><f:variable name="headlineMeasure" value="{data.headlineMeasure}" /></f:if>
-<section class="section section--{data.sectionBackground} hero-section hero-section--{heroLayout}" data-spacing="{data.sectionSpacing}">
+<section id="c{data.uid}" class="section section--{data.sectionBackground} hero-section hero-section--{heroLayout}" data-spacing="{data.sectionSpacing}">
     <div class="container container--{data.width}">
         <div class="hero hero--{heroLayout} hero--height-{heroHeight}" data-image-position="{data.imagePosition}" data-media-crop="{data.mediaCrop}" data-headline-measure="{headlineMeasure}">
             <div class="hero__content">

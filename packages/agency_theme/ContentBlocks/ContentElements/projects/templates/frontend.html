@@ -2,7 +2,7 @@
 <f:variable name="viewProjectLabel" value="{f:translate(key: 'LLL:EXT:agency_theme/Resources/Private/Language/locallang.xlf:block.viewProject')}" />
 <f:variable name="projectStyle" value="cards" />
 <f:if condition="{data.projectStyle}"><f:variable name="projectStyle" value="{data.projectStyle}" /></f:if>
-<section class="section section--{data.sectionBackground}" data-spacing="{data.sectionSpacing}">
+<section id="c{data.uid}" class="section section--{data.sectionBackground}" data-spacing="{data.sectionSpacing}">
     <div class="container container--{data.width}">
         <header class="section-header">
             <h2 class="section-header__title">{data.headline}</h2>
