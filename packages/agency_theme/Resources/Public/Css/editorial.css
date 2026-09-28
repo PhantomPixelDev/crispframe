@@ -57,6 +57,7 @@
 .article-layout__main>.frame-type-text .ce-bodytext{max-width:68ch}
 .article-layout__main>.frame-type-text h2{font-size:clamp(1.75rem,3vw,2.5rem)}
 .page--article .hero-section:not([data-spacing="small"]):not([data-spacing="large"]){padding-block:clamp(2.5rem,4.5vw,4.5rem)}
+.page--article .article-layout__main>.hero-section{padding-inline:clamp(1.25rem,4vw,3.5rem)}
 .page--article .hero-section .hero{grid-template-columns:minmax(0,1fr) minmax(12rem,.72fr);gap:clamp(1.5rem,3vw,3rem);min-height:0}
 .page--article .hero__title{max-width:16ch;font-size:clamp(2.5rem,4.2vw,4.5rem);letter-spacing:-.055em}
 .article-layout__sidebar .section{padding-block:var(--space-lg)}
