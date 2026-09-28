@@ -22,11 +22,12 @@ foreach (glob($theme . '/ContentBlocks/ContentElements/*/templates/backend-previ
     foreach (['Header', 'Content'] as $section) {
         $view = $factory->create(new \TYPO3\CMS\Core\View\ViewFactoryData(
             templateRootPaths: [dirname($template)],
+            templatePathAndFilename: $template,
             layoutRootPaths: ['EXT:content_blocks/Resources/Private/Layouts/Preview/' . $section],
             request: $request,
         ));
         $view->assign('data', $data);
-        $output = $view->render('backend-preview');
+        $output = $view->render();
         if (str_contains($output, '<script>') || str_contains($output, 'HIDDEN_PREVIEW_ITEM') || str_contains($output, '<f:')) {
             throw new RuntimeException('Unsafe or unrendered preview: ' . $template . '/' . $section);
         }

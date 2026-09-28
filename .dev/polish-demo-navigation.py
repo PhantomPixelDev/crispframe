@@ -75,4 +75,4 @@ with db:
             original_items = db.execute('SELECT uid FROM crispframe_resourcelist_items WHERE foreign_table_parent_uid=? AND sys_language_uid=0 AND deleted=0 ORDER BY sorting', (parent,)).fetchall()
         for index, (label, link) in enumerate(links):
             insert('crispframe_resourcelist_items', {'pid': pid, 'foreign_table_parent_uid': uid, 'sys_language_uid': language, 'l10n_parent': original_items[index]['uid'] if language and index < len(original_items) else 0, 'sorting': (index + 1) * 128, 'tstamp': now, 'crdate': now, 'label': label, 'link': link, 'icon': 'none'})
-print('Added showcase navigation. Existing records were not changed.')
+print('Showcase navigation ready. Existing page content was preserved; only managed jump links were added or repaired.')
