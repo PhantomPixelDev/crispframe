@@ -10,9 +10,9 @@
 .frame-type-form_formframework form .form-control:focus{outline:2px solid var(--color-focus);outline-offset:2px;border-color:var(--color-focus)}
 .frame-type-form_formframework form .form-control[aria-invalid="true"],.frame-type-form_formframework form .form-element.has-error .form-control{border-color:#b42318}
 .frame-type-form_formframework form .invalid-feedback{display:block;margin-block-start:.4rem;color:#b42318;font-size:var(--text-sm)}
-.frame-type-form_formframework form button[type="submit"],.frame-type-form_formframework form input[type="submit"]{display:inline-flex;justify-content:center;min-height:3rem;padding:.75rem 1.35rem;border:1px solid var(--color-brand);border-radius:var(--radius-sm);background:var(--color-brand);color:#fff;font:inherit;font-size:var(--text-sm);font-weight:var(--font-weight-semibold);cursor:pointer;transition:background var(--transition-fast),border-color var(--transition-fast)}
-.frame-type-form_formframework form button[type="submit"]:hover,.frame-type-form_formframework form input[type="submit"]:hover{background:var(--color-brand-hover);border-color:var(--color-brand-hover)}
-.frame-type-form_formframework form button[type="submit"]:focus-visible,.frame-type-form_formframework form input[type="submit"]:focus-visible{outline:2px solid var(--color-focus);outline-offset:3px}
+.frame-type-form_formframework form button[type="submit"],.frame-type-form_formframework form input[type="submit"]{display:inline-flex;align-items:center;justify-content:center;min-height:3rem;padding:.75rem 1.5rem;border:1px solid var(--color-brand);border-radius:var(--radius-pill);background:var(--color-brand);color:#fff;font:inherit;font-size:var(--text-sm);font-weight:var(--font-weight-semibold);box-shadow:0 8px 20px color-mix(in srgb,var(--color-brand) 23%,transparent);cursor:pointer;transition:background var(--transition-fast),border-color var(--transition-fast),box-shadow var(--transition-fast)}
+.frame-type-form_formframework form button[type="submit"]:hover,.frame-type-form_formframework form input[type="submit"]:hover{background:var(--color-brand-hover);border-color:var(--color-brand-hover);box-shadow:0 10px 24px color-mix(in srgb,var(--color-brand) 28%,transparent)}
+.frame-type-form_formframework form button[type="submit"]:focus-visible,.frame-type-form_formframework form input[type="submit"]:focus-visible{outline:3px solid var(--color-focus);outline-offset:3px}
 .frame-type-form_formframework form .form-navigation{margin-block-start:var(--space-xl)}
 .frame-type-form_formframework form{max-width:48rem;margin-inline:auto}
 .frame-type-form_formframework header{max-width:48rem;margin:0 auto var(--space-lg)}
@@ -29,8 +29,9 @@
 .frame-type-form_formframework form :disabled{opacity:.6;cursor:not-allowed}
 .frame-type-form_formframework form [hidden]{display:none!important}
 @media(max-width:47.99rem){.frame-type-form_formframework form{padding:1.25rem}.frame-type-form_formframework form h2{font-size:1.65rem}}
+@media(max-width:30rem){.frame-type-form_formframework form button[type="submit"],.frame-type-form_formframework form input[type="submit"]{width:100%}}
 
-/* Consolidated visual system and component refinements. */
+/* Custom form controls alongside the Form Framework. */
 .form__input:focus,.form__textarea:focus,.form__select:focus{box-shadow:0 0 0 3px color-mix(in srgb,var(--color-focus) 18%,transparent)}
 .form__input,.form__textarea,.form__select{min-height:3rem;padding:.7rem .85rem}
 .form__input,.form__textarea,.form__select{border-radius:var(--radius-sm);background:color-mix(in srgb,var(--color-bg) 92%,var(--color-bg-subtle));border-color:var(--color-border-strong)}

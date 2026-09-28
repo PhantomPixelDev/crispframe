@@ -77,7 +77,7 @@
 .resource-list__arrow{align-self:center;margin:0 0 0 auto}
 @media(prefers-reduced-motion:reduce){.child-pages__link,.resource-list__link{transition:none}.child-pages__link:hover,.resource-list__link:hover{transform:none}}
 
-/* Consolidated visual system and component refinements. */
+/* Native TYPO3 elements and editorial refinements. */
 /* Native TYPO3 content can sit between Crispframe blocks without custom templates. */
 .page>.frame:not([class*="frame-type-crispframe_"]){width:min(100% - 2*var(--container-gutter),var(--container-default));margin:var(--space-2xl) auto;color:var(--color-text)}
 .page>.frame:not([class*="frame-type-crispframe_"]):first-child{margin-block-start:var(--space-3xl)}

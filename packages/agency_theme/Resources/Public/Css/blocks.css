@@ -89,7 +89,7 @@
 .section--dark .timeline--rail,.section--brand .timeline--rail{border-color:rgba(255,255,255,.55)}
 .section--dark .timeline--cards .timeline__item,.section--brand .timeline--cards .timeline__item{color:var(--color-text)}
 
-/* Consolidated visual system and component refinements. */
+/* Block presentation and editor-selected variants. */
 .pricing-card{padding:clamp(1.5rem,2.5vw,2.25rem)}
 .pricing-card--featured{padding:calc(clamp(1.5rem,2.5vw,2.25rem) - 1px)}
 .gallery-grid a{border-radius:var(--radius-md)}

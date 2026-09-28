@@ -113,7 +113,7 @@
 .prose--intro p{margin-inline:auto}
 .btn--block{width:100%}
 
-/* Consolidated visual system and component refinements. */
+/* Section rhythm and heading scale. */
 .section{position:relative}
 .section--subtle{border-block-color:transparent}
 .section-header{max-width:48rem;margin-block-end:clamp(1.75rem,3vw,3rem)}

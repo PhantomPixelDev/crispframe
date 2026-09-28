@@ -65,7 +65,7 @@
 .language-switch [aria-disabled="true"]{opacity:.5}
 @media(max-width:30rem){.language-switch{font-size:var(--text-xs)}.language-switch>a,.language-switch>span{padding:.25rem}}
 
-/* Consolidated visual system and component refinements. */
+/* Palette surface refinements. */
 .site-shell{background:var(--color-paper);color:var(--color-ink)}
 .site-shell[data-palette="ocean"]{--color-bg:#fcfcfa;--color-bg-subtle:#f2f5f7;--color-bg-muted:#e7eef3;--color-border:#d8e1e6;--color-border-strong:#b8c8d1;--color-text:#152235;--color-text-muted:#566678}
 .site-shell[data-palette="forest"]{--color-bg-subtle:#f4f8f4;--color-bg-muted:#e7f1e9;--color-border:#d8e5dc}

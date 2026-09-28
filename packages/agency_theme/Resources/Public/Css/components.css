@@ -246,7 +246,7 @@ img.site-header__logo{width:auto;height:2rem;background:none;border-radius:0;dis
 .person-card__role{font-size:var(--text-sm);color:var(--color-text-muted)}
 /* testimonial single definition is above (95-102) — preserves box-shadow, quote ::before, author border, avatar bg/border */
 
-/* Consolidated visual system and component refinements. */
+/* Header, navigation, hero, card, and block component refinements. */
 .site-header{background:color-mix(in srgb,var(--color-bg) 94%,transparent);backdrop-filter:saturate(1.1) blur(18px);border-color:var(--color-border);box-shadow:0 5px 24px rgba(17,31,44,.045)}
 .site-header__inner{min-height:4.75rem;gap:var(--space-md)}
 .site-header__brand{flex-shrink:0;gap:.7rem}
