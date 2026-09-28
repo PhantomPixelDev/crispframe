@@ -399,6 +399,7 @@ img.site-header__logo{width:auto;height:2rem;background:none;border-radius:0;dis
 .site-footer__prelude{background:linear-gradient(120deg,var(--color-brand-ink),var(--color-brand));box-shadow:var(--shadow-lg)}
 @media(max-width:63.99rem){.hero-section .hero{grid-template-columns:1fr;gap:var(--space-2xl)}.hero__title{max-width:13ch}}
 @media(max-width:47.99rem){.section-header__title{font-size:clamp(2rem,9vw,3rem)}.hero__title{font-size:clamp(2.8rem,14vw,4.4rem)}.card:hover,.project-card:hover,.person-card:hover,.pricing-card:hover{transform:none}}
+@media(max-width:47.99rem){.site-shell[data-rhythm="balanced"] .hero-section:not([data-spacing="small"]):not([data-spacing="large"]){padding-block:clamp(2.5rem,8vw,4rem)}}
 /* Clear icon anchors, without decorative layers competing with the content. */
 .service-card,.card--feature{position:relative;gap:var(--space-md);padding:clamp(1.25rem,2vw,1.75rem)}
 .service-card>.card__icon,.card--feature>.card__icon,.resource-list__icon{display:inline-flex;align-items:center;justify-content:center;align-self:flex-start;width:3.5rem;height:3.5rem;flex:none;border:1px solid var(--color-border);border-radius:var(--radius-md);background:var(--color-bg-subtle);box-shadow:none;color:var(--color-brand-ink)}
