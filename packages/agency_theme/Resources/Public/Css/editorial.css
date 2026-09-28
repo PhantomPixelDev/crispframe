@@ -76,3 +76,29 @@
 .resource-list__content{padding:0}
 .resource-list__arrow{align-self:center;margin:0 0 0 auto}
 @media(prefers-reduced-motion:reduce){.child-pages__link,.resource-list__link{transition:none}.child-pages__link:hover,.resource-list__link:hover{transform:none}}
+
+/* Consolidated visual system and component refinements. */
+/* Native TYPO3 content can sit between Crispframe blocks without custom templates. */
+.page>.frame:not([class*="frame-type-crispframe_"]){width:min(100% - 2*var(--container-gutter),var(--container-default));margin:var(--space-2xl) auto;color:var(--color-text)}
+.page>.frame:not([class*="frame-type-crispframe_"]):first-child{margin-block-start:var(--space-3xl)}
+.frame-type-text,.frame-type-textmedia,.frame-type-textpic,.frame-type-table,.frame-type-uploads{overflow-wrap:anywhere}
+.frame-type-text .ce-bodytext,.frame-type-textmedia .ce-bodytext,.frame-type-textpic .ce-bodytext{max-width:72ch;line-height:var(--leading-normal)}
+.frame-type-text .ce-bodytext>*+*,.frame-type-textmedia .ce-bodytext>*+*,.frame-type-textpic .ce-bodytext>*+*{margin-block-start:var(--space-md)}
+.frame-type-text a,.frame-type-textmedia a,.frame-type-textpic a,.frame-type-uploads a{color:var(--color-brand-ink);text-decoration:underline;text-underline-offset:.16em}
+.frame-type-text a:focus-visible,.frame-type-textmedia a:focus-visible,.frame-type-textpic a:focus-visible,.frame-type-uploads a:focus-visible{outline:3px solid var(--color-focus);outline-offset:3px}
+.frame-type-textmedia .ce-gallery,.frame-type-textpic .ce-gallery,.frame-type-image .ce-gallery{max-width:100%;overflow:hidden}
+.frame-type-textmedia .ce-gallery img,.frame-type-textpic .ce-gallery img,.frame-type-image .ce-gallery img{display:block;max-width:100%;height:auto;border-radius:var(--radius-md)}
+.frame-type-textmedia .ce-gallery figcaption,.frame-type-textpic .ce-gallery figcaption,.frame-type-image .ce-gallery figcaption{padding-block:var(--space-xs);font-size:var(--text-sm);color:var(--color-text-muted)}
+.frame-type-table .ce-table{display:block;max-width:100%;overflow-x:auto;border:1px solid var(--color-border);border-radius:var(--radius-md)}
+.frame-type-table table{min-width:32rem;margin:0;background:var(--color-bg)}
+.frame-type-table th{background:var(--color-bg-subtle);color:var(--color-text)}
+.frame-type-table caption{padding:var(--space-md);text-align:start;font-weight:var(--font-weight-semibold)}
+.frame-type-uploads .ce-uploads{list-style:none;padding:0;margin:0;display:grid;gap:var(--space-sm)}
+.frame-type-uploads .ce-uploads li{padding:var(--space-md);border:1px solid var(--color-border);border-radius:var(--radius-sm);background:var(--color-bg-subtle)}
+.frame-type-menu_sitemap ul,.frame-type-menu_section ul,.frame-type-menu_pages ul,.frame-type-menu_subpages ul,.frame-type-shortcut ul{display:grid;gap:var(--space-xs);padding:0;list-style:none}
+.frame-type-menu_sitemap a,.frame-type-menu_section a,.frame-type-menu_pages a,.frame-type-menu_subpages a{display:block;padding:.7rem var(--space-md);border:1px solid var(--color-border);border-radius:var(--radius-sm);background:var(--color-bg);color:var(--color-text);text-decoration:none}
+.frame-type-menu_sitemap a:hover,.frame-type-menu_section a:hover,.frame-type-menu_pages a:hover,.frame-type-menu_subpages a:hover{border-color:var(--color-brand);background:var(--color-bg-subtle)}
+.tx-indexedsearch-searchbox,.tx-indexedsearch-res{max-width:58rem;margin-inline:auto}
+.tx-indexedsearch-searchbox form{display:flex;flex-wrap:wrap;gap:var(--space-sm);align-items:end}
+.tx-indexedsearch-searchbox input[type="search"],.tx-indexedsearch-searchbox input[type="text"]{min-height:2.75rem;min-width:min(100%,20rem);padding:.65rem .8rem;border:1px solid var(--color-border-strong);border-radius:var(--radius-sm);background:var(--color-bg);color:var(--color-text)}
+.tx-indexedsearch-res{display:grid;gap:var(--space-lg);margin-block-start:var(--space-xl)}

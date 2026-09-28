@@ -64,3 +64,11 @@
 .language-switch>a:focus-visible{outline:3px solid var(--color-focus);outline-offset:2px}
 .language-switch [aria-disabled="true"]{opacity:.5}
 @media(max-width:30rem){.language-switch{font-size:var(--text-xs)}.language-switch>a,.language-switch>span{padding:.25rem}}
+
+/* Consolidated visual system and component refinements. */
+.site-shell{background:var(--color-paper);color:var(--color-ink)}
+.site-shell[data-palette="ocean"]{--color-bg:#fcfcfa;--color-bg-subtle:#f2f5f7;--color-bg-muted:#e7eef3;--color-border:#d8e1e6;--color-border-strong:#b8c8d1;--color-text:#152235;--color-text-muted:#566678}
+.site-shell[data-palette="forest"]{--color-bg-subtle:#f4f8f4;--color-bg-muted:#e7f1e9;--color-border:#d8e5dc}
+.site-shell[data-palette="plum"]{--color-bg-subtle:#faf7fa;--color-bg-muted:#f1eaf3;--color-border:#e7dce9}
+.site-shell[data-palette="ember"]{--color-bg-subtle:#fbf7f3;--color-bg-muted:#f4eae2;--color-border:#eadfd6}
+.site-shell[data-type-scale="expressive"]{--text-h1:clamp(3rem,6vw,5.6rem);--text-h2:clamp(2.2rem,3.7vw,3.6rem);--text-h3:clamp(1.35rem,2.3vw,1.85rem)}

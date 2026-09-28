@@ -2,11 +2,11 @@
 *,*::before,*::after{box-sizing:border-box}
 *{margin:0}
 html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scrollbar-gutter:stable;color-scheme:light;hanging-punctuation:first last}
-body{font-family:var(--font-sans);font-size:var(--text-base);line-height:var(--leading-normal);color:var(--color-text);background:var(--color-bg);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility;overflow-wrap:break-word}
+body{font-family:var(--font-sans);font-size:var(--text-base);line-height:var(--leading-normal);color:var(--color-text);background:var(--color-bg);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility;overflow-wrap:break-word;font-weight:430;letter-spacing:-.006em}
 img,picture,video,svg{display:block;max-width:100%}
 img,video{height:auto}
 svg{flex-shrink:0}
-h1,h2,h3,h4{font-weight:var(--font-weight-semibold);line-height:var(--leading-tight);letter-spacing:var(--tracking-tight);text-wrap:balance}
+h1,h2,h3,h4{font-weight:680;line-height:var(--leading-tight);letter-spacing:-.045em;text-wrap:balance}
 h1{font-size:var(--text-h1);line-height:1.1}
 h2{font-size:var(--text-h2)}
 h3{font-size:var(--text-h3);line-height:var(--leading-snug)}
@@ -42,3 +42,7 @@ td{border-block-end:1px solid var(--color-border);padding:var(--space-sm) var(--
   html{scroll-behavior:auto}
   *,*::before,*::after{animation-duration:.01ms;animation-iteration-count:1;transition-duration:.01ms;scroll-behavior:auto}
 }
+
+/* Reduced motion also covers decorative component transforms. */
+@media(prefers-reduced-motion:reduce){.gallery-grid a:hover img{transform:none}.card,.project-card,.person-card,.pricing-card{transition:none}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}

@@ -112,3 +112,18 @@
 .prose--intro{margin-inline:auto;text-align:center;max-width:var(--measure)}
 .prose--intro p{margin-inline:auto}
 .btn--block{width:100%}
+
+/* Consolidated visual system and component refinements. */
+.section{position:relative}
+.section--subtle{border-block-color:transparent}
+.section-header{max-width:48rem;margin-block-end:clamp(1.75rem,3vw,3rem)}
+.section-header__kicker,.section__eyebrow,.hero__eyebrow{letter-spacing:.13em;font-weight:var(--font-weight-bold)}
+.section-header__lead,.section__lead{font-size:clamp(1.05rem,1.5vw,1.25rem);max-width:58ch}
+.section-header__title{max-width:20ch}
+.section-header--center .section-header__title{margin-inline:auto}
+.cards,.grid,.process,.pricing-grid,.gallery-grid{gap:clamp(1rem,2vw,1.5rem)}
+.section--default:nth-of-type(even){background:linear-gradient(180deg,color-mix(in srgb,var(--color-bg-subtle) 58%,var(--color-bg)) 0%,var(--color-bg) 100%)}
+.section-header{margin-block-end:clamp(1.75rem,2.5vw,3rem)}
+.section-header__kicker,.section__eyebrow,.hero__eyebrow{font-size:.7rem;letter-spacing:.16em}
+.section-header__title{font-size:clamp(2.25rem,4vw,4rem);max-width:18ch}
+.section-header__lead{max-width:52ch;font-size:clamp(1.05rem,1.5vw,1.25rem);line-height:1.55}

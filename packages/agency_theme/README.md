@@ -101,6 +101,8 @@ Additional settings cover company details, logo, English/German CTA labels, anno
 
 Content elements also expose their own width, background, and spacing controls. Hero blocks support split, centered, background-media, and minimal layouts. The [guided style variants](Documentation/StyleVariants.md) add fixed choices for Hero headline width, Services, Feature grid, Projects, Testimonials, and CTA without changing existing records.
 
+For deeper CSS changes, use the [styling source map](Documentation/Styling.md) to find the owning file for each component.
+
 ## Forms
 
 Add a **Form** content element and select **Contact inquiry** or **Project inquiry**. Both use TYPO3 Form Framework. The project preset includes service, organization, optional budget and timing, contact details, consent, and a message.

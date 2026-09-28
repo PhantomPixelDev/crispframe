@@ -9,19 +9,25 @@
   --color-focus:var(--color-brand);--color-selection-bg:#dbeafe;--color-selection-text:var(--color-text);
   --space-xs:.5rem;--space-sm:.75rem;--space-md:1rem;--space-lg:1.5rem;--space-xl:2rem;--space-2xl:3rem;--space-3xl:4.5rem;--space-4xl:6rem;
   --container-sm:44rem;--container-default:74rem;--container-lg:84rem;--container-gutter:clamp(1rem,3vw,2rem);
-  --radius-sm:8px;--radius-md:16px;--radius-pill:999px;
-  --shadow-sm:0 4px 16px rgba(17,31,44,.045);--shadow:0 12px 36px rgba(17,31,44,.07);
+  --radius-sm:6px;--radius-md:14px;--radius-pill:999px;
+  --shadow-sm:0 4px 16px rgba(21,34,53,.05);--shadow:0 18px 48px rgba(21,34,53,.1);
   --ease-default:cubic-bezier(.25,.1,.25,1);--duration-fast:150ms;--duration-base:180ms;
   --transition-base:var(--duration-base) var(--ease-default);--transition-fast:var(--duration-fast) var(--ease-default);
-  --font-sans:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji";
+  --font-sans:"Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
   --font-mono:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
   --font-weight-regular:400;--font-weight-medium:500;--font-weight-semibold:600;--font-weight-bold:700;
-  --leading-tight:1.2;--leading-snug:1.35;--leading-normal:1.65;--leading-relaxed:1.75;
-  --measure:65ch;
+  --leading-tight:1.2;--leading-snug:1.35;--leading-normal:1.62;--leading-relaxed:1.75;
+  --measure:68ch;
   --text-xs:.8125rem;--text-sm:.875rem;--text-base:1rem;--text-md:1.0625rem;--text-lg:1.125rem;
   --text-h1:clamp(2.6rem,5vw,4.6rem);--text-h2:clamp(2rem,3.2vw,3.1rem);--text-h3:clamp(1.25rem,2vw,1.65rem);--text-h4:1.08rem;
   --tracking-tight:-.035em;--tracking-normal:0;
   --border-width:1px;--border-color:var(--color-border);
   --header-height:4rem;
   --z-header:100;--z-overlay:200;
+  --color-paper:#fcfcfa;
+  --color-ink:#152235;
+  --shadow-lg:0 28px 80px rgba(21,34,53,.14);
 }
+
+/* Self-hosted typeface. Palette values are in themes.css. */
+@font-face{font-family:"Plus Jakarta Sans";src:url("../Fonts/PlusJakartaSans-Variable.ttf") format("truetype");font-style:normal;font-weight:200 800;font-display:swap}

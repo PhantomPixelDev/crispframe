@@ -29,3 +29,9 @@
 .frame-type-form_formframework form :disabled{opacity:.6;cursor:not-allowed}
 .frame-type-form_formframework form [hidden]{display:none!important}
 @media(max-width:47.99rem){.frame-type-form_formframework form{padding:1.25rem}.frame-type-form_formframework form h2{font-size:1.65rem}}
+
+/* Consolidated visual system and component refinements. */
+.form__input:focus,.form__textarea:focus,.form__select:focus{box-shadow:0 0 0 3px color-mix(in srgb,var(--color-focus) 18%,transparent)}
+.form__input,.form__textarea,.form__select{min-height:3rem;padding:.7rem .85rem}
+.form__input,.form__textarea,.form__select{border-radius:var(--radius-sm);background:color-mix(in srgb,var(--color-bg) 92%,var(--color-bg-subtle));border-color:var(--color-border-strong)}
+.form__input:focus,.form__textarea:focus,.form__select:focus{border-color:var(--color-brand);box-shadow:0 0 0 4px color-mix(in srgb,var(--color-focus) 16%,transparent)}
