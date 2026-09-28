@@ -2,8 +2,7 @@ async (page) => {
   const base = page.url().match(/^https?:\/\/[^/]+/)?.[0];
   if (!base) throw new Error('Open the live demo before running this audit.');
   await page.goto(base + '/');
-  // Check the current working tree against the VPS before deployment as well.
-  await page.addStyleTag({path: 'packages/agency_theme/Resources/Public/Css/refresh.css'});
+  // Disable transitions so each synthetic variant is measured at its final color.
   await page.addStyleTag({content: '*,*::before,*::after{transition:none!important;animation:none!important}'});
   const result = await page.evaluate(() => {
     const shell = document.querySelector('.site-shell');
