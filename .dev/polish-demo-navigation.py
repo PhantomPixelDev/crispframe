@@ -23,6 +23,7 @@ plans = [
     ('/components/style-variants', [('hero', 'Hero headings', 'Hero-Überschriften'), ('services', 'Service layouts', 'Leistungsdarstellung'), ('featuregrid', 'Feature layouts', 'Merkmalsdarstellung'), ('projects', 'Project layouts', 'Projektdarstellung'), ('testimonials', 'Quote layouts', 'Zitatdarstellung'), ('cta', 'Calls to action', 'Handlungsaufforderungen')]),
 ]
 pending = []
+repairs = []
 for slug, choices in plans:
     page = db.execute('SELECT uid FROM pages WHERE slug=? AND sys_language_uid=0 AND deleted=0', (slug,)).fetchone()
     if page is None:
@@ -31,18 +32,23 @@ for slug, choices in plans:
     for language in (0, 1):
         marker = f'Demo polish: showcase navigation {language}'
         existing = db.execute('SELECT uid FROM tt_content WHERE pid=? AND header=? AND sys_language_uid=? AND deleted=0', (page['uid'], marker, language)).fetchone()
-        if existing:
-            continue
         links = []
         for kind, en, de in choices:
-            target = db.execute('SELECT uid FROM tt_content WHERE pid=? AND CType=? AND sys_language_uid=? AND deleted=0 AND hidden=0 ORDER BY sorting,uid LIMIT 1', (page['uid'], 'crispframe_' + kind, language)).fetchone()
+            target = db.execute('SELECT uid,l18n_parent FROM tt_content WHERE pid=? AND CType=? AND sys_language_uid=? AND deleted=0 AND hidden=0 ORDER BY sorting,uid LIMIT 1', (page['uid'], 'crispframe_' + kind, language)).fetchone()
             if target:
-                links.append((en if language == 0 else de, '#c' + str(target['uid'])))
+                anchor = '#c' + str(target['l18n_parent'] or target['uid'])
+                links.append((en if language == 0 else de, anchor))
+                if existing and language and target['l18n_parent']:
+                    repairs.extend((anchor, item['uid']) for item in db.execute('SELECT uid FROM crispframe_resourcelist_items WHERE foreign_table_parent_uid=? AND link=? AND deleted=0', (existing['uid'], '#c' + str(target['uid']))))
+        if existing:
+            continue
         if not links:
             raise RuntimeError(f'No visible demo targets: {slug}/{language}')
         pending.append((page['uid'], language, marker, 96 if 'style-variants' in slug else 1, links))
         print(f'{slug} language {language}: add {len(links)} editable jump links')
-if not args.apply or not pending:
+if repairs:
+    print(f'Normalize {len(repairs)} managed German jump targets to their original record IDs.')
+if not args.apply or not (pending or repairs):
     print('No writes.' if not args.apply else 'Already present; no changes.')
     raise SystemExit(0)
 backup_dir = root / 'var/backups'
@@ -54,6 +60,8 @@ def insert(table, values):
     return db.execute(f'INSERT INTO {table} ({",".join(values)}) VALUES ({",".join("?" for _ in values)})', tuple(values.values())).lastrowid
 
 with db:
+    for link, uid in repairs:
+        db.execute('UPDATE crispframe_resourcelist_items SET link=?,tstamp=? WHERE uid=?', (link, now, uid))
     parents = {}
     for pid, language, marker, sorting, links in pending:
         parent = parents.get(pid, 0)

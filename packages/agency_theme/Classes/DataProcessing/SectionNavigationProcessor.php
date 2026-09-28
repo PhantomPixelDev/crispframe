@@ -36,13 +36,14 @@ final class SectionNavigationProcessor implements DataProcessorInterface
         $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)
             ->getQueryBuilderForTable('tt_content');
         $rows = $queryBuilder
-            ->select('uid', 'header')
+            ->select('uid', 'l18n_parent', 'header')
             ->from('tt_content')
             ->where(
                 $queryBuilder->expr()->eq('pid', $queryBuilder->createNamedParameter($pageId)),
                 $queryBuilder->expr()->eq('sys_language_uid', $queryBuilder->createNamedParameter($languageId)),
                 $queryBuilder->expr()->eq('sectionIndex', $queryBuilder->createNamedParameter(1)),
                 $queryBuilder->expr()->neq('uid', $queryBuilder->createNamedParameter($currentUid)),
+                $queryBuilder->expr()->neq('CType', $queryBuilder->createNamedParameter('crispframe_sectionnavigation')),
                 $queryBuilder->expr()->neq('header', $queryBuilder->createNamedParameter('')),
             )
             ->orderBy('colPos', 'ASC')
@@ -53,7 +54,8 @@ final class SectionNavigationProcessor implements DataProcessorInterface
         $processedData['sectionNavigation'] = array_map(
             static fn(array $row): array => [
                 'title' => trim((string)$row['header']),
-                'anchor' => 'c' . (int)$row['uid'],
+                // Localized Content Blocks retain the original record UID in Fluid.
+                'anchor' => 'c' . ((int)$row['l18n_parent'] ?: (int)$row['uid']),
             ],
             $rows,
         );
